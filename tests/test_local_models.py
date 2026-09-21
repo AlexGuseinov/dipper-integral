@@ -49,11 +49,22 @@ def test_carry_encoding_equivalence(nmax=6):
                     assert ok == (a + bp == w)
 
 
+def test_addition_bit_degree(nmax=8):
+    """Lemma: deg((x+y mod 2^n)_i) = i + 1 in the 2n input bits."""
+    for n in range(1, nmax + 1):
+        mask = (1 << n) - 1
+        for i in range(n):
+            truth = [((xy & mask) + (xy >> n) >> i) & 1 for xy in range(1 << (2 * n))]
+            deg = max(bin(u).count("1") for u, c in enumerate(moebius(truth)) if c)
+            assert deg == i + 1, (n, i, deg)
+
+
 if __name__ == "__main__":
+    test_addition_bit_degree()
     test_sbox_table_is_exact_and_bijective_props()
     test_hu_yap_addition()
     test_addition_with_retained_operand()
     test_carry_encoding_equivalence()
     n_mp = sum(map(sum, SBOX_MP)); n_bdp = sum(map(sum, SBOX_BDP))
     print(f"S-box: {n_mp} valid MP transitions, {n_bdp} BDP transitions")
-    print("all local models validated exhaustively (addition n<=5, retained n<=4, carry n<=6)")
+    print("all local models validated exhaustively (addition n<=5, retained n<=4, carry n<=6, bit degree n<=8)")

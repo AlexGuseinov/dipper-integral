@@ -68,3 +68,12 @@ Mechanism: every certified bit at the 6-round boundary comes, in the last round,
 * 7-round distinguisher on T^{-1}(C) (free final round), 2^60 data.
 * 8-round partial key recovery: bit 1 (word D) needs only 4 bits of RK8; 8 structures of 2^60 → 2^63 data, 2^63 partial decryptions; recovers 4 bits. Theoretical (half the codebook).
 * Small-scale end-to-end validation (6 rounds, 200 keys): right key always survives; wrong-guess survival ≈ 0.565/structure; 1.13 candidates after 8 structures.
+
+## Step 6 — degree mechanism and exactness attempts
+* Lemma: deg((x⊞y)_i) = i+1 (Kummer + Braeken–Semaev), verified exhaustively n ≤ 8 [`tests/test_local_models.py`].
+* Certified degree bounds for every output bit [`step6_degree.py`, `step6_degree_*.json`, figure `paper/fig_degree.pdf`]:
+  * Dipper after 1 round: bit i of A⊞B has bound 3,5,7,…,26 (≈ linear in i); retained B stays 2–3.
+  * Dipper: every bit reaches 63 at r=6; at r=5 exactly six retained-word bits {1,19,24,51,56,58} have bound 62 (= the bits certified for all 64 maximal cubes).
+  * Dipper-XOR: all bits 63 at r=9; Dipper-no-add: at r=10.
+* Exact decision of the 46 persistent gap bits [`step6_gap_resolution.json`]: key support 33–88 bits, key-degree bound 23–65 → infeasible; open.
+* Presence (exact non-balance) at 7 rounds via key-monomial parity [`step6_presence_attempt.json`]: no odd count found (20 key monomials, cap 2·10^4) on 2 instances; open.

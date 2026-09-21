@@ -21,6 +21,8 @@ evidence with SAT-based certificates that hold **for every choice of round keys*
 | Ablation: ⊞ → ⊕ / addition removed | 9 / 10 certified rounds (vs 6) |
 | Exact MP vs gate-level MP vs classical BDP | identical certificates on every instance |
 | Mechanism | at the 6-round boundary every balanced bit comes from the retained words B, D |
+| Degree lemma | bit i of x⊞y has algebraic degree exactly i+1 (proved; checked n ≤ 8) |
+| Certified degree bounds | all 64 bits reach bound 63 after 6 rounds (Dipper) vs 9 / 10 rounds (XOR / no-add); retained words lag ~1 round |
 | Specification check | 128-bit vectors need RK = K[63:0] (text says K[127:64]); 96-bit vectors not reproducible |
 
 Full numbers: [`results/RESULTS.md`](results/RESULTS.md), raw data: `results/*.json`,
@@ -36,6 +38,7 @@ dipper/            library
   anf.py           exact ANF / monomial tables (S-box, modular addition)
   models.py        SAT models: 'mp' (exact), 'mpc' (gate-level MP), 'bdp' (classical)
   exact.py         trail enumeration with parity per key monomial
+  resolve.py       key-support / key-degree bounds, exact zero test, presence attempt
 scripts/           one script per experiment (step1 … step5), summarize.py
 tests/             test vectors, inverses, exhaustive local-model checks, soundness
 results/           JSON outputs, logs, RESULTS.md, step1_spec_check.md

@@ -1,0 +1,2 @@
+{'rounds': 7, 'constant_bit': 0, 'bit': 0, 'proved_present': False, 'info': {'reason': 'no odd key monomial found', 'tried': 20}, 'seconds': 246.0}
+{'rounds': 7, 'constant_bit': 5, 'bit': 17, 'proved_present': False, 'info': {'reason': 'no odd key monomial found', 'tried': 20}, 'seconds': 238.2}

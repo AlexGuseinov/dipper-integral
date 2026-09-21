@@ -1,0 +1,524 @@
+{
+ "summary": {
+  "cases": 46,
+  "verdicts": {
+   "undecided (too many evaluations)": 46
+  },
+  "support_size_range": [
+   33,
+   88
+  ],
+  "degree_bound_range": [
+   23,
+   65
+  ]
+ },
+ "cases": [
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 88,
+   "degree_bound": 65,
+   "evaluations": 309484564257207868793267189,
+   "cube": "nibbles[13]",
+   "dim": 4,
+   "rounds": 2,
+   "bit": 28,
+   "seconds": 0.8
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 88,
+   "degree_bound": 64,
+   "evaluations": 309483694338658411094842109,
+   "cube": "nibbles[13]",
+   "dim": 4,
+   "rounds": 2,
+   "bit": 31,
+   "seconds": 0.7
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 83,
+   "degree_bound": 62,
+   "evaluations": 9671394802782943126549072,
+   "cube": "nibbles[4]",
+   "dim": 4,
+   "rounds": 2,
+   "bit": 6,
+   "seconds": 0.7
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 80,
+   "degree_bound": 57,
+   "evaluations": 1208883443295155956044204,
+   "cube": "nibbles[2, 8]",
+   "dim": 8,
+   "rounds": 2,
+   "bit": 6,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 80,
+   "degree_bound": 57,
+   "evaluations": 1208883443295155956044204,
+   "cube": "nibbles[2, 8]",
+   "dim": 8,
+   "rounds": 2,
+   "bit": 23,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 72,
+   "degree_bound": 50,
+   "evaluations": 4721103334361941929948,
+   "cube": "nibbles[2, 8]",
+   "dim": 8,
+   "rounds": 2,
+   "bit": 39,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 80,
+   "degree_bound": 54,
+   "evaluations": 1208289480439497783959236,
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "rounds": 2,
+   "bit": 14,
+   "seconds": 0.2
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 75,
+   "degree_bound": 53,
+   "evaluations": 37775601475763099367552,
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "rounds": 2,
+   "bit": 23,
+   "seconds": 0.5
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 80,
+   "degree_bound": 56,
+   "evaluations": 1208815132443441387661804,
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "rounds": 2,
+   "bit": 28,
+   "seconds": 0.2
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 68,
+   "degree_bound": 46,
+   "evaluations": 294825272632299463392,
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "rounds": 2,
+   "bit": 30,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 71,
+   "degree_bound": 50,
+   "evaluations": 2360825329249067362812,
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "rounds": 2,
+   "bit": 44,
+   "seconds": 0.4
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 84,
+   "degree_bound": 58,
+   "evaluations": 19340236157044427783799896,
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "rounds": 2,
+   "bit": 45,
+   "seconds": 0.6
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 71,
+   "degree_bound": 48,
+   "evaluations": 2359034086621527304236,
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "rounds": 2,
+   "bit": 47,
+   "seconds": 0.6
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 76,
+   "degree_bound": 52,
+   "evaluations": 75528978644487123602904,
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "rounds": 2,
+   "bit": 61,
+   "seconds": 0.2
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 55,
+   "degree_bound": 39,
+   "evaluations": 36010497142784256,
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 9,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 60,
+   "degree_bound": 42,
+   "evaluations": 1152307132464022707,
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 26,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 75,
+   "degree_bound": 53,
+   "evaluations": 37775601475763099367552,
+   "cube": "nibbles[2, 4, 8]",
+   "dim": 12,
+   "rounds": 2,
+   "bit": 6,
+   "seconds": 0.2
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 75,
+   "degree_bound": 53,
+   "evaluations": 37775601475763099367552,
+   "cube": "nibbles[2, 4, 8]",
+   "dim": 12,
+   "rounds": 2,
+   "bit": 23,
+   "seconds": 0.6
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 75,
+   "degree_bound": 48,
+   "evaluations": 37579041323426056351524,
+   "cube": "nibbles[2, 4, 8]",
+   "dim": 12,
+   "rounds": 2,
+   "bit": 36,
+   "seconds": 0.3
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 67,
+   "degree_bound": 46,
+   "evaluations": 147477500564846619336,
+   "cube": "nibbles[2, 4, 8]",
+   "dim": 12,
+   "rounds": 2,
+   "bit": 39,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 75,
+   "degree_bound": 50,
+   "evaluations": 37732761691992491579052,
+   "cube": "nibbles[2, 4, 8]",
+   "dim": 12,
+   "rounds": 2,
+   "bit": 53,
+   "seconds": 0.5
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 83,
+   "degree_bound": 61,
+   "evaluations": 9671370263356905308554912,
+   "cube": "random4",
+   "dim": 4,
+   "rounds": 2,
+   "bit": 23,
+   "seconds": 2.7
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 64,
+   "degree_bound": 47,
+   "evaluations": 18446030823258894507,
+   "cube": "random4",
+   "dim": 4,
+   "rounds": 3,
+   "bit": 16,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 69,
+   "degree_bound": 50,
+   "evaluations": 590269929835134313440,
+   "cube": "random4",
+   "dim": 4,
+   "rounds": 3,
+   "bit": 33,
+   "seconds": 0.3
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 33,
+   "degree_bound": 24,
+   "evaluations": 8570386546,
+   "cube": "random4",
+   "dim": 4,
+   "rounds": 2,
+   "bit": 21,
+   "seconds": 0.0
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 64,
+   "degree_bound": 48,
+   "evaluations": 18446519350195974087,
+   "cube": "random4",
+   "dim": 4,
+   "rounds": 3,
+   "bit": 16,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 38,
+   "degree_bound": 27,
+   "evaluations": 274177292184,
+   "cube": "random4",
+   "dim": 4,
+   "rounds": 3,
+   "bit": 19,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 70,
+   "degree_bound": 51,
+   "evaluations": 1180557091084664091864,
+   "cube": "random4",
+   "dim": 4,
+   "rounds": 3,
+   "bit": 33,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 60,
+   "degree_bound": 44,
+   "evaluations": 1152843962518559532,
+   "cube": "random4",
+   "dim": 4,
+   "rounds": 3,
+   "bit": 41,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 61,
+   "degree_bound": 44,
+   "evaluations": 2305538316661264539,
+   "cube": "random8",
+   "dim": 8,
+   "rounds": 3,
+   "bit": 16,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 33,
+   "degree_bound": 23,
+   "evaluations": 8531819446,
+   "cube": "random8",
+   "dim": 8,
+   "rounds": 3,
+   "bit": 19,
+   "seconds": 0.0
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 57,
+   "degree_bound": 40,
+   "evaluations": 144024139020348339,
+   "cube": "random8",
+   "dim": 8,
+   "rounds": 3,
+   "bit": 48,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 65,
+   "degree_bound": 47,
+   "evaluations": 36890682276342505494,
+   "cube": "random8",
+   "dim": 8,
+   "rounds": 3,
+   "bit": 26,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 63,
+   "degree_bound": 43,
+   "evaluations": 9213099360929945856,
+   "cube": "random8",
+   "dim": 8,
+   "rounds": 3,
+   "bit": 18,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 59,
+   "degree_bound": 40,
+   "evaluations": 575367291101131461,
+   "cube": "random12",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 11,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 59,
+   "degree_bound": 39,
+   "evaluations": 573970009599196296,
+   "cube": "random12",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 18,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 54,
+   "degree_bound": 36,
+   "evaluations": 17932673125137243,
+   "cube": "random12",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 41,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 55,
+   "degree_bound": 39,
+   "evaluations": 36010497142784256,
+   "cube": "random12",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 9,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 53,
+   "degree_bound": 39,
+   "evaluations": 9005989857561944,
+   "cube": "random12",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 16,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 60,
+   "degree_bound": 42,
+   "evaluations": 1152307132464022707,
+   "cube": "random12",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 26,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 60,
+   "degree_bound": 41,
+   "evaluations": 1151382102898281657,
+   "cube": "random12",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 43,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 60,
+   "degree_bound": 41,
+   "evaluations": 1151382102898281657,
+   "cube": "random12",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 50,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 55,
+   "degree_bound": 40,
+   "evaluations": 36022396843310046,
+   "cube": "random12",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 16,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 61,
+   "degree_bound": 43,
+   "evaluations": 2305001486606727714,
+   "cube": "random12",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 33,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 55,
+   "degree_bound": 38,
+   "evaluations": 35980747891469781,
+   "cube": "random12",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 9,
+   "seconds": 0.1
+  },
+  {
+   "verdict": "undecided (too many evaluations)",
+   "support_size": 60,
+   "degree_bound": 41,
+   "evaluations": 1151382102898281657,
+   "cube": "random12",
+   "dim": 12,
+   "rounds": 3,
+   "bit": 26,
+   "seconds": 0.1
+  }
+ ]
+}

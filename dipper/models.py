@@ -195,11 +195,14 @@ def key_layer(m, x, model):
 
 
 def build(active, rounds, model="mp", mode="add"):
-    """Returns (Model, output_vars). Input mask = indicator of `active`."""
+    """Returns (Model, output_vars). Input mask = indicator of `active`;
+    active=None leaves the input mask free (m.inputs holds its variables)."""
     m = Model()
     x = m.vars(64)
-    for i in range(64):
-        m.add([x[i]] if i in active else [-x[i]])
+    m.inputs = list(x)
+    if active is not None:
+        for i in range(64):
+            m.add([x[i]] if i in active else [-x[i]])
     table = SBOX_BDP if model == "bdp" else SBOX_MP
     m.masks += list(x)
     for _ in range(rounds):

@@ -28,6 +28,11 @@ reproduce: quick ## everything (several hours on 2 cores)
 	$(PY) scripts/step4_parity_attempt.py
 	$(PY) scripts/step5_attack_smallscale.py
 	$(PY) scripts/step5_key_recovery.py
+	$(PY) scripts/step6_degree.py add 7
+	$(PY) scripts/step6_degree.py xor,none 11
+	$(PY) scripts/step6_gap_resolution.py
+	$(PY) scripts/step6_presence_attempt.py
+	$(PY) scripts/figures.py
 	$(PY) scripts/summarize.py
 
 summary:
