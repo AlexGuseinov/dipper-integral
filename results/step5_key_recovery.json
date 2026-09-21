@@ -1,0 +1,165 @@
+{
+ "per_bit": {
+  "1": {
+   "guessed_key_bits": 4,
+   "observed_dependencies": 4,
+   "cubes_63": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15,
+    34,
+    35,
+    38,
+    42,
+    43
+   ],
+   "in_60dim_frontier_cube": true
+  },
+  "18": {
+   "guessed_key_bits": 22,
+   "observed_dependencies": 21,
+   "cubes_63": [
+    4,
+    6,
+    7
+   ],
+   "in_60dim_frontier_cube": false
+  },
+  "19": {
+   "guessed_key_bits": 22,
+   "observed_dependencies": 21,
+   "cubes_63": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15,
+    34,
+    35,
+    38,
+    42,
+    43
+   ],
+   "in_60dim_frontier_cube": true
+  },
+  "24": {
+   "guessed_key_bits": 32,
+   "observed_dependencies": 25,
+   "cubes_63": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15,
+    34,
+    35,
+    38,
+    42,
+    43
+   ],
+   "in_60dim_frontier_cube": true
+  },
+  "41": {
+   "guessed_key_bits": 4,
+   "observed_dependencies": 4,
+   "cubes_63": [
+    4,
+    6,
+    7
+   ],
+   "in_60dim_frontier_cube": false
+  },
+  "48": {
+   "guessed_key_bits": 10,
+   "observed_dependencies": 10,
+   "cubes_63": [
+    4,
+    6,
+    7
+   ],
+   "in_60dim_frontier_cube": false
+  },
+  "51": {
+   "guessed_key_bits": 10,
+   "observed_dependencies": 10,
+   "cubes_63": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15,
+    34,
+    35,
+    38,
+    42,
+    43,
+    46
+   ],
+   "in_60dim_frontier_cube": true
+  },
+  "56": {
+   "guessed_key_bits": 26,
+   "observed_dependencies": 24,
+   "cubes_63": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15,
+    34,
+    35,
+    38,
+    42,
+    43,
+    46
+   ],
+   "in_60dim_frontier_cube": true
+  },
+  "58": {
+   "guessed_key_bits": 26,
+   "observed_dependencies": 24,
+   "cubes_63": [
+    4,
+    5,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15,
+    34,
+    35,
+    38,
+    42,
+    43,
+    46
+   ],
+   "in_60dim_frontier_cube": true
+  }
+ },
+ "attack8": {
+  "bit": 1,
+  "guessed_RK8_bits": 4,
+  "structures_2^60": 8,
+  "data_log2": 63.0,
+  "time_log2_partial_decryptions": 63.0,
+  "note": "distinguisher 6 rounds + free round 7 + 1 key-guessed round = 8 rounds"
+ }
+}

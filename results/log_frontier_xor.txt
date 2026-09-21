@@ -1,0 +1,5 @@
+xor mp r 5 dim 7 balanced 2 99s
+xor mp r 6 dim 22 balanced 1 213s
+xor mp r 7 dim 44 balanced 1 693s
+xor mp r 8 dim 59 balanced 1 1141s
+xor mp r 9 dim 63 balanced 0 97s

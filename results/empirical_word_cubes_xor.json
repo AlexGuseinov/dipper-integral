@@ -1,0 +1,100 @@
+{
+ "mode": "xor",
+ "trials_random_rk": 400,
+ "trials_real_ks128": 16,
+ "words": {
+  "A": {
+   "balanced_bits_per_round": {
+    "1": 64,
+    "2": 64,
+    "3": 64,
+    "4": 64,
+    "5": 64,
+    "6": 26,
+    "7": 0,
+    "8": 0
+   },
+   "balanced_mask_hex": {
+    "1": "FFFFFFFFFFFFFFFF",
+    "2": "FFFFFFFFFFFFFFFF",
+    "3": "FFFFFFFFFFFFFFFF",
+    "4": "FFFFFFFFFFFFFFFF",
+    "5": "FFFFFFFFFFFFFFFF",
+    "6": "339D198845092399",
+    "7": "0000000000000000",
+    "8": "0000000000000000"
+   },
+   "free_round_identity_holds": true
+  },
+  "B": {
+   "balanced_bits_per_round": {
+    "1": 64,
+    "2": 64,
+    "3": 64,
+    "4": 64,
+    "5": 7,
+    "6": 0,
+    "7": 0,
+    "8": 0
+   },
+   "balanced_mask_hex": {
+    "1": "FFFFFFFFFFFFFFFF",
+    "2": "FFFFFFFFFFFFFFFF",
+    "3": "FFFFFFFFFFFFFFFF",
+    "4": "FFFFFFFFFFFFFFFF",
+    "5": "0099000001080100",
+    "6": "0000000000000000",
+    "7": "0000000000000000",
+    "8": "0000000000000000"
+   },
+   "free_round_identity_holds": true
+  },
+  "C": {
+   "balanced_bits_per_round": {
+    "1": 64,
+    "2": 64,
+    "3": 64,
+    "4": 64,
+    "5": 64,
+    "6": 25,
+    "7": 0,
+    "8": 0
+   },
+   "balanced_mask_hex": {
+    "1": "FFFFFFFFFFFFFFFF",
+    "2": "FFFFFFFFFFFFFFFF",
+    "3": "FFFFFFFFFFFFFFFF",
+    "4": "FFFFFFFFFFFFFFFF",
+    "5": "FFFFFFFFFFFFFFFF",
+    "6": "119D2A9967892300",
+    "7": "0000000000000000",
+    "8": "0000000000000000"
+   },
+   "free_round_identity_holds": true
+  },
+  "D": {
+   "balanced_bits_per_round": {
+    "1": 64,
+    "2": 64,
+    "3": 64,
+    "4": 64,
+    "5": 8,
+    "6": 0,
+    "7": 0,
+    "8": 0
+   },
+   "balanced_mask_hex": {
+    "1": "FFFFFFFFFFFFFFFF",
+    "2": "FFFFFFFFFFFFFFFF",
+    "3": "FFFFFFFFFFFFFFFF",
+    "4": "FFFFFFFFFFFFFFFF",
+    "5": "1188000005080200",
+    "6": "0000000000000000",
+    "7": "0000000000000000",
+    "8": "0000000000000000"
+   },
+   "free_round_identity_holds": true
+  }
+ },
+ "seconds": 211.6
+}

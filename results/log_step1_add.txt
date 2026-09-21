@@ -1,0 +1,5 @@
+A {1: 64, 2: 64, 3: 64, 4: 38, 5: 3, 6: 0, 7: 0} free-round identity: True
+B {1: 64, 2: 56, 3: 24, 4: 0, 5: 0, 6: 0, 7: 0} free-round identity: True
+C {1: 64, 2: 64, 3: 64, 4: 38, 5: 3, 6: 0, 7: 0} free-round identity: True
+D {1: 64, 2: 60, 3: 25, 4: 0, 5: 0, 6: 0, 7: 0} free-round identity: True
+seconds 466.3

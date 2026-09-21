@@ -1,0 +1,25 @@
+xor mp 4 max 64 cubes w/ cert 64 3.1s
+xor mp 5 max 64 cubes w/ cert 64 5.4s
+xor mp 6 max 64 cubes w/ cert 64 5.9s
+xor mp 7 max 64 cubes w/ cert 64 24.0s
+xor mpc 4 max 64 cubes w/ cert 64 3.1s
+xor mpc 5 max 64 cubes w/ cert 64 5.4s
+xor mpc 6 max 64 cubes w/ cert 64 5.8s
+xor mpc 7 max 64 cubes w/ cert 64 24.2s
+xor bdp 4 max 64 cubes w/ cert 64 2.1s
+xor bdp 5 max 64 cubes w/ cert 64 3.0s
+xor bdp 6 max 64 cubes w/ cert 64 8.9s
+xor bdp 7 max 64 cubes w/ cert 64 17.5s
+none mp 4 max 64 cubes w/ cert 64 2.6s
+none mp 5 max 64 cubes w/ cert 64 3.4s
+none mp 6 max 64 cubes w/ cert 64 4.4s
+none mp 7 max 64 cubes w/ cert 64 5.7s
+none mpc 4 max 64 cubes w/ cert 64 2.7s
+none mpc 5 max 64 cubes w/ cert 64 3.4s
+none mpc 6 max 64 cubes w/ cert 64 4.4s
+none mpc 7 max 64 cubes w/ cert 64 5.4s
+none bdp 4 max 64 cubes w/ cert 64 1.9s
+none bdp 5 max 64 cubes w/ cert 64 2.3s
+none bdp 6 max 64 cubes w/ cert 64 2.9s
+none bdp 7 max 64 cubes w/ cert 64 4.1s
+total 151.7

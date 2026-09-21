@@ -1,0 +1,108 @@
+{
+ "mode": "none",
+ "trials_random_rk": 400,
+ "trials_real_ks128": 16,
+ "words": {
+  "A": {
+   "balanced_bits_per_round": {
+    "1": 64,
+    "2": 64,
+    "3": 64,
+    "4": 64,
+    "5": 64,
+    "6": 64,
+    "7": 14,
+    "8": 0,
+    "9": 0
+   },
+   "balanced_mask_hex": {
+    "1": "FFFFFFFFFFFFFFFF",
+    "2": "FFFFFFFFFFFFFFFF",
+    "3": "FFFFFFFFFFFFFFFF",
+    "4": "FFFFFFFFFFFFFFFF",
+    "5": "FFFFFFFFFFFFFFFF",
+    "6": "FFFFFFFFFFFFFFFF",
+    "7": "6088200903004194",
+    "8": "0000000000000000",
+    "9": "0000000000000000"
+   },
+   "free_round_identity_holds": true
+  },
+  "B": {
+   "balanced_bits_per_round": {
+    "1": 64,
+    "2": 64,
+    "3": 64,
+    "4": 64,
+    "5": 64,
+    "6": 63,
+    "7": 9,
+    "8": 0,
+    "9": 0
+   },
+   "balanced_mask_hex": {
+    "1": "FFFFFFFFFFFFFFFF",
+    "2": "FFFFFFFFFFFFFFFF",
+    "3": "FFFFFFFFFFFFFFFF",
+    "4": "FFFFFFFFFFFFFFFF",
+    "5": "FFFFFFFFFFFFFFFF",
+    "6": "FFFFFFFF7FFFFFFF",
+    "7": "0008300903000180",
+    "8": "0000000000000000",
+    "9": "0000000000000000"
+   },
+   "free_round_identity_holds": true
+  },
+  "C": {
+   "balanced_bits_per_round": {
+    "1": 64,
+    "2": 64,
+    "3": 64,
+    "4": 64,
+    "5": 64,
+    "6": 64,
+    "7": 4,
+    "8": 0,
+    "9": 0
+   },
+   "balanced_mask_hex": {
+    "1": "FFFFFFFFFFFFFFFF",
+    "2": "FFFFFFFFFFFFFFFF",
+    "3": "FFFFFFFFFFFFFFFF",
+    "4": "FFFFFFFFFFFFFFFF",
+    "5": "FFFFFFFFFFFFFFFF",
+    "6": "FFFFFFFFFFFFFFFF",
+    "7": "0008200001000080",
+    "8": "0000000000000000",
+    "9": "0000000000000000"
+   },
+   "free_round_identity_holds": true
+  },
+  "D": {
+   "balanced_bits_per_round": {
+    "1": 64,
+    "2": 64,
+    "3": 64,
+    "4": 64,
+    "5": 64,
+    "6": 64,
+    "7": 6,
+    "8": 0,
+    "9": 0
+   },
+   "balanced_mask_hex": {
+    "1": "FFFFFFFFFFFFFFFF",
+    "2": "FFFFFFFFFFFFFFFF",
+    "3": "FFFFFFFFFFFFFFFF",
+    "4": "FFFFFFFFFFFFFFFF",
+    "5": "FFFFFFFFFFFFFFFF",
+    "6": "FFFFFFFFFFFFFFFF",
+    "7": "0100080040002280",
+    "8": "0000000000000000",
+    "9": "0000000000000000"
+   },
+   "free_round_identity_holds": true
+  }
+ },
+ "seconds": 290.9
+}

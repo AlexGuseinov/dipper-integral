@@ -1,0 +1,112 @@
+word-A                 d=16 r=2 cert=64 emp=64 gap= 0 persistent= 0
+word-A                 d=16 r=3 cert=64 emp=64 gap= 0 persistent= 0
+word-A                 d=16 r=4 cert=38 emp=38 gap= 0 persistent= 0
+word-A                 d=16 r=5 cert= 3 emp= 3 gap= 0 persistent= 0
+word-B                 d=16 r=2 cert=56 emp=56 gap= 0 persistent= 0
+word-B                 d=16 r=3 cert=24 emp=24 gap= 0 persistent= 0
+word-B                 d=16 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+word-B                 d=16 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+word-C                 d=16 r=2 cert=64 emp=64 gap= 0 persistent= 0
+word-C                 d=16 r=3 cert=64 emp=64 gap= 0 persistent= 0
+word-C                 d=16 r=4 cert=38 emp=38 gap= 0 persistent= 0
+word-C                 d=16 r=5 cert= 3 emp= 4 gap= 1 persistent= 0
+word-D                 d=16 r=2 cert=60 emp=61 gap= 1 persistent= 0
+word-D                 d=16 r=3 cert=25 emp=25 gap= 0 persistent= 0
+word-D                 d=16 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+word-D                 d=16 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[13]            d= 4 r=2 cert=27 emp=33 gap= 6 persistent= 2
+nibbles[13]            d= 4 r=3 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[13]            d= 4 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[13]            d= 4 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[4]             d= 4 r=2 cert=29 emp=35 gap= 6 persistent= 1
+nibbles[4]             d= 4 r=3 cert= 0 emp= 1 gap= 1 persistent= 0
+nibbles[4]             d= 4 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[4]             d= 4 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[0]             d= 4 r=2 cert=34 emp=36 gap= 2 persistent= 0
+nibbles[0]             d= 4 r=3 cert= 8 emp= 8 gap= 0 persistent= 0
+nibbles[0]             d= 4 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[0]             d= 4 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[12]            d= 4 r=2 cert=27 emp=32 gap= 5 persistent= 0
+nibbles[12]            d= 4 r=3 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[12]            d= 4 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[12]            d= 4 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[5, 12]         d= 8 r=2 cert=52 emp=61 gap= 9 persistent= 0
+nibbles[5, 12]         d= 8 r=3 cert=23 emp=23 gap= 0 persistent= 0
+nibbles[5, 12]         d= 8 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[5, 12]         d= 8 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[2, 8]          d= 8 r=2 cert=42 emp=48 gap= 6 persistent= 3
+nibbles[2, 8]          d= 8 r=3 cert= 6 emp=14 gap= 8 persistent= 0
+nibbles[2, 8]          d= 8 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[2, 8]          d= 8 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[0, 15]         d= 8 r=2 cert=64 emp=64 gap= 0 persistent= 0
+nibbles[0, 15]         d= 8 r=3 cert=38 emp=38 gap= 0 persistent= 0
+nibbles[0, 15]         d= 8 r=4 cert= 3 emp= 3 gap= 0 persistent= 0
+nibbles[0, 15]         d= 8 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[2, 15]         d= 8 r=2 cert=64 emp=64 gap= 0 persistent= 0
+nibbles[2, 15]         d= 8 r=3 cert=38 emp=38 gap= 0 persistent= 0
+nibbles[2, 15]         d= 8 r=4 cert= 3 emp= 4 gap= 1 persistent= 0
+nibbles[2, 15]         d= 8 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[4, 9, 12]      d=12 r=2 cert=42 emp=56 gap=14 persistent= 8
+nibbles[4, 9, 12]      d=12 r=3 cert= 6 emp=21 gap=15 persistent= 2
+nibbles[4, 9, 12]      d=12 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[4, 9, 12]      d=12 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[0, 1, 15]      d=12 r=2 cert=64 emp=64 gap= 0 persistent= 0
+nibbles[0, 1, 15]      d=12 r=3 cert=39 emp=39 gap= 0 persistent= 0
+nibbles[0, 1, 15]      d=12 r=4 cert= 3 emp= 4 gap= 1 persistent= 0
+nibbles[0, 1, 15]      d=12 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[2, 4, 8]       d=12 r=2 cert=42 emp=51 gap= 9 persistent= 5
+nibbles[2, 4, 8]       d=12 r=3 cert= 6 emp= 7 gap= 1 persistent= 0
+nibbles[2, 4, 8]       d=12 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[2, 4, 8]       d=12 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+nibbles[1, 5, 15]      d=12 r=2 cert=64 emp=64 gap= 0 persistent= 0
+nibbles[1, 5, 15]      d=12 r=3 cert=41 emp=41 gap= 0 persistent= 0
+nibbles[1, 5, 15]      d=12 r=4 cert= 6 emp= 6 gap= 0 persistent= 0
+nibbles[1, 5, 15]      d=12 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+random4                d= 4 r=2 cert=42 emp=51 gap= 9 persistent= 1
+random4                d= 4 r=3 cert= 6 emp= 8 gap= 2 persistent= 2
+random4                d= 4 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+random4                d= 4 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+random4                d= 4 r=2 cert=38 emp=39 gap= 1 persistent= 1
+random4                d= 4 r=3 cert= 4 emp= 9 gap= 5 persistent= 4
+random4                d= 4 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+random4                d= 4 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+random4                d= 4 r=2 cert=42 emp=44 gap= 2 persistent= 0
+random4                d= 4 r=3 cert= 8 emp=11 gap= 3 persistent= 0
+random4                d= 4 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+random4                d= 4 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+random4                d= 4 r=2 cert=28 emp=36 gap= 8 persistent= 0
+random4                d= 4 r=3 cert= 0 emp= 7 gap= 7 persistent= 0
+random4                d= 4 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+random4                d= 4 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+random8                d= 8 r=2 cert=40 emp=48 gap= 8 persistent= 0
+random8                d= 8 r=3 cert= 4 emp=10 gap= 6 persistent= 2
+random8                d= 8 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+random8                d= 8 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+random8                d= 8 r=2 cert=42 emp=46 gap= 4 persistent= 0
+random8                d= 8 r=3 cert= 6 emp=10 gap= 4 persistent= 1
+random8                d= 8 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+random8                d= 8 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+random8                d= 8 r=2 cert=42 emp=42 gap= 0 persistent= 0
+random8                d= 8 r=3 cert= 6 emp=11 gap= 5 persistent= 1
+random8                d= 8 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+random8                d= 8 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+random8                d= 8 r=2 cert=42 emp=44 gap= 2 persistent= 0
+random8                d= 8 r=3 cert= 6 emp= 8 gap= 2 persistent= 1
+random8                d= 8 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+random8                d= 8 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+random12               d=12 r=2 cert=42 emp=45 gap= 3 persistent= 0
+random12               d=12 r=3 cert= 6 emp=16 gap=10 persistent= 3
+random12               d=12 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+random12               d=12 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+random12               d=12 r=2 cert=42 emp=43 gap= 1 persistent= 0
+random12               d=12 r=3 cert= 6 emp=14 gap= 8 persistent= 5
+random12               d=12 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+random12               d=12 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+random12               d=12 r=2 cert=42 emp=42 gap= 0 persistent= 0
+random12               d=12 r=3 cert= 6 emp=12 gap= 6 persistent= 2
+random12               d=12 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+random12               d=12 r=5 cert= 0 emp= 0 gap= 0 persistent= 0
+random12               d=12 r=2 cert=46 emp=51 gap= 5 persistent= 0
+random12               d=12 r=3 cert= 6 emp=14 gap= 8 persistent= 2
+random12               d=12 r=4 cert= 0 emp= 0 gap= 0 persistent= 0
+random12               d=12 r=5 cert= 0 emp= 0 gap= 0 persistent= 0

@@ -1,0 +1,82 @@
+[
+ {
+  "mode": "add",
+  "rounds": 3,
+  "dim": 2,
+  "certified_bits": [
+   1,
+   19,
+   24,
+   51,
+   56,
+   58
+  ],
+  "trials": 400,
+  "contradictions": []
+ },
+ {
+  "mode": "add",
+  "rounds": 4,
+  "dim": 4,
+  "certified_bits": [
+   1,
+   19,
+   24
+  ],
+  "trials": 400,
+  "contradictions": []
+ },
+ {
+  "mode": "add",
+  "rounds": 5,
+  "dim": 16,
+  "certified_bits": [
+   51,
+   56,
+   58
+  ],
+  "trials": 400,
+  "contradictions": []
+ },
+ {
+  "mode": "xor",
+  "rounds": 5,
+  "dim": 7,
+  "certified_bits": [
+   24,
+   51
+  ],
+  "trials": 400,
+  "contradictions": []
+ },
+ {
+  "mode": "none",
+  "rounds": 5,
+  "dim": 3,
+  "certified_bits": [
+   19
+  ],
+  "trials": 400,
+  "contradictions": []
+ },
+ {
+  "mode": "none",
+  "rounds": 6,
+  "dim": 8,
+  "certified_bits": [
+   7
+  ],
+  "trials": 400,
+  "contradictions": []
+ },
+ {
+  "mode": "none",
+  "rounds": 7,
+  "dim": 15,
+  "certified_bits": [
+   61
+  ],
+  "trials": 400,
+  "contradictions": []
+ }
+]

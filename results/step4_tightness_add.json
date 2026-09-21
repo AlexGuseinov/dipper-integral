@@ -1,0 +1,2440 @@
+{
+ "mode": "add",
+ "N1": 200,
+ "N2": 3000,
+ "rows": [
+  {
+   "cube": "word-A",
+   "dim": 16,
+   "active": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 2,
+   "certified": 64,
+   "empirical_zero": 64,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-A",
+   "dim": 16,
+   "active": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 3,
+   "certified": 64,
+   "empirical_zero": 64,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-A",
+   "dim": 16,
+   "active": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 4,
+   "certified": 38,
+   "empirical_zero": 38,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-A",
+   "dim": 16,
+   "active": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 5,
+   "certified": 3,
+   "empirical_zero": 3,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-B",
+   "dim": 16,
+   "active": [
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+   ],
+   "rounds": 2,
+   "certified": 56,
+   "empirical_zero": 56,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-B",
+   "dim": 16,
+   "active": [
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+   ],
+   "rounds": 3,
+   "certified": 24,
+   "empirical_zero": 24,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-B",
+   "dim": 16,
+   "active": [
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-B",
+   "dim": 16,
+   "active": [
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-C",
+   "dim": 16,
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+   ],
+   "rounds": 2,
+   "certified": 64,
+   "empirical_zero": 64,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-C",
+   "dim": 16,
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+   ],
+   "rounds": 3,
+   "certified": 64,
+   "empirical_zero": 64,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-C",
+   "dim": 16,
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+   ],
+   "rounds": 4,
+   "certified": 38,
+   "empirical_zero": 38,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-C",
+   "dim": 16,
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+   ],
+   "rounds": 5,
+   "certified": 3,
+   "empirical_zero": 4,
+   "gap": 1,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-D",
+   "dim": 16,
+   "active": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "rounds": 2,
+   "certified": 60,
+   "empirical_zero": 61,
+   "gap": 1,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-D",
+   "dim": 16,
+   "active": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "rounds": 3,
+   "certified": 25,
+   "empirical_zero": 25,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-D",
+   "dim": 16,
+   "active": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "word-D",
+   "dim": 16,
+   "active": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[13]",
+   "dim": 4,
+   "active": [
+    52,
+    53,
+    54,
+    55
+   ],
+   "rounds": 2,
+   "certified": 27,
+   "empirical_zero": 33,
+   "gap": 6,
+   "gap_persistent": 2,
+   "persistent_bits": [
+    28,
+    31
+   ]
+  },
+  {
+   "cube": "nibbles[13]",
+   "dim": 4,
+   "active": [
+    52,
+    53,
+    54,
+    55
+   ],
+   "rounds": 3,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[13]",
+   "dim": 4,
+   "active": [
+    52,
+    53,
+    54,
+    55
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[13]",
+   "dim": 4,
+   "active": [
+    52,
+    53,
+    54,
+    55
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[4]",
+   "dim": 4,
+   "active": [
+    16,
+    17,
+    18,
+    19
+   ],
+   "rounds": 2,
+   "certified": 29,
+   "empirical_zero": 35,
+   "gap": 6,
+   "gap_persistent": 1,
+   "persistent_bits": [
+    6
+   ]
+  },
+  {
+   "cube": "nibbles[4]",
+   "dim": 4,
+   "active": [
+    16,
+    17,
+    18,
+    19
+   ],
+   "rounds": 3,
+   "certified": 0,
+   "empirical_zero": 1,
+   "gap": 1,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[4]",
+   "dim": 4,
+   "active": [
+    16,
+    17,
+    18,
+    19
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[4]",
+   "dim": 4,
+   "active": [
+    16,
+    17,
+    18,
+    19
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[0]",
+   "dim": 4,
+   "active": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "rounds": 2,
+   "certified": 34,
+   "empirical_zero": 36,
+   "gap": 2,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[0]",
+   "dim": 4,
+   "active": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "rounds": 3,
+   "certified": 8,
+   "empirical_zero": 8,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[0]",
+   "dim": 4,
+   "active": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[0]",
+   "dim": 4,
+   "active": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[12]",
+   "dim": 4,
+   "active": [
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 2,
+   "certified": 27,
+   "empirical_zero": 32,
+   "gap": 5,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[12]",
+   "dim": 4,
+   "active": [
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 3,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[12]",
+   "dim": 4,
+   "active": [
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[12]",
+   "dim": 4,
+   "active": [
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[5, 12]",
+   "dim": 8,
+   "active": [
+    20,
+    21,
+    22,
+    23,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 2,
+   "certified": 52,
+   "empirical_zero": 61,
+   "gap": 9,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[5, 12]",
+   "dim": 8,
+   "active": [
+    20,
+    21,
+    22,
+    23,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 3,
+   "certified": 23,
+   "empirical_zero": 23,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[5, 12]",
+   "dim": 8,
+   "active": [
+    20,
+    21,
+    22,
+    23,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[5, 12]",
+   "dim": 8,
+   "active": [
+    20,
+    21,
+    22,
+    23,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[2, 8]",
+   "dim": 8,
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 2,
+   "certified": 42,
+   "empirical_zero": 48,
+   "gap": 6,
+   "gap_persistent": 3,
+   "persistent_bits": [
+    6,
+    23,
+    39
+   ]
+  },
+  {
+   "cube": "nibbles[2, 8]",
+   "dim": 8,
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 3,
+   "certified": 6,
+   "empirical_zero": 14,
+   "gap": 8,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[2, 8]",
+   "dim": 8,
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[2, 8]",
+   "dim": 8,
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[0, 15]",
+   "dim": 8,
+   "active": [
+    0,
+    1,
+    2,
+    3,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 2,
+   "certified": 64,
+   "empirical_zero": 64,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[0, 15]",
+   "dim": 8,
+   "active": [
+    0,
+    1,
+    2,
+    3,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 3,
+   "certified": 38,
+   "empirical_zero": 38,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[0, 15]",
+   "dim": 8,
+   "active": [
+    0,
+    1,
+    2,
+    3,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 4,
+   "certified": 3,
+   "empirical_zero": 3,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[0, 15]",
+   "dim": 8,
+   "active": [
+    0,
+    1,
+    2,
+    3,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[2, 15]",
+   "dim": 8,
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 2,
+   "certified": 64,
+   "empirical_zero": 64,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[2, 15]",
+   "dim": 8,
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 3,
+   "certified": 38,
+   "empirical_zero": 38,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[2, 15]",
+   "dim": 8,
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 4,
+   "certified": 3,
+   "empirical_zero": 4,
+   "gap": 1,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[2, 15]",
+   "dim": 8,
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 2,
+   "certified": 42,
+   "empirical_zero": 56,
+   "gap": 14,
+   "gap_persistent": 8,
+   "persistent_bits": [
+    14,
+    23,
+    28,
+    30,
+    44,
+    45,
+    47,
+    61
+   ]
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 3,
+   "certified": 6,
+   "empirical_zero": 21,
+   "gap": 15,
+   "gap_persistent": 2,
+   "persistent_bits": [
+    9,
+    26
+   ]
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "dim": 12,
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[0, 1, 15]",
+   "dim": 12,
+   "active": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 2,
+   "certified": 64,
+   "empirical_zero": 64,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[0, 1, 15]",
+   "dim": 12,
+   "active": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 3,
+   "certified": 39,
+   "empirical_zero": 39,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[0, 1, 15]",
+   "dim": 12,
+   "active": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 4,
+   "certified": 3,
+   "empirical_zero": 4,
+   "gap": 1,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[0, 1, 15]",
+   "dim": 12,
+   "active": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[2, 4, 8]",
+   "dim": 12,
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    16,
+    17,
+    18,
+    19,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 2,
+   "certified": 42,
+   "empirical_zero": 51,
+   "gap": 9,
+   "gap_persistent": 5,
+   "persistent_bits": [
+    6,
+    23,
+    36,
+    39,
+    53
+   ]
+  },
+  {
+   "cube": "nibbles[2, 4, 8]",
+   "dim": 12,
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    16,
+    17,
+    18,
+    19,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 3,
+   "certified": 6,
+   "empirical_zero": 7,
+   "gap": 1,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[2, 4, 8]",
+   "dim": 12,
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    16,
+    17,
+    18,
+    19,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[2, 4, 8]",
+   "dim": 12,
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    16,
+    17,
+    18,
+    19,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[1, 5, 15]",
+   "dim": 12,
+   "active": [
+    4,
+    5,
+    6,
+    7,
+    20,
+    21,
+    22,
+    23,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 2,
+   "certified": 64,
+   "empirical_zero": 64,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[1, 5, 15]",
+   "dim": 12,
+   "active": [
+    4,
+    5,
+    6,
+    7,
+    20,
+    21,
+    22,
+    23,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 3,
+   "certified": 41,
+   "empirical_zero": 41,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[1, 5, 15]",
+   "dim": 12,
+   "active": [
+    4,
+    5,
+    6,
+    7,
+    20,
+    21,
+    22,
+    23,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 4,
+   "certified": 6,
+   "empirical_zero": 6,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "nibbles[1, 5, 15]",
+   "dim": 12,
+   "active": [
+    4,
+    5,
+    6,
+    7,
+    20,
+    21,
+    22,
+    23,
+    60,
+    61,
+    62,
+    63
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    21,
+    29,
+    30,
+    57
+   ],
+   "rounds": 2,
+   "certified": 42,
+   "empirical_zero": 51,
+   "gap": 9,
+   "gap_persistent": 1,
+   "persistent_bits": [
+    23
+   ]
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    21,
+    29,
+    30,
+    57
+   ],
+   "rounds": 3,
+   "certified": 6,
+   "empirical_zero": 8,
+   "gap": 2,
+   "gap_persistent": 2,
+   "persistent_bits": [
+    16,
+    33
+   ]
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    21,
+    29,
+    30,
+    57
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    21,
+    29,
+    30,
+    57
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    0,
+    7,
+    35,
+    43
+   ],
+   "rounds": 2,
+   "certified": 38,
+   "empirical_zero": 39,
+   "gap": 1,
+   "gap_persistent": 1,
+   "persistent_bits": [
+    21
+   ]
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    0,
+    7,
+    35,
+    43
+   ],
+   "rounds": 3,
+   "certified": 4,
+   "empirical_zero": 9,
+   "gap": 5,
+   "gap_persistent": 4,
+   "persistent_bits": [
+    16,
+    19,
+    33,
+    41
+   ]
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    0,
+    7,
+    35,
+    43
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    0,
+    7,
+    35,
+    43
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    21,
+    40,
+    43,
+    45
+   ],
+   "rounds": 2,
+   "certified": 42,
+   "empirical_zero": 44,
+   "gap": 2,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    21,
+    40,
+    43,
+    45
+   ],
+   "rounds": 3,
+   "certified": 8,
+   "empirical_zero": 11,
+   "gap": 3,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    21,
+    40,
+    43,
+    45
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    21,
+    40,
+    43,
+    45
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    39,
+    41,
+    50,
+    51
+   ],
+   "rounds": 2,
+   "certified": 28,
+   "empirical_zero": 36,
+   "gap": 8,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    39,
+    41,
+    50,
+    51
+   ],
+   "rounds": 3,
+   "certified": 0,
+   "empirical_zero": 7,
+   "gap": 7,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    39,
+    41,
+    50,
+    51
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random4",
+   "dim": 4,
+   "active": [
+    39,
+    41,
+    50,
+    51
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    5,
+    17,
+    21,
+    22,
+    28,
+    31,
+    35,
+    38
+   ],
+   "rounds": 2,
+   "certified": 40,
+   "empirical_zero": 48,
+   "gap": 8,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    5,
+    17,
+    21,
+    22,
+    28,
+    31,
+    35,
+    38
+   ],
+   "rounds": 3,
+   "certified": 4,
+   "empirical_zero": 10,
+   "gap": 6,
+   "gap_persistent": 2,
+   "persistent_bits": [
+    16,
+    19
+   ]
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    5,
+    17,
+    21,
+    22,
+    28,
+    31,
+    35,
+    38
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    5,
+    17,
+    21,
+    22,
+    28,
+    31,
+    35,
+    38
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    10,
+    16,
+    18,
+    30,
+    39,
+    58,
+    61,
+    63
+   ],
+   "rounds": 2,
+   "certified": 42,
+   "empirical_zero": 46,
+   "gap": 4,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    10,
+    16,
+    18,
+    30,
+    39,
+    58,
+    61,
+    63
+   ],
+   "rounds": 3,
+   "certified": 6,
+   "empirical_zero": 10,
+   "gap": 4,
+   "gap_persistent": 1,
+   "persistent_bits": [
+    48
+   ]
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    10,
+    16,
+    18,
+    30,
+    39,
+    58,
+    61,
+    63
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    10,
+    16,
+    18,
+    30,
+    39,
+    58,
+    61,
+    63
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    5,
+    6,
+    24,
+    35,
+    46,
+    52,
+    56,
+    58
+   ],
+   "rounds": 2,
+   "certified": 42,
+   "empirical_zero": 42,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    5,
+    6,
+    24,
+    35,
+    46,
+    52,
+    56,
+    58
+   ],
+   "rounds": 3,
+   "certified": 6,
+   "empirical_zero": 11,
+   "gap": 5,
+   "gap_persistent": 1,
+   "persistent_bits": [
+    26
+   ]
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    5,
+    6,
+    24,
+    35,
+    46,
+    52,
+    56,
+    58
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    5,
+    6,
+    24,
+    35,
+    46,
+    52,
+    56,
+    58
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    14,
+    29,
+    30,
+    31,
+    42,
+    55,
+    58,
+    60
+   ],
+   "rounds": 2,
+   "certified": 42,
+   "empirical_zero": 44,
+   "gap": 2,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    14,
+    29,
+    30,
+    31,
+    42,
+    55,
+    58,
+    60
+   ],
+   "rounds": 3,
+   "certified": 6,
+   "empirical_zero": 8,
+   "gap": 2,
+   "gap_persistent": 1,
+   "persistent_bits": [
+    18
+   ]
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    14,
+    29,
+    30,
+    31,
+    42,
+    55,
+    58,
+    60
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random8",
+   "dim": 8,
+   "active": [
+    14,
+    29,
+    30,
+    31,
+    42,
+    55,
+    58,
+    60
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    13,
+    14,
+    15,
+    23,
+    26,
+    28,
+    34,
+    39,
+    45,
+    55,
+    58,
+    60
+   ],
+   "rounds": 2,
+   "certified": 42,
+   "empirical_zero": 45,
+   "gap": 3,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    13,
+    14,
+    15,
+    23,
+    26,
+    28,
+    34,
+    39,
+    45,
+    55,
+    58,
+    60
+   ],
+   "rounds": 3,
+   "certified": 6,
+   "empirical_zero": 16,
+   "gap": 10,
+   "gap_persistent": 3,
+   "persistent_bits": [
+    11,
+    18,
+    41
+   ]
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    13,
+    14,
+    15,
+    23,
+    26,
+    28,
+    34,
+    39,
+    45,
+    55,
+    58,
+    60
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    13,
+    14,
+    15,
+    23,
+    26,
+    28,
+    34,
+    39,
+    45,
+    55,
+    58,
+    60
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    3,
+    5,
+    6,
+    13,
+    19,
+    24,
+    27,
+    33,
+    34,
+    50,
+    57,
+    58
+   ],
+   "rounds": 2,
+   "certified": 42,
+   "empirical_zero": 43,
+   "gap": 1,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    3,
+    5,
+    6,
+    13,
+    19,
+    24,
+    27,
+    33,
+    34,
+    50,
+    57,
+    58
+   ],
+   "rounds": 3,
+   "certified": 6,
+   "empirical_zero": 14,
+   "gap": 8,
+   "gap_persistent": 5,
+   "persistent_bits": [
+    9,
+    16,
+    26,
+    43,
+    50
+   ]
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    3,
+    5,
+    6,
+    13,
+    19,
+    24,
+    27,
+    33,
+    34,
+    50,
+    57,
+    58
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    3,
+    5,
+    6,
+    13,
+    19,
+    24,
+    27,
+    33,
+    34,
+    50,
+    57,
+    58
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    0,
+    1,
+    13,
+    27,
+    35,
+    36,
+    38,
+    42,
+    47,
+    50,
+    54,
+    61
+   ],
+   "rounds": 2,
+   "certified": 42,
+   "empirical_zero": 42,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    0,
+    1,
+    13,
+    27,
+    35,
+    36,
+    38,
+    42,
+    47,
+    50,
+    54,
+    61
+   ],
+   "rounds": 3,
+   "certified": 6,
+   "empirical_zero": 12,
+   "gap": 6,
+   "gap_persistent": 2,
+   "persistent_bits": [
+    16,
+    33
+   ]
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    0,
+    1,
+    13,
+    27,
+    35,
+    36,
+    38,
+    42,
+    47,
+    50,
+    54,
+    61
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    0,
+    1,
+    13,
+    27,
+    35,
+    36,
+    38,
+    42,
+    47,
+    50,
+    54,
+    61
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    10,
+    13,
+    15,
+    22,
+    27,
+    31,
+    32,
+    44,
+    51,
+    52,
+    60,
+    61
+   ],
+   "rounds": 2,
+   "certified": 46,
+   "empirical_zero": 51,
+   "gap": 5,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    10,
+    13,
+    15,
+    22,
+    27,
+    31,
+    32,
+    44,
+    51,
+    52,
+    60,
+    61
+   ],
+   "rounds": 3,
+   "certified": 6,
+   "empirical_zero": 14,
+   "gap": 8,
+   "gap_persistent": 2,
+   "persistent_bits": [
+    9,
+    26
+   ]
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    10,
+    13,
+    15,
+    22,
+    27,
+    31,
+    32,
+    44,
+    51,
+    52,
+    60,
+    61
+   ],
+   "rounds": 4,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  },
+  {
+   "cube": "random12",
+   "dim": 12,
+   "active": [
+    10,
+    13,
+    15,
+    22,
+    27,
+    31,
+    32,
+    44,
+    51,
+    52,
+    60,
+    61
+   ],
+   "rounds": 5,
+   "certified": 0,
+   "empirical_zero": 0,
+   "gap": 0,
+   "gap_persistent": 0,
+   "persistent_bits": []
+  }
+ ],
+ "seconds": 98.5
+}

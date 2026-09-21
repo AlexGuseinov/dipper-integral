@@ -1,0 +1,7 @@
+xor mp 8 max 64 cubes w/ cert 64 timeouts 0 960.4s
+xor mp 9 max 5 cubes w/ cert 10 timeouts 0 460.1s
+xor mp 10 max 0 cubes w/ cert 0 timeouts 0 73.0s
+xor bdp 8 max 64 cubes w/ cert 64 timeouts 0 880.6s
+xor bdp 9 max 5 cubes w/ cert 10 timeouts 0 389.0s
+xor bdp 10 max 0 cubes w/ cert 0 timeouts 0 41.1s
+total 2804.2

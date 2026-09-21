@@ -1,0 +1,9 @@
+none mp 8 max 64 cubes w/ cert 64 timeouts 0 7.4s
+none mp 9 max 64 cubes w/ cert 64 timeouts 0 59.4s
+none mp 10 max 2 cubes w/ cert 8 timeouts 0 61.8s
+none mp 11 max 0 cubes w/ cert 0 timeouts 0 52.8s
+none bdp 8 max 64 cubes w/ cert 64 timeouts 0 5.7s
+none bdp 9 max 64 cubes w/ cert 64 timeouts 0 29.1s
+none bdp 10 max 2 cubes w/ cert 8 timeouts 0 28.3s
+none bdp 11 max 0 cubes w/ cert 0 timeouts 0 21.4s
+total 265.9

@@ -1,0 +1,6 @@
+none mp r 5 dim 3 balanced 1 47s
+none mp r 6 dim 8 balanced 1 73s
+none mp r 7 dim 15 balanced 1 109s
+none mp r 8 dim 48 balanced 1 186s
+none mp r 9 dim 59 balanced 1 330s
+none mp r 10 dim 63 balanced 2 163s
