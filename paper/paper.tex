@@ -69,11 +69,11 @@ Dipper~\cite{dipper2026} is a 64-bit hybrid SPN--ARX cipher with 96- and 128-bit
 \item \textbf{The role of the modular addition (Q2).} In a controlled ablation, replacing the two additions by XOR or removing them extends the longest certified property from six to nine and ten rounds. At the six-round boundary every certified bit comes from the retained operands, the two words that feed the additions but pass through them unchanged. We relate this to Lemma~\ref{lem:deg}, which states that output bit $i$ of an addition has degree exactly $i+1$, and to degree upper bounds for every output bit and round.
 \item \textbf{Model comparison and tightness (Q3).} The monomial-trail existence model with exact local transitions (\MPEL), a gate-level monomial model and the conventional bit-based division property certify the same bits on every instance we examined. We explain part of this structurally, and we measure the distance between certificates and experiment.
 \end{enumerate}
-The technical tools behind these results are the exact local rule for Dipper's ARX map (Lemma~\ref{lem:addret}) and the free-final-round observation (Lemma~\ref{lem:free}). Sections~\ref{sec:keyrec} and~\ref{sec:erratum} contain secondary material: a partial-key filtering procedure and a specification check. Code, data, proofs and scripts are available at \repo{}.
+The technical tools behind these results are the exact local rule for Dipper's ARX map (Lemma~\ref{lem:addret}) and the free-final-round observation (Lemma~\ref{lem:free}). Sections~\ref{sec:keyrec} and~\ref{sec:erratum} contain secondary material: a partial-key filtering procedure and two corrections to the key-schedule description of~\cite{dipper2026}. Code, data, proofs and scripts are available at \repo{}.
 
 \paragraph{Scope of the claims.} A certificate proves that a cube sum is zero for all round keys. The absence of a certificate proves nothing about the cipher: it only means that the model contains a trail. Our seven-round statement is therefore a statement about the model, not a proof that Dipper has no seven-round integral distinguisher. For cipher outputs we report only degree upper bounds and never claim that a degree is attained; Lemma~\ref{lem:deg}, about an isolated addition, is the only exact degree statement.
 
-\paragraph{Organisation.} Section~\ref{sec:related} reviews related work and Section~\ref{sec:prelim} introduces the notation and background. Section~\ref{sec:models} gives the local rules and the structural lemmas, and Section~\ref{sec:validation} validates them. Section~\ref{sec:results} reports the certified properties of Dipper, and Section~\ref{sec:ablation} studies the role of the addition. Section~\ref{sec:tightness} compares models and experiment. Sections~\ref{sec:keyrec} and~\ref{sec:erratum} cover key recovery and the specification check. Section~\ref{sec:discussion} discusses implications and limitations.
+\paragraph{Organisation.} Section~\ref{sec:related} reviews related work and Section~\ref{sec:prelim} introduces the notation and background. Section~\ref{sec:models} gives the local rules and the structural lemmas, and Section~\ref{sec:validation} validates them. Section~\ref{sec:results} reports the certified properties of Dipper, and Section~\ref{sec:ablation} studies the role of the addition. Section~\ref{sec:tightness} compares models and experiment. Sections~\ref{sec:keyrec} and~\ref{sec:erratum} cover key filtering and the key-schedule corrections. Section~\ref{sec:discussion} discusses implications and limitations.
 
 % =====================================================================
 \section{Related work}\label{sec:related}
@@ -252,7 +252,7 @@ A bound $\deg_x S^{(r)}_j\le62$ certifies bit $j$ over \emph{every} 63-dimension
 % =====================================================================
 \section{Validation}\label{sec:validation}
 
-\paragraph{Reference implementation.} Our Python implementation reproduces both published Dipper-64/128 test vectors and is cross-checked against a vectorised implementation. Section~\ref{sec:erratum} discusses the key schedule.
+\paragraph{Reference implementation.} Our Python implementation reproduces all four published test vectors, agrees with the authors' reference code on 1000 random encryptions, and is cross-checked against a vectorised implementation. Section~\ref{sec:erratum} gives two corrections to the published key-schedule description.
 
 \paragraph{Local models.} The S-box table is computed from the ANF. We verified exhaustively the Hu--Yap rule for $n\le5$, Lemma~\ref{lem:addret} for $n\le4$ (all $2^{16}$ exponent pairs), Lemma~\ref{lem:deg} for $n\le8$, and the carry encoding for $n\le6$.
 
@@ -437,24 +437,15 @@ One structure costs $2^{60}$ evaluations of $T^{-1}$ plus $2^8$ table operations
 \paragraph{Assumptions and small-scale evidence.} The right guess always passes. The number of wrong guesses left after $N$ structures depends on how the wrong-guess sums behave. Under the usual heuristic that they are independent and uniform, $N$ structures leave $15\cdot2^{-N}$ wrong guesses on average. We ran the same procedure at small scale, on six rounds: the 4-round certificate of the cube $\{60,\dots,63\}$ on bit~1, followed by the free round and one key-guessed round, with 200 random keys. The right guess always survived. A wrong guess survived one structure with probability about $0.565$, so the uniform heuristic is optimistic, and eight structures left $1.13$ candidates on average, with a unique survivor in 88.5\% of the runs. We have not established that this rate carries over to eight rounds or that the structures act as independent filters there. Extrapolating anyway, about eight structures, i.e.\ $2^{63}$ chosen plaintexts, would be needed to identify four bits of $RK_8$. This recovers round-key bits, not the master key, and the data requirement is half the codebook. We therefore regard the procedure as evidence of a large margin, not as an attack on Dipper.
 
 % =====================================================================
-\section{Specification of the analysed cipher}\label{sec:erratum}
-The results of this paper depend only on the round function, because every certificate holds for arbitrary independent round keys. The round function is fixed by Section~\ref{sec:prelim} and confirmed by the published Dipper-64/128 test vectors, which exercise all 28 rounds. Appendix~\ref{app:tv} lists the vectors together with intermediate round keys and states.
+\section{Specification of the analysed cipher and corrections}\label{sec:erratum}
+The results of this paper depend only on the round function, because every certificate holds for arbitrary independent round keys. The round function is fixed by Section~\ref{sec:prelim} and confirmed by all published test vectors, which exercise all 28 rounds.
 
-Two discrepancies with the key-schedule text of~\cite{dipper2026} were found.
+We implemented both key schedules independently and compared them with the published test vectors and with the authors' reference implementation (Specification v1.1 and its Python reference code, which generated the vectors of~\cite{dipper2026}). Our implementation agrees with the reference code on all four published vectors and on 1000 random encryptions (500 per key size). The specification and the reference code are consistent with each other. Two statements in the key-schedule section of the published paper~\cite{dipper2026} are not, and we correct them here.
 \begin{enumerate}
-\item The Dipper-64/128 vectors are reproduced when the round key is $RK_r=K^{(r)}[63{:}0]$, while Equation~(7) of~\cite{dipper2026} states $K^{(r)}[127{:}64]$.
-\item The two Dipper-64/96 vectors are not reproduced by the key schedule as written. They are also not reproduced by any variant in a brute-force search that covered:
-\begin{itemize}
-\item all 720 word permutations of the key update;
-\item all placements and directions of the two word rotations;
-\item every 3- or 4-subset of S-box words;
-\item all six round-constant positions;
-\item three extraction windows.
-\end{itemize}
+\item \emph{Round-key window of Dipper-64/128.} Equation~(7) of~\cite{dipper2026} states $RK_r=K^{(r)}[127{:}64]$. The specification and the reference code use $RK_r=K^{(r)}[63{:}0]=k_3\|k_2\|k_1\|k_0$ for both key sizes, and this produces the published vectors.
+\item \emph{S-box positions of Dipper-64/96.} Equation~(9) of~\cite{dipper2026} applies the S-box to the top nibble $[15{:}12]$ of words $k'_1,k'_2,k'_4,k'_5$. The specification and the reference code apply it to the key-state bits $K[95{:}92]$, $K[71{:}68]$, $K[47{:}44]$ and $K[23{:}20]$, i.e.\ to $k'_5[15{:}12]$, $k'_4[7{:}4]$, $k'_2[15{:}12]$ and $k'_1[7{:}4]$. For $k'_4$ and $k'_1$ the S-box therefore acts on the second-lowest nibble, not on the top nibble. The comments of the specification call these positions ``top nibbles'', which is how the error entered the paper. With this correction the published Dipper-64/96 vectors are reproduced. The word permutation, the rotations and the round-constant position $K[52{:}48]$ are as stated in~\cite{dipper2026}.
 \end{enumerate}
-% AUTHORS: resolve item 2 against the reference code and replace the red note below
-% with the corrected Dipper-64/96 key schedule, its test vectors and intermediate round keys.
-\textcolor{red}{[To be completed by the authors before submission: the Dipper-64/96 key schedule as implemented in the reference code, its test vectors, intermediate round keys, and the corresponding correction to~\cite{dipper2026}.]}
+The Dipper-64/128 S-box positions ($k'_7$, $k'_3$, $k'_1$, top nibbles) are stated correctly in~\cite{dipper2026}. Appendix~\ref{app:tv} lists all published vectors with intermediate round keys and states. Neither correction affects the integral results, which hold for arbitrary independent round keys, or the round function, which the published text states correctly.
 
 % =====================================================================
 \section{Discussion}\label{sec:discussion}
@@ -484,7 +475,7 @@ The reference implementation, SAT models, scripts, raw JSON results, the proof-c
 
 \appendix
 \section{Test vectors and intermediate values}\label{app:tv}
-Dipper-64/128 under the convention $RK_r=K^{(r)}[63{:}0]$ (Section~\ref{sec:erratum}); all values in hexadecimal, most significant bit first.
+All values in hexadecimal, most significant bit first. Dipper-64/128 with $RK_r=K^{(r)}[63{:}0]$ (Section~\ref{sec:erratum}).
 
 \begin{center}\small
 \begin{tabular}{lll}
@@ -504,7 +495,27 @@ $C=S^{(28)}$ & \texttt{4B46284387969060} & \texttt{6ABB4518063706B0}\\
 \bottomrule
 \end{tabular}
 \end{center}
-% AUTHORS: add the corrected Dipper-64/96 vectors and intermediate round keys here.
+
+\medskip\noindent Dipper-64/96 under the corrected S-box positions (Section~\ref{sec:erratum}).
+
+\begin{center}\small
+\begin{tabular}{lll}
+\toprule
+ & Vector 1 & Vector 2\\
+\midrule
+$K$ & \texttt{00112233445566778899AABB} & \texttt{000000000000000000000000}\\
+$P$ & \texttt{0123456789ABCDEF} & \texttt{0000000000000000}\\
+$RK_1$ & \texttt{445566778899AABB} & \texttt{0000000000000000}\\
+$S^{(1)}$ & \texttt{97B834DFA857A809} & \texttt{3118311831183108}\\
+$RK_2$ & \texttt{6227BBBA00A12233} & \texttt{0001100000100000}\\
+$S^{(2)}$ & \texttt{E77DDB5526AFBAB0} & \texttt{B23376D0F8957AFC}\\
+$RK_3$ & \texttt{402A433264F56697} & \texttt{0006100010100010}\\
+$S^{(3)}$ & \texttt{3BDC9FD0104AC1C2} & \texttt{11D992CE930C3154}\\
+$RK_{28}$ & \texttt{200AEA1FD9DD001D} & \texttt{E5659977E0A29797}\\
+$C=S^{(28)}$ & \texttt{5F189202D3152B8F} & \texttt{D873355EC63B1B4B}\\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \bibliographystyle{plain}
 \bibliography{refs}

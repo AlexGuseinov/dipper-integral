@@ -1,27 +1,23 @@
 # Step 1 — specification check and reproduction of the published integral
 
-## Reference implementation vs. published test vectors (Table 3)
+## Reference implementation vs. published test vectors (Table 3) — RESOLVED
 
-| Variant | Vector | Result |
-|---|---|---|
-| Dipper-64/128 | P=0123…CDEF, K=0001…0E0F | **reproduced** (4B46284387969060) |
-| Dipper-64/128 | P=FF…FF, K=FF…FF | **reproduced** (6ABB4518063706B0) |
-| Dipper-64/96 | P=0123…CDEF, K=0011…AABB | **not reproduced** (text-faithful impl: 7060A90BBB4D69C5) |
-| Dipper-64/96 | P=0, K=0 | **not reproduced** (text-faithful impl: 1D6E0C3187AA2116) |
+All four vectors are reproduced; the implementation agrees with the authors'
+reference code (github.com/AlexGuseinov/Dipper-lightweight-cipher,
+`yosys synthesis/Dipper_verilog/ref/dipper_reference.py`, Spec v1.1) on 1000
+random encryptions.
 
-Findings:
-1. The 128-bit vectors are reproduced only if the round key is `RK_r = K^(r)[63:0]`;
-   Eq. (7) of the paper states `K^(r)[127:64]`. Either the text or the reference
-   code uses the other half; the code (vectors) is taken as normative here.
-2. The 96-bit vectors could not be reproduced under Eqs. (7)–(10), nor under a
-   brute-force search over: all 720 word permutations, all positions of the two
-   rotations (both directions), every 3- or 4-subset of S-box words, all 6
-   round-constant word positions and 3 extraction windows
-   (`scripts/spec_check_96_bruteforce.c`, zero-key vector). The authors' reference
-   code should be consulted; this is reported as an open erratum.
-3. The round function itself is confirmed: the 128-bit vectors exercise all
-   28 rounds of it. Since every integral certificate in this work holds for
-   arbitrary independent round keys, neither discrepancy affects the results.
+The published paper's key-schedule text contains two errors (spec v1.1 and the
+reference code are consistent with each other):
+1. Dipper-64/128 round key: paper Eq. (7) says K[127:64]; spec/code use K[63:0].
+2. Dipper-64/96 S-boxes: paper Eq. (9) says top nibble [15:12] of words 1,2,4,5;
+   spec/code use bits K[95:92], K[71:68], K[47:44], K[23:20] = k5[15:12], k4[7:4],
+   k2[15:12], k1[7:4]. (Spec comments call these "top nibbles"; that is how the
+   error entered the paper.)
+
+History: before the reference code was available, a brute-force search over
+key-schedule conventions (`scripts/spec_check_96_bruteforce.c`) found no match —
+it only allowed top-nibble S-box positions, which is exactly the wrong assumption.
 
 ## Structural identities (tests/test_vectors.py, tests/test_fast.py)
 - `T^{-1}(T(x)) = x` and `T^{-1}(R_k(x)) = x XOR k` for 2000 random inputs, for

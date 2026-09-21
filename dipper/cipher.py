@@ -114,13 +114,18 @@ def _sbox_top(w):
 
 
 def key_update_96(k, rc):
+    """Dipper-64/96 key update as in Specification v1.1 and the reference code.
+    NOTE: the S-boxes act on key-state bits K[95:92], K[71:68], K[47:44], K[23:20],
+    i.e. k5[15:12], k4[7:4], k2[15:12], k1[7:4]. The published paper (Eq. 9) says
+    'top nibble of words 1,2,4,5', which is wrong for k4 and k1."""
     k0, k1, k2, k3, k4, k5 = _kwords(k, 6)
     # (k5',k4',k3',k2',k1',k0') = (k3, k2, k1>>>2, k0>>>12, k5, k4)
     w = [k4, k5, rotr16(k0, 12), rotr16(k1, 2), k2, k3]
-    for i in (1, 2, 4, 5):
-        w[i] = _sbox_top(w[i])
-    w[3] ^= rc                                             # K[52:48] ^= RC
-    return _kjoin(w)
+    K = _kjoin(w)
+    for pos in (92, 68, 44, 20):
+        K = (K & ~(0xF << pos)) | (SBOX[(K >> pos) & 0xF] << pos)
+    K ^= (rc & 0x1F) << 48                                 # K[52:48] ^= RC
+    return K & ((1 << 96) - 1)
 
 
 def key_update_128(k, rc):
@@ -140,11 +145,10 @@ def expand_key(key, keysize, rounds=ROUNDS, window128="vectors"):
     published test vectors (Table 3) are reproduced only when RK_r = K^(r)[63:0].
     window128="vectors" (default) follows the test vectors, "text" follows Eq. (7).
 
-    Dipper-64/96: implemented exactly as Eqs. (7)-(10). The published 96-bit
-    test vectors are NOT reproduced by this text-faithful implementation (see
-    results/step1_spec_check.md). None of the integral results in this
-    repository depend on the key schedule: all certificates hold for arbitrary
-    independent round keys.
+    Dipper-64/96: follows Specification v1.1 / the reference code (S-box
+    positions K[95:92], K[71:68], K[47:44], K[23:20]); reproduces the published
+    vectors. See results/step1_spec_check.md. None of the integral results depend
+    on the key schedule: all certificates hold for arbitrary independent round keys.
     """
     rks, k = [], key
     for rc in round_constants(rounds):

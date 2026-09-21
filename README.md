@@ -24,7 +24,7 @@ evidence with SAT-based certificates that hold **for every choice of round keys*
 | Degree lemma | bit i of x⊞y has algebraic degree exactly i+1 (proved; checked n ≤ 8) |
 | Degree UPPER bounds | all bounds are 63 from r=6 (Dipper) vs r=9 / 10 (XOR / no-add); retained words lag ~1 round |
 | Checkable artifacts | 138 distinct DRAT proofs checked by drat-trim; 12 288 SAT trails validated independently (`make certificates`) |
-| Specification check | 128-bit vectors need RK = K[63:0] (text says K[127:64]); 96-bit vectors not reproducible |
+| Key-schedule corrections | paper text vs. spec/reference code: 128-bit RK = K[63:0] (not K[127:64]); 96-bit S-boxes at k4[7:4], k1[7:4] (not top nibbles). All 4 vectors reproduced |
 
 Full numbers: [`results/RESULTS.md`](results/RESULTS.md), raw data: `results/*.json`,
 paper: [`paper/paper.pdf`](paper/paper.pdf) (LaTeX source `paper/paper.tex`,

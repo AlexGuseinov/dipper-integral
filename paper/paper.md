@@ -134,7 +134,8 @@ Dipper’s ARX map (Lemma 1) and the free-final-round observation
 (Lemma 4).
 Sections 9
 and 10 contain secondary material: a
-partial-key filtering procedure and a specification check. Code, data,
+partial-key filtering procedure and two corrections to the key-schedule
+description of (Huseynli, Imamverdiyev, and Alizadeh 2026). Code, data,
 proofs and scripts are available at
 <https://github.com/AlexGuseinov/dipper-integral>.
 
@@ -160,8 +161,8 @@ Section 6 reports the certified properties of
 Dipper, and Section 7 studies the role of the addition.
 Section 8 compares models and experiment.
 Sections 9
-and 10 cover key recovery and the
-specification check.
+and 10 cover key filtering and the
+key-schedule corrections.
 Section 11 discusses implications and
 limitations.
 
@@ -644,9 +645,11 @@ of the 64 choices of $I$ separately.
 
 #### Reference implementation.
 
-Our Python implementation reproduces both published Dipper-64/128 test
-vectors and is cross-checked against a vectorised implementation.
-Section 10 discusses the key schedule.
+Our Python implementation reproduces all four published test vectors,
+agrees with the authors’ reference code on 1000 random encryptions, and
+is cross-checked against a vectorised implementation.
+Section 10 gives two corrections to the
+published key-schedule description.
 
 #### Local models.
 
@@ -1079,42 +1082,50 @@ recovers round-key bits, not the master key, and the data requirement is
 half the codebook. We therefore regard the procedure as evidence of a
 large margin, not as an attack on Dipper.
 
-# Specification of the analysed cipher
+# Specification of the analysed cipher and corrections
 
 The results of this paper depend only on the round function, because
 every certificate holds for arbitrary independent round keys. The round
 function is fixed by
-Section 3 and confirmed by the published
-Dipper-64/128 test vectors, which exercise all 28 rounds.
-Appendix A lists the vectors together with
-intermediate round keys and states.
+Section 3 and confirmed by all published test
+vectors, which exercise all 28 rounds.
 
-Two discrepancies with the key-schedule text of (Huseynli, Imamverdiyev,
-and Alizadeh 2026) were found.
+We implemented both key schedules independently and compared them with
+the published test vectors and with the authors’ reference
+implementation (Specification v1.1 and its Python reference code, which
+generated the vectors of (Huseynli, Imamverdiyev, and Alizadeh 2026)).
+Our implementation agrees with the reference code on all four published
+vectors and on 1000 random encryptions (500 per key size). The
+specification and the reference code are consistent with each other. Two
+statements in the key-schedule section of the published paper (Huseynli,
+Imamverdiyev, and Alizadeh 2026) are not, and we correct them here.
 
-1.  The Dipper-64/128 vectors are reproduced when the round key is
-    $RK_r=K^{(r)}[63{:}0]$, while Equation (7) of (Huseynli,
-    Imamverdiyev, and Alizadeh 2026) states $K^{(r)}[127{:}64]$.
+1.  *Round-key window of Dipper-64/128.* Equation (7) of (Huseynli,
+    Imamverdiyev, and Alizadeh 2026) states $RK_r=K^{(r)}[127{:}64]$.
+    The specification and the reference code use
+    $RK_r=K^{(r)}[63{:}0]=k_3\|k_2\|k_1\|k_0$ for both key sizes, and
+    this produces the published vectors.
 
-2.  The two Dipper-64/96 vectors are not reproduced by the key schedule
-    as written. They are also not reproduced by any variant in a
-    brute-force search that covered:
+2.  *S-box positions of Dipper-64/96.* Equation (9) of (Huseynli,
+    Imamverdiyev, and Alizadeh 2026) applies the S-box to the top nibble
+    $[15{:}12]$ of words $k'_1,k'_2,k'_4,k'_5$. The specification and
+    the reference code apply it to the key-state bits $K[95{:}92]$,
+    $K[71{:}68]$, $K[47{:}44]$ and $K[23{:}20]$, i.e. to
+    $k'_5[15{:}12]$, $k'_4[7{:}4]$, $k'_2[15{:}12]$ and $k'_1[7{:}4]$.
+    For $k'_4$ and $k'_1$ the S-box therefore acts on the second-lowest
+    nibble, not on the top nibble. The comments of the specification
+    call these positions “top nibbles”, which is how the error entered
+    the paper. With this correction the published Dipper-64/96 vectors
+    are reproduced. The word permutation, the rotations and the
+    round-constant position $K[52{:}48]$ are as stated in (Huseynli,
+    Imamverdiyev, and Alizadeh 2026).
 
-    - all 720 word permutations of the key update;
-
-    - all placements and directions of the two word rotations;
-
-    - every 3- or 4-subset of S-box words;
-
-    - all six round-constant positions;
-
-    - three extraction windows.
-
-<span style="color: red">\[To be completed by the authors before
-submission: the Dipper-64/96 key schedule as implemented in the
-reference code, its test vectors, intermediate round keys, and the
-corresponding correction to (Huseynli, Imamverdiyev, and Alizadeh
-2026).\]</span>
+The Dipper-64/128 S-box positions ($k'_7$, $k'_3$, $k'_1$, top nibbles)
+are stated correctly in (Huseynli, Imamverdiyev, and Alizadeh 2026).
+Appendix A lists all published vectors with
+intermediate round keys and states. Neither correction affects the
+integral results, which hold for arbitrary independent round keys, or
+the round function, which the published text states correctly.
 
 # Discussion
 
@@ -1209,9 +1220,9 @@ and checks all proofs and trails.
 
 # Test vectors and intermediate values
 
-Dipper-64/128 under the convention $RK_r=K^{(r)}[63{:}0]$
-(Section 10); all values in hexadecimal, most
-significant bit first.
+All values in hexadecimal, most significant bit first. Dipper-64/128
+with $RK_r=K^{(r)}[63{:}0]$
+(Section 10).
 
 <div class="center">
 
@@ -1227,6 +1238,26 @@ significant bit first.
 | $S^{(3)}$    | `22C358EDC3BD1695`                 | `F49F4481BC92B880`                 |
 | $RK_{28}$    | `78090A148A9BF0E0`                 | `FFFFFFE02664FFFF`                 |
 | $C=S^{(28)}$ | `4B46284387969060`                 | `6ABB4518063706B0`                 |
+
+</div>
+
+Dipper-64/96 under the corrected S-box positions
+(Section 10).
+
+<div class="center">
+
+|              | Vector 1                   | Vector 2                   |
+|:-------------|:---------------------------|:---------------------------|
+| $K$          | `00112233445566778899AABB` | `000000000000000000000000` |
+| $P$          | `0123456789ABCDEF`         | `0000000000000000`         |
+| $RK_1$       | `445566778899AABB`         | `0000000000000000`         |
+| $S^{(1)}$    | `97B834DFA857A809`         | `3118311831183108`         |
+| $RK_2$       | `6227BBBA00A12233`         | `0001100000100000`         |
+| $S^{(2)}$    | `E77DDB5526AFBAB0`         | `B23376D0F8957AFC`         |
+| $RK_3$       | `402A433264F56697`         | `0006100010100010`         |
+| $S^{(3)}$    | `3BDC9FD0104AC1C2`         | `11D992CE930C3154`         |
+| $RK_{28}$    | `200AEA1FD9DD001D`         | `E5659977E0A29797`         |
+| $C=S^{(28)}$ | `5F189202D3152B8F`         | `D873355EC63B1B4B`         |
 
 </div>
 

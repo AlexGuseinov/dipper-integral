@@ -6,8 +6,8 @@ the state S^(r) after r full rounds unless stated otherwise.
 
 ## Step 1 — specification check, reproduction of the published integral
 See [`step1_spec_check.md`](step1_spec_check.md).
-* Dipper-64/128 test vectors: reproduced, **but only with RK_r = K^(r)[63:0]** (paper Eq. 7 says [127:64]).
-* Dipper-64/96 test vectors: **not reproduced** (text-faithful implementation + brute force over conventions).
+* All four test vectors reproduced; agreement with the authors' reference code on 1000 random encryptions.
+* Two errors in the published key-schedule text: 128-bit RK_r = K[63:0] (paper Eq. 7: K[127:64]); 96-bit S-boxes at k5[15:12], k4[7:4], k2[15:12], k1[7:4] (paper Eq. 9: top nibbles of words 1,2,4,5).
 * Published 5-round, 16-bit word-saturation integrals: reproduced (A: 3 bits, C: 3 bits at r=5; B, D: none beyond r=3) with 1016 trials; free-round identity holds in every trial.
 
 ## Step 2 — local models [`tests/test_local_models.py`]
