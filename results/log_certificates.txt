@@ -1,0 +1,4 @@
+UNSAT proofs: 141, verified: 141, 169s
+add 7 {'queries': 4096, 'sat': 4096, 'trails_valid': 4096} 13s
+xor 10 {'queries': 4096, 'sat': 4096, 'trails_valid': 4096} 95s
+none 11 {'queries': 4096, 'sat': 4096, 'trails_valid': 4096} 158s

@@ -1,45 +1,30 @@
 ---
 abstract: |
   Dipper is a 64-bit lightweight block cipher whose round combines the
-  GIFT S-box and bit permutation with two 16-bit modular additions
-  acting on half of the state. In the design paper we bounded integral
-  distinguishers experimentally at five rounds. We replace this
-  experimental evidence with machine-checked certificates that hold for
-  every choice of the round keys. We model monomial trails through
-  reduced-round Dipper as SAT instances, using the exact coefficient
-  table of the S-box and an exact local rule for the map
-  $(x,y)\mapsto(x\boxplus y,\,y)$ that we derive from the
-  Braeken–Semaev/Hu–Yap characterisation of modular addition and verify
-  exhaustively. The models are validated component-wise against exact
-  algebraic normal forms, against published division-property results
-  for GIFT-64 and PRESENT, and against cube-sum experiments with random
-  keys, which never contradicted a certificate. On Dipper we obtain: (i)
-  the published five-round properties are reproduced and certified for
-  all keys; (ii) six-round integral properties exist (up to nine
-  balanced bits with $2^{63}$ chosen plaintexts, six balanced bits with
-  $2^{60}$); (iii) no seven-round property is certified for any
-  bit-aligned cube and single output bit, which is exhaustive within the
-  model because of a monotonicity lemma; (iv) since Dipper has no final
-  key whitening, every $r$-round property extends to $r{+}1$ rounds
-  without key guessing, giving a seven-round distinguisher and an
-  eight-round partial key recovery with $2^{63}$ data. In a controlled
-  ablation, replacing the two modular additions by XOR extends the
-  longest certified property to nine rounds, and removing them extends
-  it to ten; all certified balanced bits at the six-round boundary
-  originate from the two words that bypass the addition in the last
-  round. We explain this with a degree lemma for modular addition
-  (output bit $i$ has algebraic degree exactly $i+1$) and with certified
-  degree bounds for every output bit and round: after one round the
-  added words already reach degree 26, against 3 for the retained words,
-  and every output bit reaches the maximal bound 63 after six rounds for
-  Dipper, but only after nine and ten rounds for the variants. Exact
-  monomial prediction and the conventional bit-based division property
-  produce identical certificates in every case we examined, which we
-  partly explain by the full-state key addition that precedes each S-box
-  layer. We also report that the published Dipper-64/96 test vectors
-  could not be reproduced from the specification text and that the
-  128-bit vectors require a different round-key window than the one
-  stated. All code and data are public.
+  GIFT S-box and bit permutation with two 16-bit modular additions on
+  half of the state. Its integral resistance was so far supported only
+  by experiments with a few random keys, which bounded word-saturation
+  distinguishers at five rounds. We replace this evidence by
+  key-independent certificates. We model monomial trails through
+  reduced-round Dipper as SAT instances whose local transitions are
+  exact: the coefficient table of the S-box and a rule for the map
+  $(x,y)\mapsto(x\boxplus y,y)$ derived from the Braeken–Semaev
+  characterisation of modular addition. The certificates at the round
+  boundaries are backed by DRAT proofs checked with `drat-trim`, and
+  every trail behind a negative boundary result is validated
+  independently of the SAT encoding. The five-round properties become
+  statements for all round keys, and six-round properties exist. Within
+  this existence-based model, no bit-aligned cube certifies any single
+  output bit at seven rounds; a monotonicity lemma makes this statement
+  cover cubes of every dimension. A controlled ablation isolates the
+  effect of the two modular additions: replacing them by XOR, or
+  removing them, extends the longest certified property from six rounds
+  to nine and ten rounds. At the six-round boundary every certified bit
+  comes from the two words that bypass the addition, and we relate this
+  to the exact degree of the addition output bits and to degree upper
+  bounds for every output bit and round. On all instances examined, the
+  model with exact local transitions certifies the same bits as the
+  conventional bit-based division property.
 author:
 - Ali Huseynli[^1]
 - Yadigar Imamverdiyev
@@ -56,176 +41,170 @@ title: |
 ---
 
 **Keywords:** integral cryptanalysis; division property; monomial
-prediction; modular addition; SAT; lightweight block cipher; Dipper
+prediction; modular addition; SAT; DRAT; lightweight block cipher;
+Dipper
 
 # Introduction
 
 Integral (square, saturation) cryptanalysis (Knudsen and Wagner 2002)
-looks for a set of chosen plaintexts, typically an affine subspace (a
-*cube*), over which some output bit sums to zero independently of the
-key. The division property (Todo 2015b) and its bit-based versions (Todo
-and Morii 2016; Xiang et al. 2016) turned the search for such properties
-into a propagation problem that can be solved with MILP or SAT tools;
-monomial prediction (Hu et al. 2020), shown in (Hu et al. 2020) to be
-equivalent to the three-subset division property without unknown
-subset (Hao et al. 2020), gives the exact algebraic view in which a cube
-sum vanishes if and only if the corresponding monomial coefficient is
-zero.
+looks for a set of chosen plaintexts, typically an affine subspace
+called a *cube*, over which some output bit sums to zero independently
+of the key. The division property (Todo 2015b) and its bit-based
+versions (Todo and Morii 2016; Xiang et al. 2016) turned the search for
+such properties into a propagation problem for MILP or SAT solvers.
+Monomial prediction (Hu et al. 2020), which Hu et al. proved equivalent
+to the three-subset division property without unknown subset (Hao et al.
+2020), gives the exact algebraic view: a cube sum vanishes if and only
+if certain monomial coefficients are zero.
 
-Algebraic properties of modular addition are well understood in
-isolation. Its differential and linear behaviour is described exactly by
-the results of Lipmaa and Moriai (Lipmaa and Moriai 2002) and of
-Wallén (Wallén 2003), and its algebraic normal form by Braeken and
-Semaev (Braeken and Semaev 2005). Integral analysis of ciphers that mix
-modular addition with S-boxes is less developed. Division-property
-models for ARX designs (Sun, Wang, and Wang 2016; Sun et al. 2017) were
-designed for pure ARX ciphers such as SPECK (Beaulieu et al. 2015),
-where the addition is the only nonlinear operation. In a hybrid round
-the addition interacts with a small S-box and a bit permutation, and it
-is not obvious how much it contributes to resistance against integral
-attacks, or which part of the state carries an integral property the
-longest.
+Modular addition is well understood in isolation. Its differential and
+linear behaviour is described exactly by Lipmaa and Moriai (Lipmaa and
+Moriai 2002) and by Wallén (Wallén 2003), and its algebraic normal form
+by Braeken and Semaev (Braeken and Semaev 2005). Integral analysis of
+ciphers that mix modular addition with S-boxes is less developed.
+Division-property models for ARX designs (Sun, Wang, and Wang 2016; Sun
+et al. 2017) target pure ARX ciphers such as SPECK (Beaulieu et al.
+2015), in which the addition is the only nonlinear operation. In a
+hybrid round the addition interacts with a small S-box and a bit
+permutation. It is then not obvious how much the addition contributes to
+integral resistance, or which part of the state keeps an integral
+property longest.
 
-Dipper, proposed in our previous work (Huseynli, Imamverdiyev, and
-Alizadeh 2026), is a 64-bit hybrid SPN–ARX cipher with 96- and 128-bit
-keys and 28 rounds. Each round applies a full-state key addition,
-sixteen GIFT S-boxes (Banik et al. 2017), four word rotations, two
-16-bit modular additions over half of the state and the GIFT-64 bit
-permutation. Its security evaluation includes MILP differential bounds,
-CP-SAT linear bounds, an impossible-differential search and an
-*experimental* integral search that saturates one 16-bit word and
-reports distinguishers of at most five rounds. Experimental integral
-searches have two weaknesses: a sum that is zero for a few random keys
-is not necessarily zero for all keys, and a search limited to
-word-saturated cubes says nothing about other cubes.
-Section 6 shows that the first weakness is real
-for Dipper: with 80 trials, two bits appear balanced that are not.
+Dipper (Huseynli, Imamverdiyev, and Alizadeh 2026) is a 64-bit hybrid
+SPN–ARX cipher with 96- and 128-bit keys and 28 rounds, proposed in our
+previous work. Each round applies a full-state key addition, sixteen
+GIFT S-boxes (Banik et al. 2017), four word rotations, two 16-bit
+modular additions over half of the state and the GIFT-64 bit
+permutation. The design paper evaluates differential, linear and
+impossible-differential resistance with MILP and CP-SAT models. Its
+integral evaluation, however, is *experimental*: one 16-bit word is
+saturated, the sums are tested for a few random keys, and distinguishers
+are reported for up to five rounds. Such an evaluation has two
+weaknesses. A sum that is zero for a few random keys need not be zero
+for all keys, and a search limited to word-saturated cubes says nothing
+about other cubes.
+Section 6 shows that the first weakness is not
+hypothetical for Dipper: with 80 trials, two bits look balanced that are
+not.
 
 #### Research questions.
 
 We ask three questions. (Q1) Which integral properties of reduced-round
-Dipper hold for *all* keys, and how far do they extend over *all*
-bit-aligned cubes? (Q2) Does the exact treatment of the modular
-addition, now possible through the Hu–Yap characterisation (Hu and Yap
-2024), certify more than the conventional division property? (Q3) What
-exactly do the two half-state additions contribute, and why do some
-parts of the state stay balanced longer than others?
+Dipper hold for *all* round keys, and how far do they extend over *all*
+bit-aligned cubes? (Q2) What exactly do the two half-state additions
+contribute, and why do some parts of the state stay balanced longer than
+others? (Q3) Does an exact treatment of the modular addition, made
+possible by the Hu–Yap characterisation (Hu and Yap 2024), certify more
+than the conventional division property?
 
 #### Contributions.
 
-1.  **Exact local models.** We model the Dipper round with the exact
-    $16\times16$ monomial table of the GIFT S-box and an exact local
-    rule (Lemma 1) for the addition with retained
-    operand $(x,y)\mapsto(x\boxplus y,y)$, which is the actual shape of
-    Dipper’s ARX layer. Every local model is checked exhaustively
-    against algebraic normal forms.
+1.  **Key-independent certificates and a complete search within the
+    model (Q1).** We certify the published five-round properties for all
+    round keys, find six-round properties (nine balanced bits with a
+    $2^{63}$ cube; six bits with the smallest certified cube found, of
+    size $2^{60}$), and show that no bit-aligned cube certifies a single
+    output bit at seven rounds in the model. The monotonicity lemma
+    (Lemma 3) reduces this statement to the 64
+    cubes of dimension 63. Every boundary result has a checkable
+    artifact: 138 DRAT proofs (distinct instances) verified by
+    `drat-trim`, and 12 288 monomial trails validated by a checker that
+    does not use the SAT encoding.
 
-2.  **All-key certificates and a complete round bound within the
-    model.** We certify the published five-round properties for all
-    keys, find six-round properties, and prove that no bit-aligned cube
-    of any dimension gives a certificate for a single output bit at
-    seven rounds in our model
-    (Lemma 3 reduces this to the 64 cubes of
-    dimension 63).
+2.  **The role of the modular addition (Q2).** In a controlled ablation,
+    replacing the two additions by XOR or removing them extends the
+    longest certified property from six to nine and ten rounds. At the
+    six-round boundary every certified bit comes from the retained
+    operands, the two words that feed the additions but pass through
+    them unchanged. We relate this to
+    Lemma 2, which states that output bit $i$ of
+    an addition has degree exactly $i+1$, and to degree upper bounds for
+    every output bit and round.
 
-3.  **Free final round and key recovery.** Because Dipper has no final
-    whitening key, every $r$-round state property is an $(r{+}1)$-round
-    property of $T^{-1}(C)$ without key guessing
-    (Lemma 4). We quantify the resulting
-    seven-round distinguisher and an eight-round partial key recovery,
-    and we validate the key-recovery procedure end-to-end at small
-    scale.
+3.  **Model comparison and tightness (Q3).** The monomial-trail
+    existence model with exact local transitions
+    (<span class="sans-serif">MP-EL</span>), a gate-level monomial model
+    and the conventional bit-based division property certify the same
+    bits on every instance we examined. We explain part of this
+    structurally, and we measure the distance between certificates and
+    experiment.
 
-4.  **Model comparison and tightness.** Exact monomial prediction,
-    gate-level monomial prediction and the conventional bit-based
-    division property give identical certificates on every instance
-    examined. We explain this and measure how close the certificates are
-    to experiment.
-
-5.  **Role of the modular addition.** An ablation with the additions
-    replaced by XOR or removed isolates the contribution of the modular
-    additions: 6 certified rounds versus 9 and 10.
-
-6.  **Degree mechanism.** We prove that output bit $i$ of an $n$-bit
-    modular addition has algebraic degree exactly $i+1$
-    (Lemma 2). We compute certified upper bounds
-    on the algebraic degree of every output bit of Dipper and of the
-    variants for every round, and show that the degree gap between added
-    and retained words explains where integral properties survive
-    (Section 9).
-
-7.  **Specification check.** We report discrepancies between the Dipper
-    specification text and its published test vectors
-    (Section 10).
-
-The repository <https://github.com/AlexGuseinov/dipper-integral>
-contains the reference implementation, all models, scripts and raw
-results.
-
-#### Organisation.
-
-Section 2 reviews related work.
-Section 3 fixes notation.
-Section 4 gives the local rules, the degree
-lemma and the structural lemmas.
-Section 5 validates the models.
-Section 6 reports the certified properties of
-Dipper. Section 7 compares the models with each other
-and with experiment.
-Sections 8
-and 9 study the role of the modular
-addition. Section 10 reports the specification check, and
-Section 11 discusses implications and
-limitations.
+The technical tools behind these results are the exact local rule for
+Dipper’s ARX map (Lemma 1) and the free-final-round observation
+(Lemma 4).
+Sections 9
+and 10 contain secondary material: a
+partial-key filtering procedure and a specification check. Code, data,
+proofs and scripts are available at
+<https://github.com/AlexGuseinov/dipper-integral>.
 
 #### Scope of the claims.
 
-A certificate proves that a cube sum is zero for all keys. The absence
-of a certificate proves nothing about the cipher: it only means that the
-model found no certificate. Our round bound at seven rounds is therefore
-a statement about the models used here, not a proof that Dipper has no
-seven-round integral distinguisher.
+A certificate proves that a cube sum is zero for all round keys. The
+absence of a certificate proves nothing about the cipher: it only means
+that the model contains a trail. Our seven-round statement is therefore
+a statement about the model, not a proof that Dipper has no seven-round
+integral distinguisher. For cipher outputs we report only degree upper
+bounds and never claim that a degree is attained;
+Lemma 2, about an isolated addition, is the only
+exact degree statement.
+
+#### Organisation.
+
+Section 2 reviews related work and
+Section 3 introduces the notation and
+background. Section 4 gives the local rules and the
+structural lemmas, and
+Section 5 validates them.
+Section 6 reports the certified properties of
+Dipper, and Section 7 studies the role of the addition.
+Section 8 compares models and experiment.
+Sections 9
+and 10 cover key recovery and the
+specification check.
+Section 11 discusses implications and
+limitations.
 
 # Related work
 
 #### Integral and higher-order differential cryptanalysis.
 
 Integral attacks go back to the Square attack (Daemen, Knudsen, and
-Rijmen 1997) and were formalised as integral cryptanalysis by Knudsen
+Rijmen 1997). They were formalised as integral cryptanalysis by Knudsen
 and Wagner (Knudsen and Wagner 2002) and as the saturation attack by
-Lucks (Lucks 2002). Z’aba et al. (Z’aba et al. 2008) extended them to
-bit-oriented ciphers. The underlying algebra is that of higher-order
-derivatives (Lai 1994; Knudsen 1995): a cube sum is a derivative of
-order equal to the cube dimension, and it vanishes when the algebraic
-degree is smaller than that order. Degree bounds for iterated
-constructions were given by Canteaut and Videau (Canteaut and Videau
-2002) and by Boura, Canteaut and De Cannière (Boura, Canteaut, and De
-Cannière 2011). The cube attack of Dinur and Shamir (Dinur and Shamir
-2009) uses the same algebra in a key-recovery setting.
+Lucks (Lucks 2002), and extended to bit-oriented ciphers by Z’aba et
+al. (Z’aba et al. 2008). The underlying algebra is that of higher-order
+derivatives (Lai 1994; Knudsen 1995): a cube sum is a derivative whose
+order is the cube dimension, and it vanishes whenever the algebraic
+degree is smaller than that order. Canteaut and Videau (Canteaut and
+Videau 2002) and Boura, Canteaut and De Cannière (Boura, Canteaut, and
+De Cannière 2011) bounded the degree of iterated constructions. The cube
+attack of Dinur and Shamir (Dinur and Shamir 2009) applies the same
+algebra to key recovery.
 
 #### Division property and monomial prediction.
 
 Todo introduced the division property (Todo 2015b) and used it to break
 full MISTY1 (Todo 2015a). The bit-based division property (Todo and
 Morii 2016) and its MILP modelling (Xiang et al. 2016) made automated
-search practical. Eskandari et al. (Eskandari et al. 2019) provide a
-SAT-based tool and a table of results that we use as a benchmark. For
-stream ciphers, the division property underlies modern cube
-attacks (Todo et al. 2017; Wang et al. 2018). The three-subset division
-property (Hu and Wang 2019) and its variant without unknown subset (Hao
-et al. 2020) remove the imprecision of the two-subset version. Hu et
-al. (Hu et al. 2020) showed that the latter is equivalent to monomial
-prediction, which counts monomial trails modulo 2. Complex linear layers
-need dedicated models (Hu, Wang, and Wang 2020; Zhang and Rijmen 2019).
+search practical, and Eskandari et al. (Eskandari et al. 2019) provide a
+SAT-based tool and a table of results that we use as a benchmark. In
+stream ciphers the division property underlies modern cube attacks (Todo
+et al. 2017; Wang et al. 2018). The three-subset division property (Hu
+and Wang 2019) and its variant without unknown subset (Hao et al. 2020)
+remove the imprecision of the two-subset version; Hu et al. (Hu et al.
+2020) showed that the latter is equivalent to monomial prediction.
+Complex linear layers need dedicated models (Hu, Wang, and Wang 2020;
+Zhang and Rijmen 2019).
 
 #### Modular addition.
 
 Sun, Wang and Wang (Sun, Wang, and Wang 2016) gave the first MILP model
 of the bit-based division property for ARX ciphers, based on a
-gate-level decomposition of the carry chain. Sun et al. (Sun et al.
+gate-level decomposition of the carry chain, and Sun et al. (Sun et al.
 2017) moved it to SAT. Hu and Yap (Hu and Yap 2024) observed that the
-characterisation of Braeken and Semaev (Braeken and Semaev 2005) gives a
-perfect local monomial-prediction model for modular addition, and
+characterisation of Braeken and Semaev (Braeken and Semaev 2005) yields
+a perfect local monomial-prediction model for modular addition.
 CLAASP-MP (Bellini, Rachidi, and Tiwari 2026) integrates such models
 into a general MILP framework. We use this characterisation for the
 specific map $(x,y)\mapsto(x\boxplus y,y)$ of Dipper and derive from it
@@ -233,67 +212,214 @@ a degree statement.
 
 #### Security guarantees and degree lower bounds.
 
-Finding an integral distinguisher is an upper-bound question. The
-converse question, proving that *no* integral distinguisher exists after
-a number of rounds, requires exact information such as degree lower
-bounds. Hebborn et al. developed lower bounds on the degree (Hebborn et
-al. 2020) and strong security guarantees against integral
-distinguishers (Hebborn et al. 2021) for ciphers with full-state key
-addition. Zeng and Tian (Zeng and Tian 2024) extended them to ciphers
-without a whitening key. Dipper falls into the latter class, so these
-methods are the natural next step
-(Section 11).
+Finding an integral distinguisher answers an upper-bound question.
+Proving that *no* integral distinguisher exists requires exact
+information, such as lower bounds on the degree. Hebborn et
+al. developed degree lower bounds (Hebborn et al. 2020) and strong
+security guarantees against integral distinguishers (Hebborn et al.
+2021) for ciphers in which a key is added to the full state; Dipper,
+which adds a full-state key before its first S-box layer, appears to fit
+this setting. Zeng and Tian (Zeng and Tian 2024) extended the guarantees
+to ciphers without such a whitening key, such as SIMON and Simeck.
 
 #### Integral key recovery.
 
-Key recovery built on monomial prediction is studied, for example, by
-Hadipour and Eichlseder (Hadipour and Eichlseder 2022).
+Hadipour and Eichlseder (Hadipour and Eichlseder 2022), for example,
+study key recovery built on monomial prediction.
 
 #### Positioning.
 
-We do not claim a new general framework. Our contribution is the
-analysis of one hybrid cipher: exact rules for its particular ARX shape,
-all-key certificates, a round bound over all bit-aligned cubes within
-the model, a model comparison, an ablation, and a degree-based
-explanation.
+We do not propose a new general framework. Our contribution is the
+analysis of one hybrid cipher, which consists of exact rules for its
+particular ARX shape, key-independent certificates with checkable
+artifacts, a search over all bit-aligned cubes within the model, a model
+comparison, an ablation, and a degree-based explanation.
 
 # Preliminaries
 
-## Dipper
+This section fixes notation and recalls the algebraic facts on which the
+analysis rests. The material is standard, but we state it in the form in
+which we use it, because the difference between what a model *proves*
+and what it merely *fails to exclude* runs through the whole paper.
 
-The state is $S=A\|B\|C\|D$ with 16-bit words, $A=S[63{:}48]$ and bit 0
-the least significant. For $r=1,\dots,28$,
-$$S^{(r)} = T\big(S^{(r-1)}\oplus RK_r\big),\qquad
-T = P\circ M\circ \mathrm{SC},$$ where $\mathrm{SC}$ applies the GIFT
-S-box to the sixteen nibbles, $M$ rotates $A,B,C,D$ left by $1,4,7,11$
-and then sets $A\gets A\boxplus B$ and $C\gets C\boxplus D$ (with $B,D$
-unchanged), and $P$ is the GIFT-64 bit permutation. The ciphertext is
-$S^{(28)}$; there is no final key addition. $T$ is a public permutation.
-We write $\mathrm{Dipper}^{\oplus}$ for the variant in which the two
-additions are replaced by XOR and $\mathrm{Dipper}^{\varnothing}$ for
-the variant in which they are removed (rotations kept). These are
-analysis variants only.
+## Notation
 
-## Cube sums and monomial prediction
+Vectors in $\mathbb{F}_2^n$ are written $u=(u_0,\dots,u_{n-1})$ with
+$u_0$ the least significant bit. We identify $u$ with the integer
+$\operatorname{val}(u)=\sum_i u_i2^i$ whenever we do arithmetic with it.
+The Hamming weight is $\operatorname{wt}(u)=\#\{i:u_i=1\}$, and $e_i$ is
+the $i$-th unit vector. We write $u\preceq v$ if $u_i\le v_i$ for all
+$i$, so that $u$ is a sub-mask of $v$; $u\vee v$ and $u\wedge v$ are the
+bitwise OR and AND. For a set $I\subseteq\{0,\dots,n-1\}$, $\mathbf 1_I$
+is its indicator vector. The symbol $\oplus$ denotes XOR, and $\boxplus$
+addition modulo $2^n$, where $n$ is clear from the context. $x\lll s$ is
+a left rotation of an $n$-bit word.
 
-For $u\in\mathbb{F}_2^n$ write $x^u=\prod_{i:u_i=1}x_i$. Let
-$I\subseteq\{0,\dots,63\}$ be a set of active bits and let the remaining
-plaintext bits be constants. For an output bit $f$ of $r$ rounds, viewed
-as a polynomial in the plaintext $x$ and the key material $k$,
-$$\bigoplus_{x_I\in\mathbb{F}_2^{|I|}} f(x,k) \;=\; \sum_{u\supseteq I,\,v} a_{u,v}\, x^{u\setminus I}k^v ,$$
-so the sum vanishes for all constants and all keys if and only if
-$a_{u,v}=0$ whenever $u\supseteq I$. For a composite function
-$f=f_r\circ\dots\circ f_1$, the coefficient of $x^{u_0}$ in $f^{u_r}$
-equals the parity of the number of *monomial trails*
-$u_0\to u_1\to\dots\to u_r$ in which each step is a nonzero local
-coefficient (Hu et al. 2020). If no trail exists, the coefficient is
-zero. This is the only direction we use: *no trail* $\Rightarrow$
-*balanced*.
+## Boolean functions, ANF and degree
 
-The conventional bit-based division property (BDP) (Todo and Morii 2016;
-Xiang et al. 2016) propagates a set of vectors instead of monomials. It
-is sound in the same direction (no division trail to a unit vector
-$\Rightarrow$ the bit is balanced) and can be less precise.
+Every Boolean function $f:\mathbb{F}_2^n\to\mathbb{F}_2$ has a unique
+algebraic normal form (ANF)
+$$f(x)=\bigoplus_{u\in\mathbb{F}_2^n} a_u\,x^u,\qquad x^u=\prod_{i:u_i=1}x_i,\qquad a_u\in\mathbb{F}_2.$$
+The coefficients follow from the truth table by the Möbius transform
+$a_u=\bigoplus_{v\preceq u}f(v)$, which costs $n2^n$ operations. The
+*algebraic degree* $\deg f$ is the largest $\operatorname{wt}(u)$ with
+$a_u=1$. For a vectorial function $F=(f_0,\dots,f_{m-1})$ and
+$v\in\mathbb{F}_2^m$ we write $F^v=\prod_{j:v_j=1}f_j$, which is again a
+Boolean function. Two facts are used repeatedly: $x_i^2=x_i$, so
+products of monomials are monomials of the union of their supports; and
+a nonconstant component of a permutation of $\mathbb{F}_2^n$ has degree
+at most $n-1$, since $\bigoplus_x f(x)$ equals the coefficient
+$a_{\mathbf 1}$ and is zero for a balanced function.
+
+## The Dipper cipher
+
+Figure 1 shows one round.
+
+<figure id="fig:round">
+<img src="fig_round.png" style="width:78.0%" />
+<figcaption>One Dipper round. The shaded boxes are the <em>added</em>
+words; <span class="math inline"><em>B</em></span> and <span
+class="math inline"><em>D</em></span> are the <em>retained</em> words,
+used as addends and passed on unchanged. The ARX layer <span
+class="math inline"><em>M</em></span> consists of the rotations and the
+two additions. There is no key addition after the last
+round.</figcaption>
+</figure>
+
+The state is $S=A\|B\|C\|D$ with 16-bit words, $A=S[63{:}48]$,
+$D=S[15{:}0]$ and bit 0 the least significant. For $r=1,\dots,28$,
+$$S^{(r)} = T\big(S^{(r-1)}\oplus RK_r\big),\qquad T = P\circ M\circ \mathrm{SC},$$
+with $S^{(0)}$ the plaintext and $S^{(28)}$ the ciphertext.
+$\mathrm{SC}$ applies the GIFT S-box to the sixteen nibbles. $M$ first
+rotates $A,B,C,D$ left by $1,4,7,11$ and then sets
+$$A\gets A\boxplus B,\qquad C\gets C\boxplus D,$$ so $B$ and $D$ are
+used as addends and pass through the additions unchanged (after their
+rotation). We call $A,C$ the *added* words and $B,D$ the *retained*
+words of the ARX layer. $P$ is the GIFT-64 bit permutation
+$P(i)=4\lfloor i/16\rfloor+16\big((3\lfloor (i\bmod 16)/4\rfloor+(i\bmod4))\bmod4\big)+(i\bmod4)$,
+which moves bit $i$ to position $P(i)$. Three structural features matter
+for integral analysis. The key is added to the *full* state at the start
+of every round. $T$ is a public permutation. There is no key addition
+after the last round.
+
+For the ablation we define two analysis variants, which are not ciphers
+anyone proposes. $\mathrm{Dipper}^{\oplus}$ replaces both additions by
+XOR, and $\mathrm{Dipper}^{\varnothing}$ removes them while keeping the
+rotations. Throughout, the round keys $RK_1,\dots,RK_r$ are treated as
+*independent* variables; a statement that holds for all such sequences
+holds in particular for the sequences produced by either key schedule.
+
+## Cubes and integral properties
+
+<div class="definition">
+
+**Definition 1** (Cube, balanced bit). Let $I\subseteq\{0,\dots,63\}$
+and $c\in\mathbb{F}_2^{64}$ with $c_i=0$ for $i\in I$. The *cube*
+$\mathcal C_I(c)$ is the set of the $2^{|I|}$ plaintexts that take all
+values on the positions in $I$ (the active bits) and agree with $c$
+elsewhere (the constant bits). For an $r$-round state bit $S^{(r)}_j$,
+the *cube sum* is $\bigoplus_{x\in\mathcal C_I(c)}S^{(r)}_j(x)$. The bit
+is *balanced over $I$ after $r$ rounds* if the cube sum is zero for
+every constant $c$ and every sequence of round keys.
+
+</div>
+
+All cubes in this paper are *bit-aligned*: they are spanned by unit
+vectors. Affine subspaces in other bases, non-affine input sets and
+output functions other than a single bit are outside the scope of our
+search.
+
+Viewing $S^{(r)}_j$ as a polynomial in the plaintext bits $x$ and the
+key bits $k$, and substituting the constants $c_i$ for the plaintext
+bits outside $I$ after summation, $$\label{eq:cubesum}
+\bigoplus_{x_I\in\mathbb{F}_2^{|I|}} S^{(r)}_j(x,k)\;=\;\bigoplus_{u\succeq \mathbf 1_I,\;v} a_{u,v}\,x^{u\oplus\mathbf 1_I}\,k^{v},$$
+because summing a monomial $x^u$ over the cube leaves
+$x^{u\oplus\mathbf 1_I}$ if $u\succeq\mathbf 1_I$ and zero otherwise.
+Hence the bit is balanced over $I$ *if and only if* every coefficient
+$a_{u,v}$ with $u\succeq\mathbf 1_I$ vanishes. A cube sum is a
+derivative of order $|I|$ (Lai 1994). In particular, if
+$\deg_x S^{(r)}_j<|I|$ the bit is balanced over every cube of dimension
+$|I|$, which links integral properties to degree bounds
+(Section 7.2). The 64-dimensional cube, i.e. the
+full codebook, is balanced for every bit of every permutation. It is
+trivial and excluded.
+
+## Monomial trails
+
+Let $F=F_r\circ\dots\circ F_1$ be a composition of vectorial functions.
+For a single function $G$ and masks $u,v$, write $G[u\to v]=1$ if $x^u$
+occurs in the ANF of $G^v$ and $0$ otherwise. A *monomial trail* from
+$u_0$ to $u_r$ is a sequence $u_0\to u_1\to\dots\to u_r$ with
+$F_t[u_{t-1}\to u_t]=1$ for all $t$.
+
+<div id="prop:mp" class="proposition">
+
+**Proposition 1** (Hu et al. (Hu et al. 2020)). *The coefficient of
+$x^{u_0}$ in $F^{u_r}$ equals the number of monomial trails from $u_0$
+to $u_r$ modulo 2.*
+
+</div>
+
+The proposition gives two sound tests of opposite strength. If *no*
+trail exists, the coefficient is zero; this is the test we use, and it
+only needs a satisfiability check. If trails exist, the coefficient is
+their parity. Deciding it requires counting, and trails can cancel in
+pairs. The following toy example shows the gap between the two tests.
+
+<div id="ex:cancel" class="example">
+
+**Example 1** (Cancellation). Let $F_1(x_1,x_2)=(x_1x_2,\;x_1x_2)$ and
+$F_2(y_1,y_2)=y_1\oplus y_2$. Then $F=F_2\circ F_1=0$, so the sum over
+the cube $\{x_1,x_2\}$ is zero. From $x^{11}=x_1x_2$ to the output there
+are two trails, $11\to10\to1$ and $11\to01\to1$, because $x_1x_2$ occurs
+in both $y_1$ and $y_2$ and both occur in $F_2$. An existence test finds
+a trail and cannot certify the property. The parity test counts two
+trails and certifies it.
+
+</div>
+
+For keyed functions we treat each key bit as a variable. The
+key-addition layer $s'=s\oplus k$ satisfies
+$s'^w=\bigoplus_{u\preceq w}s^uk^{w\oplus u}$. A trail step $u\to w$ is
+therefore possible exactly when $u\preceq w$, and different steps attach
+different key monomials $k^{w\oplus u}$. Trails with different key
+monomials never cancel each other; only trails with the same key
+monomial can.
+
+## The bit-based division property
+
+The conventional (two-subset) bit-based division property (Todo and
+Morii 2016) describes a multiset $\mathbb X\subseteq\mathbb{F}_2^n$ by a
+set $\mathbb K$ of vectors: $\mathbb X$ has property
+$\mathcal D^n_{\mathbb K}$ if $\bigoplus_{x\in\mathbb X}x^u=0$ for every
+$u$ such that $u\not\succeq k$ for all $k\in\mathbb K$. A cube with
+active set $I$ has $\mathbb K=\{\mathbf 1_I\}$. Propagation rules map
+$\mathbb K$ through each operation, and bit $j$ is balanced if $e_j$ is
+not reachable. Key addition leaves the property unchanged. For an S-box,
+$k\to v$ is a *division trail* if some $u\succeq k$ has $S[u\to v]=1$.
+The rules for COPY, AND and XOR gates are those of (Todo and Morii 2016;
+Xiang et al. 2016). BDP is sound in the same direction as the existence
+test above. Like that test, it cannot see cancellations, and it can be
+less precise still. Precision is improved by the three-subset division
+property (Hu and Wang 2019) and made exact by its variant without
+unknown subset (Hao et al. 2020), which is equivalent to monomial
+prediction (Hu et al. 2020).
+
+## SAT encodings and checkable answers
+
+Both tests become satisfiability problems once every mask bit is a
+Boolean variable and every local relation is written as clauses. Each
+clause excludes one forbidden assignment of the variables of a small
+component. The solver then answers one of two ways. If the formula is
+*unsatisfiable* (UNSAT), no trail exists and the bit is certified; a
+DRAT proof (Wetzler, Heule, and Hunt 2014) records the solver’s
+reasoning, and an independent checker such as `drat-trim` can replay it.
+If the formula is *satisfiable* (SAT), the solver returns an assignment,
+from which we read off a candidate trail and verify it layer by layer
+against the local rules, without using the clauses. We use
+CaDiCaL (Biere et al. 2020, 2024) through PySAT (Ignatiev, Morgado, and
+Marques-Silva 2018) for the search and an external CaDiCaL binary for
+proof generation.
 
 # Models
 
@@ -301,26 +427,23 @@ $\Rightarrow$ the bit is balanced) and can be less precise.
 
 #### Key addition.
 
-For $s'=s\oplus k$ with free $k$,
-$s'^{w}=\sum_{u\preceq w}s^u k^{w\oplus u}$. Hence $u\to w$ is a trail
-step iff $u\preceq w$, and distinct steps carry distinct key monomials.
-Under BDP the key addition is transparent.
+A step $u\to w$ is allowed iff $u\preceq w$. Under BDP the key addition
+is transparent.
 
 #### S-box.
 
-For $y=S(x)$ we compute $T[u][v]=[x^u]\,y^v$ for all
-$u,v\in\mathbb{F}_2^4$ by Möbius transform. For the GIFT S-box, 68 of
-the 256 pairs are nonzero. The BDP table is $\mathrm{BDP}[k][v]=1$ iff
-$T[u][v]=1$ for some $u\succeq k$, which gives 170 transitions.
+For the GIFT S-box we compute $S[u\to v]$ for all $u,v\in\mathbb{F}_2^4$
+by the Möbius transform. Of the 256 pairs, 68 are nonzero. The BDP table
+has 170 transitions.
 
-#### Modular addition.
+#### Modular addition with retained operand.
 
-Braeken and Semaev (Braeken and Semaev 2005), applied to cryptanalysis
-by Hu and Yap (Hu and Yap 2024), show that for $z=x\boxplus y$ on $n$
-bits, $[x^ay^b]\,z^w=1$ if and only if
+Braeken and Semaev (Braeken and Semaev 2005), and Hu and Yap (Hu and Yap
+2024) in the cryptanalytic setting, show that for $z=x\boxplus y$ on $n$
+bits the monomial $x^ay^b$ occurs in $z^w$ if and only if
 $\operatorname{val}(a)+\operatorname{val}(b)=\operatorname{val}(w)$ over
-the integers. Dipper does not use $z$ alone: the addend is also an
-output. The following lemma gives the exact rule for that shape.
+the integers. Dipper’s ARX map also outputs the addend. The following
+lemma gives the exact rule for that shape.
 
 <div id="lem:addret" class="lemma">
 
@@ -344,8 +467,26 @@ $\operatorname{val}(w)\ge\operatorname{val}(a)$. ◻
 
 </div>
 
-The same characterisation gives the exact algebraic degree of each
-output bit of the addition.
+<div id="ex:add" class="example">
+
+**Example 2**. For $n=2$, the high output bit of $z=x\boxplus y$ is
+$z_1=x_1\oplus y_1\oplus x_0y_0$. Its monomials correspond to the pairs
+$(\operatorname{val}(a),\operatorname{val}(b))\in\{(2,0),(0,2),(1,1)\}$,
+which are exactly the solutions of
+$\operatorname{val}(a)+\operatorname{val}(b)=2=\operatorname{val}(e_1)$.
+The monomial $x_0y_0$ comes from the carry, and its degree $2=i+1$
+anticipates Lemma 2 below. For the retained version,
+$z_1y_0=x_1y_0\oplus y_1y_0\oplus x_0y_0$. With $w=e_1$ and $c=e_0$,
+Lemma 1 predicts the monomials
+$x^ay^{b'\vee e_0}$ for the same three pairs, i.e. $x_1y_0$, $y_1y_0$
+and $x_0y_0$, in agreement with the direct computation.
+
+</div>
+
+The same characterisation gives the exact degree of each output bit of
+the addition. Lemma 2 is an elementary consequence of (Braeken
+and Semaev 2005). We state it because it drives the mechanism of
+Section 7.2.
 
 <div id="lem:deg" class="lemma">
 
@@ -357,132 +498,147 @@ $i+1$ as a Boolean function of the $2n$ input bits.*
 
 <div class="proof">
 
-*Proof.* Take $w=e_i$, i.e. $\operatorname{val}(w)=2^i$. By the
-Braeken–Semaev characterisation, $x^ay^b$ occurs in $z_i$ iff
-$\operatorname{val}(a)+\operatorname{val}(b)=2^i$, and its degree is
-$\mathrm{wt}(a)+\mathrm{wt}(b)$. By Kummer’s theorem (Kummer 1852),
-$\mathrm{wt}(a)+\mathrm{wt}(b)=\mathrm{wt}(a+b)+c(a,b)$, where $c(a,b)$
-is the number of carries in the binary addition of $a$ and $b$. Here
-$\mathrm{wt}(a+b)=1$, and carries can only occur at positions
-$0,\dots,i-1$, so the degree is at most $i+1$. The pair $a=1$, $b=2^i-1$
-produces $i$ carries and attains $i+1$. ◻
+*Proof.* Take $w=e_i$, i.e. $\operatorname{val}(w)=2^i$. The monomial
+$x^ay^b$ occurs in $z_i$ iff
+$\operatorname{val}(a)+\operatorname{val}(b)=2^i$, and it has degree
+$\operatorname{wt}(a)+\operatorname{wt}(b)$. Every carry in the binary
+addition of $a$ and $b$ turns two ones into a single one in the next
+position, so
+$\operatorname{wt}(a)+\operatorname{wt}(b)=\operatorname{wt}(a+b)+c(a,b)$,
+where $c(a,b)$ is the number of carries (equivalently, by Kummer’s
+theorem (Kummer 1852), $c(a,b)$ is the 2-adic valuation of
+$\binom{a+b}{a}$). Here $\operatorname{wt}(a+b)=1$, and carries can
+occur only at positions $0,\dots,i-1$, so the degree is at most $i+1$.
+The pair $a=1$, $b=2^i-1$ produces $i$ carries and attains $i+1$. ◻
 
 </div>
 
 <div id="cor:round" class="corollary">
 
-**Corollary 1**. *In one Dipper round, let $d$ bound the degree of the
-round input. Every bit of the retained words $B,D$ after the ARX layer
-is an S-box output bit and has degree at most $3d$. Bit $i$ of
-$A\boxplus B$ or $C\boxplus D$ is a polynomial of degree $i+1$ in S-box
-output bits, so its degree can reach $\min\{3d(i+1),64\}$. Only bit 0 of
-the added words is linear in the S-box outputs.*
+**Corollary 1**. *In one Dipper round, let $d$ be an upper bound on the
+degree of the round input. Every bit of the retained words after the ARX
+layer is an S-box output bit and has degree at most $3d$. Bit $i$ of an
+added word is a polynomial of degree $i+1$ in S-box output bits, so its
+degree is at most $\min\{3d(i+1),63\}$. Only bit 0 of an added word is
+linear in the S-box outputs.*
 
 </div>
 
-The corollary is an upper bound, not a statement about the actual
-degree. Section 9 shows that the certified bounds follow
-this pattern closely.
+Corollary 1 gives upper bounds; it does not state
+which degrees are attained.
 
-In the SAT model, the integer equation
+#### Encoding.
+
+In the SAT model the equation
 $\operatorname{val}(a)+\operatorname{val}(b')=\operatorname{val}(w)$ is
-encoded bitwise with auxiliary carries: $a_i+b'_i+q_i=w_i+2q_{i+1}$ with
-$q_0=q_n=0$. These are carries between exponent integers, not the
-cipher’s data carries. Since $b'$ and $q$ are determined by $(a,w)$,
-each trail has exactly one extension to the auxiliary variables.
+encoded bitwise with auxiliary carries, $a_i+b'_i+q_i=w_i+2q_{i+1}$,
+$q_0=q_n=0$. These are carries of the exponent integers, not the
+cipher’s data carries. The pair $(a,w)$ determines $b'$ and $q$, so each
+trail has exactly one extension to the auxiliary variables.
 
-We call the model built from these tables *exact MP*: its local
-relations are exact, while the global test is trail *existence*, not
-trail parity.
+#### The three models.
 
-#### Gate-level alternatives.
+<span class="sans-serif">MP-EL</span> (monomial-trail existence model
+with exact local transitions) uses the S-box table and
+Lemma 1. Its local relations are exact, but
+its global test is trail *existence*, not trail parity, so it cannot see
+cancellations of the kind in
+Example 1. For comparison,
+<span class="sans-serif">MP-circuit</span> models the addition as a
+ripple-carry circuit, $s_i=x_i\oplus y_i\oplus c_i$ and
+$c_{i+1}=x_iy_i\oplus(x_i\oplus y_i)c_i$, with explicit COPY gates,
+including the copy of $y$ that forms the retained output. It uses the
+monomial gate rules (COPY: $u=\bigvee v_j$; AND: $u_1=u_2=v$; XOR:
+$v=u_1+u_2$). <span class="sans-serif">BDP</span> uses the same circuit
+with the division-property rules (COPY: $u=\sum v_j$; AND:
+$v=u_1\vee u_2$) and the BDP S-box table.
 
-For comparison we also model the addition as a ripple-carry circuit
-($s_i=x_i\oplus y_i\oplus c_i$,
-$c_{i+1}=x_iy_i\oplus(x_i\oplus y_i)c_i$) with explicit COPY gates,
-including the copy of $y$ that forms the retained output. The circuit is
-propagated with monomial rules (COPY: $u=\bigvee v_j$; AND: $u_1=u_2=v$;
-XOR: $v=u_1+u_2$) in the model we call *MP-circuit*, and with BDP rules
-(COPY: $u=\sum v_j$; AND: $v=u_1\vee u_2$) in the model we call *BDP*.
+## Round model, soundness and structural lemmas
 
-## Round model, soundness and two structural lemmas
+One round is modelled as the key addition, sixteen S-box relations, the
+word rotations (wiring), the two addition relations and the bit
+permutation (wiring). The input mask is fixed to $\mathbf 1_I$ and the
+output mask after $r$ rounds to $e_j$. Each output bit is an incremental
+query under assumptions.
 
-One round is modelled as key addition, sixteen S-box relations, the word
-rotations (wiring), the two addition relations and the bit permutation
-(wiring). The input mask is fixed to the indicator of $I$ and the output
-mask after $r$ rounds to the unit vector $e_j$. Every relation is a set
-of clauses that forbid the invalid assignments. We solve the instances
-with CaDiCaL (Biere et al. 2020) through PySAT (Ignatiev, Morgado, and
-Marques-Silva 2018). Each output bit is an incremental query under
-assumptions.
+<div id="prop:sound" class="proposition">
 
-<div class="proposition">
-
-**Proposition 1** (Soundness). *If the exact MP model (or the BDP model)
-is unsatisfiable for $(I,r,j)$, then $\bigoplus_{x_I}S^{(r)}_j=0$ for
-every value of the constant bits and every sequence of round keys
-$RK_1,\dots,RK_r$. In particular, the property holds under both Dipper
-key schedules.*
+**Proposition 2** (Soundness). *If <span class="sans-serif">MP-EL</span>
+(or <span class="sans-serif">BDP</span>) is unsatisfiable for $(I,r,j)$,
+then bit $j$ of $S^{(r)}$ is balanced over $I$: the cube sum is zero for
+every constant and every sequence of round keys, and in particular under
+both Dipper key schedules.*
 
 </div>
 
 <div class="proof">
 
 *Proof.* Every local relation contains all transitions with nonzero
-coefficient, so every nonzero coefficient of $x^{u}$, $u\supseteq I$, in
-$S_j^{(r)}$ has at least one trail starting from $u$. Such a trail first
-passes the key addition to some $w\succeq u\succeq I$, and $I\preceq w$
-is also a valid key-addition step, so the model, whose input mask is
-exactly $I$, contains a trail as well. (Under BDP the same holds because
-the division property is defined by $u\succeq I$.) The round keys are
-independent free variables, so the statement covers all key sequences,
-and therefore the subset produced by any key schedule. The constant bits
-merge with $RK_1$ into free variables. ◻
+coefficient. By Proposition 1, every nonzero coefficient $a_{u,v}$ with
+$u\succeq\mathbf 1_I$
+in 1 therefore has at least one
+trail starting from $u$. Such a trail first passes the key addition to
+some $w\succeq u\succeq\mathbf 1_I$. Since $\mathbf 1_I\preceq w$ is
+also a valid key-addition step, the model, whose input mask is exactly
+$\mathbf 1_I$, contains a trail too. For
+<span class="sans-serif">BDP</span> the statement is the standard
+soundness of division-property propagation (Todo and Morii 2016; Xiang
+et al. 2016). The round keys are independent variables and the constants
+merge with $RK_1$, which gives the claimed generality. ◻
 
 </div>
 
 <div id="lem:mono" class="lemma">
 
-**Lemma 3** (Monotonicity). *In the MP model, if $I\subseteq I'$ and
-$(I,r,j)$ has no trail, then $(I',r,j)$ has no trail. Consequently, if
-no bit-aligned cube of dimension 63 yields a certificate for output bit
-$j$ after $r$ rounds, no bit-aligned cube of any dimension $\le63$
-does.*
+**Lemma 3** (Monotonicity). *In <span class="sans-serif">MP-EL</span>,
+if $I\subseteq I'$ and $(I,r,j)$ has no trail, then $(I',r,j)$ has no
+trail. Consequently, if no bit-aligned cube of dimension 63 is certified
+for output bit $j$ after $r$ rounds, no bit-aligned cube of any
+dimension $\le63$ is.*
 
 </div>
 
 <div class="proof">
 
 *Proof.* The first operation is the key addition, so the masks reachable
-after it from $I$ are $\{w\succeq I\}$, which contains
-$\{w\succeq I'\}$. All subsequent constraints are identical. Every cube
-of dimension $\le 63$ lies inside some cube of dimension 63. ◻
+from $\mathbf 1_I$ after it are $\{w\succeq\mathbf 1_I\}$. This set
+contains $\{w\succeq\mathbf 1_{I'}\}$, and all later constraints are
+identical. Every cube of dimension at most 63 lies inside some cube of
+dimension 63. ◻
 
 </div>
 
-The 64-dimensional cube (the full codebook) is trivially balanced for
-any permutation and is excluded.
-
 <div id="lem:free" class="lemma">
 
-**Lemma 4** (Free final round). *If
-$\bigoplus_{x\in\mathcal C}S^{(r)}_j=0$ for all keys and $|\mathcal C|$
-is even, then $\bigoplus_{x\in\mathcal C}T^{-1}(S^{(r+1)})_j=0$ for all
-keys.*
+**Lemma 4** (Free final round). *If bit $j$ of $S^{(r)}$ is balanced
+over $I$ and $|I|\ge1$, then bit $j$ of $T^{-1}(S^{(r+1)})$ is balanced
+over $I$.*
 
 </div>
 
 <div class="proof">
 
 *Proof.* $T^{-1}(S^{(r+1)})=S^{(r)}\oplus RK_{r+1}$, and the constant
-$RK_{r+1}$ cancels over an even number of terms. ◻
+$RK_{r+1}$ cancels over the even number $2^{|I|}$ of terms. ◻
 
 </div>
 
-Lemma 4 uses a different output test (the
-ciphertext passed through the public map $T^{-1}$) and gives no
-information about $RK_{r+1}$. We therefore report round counts for
-$S^{(r)}$ and state the $(r{+}1)$-round extension separately.
+Lemma 4 uses a different output test: the
+ciphertext is first passed through the public map $T^{-1}$. It gives no
+information about $RK_{r+1}$. We report round counts for $S^{(r)}$ and
+state the $(r{+}1)$-round extension separately.
+
+<div id="rem:percube" class="remark">
+
+*Remark 1* (Degree bounds versus cubes). A bound $\deg_x S^{(r)}_j\le62$
+certifies bit $j$ over *every* 63-dimensional cube. The converse
+direction is weaker. Even a proof that $\deg_x S^{(r)}_j=63$ would
+exclude a property for only those cubes $I$ whose monomial
+$x^{\mathbf 1_I}$ actually occurs. Excluding all 63-dimensional cubes
+would require the presence of the monomial $x^{\mathbf 1_{I}}$ for each
+of the 64 choices of $I$ separately.
+
+</div>
 
 # Validation
 
@@ -494,209 +650,366 @@ Section 10 discusses the key schedule.
 
 #### Local models.
 
-The S-box table is computed from the ANF. We verified the Hu–Yap rule
-for $x\boxplus y$ exhaustively for $n\le5$,
-Lemma 1 exhaustively for $n\le4$ (all $2^{16}$
-exponent pairs), Lemma 2 for $n\le8$, and the carry encoding for
+The S-box table is computed from the ANF. We verified exhaustively the
+Hu–Yap rule for $n\le5$,
+Lemma 1 for $n\le4$ (all $2^{16}$ exponent
+pairs), Lemma 2 for $n\le8$, and the carry encoding for
 $n\le6$.
 
 #### Benchmark.
 
 With the same SAT machinery and BDP rules we reproduce the results of
 Eskandari et al. (Eskandari et al. 2019) for GIFT-64 (Banik et al. 2017)
-and PRESENT (Bogdanov et al. 2007): a 9-round property with 63 active
-bits for GIFT-64 (30 balanced bits when the constant bit is the most
-significant bit of a nibble, as in the published result; 32 for the best
-position), no 10-round property, a 9-round property with 60 active bits
-and one balanced bit for PRESENT, and no 10-round property.
+and PRESENT (Bogdanov et al. 2007):
+
+- GIFT-64: a 9-round property with 63 active bits and no 10-round
+  property. When the constant bit is the most significant bit of a
+  nibble, as in the published result, we find 30 balanced bits; the best
+  position gives 32.
+
+- PRESENT: a 9-round property with 60 active bits and one balanced bit,
+  and no 10-round property.
 
 #### Soundness against experiment.
 
 We evaluated cube sums for random constants and independent random round
-keys in three places: the word cubes of
-Table 1 (1016 trials), the 28 cubes of the
-tightness study in
-Section 7 (200 trials per cube and round),
-and every cube of dimension at most 16 in the frontier of
-Table 3, including those of the variants
-(400 trials). No certified bit ever had a nonzero sum in any of these
-experiments.
+keys in three settings:
 
-# Results on Dipper
+- the word cubes of Table 1, with 1016 trials;
+
+- the 28 cubes of the tightness study in
+  Section 8, with 200 trials per cube and
+  round;
+
+- every cube of dimension at most 16 in
+  Table 3, including those of the variants,
+  with 400 trials.
+
+No certified bit ever had a nonzero sum.
+
+#### Checkable artifacts.
+
+For the boundary results listed below we produced artifacts that can be
+verified without trusting the SAT solver. The correctness of the CNF
+generator itself is not covered by these artifacts; it rests on the
+exhaustive checks of the local rules above and on the agreement with
+experiment. For the following UNSAT answers (certificates), the CNF was
+re-solved by an external CaDiCaL 3.0.1 (Biere et al. 2024) binary with a
+DRAT proof, and the proof was checked by `drat-trim` (Wetzler, Heule,
+and Hunt 2014):
+
+- every certified (cube, bit) pair of Dipper at six rounds;
+
+- every such pair of $\mathrm{Dipper}^{\oplus}$ at nine rounds and of
+  $\mathrm{Dipper}^{\varnothing}$ at ten rounds;
+
+- the smallest cubes of
+  Table 3 for Dipper;
+
+- the five-round word-cube properties.
+
+Each SAT answer (no certificate) was converted into a trail and
+validated by a checker that re-derives every layer from the cipher
+specification and the local rules, without the CNF. We did this for
+every one of the $3\times4096$ (cube, bit) pairs at Dipper seven rounds,
+$\mathrm{Dipper}^{\oplus}$ ten rounds and
+$\mathrm{Dipper}^{\varnothing}$ eleven rounds. All 141 proof runs,
+covering 138 distinct instances (three five-round instances occur both
+as word cubes and as frontier cubes), were verified, and all 12 288
+trails passed the check. The other UNSAT answers, e.g. the certificates
+at $r\le5$ in Table 2, the comparison instances and the
+degree bounds, rely on the solver answer alone. The CNF hashes, the tool
+versions and the verification log are part of the repository.
+
+# Certified properties of Dipper
 
 ## Reproducing the published experiment
 
 Table 1 repeats the published experiment: one
-16-bit word saturated, the other 48 bits constant, and 1016 trials (1000
-with independent random round keys, 16 with the real 128-bit key
-schedule). A bit counts as empirically balanced only if its sum is zero
-in every trial. Five rounds are the maximum, as published, and the round
-count refers to the state $S^{(r)}$ itself. For every word and every
-round $r=2,\dots,5$, the exact MP model certifies exactly the
-empirically balanced bits, so these properties now hold for all keys.
-The trial count matters: an earlier run with 80 trials reported two
-additional bits for word $C$ (one at $r=4$, one at $r=5$) whose sums
-turned out to be nonzero with probability of roughly 0.5–1%. This is the
-weakness of purely experimental bounds that certificates remove. In
-every trial we also confirmed
+16-bit word is saturated, the other 48 bits are constant, and 1016
+trials are run (1000 with independent random round keys, 16 with the
+real 128-bit key schedule). A bit counts as empirically balanced only if
+its sum is zero in every trial. As published, five rounds are the
+maximum, and the round count refers to the state $S^{(r)}$ itself. For
+every word and every round $r=2,\dots,5$,
+<span class="sans-serif">MP-EL</span> certifies exactly the empirically
+balanced bits, so these properties now hold for all round keys. The
+number of trials matters. An earlier run with 80 trials reported two
+more bits for word $C$, one at $r=4$ and one at $r=5$, whose sums turned
+out to be nonzero with probability of roughly 0.5–1%. Certificates
+remove exactly this kind of error. In every trial we also confirmed
 $\bigoplus T^{-1}(S^{(r+1)})=\bigoplus S^{(r)}$
 (Lemma 4).
 
 <div id="tab:words">
 
-| Saturated word | $r{=}1$ |  2  |  3  |  4  |   5   |  6  | $\mathrm{Dipper}^{\oplus}$ | $\mathrm{Dipper}^{\varnothing}$ |
-|:---------------|:-------:|:---:|:---:|:---:|:-----:|:---:|:--------------------------:|:-------------------------------:|
-| $A$            |   64    | 64  | 64  | 38  | **3** |  0  |        6 (26 bits)         |           7 (14 bits)           |
-| $B$            |   64    | 56  | 24  |  0  |   0   |  0  |         5 (7 bits)         |           7 (9 bits)            |
-| $C$            |   64    | 64  | 64  | 38  | **3** |  0  |        6 (25 bits)         |           7 (4 bits)            |
-| $D$            |   64    | 60  | 25  |  0  |   0   |  0  |         5 (8 bits)         |           7 (6 bits)            |
+| Saturated word | $r{=}1$ |  2  |   3    |  4  |   5   |  6  | $\mathrm{Dipper}^{\oplus}$ | $\mathrm{Dipper}^{\varnothing}$ |
+|:---------------|:-------:|:---:|:------:|:---:|:-----:|:---:|:--------------------------:|:-------------------------------:|
+| $A$            |   64    | 64  |   64   | 38  | **3** |  0  |        6 (26 bits)         |           7 (14 bits)           |
+| $B$            |   64    | 56  | **24** |  0  |   0   |  0  |         5 (7 bits)         |           7 (9 bits)            |
+| $C$            |   64    | 64  |   64   | 38  | **3** |  0  |        6 (25 bits)         |           7 (4 bits)            |
+| $D$            |   64    | 60  | **25** |  0  |   0   |  0  |         5 (8 bits)         |           7 (6 bits)            |
 
-Balanced bits of $S^{(r)}$ for 16-bit word-saturated cubes. For Dipper
-($r=1$–$6$) the empirically zero bits (1016 trials) coincide with the
-certified bits in every entry for $r\ge2$. The last two columns give,
-for the analysis variants, the last round with empirically zero bits
-(400 trials) and their number; these are empirical only. Bold: last
-round with balanced bits.
+Balanced bits of $S^{(r)}$ for 16-bit word-saturated cubes. For Dipper,
+the empirically zero bits (1016 trials) coincide with the certified bits
+in every entry for $r\ge2$. The last two columns give, for the analysis
+variants, the last round with empirically zero bits (400 trials) and
+their number (416 trials: 400 with random round keys, 16 with the real
+key schedule); these two columns are empirical only. Bold: last round
+with balanced bits.
 
 </div>
 
-## Certified properties over all cubes
+## Certified properties over all bit-aligned cubes
 
 By Lemma 3, the 64 cubes of dimension 63 (one
-constant bit $p$) decide which rounds admit a certificate for some cube.
-Table 2 summarises them. Six rounds admit
-certificates for 14 of the 64 positions of the constant bit. The best
-positions $p\in\{4,6,7\}$ give nine balanced bits
-$\{1,18,19,24,41,48,51,56,58\}$. At seven rounds no position gives a
-certificate, so within the model no bit-aligned cube of any dimension
-has a seven-round certificate for any single output bit. With
-Lemma 4, the six-round properties are
+constant bit $p$) decide which rounds admit a certificate for some
+bit-aligned cube. Table 2 summarises them. At six rounds,
+certificates exist for 14 of the 64 positions of the constant bit, and
+the best positions $p\in\{4,6,7\}$ give nine balanced bits,
+$\{1,18,19,24,41,48,51,56,58\}$. At seven, eight and nine rounds no
+position gives a certificate. Within the model, therefore, no
+bit-aligned cube of any dimension certifies a single output bit at seven
+rounds or more. Every one of the 4096 seven-round queries returned a
+trail that passed the independent check. With
+Lemma 4, the six-round properties give
 seven-round distinguishers on $T^{-1}(C)$.
 
 <div id="tab:maximal">
 
-| Rounds $r$ | cubes with a certificate | max. balanced bits | solver time (MP, all 64 cubes) |
-|:----------:|:------------------------:|:------------------:|:------------------------------:|
-|     4      |            64            |         64         |             3.9 s              |
-|     5      |            64            |         42         |             6.1 s              |
-|     6      |            14            |         9          |             7.9 s              |
-|     7      |            0             |         0          |             8.6 s              |
+| Rounds $r$ | cubes with a certificate | max. balanced bits | solver time (<span class="sans-serif">MP-EL</span>, 64 cubes) |
+|:----------:|:------------------------:|:------------------:|:-------------------------------------------------------------:|
+|     4      |            64            |         64         |                             3.9 s                             |
+|     5      |            64            |         42         |                             6.1 s                             |
+|     6      |            14            |         9          |                             7.9 s                             |
+|     7      |            0             |         0          |                             8.6 s                             |
+|     8      |            0             |         0          |                            11.1 s                             |
+|     9      |            0             |         0          |                            12.2 s                             |
 
-Cubes of dimension 63 (constant bit $p$, 64 cubes per row). Identical
-for exact MP, MP-circuit and BDP.
+Cubes of dimension 63 (constant bit $p$; 64 cubes per row).
+<span class="sans-serif">MP-EL</span>,
+<span class="sans-serif">MP-circuit</span> and
+<span class="sans-serif">BDP</span> give identical results
+(<span class="sans-serif">MP-circuit</span> was run for $r\le7$).
 
 </div>
 
 #### Data complexity.
 
-Starting from certified cubes, we removed active bits one at a time for
-as long as some bit stayed certified. We restarted from several cubes
-and random orders.
-Table 3 lists the smallest cubes found. They
-are upper bounds on the data needed, not proven minima. The five-round
-bound $2^{16}$ coincides with the published word-saturation structure
-(word $C$). The six-round cube keeps the nibble $\{4,5,6,7\}$ constant
+Starting from certified cubes, we removed active bits one at a time as
+long as some bit stayed certified, restarting from several cubes and
+random orders. Table 3 lists the smallest certified cubes
+*found* in this way. They are upper bounds on the data required, not
+proven minima. At five rounds the smallest cube found has size $2^{16}$,
+the size of the published word-saturation structure (word $C$). At six
+rounds it has size $2^{60}$: it keeps the nibble $\{4,5,6,7\}$ constant
 and certifies six bits.
 
 <div id="tab:frontier">
 
 | Rounds $r$                      |  3  |  4  |  5  |  6  |  7  |  8  |  9  | 10  |
 |:--------------------------------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Dipper                          |  2  |  4  | 16  | 60  |  –  |  –  |  –  |  –  |
+| Dipper                          |  2  |  4  | 16  | 60  |  –  |  –  |  –  |     |
 | $\mathrm{Dipper}^{\oplus}$      |     |     |  7  | 22  | 44  | 59  | 63  |  –  |
 | $\mathrm{Dipper}^{\varnothing}$ |     |     |  3  |  8  | 15  | 48  | 59  | 63  |
 
 Smallest certified cubes found (dimension $d$, i.e. $2^d$ chosen
-plaintexts) per round count. “–”: no certificate for any bit-aligned
-cube (Lemma 3); blank: not computed.
+plaintexts; greedy search, not proven minimal). “–”: no certificate for
+any bit-aligned cube
+(Lemma 3); blank: not computed.
 
 </div>
 
 ## Where the balanced bits come from
 
-Mapping the nine balanced bits at the six-round boundary back through
-the final bit permutation shows that every one of them is an output of
-word $B$ or word $D$ in the last round (bits $D_3,D_4,D_5,D_6,D_{11}$
-and $B_4,B_{12},B_{13},B_{14}$). These are the words that feed the
-additions but pass through them unchanged. No output bit of
-$A\boxplus B$ or $C\boxplus D$ is balanced at the boundary. The same
-holds for the five-round word-cube properties: bits $\{51,56,58\}$ of
-the word-$C$ cube map to $D_3,B_4,B_{14}$ and bits $\{1,19,24\}$ of the
-word-$A$ cube to $D_5,D_{11},B_{12}$. No output bit of the last-round
-additions is certified at the boundary; only retained-operand bits are.
-(Bit 0 of $A\boxplus B$ is linear, so this is an observation about the
-certified bits, not a general statement about every output bit of the
-additions.)
+We map the nine balanced bits at the six-round boundary back through the
+final bit permutation. Every one of them is an output of a retained word
+in the last round: bits $D_3,D_4,D_5,D_6,D_{11}$ and
+$B_4,B_{12},B_{13},B_{14}$. The same holds for the five-round word-cube
+properties. Bits $\{51,56,58\}$ of the word-$C$ cube map to
+$D_3,B_4,B_{14}$, and bits $\{1,19,24\}$ of the word-$A$ cube map to
+$D_5,D_{11},B_{12}$. No output bit of the last-round additions is
+certified at the boundary. This is an observation about the certified
+bits, not a claim about every output bit of the additions: bit 0 of
+$A\boxplus B$, for example, is linear.
+Section 7.2 relates it to degree.
 
-## Consequences for key recovery
+# The role of the modular addition
 
-Consider an eight-round attack: the six-round property on bit $j$ of
-$S^{(6)}$, the free seventh round
-(Lemma 4), and one round with a key guess,
-i.e. $S^{(6)}_j\oplus RK_{7,j}=T^{-1}\big(T^{-1}(C)\oplus RK_8\big)_j$.
-Bit $j$ of $T^{-1}$ depends on four input bits if its nibble lies in
-word $B$ or $D$ (rotation only), and on up to 32 bits if it lies in $A$
-or $C$ (borrow chain of the subtraction). Bit $j=1$ is certified for the
-$2^{60}$ cube and depends on only four bits of $RK_8$. Each structure of
-$2^{60}$ plaintexts gives one parity condition on those four bits. We
-validated the procedure end-to-end on a scaled-down instance (4-round
-certificate of the cube $\{60,\dots,63\}$ on bit 1, followed by the free
-round and one key-guessed round, i.e. six rounds, 200 random keys). The
-right guess always survived. A wrong guess survived one structure with
-probability about $0.565$, so eight structures left on average $1.13$
-candidates. Applying this rate to the eight-round attack is an
-extrapolation from the scaled-down instance. The eight-round attack
-therefore needs about $8\cdot2^{60}=2^{63}$ chosen plaintexts and
-$2^{63}$ partial decryptions to recover four bits of $RK_8$. This data
-complexity is half the codebook, so the attack is of theoretical
-interest only. Our best integral attack therefore covers 8 of the 28
-rounds.
+## Ablation
+
+Table 4 compares Dipper with
+$\mathrm{Dipper}^{\oplus}$ and $\mathrm{Dipper}^{\varnothing}$. The
+three ciphers were analysed under identical conditions: all 64 maximal
+cubes, <span class="sans-serif">MP-EL</span> and
+<span class="sans-serif">BDP</span> (which again agree), and the same
+solver settings (conflict budget $10^5$ with a $5\cdot10^6$ retry; no
+instance was left unresolved). Within the model, the two additions
+shorten the longest certified property from nine rounds (XOR) or ten
+rounds (no addition) to six. The empirical word-cube experiment
+(Table 1) orders the three ciphers the same way:
+5, 6 and 7 rounds. The data needed shifts in the same direction. For six
+rounds the smallest certified cubes found have size $2^{60}$ for Dipper,
+$2^{22}$ for $\mathrm{Dipper}^{\oplus}$ and $2^{8}$ for
+$\mathrm{Dipper}^{\varnothing}$.
+
+<div id="tab:ablation">
+
+| Variant                         | longest certified $r$ | max. balanced bits | with free round (Lemma 4)                    |
+|:--------------------------------|:---------------------:|:------------------:|:--------------------------------------------------------------------:|
+| Dipper ($\boxplus$)             |           6           |         9          |                                  7                                   |
+| $\mathrm{Dipper}^{\oplus}$      |           9           |         5          |                                  10                                  |
+| $\mathrm{Dipper}^{\varnothing}$ |          10           |         2          |                                  11                                  |
+
+Longest round count with a certificate for some bit-aligned cube (all
+cubes, by Lemma 3) and the maximum number of balanced bits
+at that round.
+
+</div>
+
+The variants keep the rotations, the S-box, the permutation and the
+full-state key addition, so they are not GIFT-64. A difference measured
+with an existence-based model describes certified properties. It
+describes the true algebraic behaviour only where the model is tight. We
+measured tightness only on Dipper for up to five rounds
+(Section 8).
+
+## Degree upper bounds
+
+By Section 3, a bit of degree less than $d$ is
+balanced over every cube of dimension $d$, so degree bounds give a
+global view of integral resistance. For every output bit $j$ and round
+count $r$ we computed the smallest $D$ for which
+<span class="sans-serif">MP-EL</span> with a free input mask of weight
+at least $D+1$ and output $e_j$ is unsatisfiable. This certifies the
+*upper bound* $\deg_x S^{(r)}_j\le D$ for all round keys. Bounds are
+reported up to 63 (see
+Section 3); a bound of 63 carries no information
+about the actual degree. All $64\times7$ bounds for Dipper and
+$64\times11$ bounds for each variant were resolved without timeouts.
+
+<figure id="fig:degree">
+<embed src="fig_degree.png" />
+<figcaption>Mean certified <em>upper bound</em> on the algebraic degree
+of the output bits of <span
+class="math inline"><em>S</em><sup>(<em>r</em>)</sup></span>. For
+Dipper, bits are grouped by the word of the last ARX layer that produced
+them. Actual degrees may be lower.</figcaption>
+</figure>
+
+<div id="tab:deg1">
+
+| $i$            |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  | 10  | 11  | 12  | 13  | 14  | 15  |
+|:---------------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| $A\boxplus B$  |  3  |  5  |  7  |  8  |  9  | 11  | 13  | 15  | 16  | 18  | 20  | 21  | 22  | 24  | 25  | 26  |
+| $C\boxplus D$  |  2  |  4  |  6  |  6  |  8  | 10  | 12  | 12  | 14  | 16  | 18  | 18  | 20  | 22  | 24  | 24  |
+| $B$ (retained) |  2  |  2  |  3  |  3  |  2  |  2  |  3  |  3  |  2  |  2  |  3  |  3  |  2  |  2  |  3  |  3  |
+
+Certified degree upper bounds after one round, by bit position $i$ in
+the output of the ARX layer.
+
+</div>
+
+Figure 2 and
+Table 5 support three observations. All three
+concern upper bounds.
+
+*The addition acts immediately.* After one round, the bound on bit $i$
+of $A\boxplus B$ grows almost linearly in $i$, from 3 to 26, the pattern
+predicted by Lemma 2 and
+Corollary 1. The retained word $B$ stays at the
+S-box degree 2 or 3. The growth is slower than $3(i+1)$ because
+neighbouring bits share S-boxes.
+
+*Retained words lag by about one round.* The mean bound on the added
+words reaches 60 at $r=3$, and the retained words need one more round.
+After five rounds every added-word bit has bound 63, while six
+retained-word bits, $\{1,19,24,51,56,58\}$, still have bound 62. A bound
+of 62 certifies the bit over every 63-dimensional cube. These six bits
+are exactly the bits certified for all 64 maximal cubes at five rounds,
+and the same six bits carry the six-round certificate of the $2^{60}$
+cube (Table 3).
+
+*The bounds become uninformative three to four rounds earlier with the
+additions.* From $r=6$ on, every bound for Dipper is 63; for
+$\mathrm{Dipper}^{\oplus}$ and $\mathrm{Dipper}^{\varnothing}$ this
+happens only from $r=9$ and $r=10$ on (the last rounds with a bound
+below 63 are 5, 8 and 9, respectively). The ordering matches
+Table 4, but degree bounds do not determine
+the certificate boundary: at six rounds Dipper still has certificates
+for particular 63-dimensional cubes although every bound is 63, and
+$\mathrm{Dipper}^{\oplus}$ at eight rounds has 64 certified bits on some
+cube while only two bits have a bound below 63. Certificates are per
+cube, degree bounds are over all cubes
+(Remark 1). In the linear variants the bound
+can grow only through the S-boxes, at most by a factor of three per
+round. In Dipper each addition contributes the additional factor of
+Corollary 1. Whether the *actual* degree also
+reaches 63 earlier cannot be decided from upper bounds
+(Remark 1).
 
 # Precision of the models
 
-#### MP versus BDP.
+#### <span class="sans-serif">MP-EL</span> versus <span class="sans-serif">BDP</span>.
 
-Across all 64 maximal cubes, exact MP and BDP produced identical
-certificate sets for $r=4,\dots,7$ on Dipper and up to $r=11$ on the
-variants, and MP-circuit agreed with both wherever it was run ($r\le7$).
-Across 140 further (cube, round) instances of dimension 4–16 on Dipper,
-all three models produced *identical* certificate sets. Their costs were
-similar: 8.4 s, 8.8 s and 6.2 s for the 140 instances. Part of the
-explanation is structural. In Dipper every S-box layer is preceded by a
-full-state key addition. In the MP model, the composition “key addition
-then S-box” allows exactly the transitions $u\to v$ with $T[w][v]=1$ for
-some $w\succeq u$, and this is precisely the BDP S-box table. The two
-approaches can therefore differ only inside the ARX layer, and there we
-observed no difference. This agrees with the general observation of Hu
-et al. (Hu et al. 2020) that existence-based models lose precision
-mainly through cancellation, which neither model captures.
+On all 64 maximal cubes, <span class="sans-serif">MP-EL</span> and
+<span class="sans-serif">BDP</span> produced identical certificate sets:
+for $r=4,\dots,9$ on Dipper, up to $r=10$ on $\mathrm{Dipper}^{\oplus}$
+and up to $r=11$ on $\mathrm{Dipper}^{\varnothing}$.
+<span class="sans-serif">MP-circuit</span> agreed with both wherever it
+was run ($r\le7$). On 140 further (cube, round) instances of dimension
+4–16 on Dipper, all three models produced identical certificate sets, at
+similar cost (8.4 s, 8.8 s and 6.2 s in total). This shows that the two
+*existence* models agree on the tested instances. It does not show that
+cancellation-aware monomial prediction would have no advantage over
+<span class="sans-serif">BDP</span>. Part of the agreement is
+structural. Every S-box layer of Dipper is preceded by a full-state key
+addition. In <span class="sans-serif">MP-EL</span> the composition “key
+addition, then S-box” allows exactly the transitions $u\to v$ with
+$S[w\to v]=1$ for some $w\succeq u$, which is precisely the BDP S-box
+table. The two models can therefore differ only inside the ARX layer,
+and there we observed no difference.
 
 #### Certificates versus experiment.
 
-Table 4 compares certificates with experiment
-on 28 cubes (word, nibble-aligned and random, dimension 4–16).
-*Empirically zero* means zero in 200 trials. A *gap* bit is empirically
-zero but not certified. Gap bits were re-tested with 3000 more trials
-(1000 for 16-dimensional cubes), and *persistent* gaps stayed zero. At
-four and five rounds the certificates match experiment up to three gap
-bits, none of them persistent. At two and three rounds about 7–17% of
-the empirically zero bits are not certified, and 46 bits stay zero in
-all re-tests. Such a bit is either an exact property lost to trail
-cancellation or a sum that is nonzero only with small probability. We
-tried two exact methods to decide these bits. First, trail counting with
-parity per key monomial: for bit 30 of a 12-dimensional random cube at
-two rounds, the number of trails exceeded our enumeration cap of $10^5$,
-because every key-addition layer multiplies the trails by key monomials.
-Second, a degree argument. The cube sum $g$ is a multilinear polynomial
-in the key bits, and a polynomial of degree at most $D$ vanishes
-identically iff it vanishes on every point of Hamming weight at most
-$D$. The MP model gives both the key support of $g$ and a bound on $D$.
-For all 46 persistent gap bits, however, the support contains 33–88 key
-bits and the degree bound is 23–65, so the number of evaluations is far
-beyond reach. We leave these cases open. In this sample they occur only
-at two and three rounds. The frontier itself (six and seven rounds,
-cubes of dimension 60–63) is out of experimental reach, so we cannot
-measure tightness there.
+Table 6 compares certificates with experiment
+on 28 cubes of dimension 4–16: word-aligned, nibble-aligned and random.
+A bit is *empirically zero* if its sum is zero in 200 trials, and it is
+a *gap* bit if it is empirically zero but not certified. Gap bits were
+re-tested with 3000 more trials (1000 for 16-dimensional cubes);
+*persistent* gaps stayed zero.
+
+- At four and five rounds the certificates match experiment up to three
+  gap bits, none of them persistent.
+
+- At two and three rounds, about 7–17% of the empirically zero bits are
+  not certified, and 46 bits stay zero in every re-test.
+
+Such a bit is either an exact property lost to cancellation
+(Example 1) or a sum that is nonzero only with
+small probability. We tried two exact methods on these bits.
+
+- *Trail parity per key monomial.* For bit 30 of a 12-dimensional random
+  cube at two rounds, the number of trails exceeded our enumeration cap
+  of $10^5$.
+
+- *Low-weight evaluation.* The cube sum $g$ is a multilinear polynomial
+  in the key bits. If it has degree at most $D$, it vanishes identically
+  iff it vanishes on every point of Hamming weight at most $D$.
+  <span class="sans-serif">MP-EL</span> gives the key support of $g$ and
+  a bound on $D$. For the 46 persistent gap bits the support has 33–88
+  key bits and the degree bound is 23–65. For 43 of them the number of
+  low-weight points exceeds $10^{15}$. The three smallest cases (support
+  33–38, degree bound 23–27) need about $8.5\cdot10^9$–$2.7\cdot10^{11}$
+  points. Within a time limit of 800 s per case we evaluated 2.1–3.8
+  million points, covering all points of weight at most 5 or 6. No
+  nonzero cube sum appeared, but the enumeration is far from complete,
+  so none of these bits is decided.
+
+We leave these cases open; a bitsliced implementation could complete the
+three smallest ones. In our sample they occur only at two and three
+rounds. The frontier itself (six and seven rounds, cubes of dimension
+60–63) is out of experimental reach.
 
 <div id="tab:tight">
 
@@ -712,215 +1025,210 @@ Certified versus empirically zero bits over 28 cubes of dimension 4–16
 
 </div>
 
-# The role of the modular addition
+# A partial-key filtering extension
 
-Table 5 compares Dipper with
-$\mathrm{Dipper}^{\oplus}$ and $\mathrm{Dipper}^{\varnothing}$ under
-identical cubes (all 64 maximal cubes), models (exact MP and BDP,
-identical results) and solver settings (conflict budget $10^5$ with a
-$5\cdot10^6$ retry, no instance left unresolved). Within the models, the
-two modular additions shorten the longest certified property from nine
-rounds (XOR) or ten rounds (no addition) to six. The empirical word-cube
-experiment (Table 1) shows the same ordering: 5, 6 and 7
-rounds. The data frontier
-(Table 3) shifts in the same way: six rounds
-need $2^{60}$ plaintexts for Dipper, $2^{22}$ for
-$\mathrm{Dipper}^{\oplus}$ and $2^{8}$ for
-$\mathrm{Dipper}^{\varnothing}$.
-Section 9 gives the mechanism: the additions
-raise the degree of their high-order output bits in proportion to the
-bit position (Lemma 2), and the retained operands lag behind by
-about one round.
+This section describes how the six-round properties could be used for
+key filtering over one further round. We present it as a proposed
+procedure with an explicit cost model. It is not a validated eight-round
+attack.
 
-<div id="tab:ablation">
+#### Procedure.
 
-| Variant                         | longest certified $r$ | max. balanced bits | with free round (Lemma 4)                    |
-|:--------------------------------|:---------------------:|:------------------:|:--------------------------------------------------------------------:|
-| Dipper ($\boxplus$)             |           6           |         9          |                                  7                                   |
-| $\mathrm{Dipper}^{\oplus}$      |           9           |         5          |                                  10                                  |
-| $\mathrm{Dipper}^{\varnothing}$ |          10           |         2          |                                  11                                  |
+Let bit $j$ of $S^{(6)}$ be certified over a cube $I$. For eight-round
+ciphertexts $C$, Lemma 4 gives
+$$\bigoplus_{x\in\mathcal C_I(c)} T^{-1}\!\big(T^{-1}(C)\oplus RK_8\big)_j = 0 .$$
+Bit $j$ of $T^{-1}(z)$ depends on four bits of $z$ if its nibble lies in
+word $B$ or $D$, where the inverse layer is only a rotation. It depends
+on up to 32 bits if the nibble lies in $A$ or $C$, because of the borrow
+chain of the subtraction. For $j=1$, which is certified over the
+$2^{60}$ cube, it depends on four bits of $Z=T^{-1}(C)$ and hence on
+four bits of $RK_8$. One structure of $2^{60}$ chosen plaintexts is
+processed in a streaming fashion:
 
-Longest round count with a certificate for some cube (all cubes, by
-Lemma 3) and the maximum number of balanced bits
-at that round.
+1.  For each ciphertext, compute $Z=T^{-1}(C)$ (keyless) and toggle one
+    of 16 parity bits indexed by the four relevant bits of $Z$.
 
-</div>
+2.  Let $h:\mathbb{F}_2^4\to\mathbb{F}_2$ be the partial inverse that
+    maps the four relevant bits of $z$ to bit $j$ of $T^{-1}(z)$
+    (inverse rotation of word $D$, then the inverse S-box of the
+    corresponding nibble). For each of the 16 guesses $g$, evaluate
+    $\bigoplus_{v:\text{parity}[v]=1} h(v\oplus g)$ over the 16 table
+    entries, and discard $g$ if the result is 1.
 
-A caution about scope: the variants keep the rotations, the S-box, the
-permutation and the full-state key addition, so they are not GIFT-64. A
-difference between variants measured with an existence-based model shows
-how the models behave. It becomes a statement about the true algebraic
-behaviour only where the models are tight. We measured tightness only on
-Dipper at up to five rounds
-(Section 7), not at the boundary rounds of the
-variants, so the round differences in
-Table 5 are statements about certified
-properties.
+One structure costs $2^{60}$ evaluations of $T^{-1}$ plus $2^8$ table
+operations. It needs 16 bits of memory besides the ciphertext stream.
+Every structure uses a fresh value of the four constant bits.
 
-# Algebraic degree and the mechanism
+#### Assumptions and small-scale evidence.
 
-A cube sum over a cube of dimension $d$ vanishes for all keys whenever
-the output bit has degree less than $d$ in the plaintext bits. Degree
-bounds therefore give a coarse but global view of integral resistance.
-For every output bit $j$ and round count $r$ we computed the smallest
-$D$ such that the exact-MP model with a free input mask of weight at
-least $D+1$ and output $e_j$ is unsatisfiable. This certifies
-$\deg_x S^{(r)}_j\le D$ for all round keys. Degree 64 is impossible for
-a component of a permutation, so bounds are reported up to 63. All
-$64\times7$ bounds for Dipper and $64\times11$ bounds for each variant
-were resolved without timeouts.
+The right guess always passes. The number of wrong guesses left after
+$N$ structures depends on how the wrong-guess sums behave. Under the
+usual heuristic that they are independent and uniform, $N$ structures
+leave $15\cdot2^{-N}$ wrong guesses on average. We ran the same
+procedure at small scale, on six rounds: the 4-round certificate of the
+cube $\{60,\dots,63\}$ on bit 1, followed by the free round and one
+key-guessed round, with 200 random keys. The right guess always
+survived. A wrong guess survived one structure with probability about
+$0.565$, so the uniform heuristic is optimistic, and eight structures
+left $1.13$ candidates on average, with a unique survivor in 88.5% of
+the runs. We have not established that this rate carries over to eight
+rounds or that the structures act as independent filters there.
+Extrapolating anyway, about eight structures, i.e. $2^{63}$ chosen
+plaintexts, would be needed to identify four bits of $RK_8$. This
+recovers round-key bits, not the master key, and the data requirement is
+half the codebook. We therefore regard the procedure as evidence of a
+large margin, not as an attack on Dipper.
 
-<figure id="fig:degree">
-<embed src="fig_degree.png" />
-<figcaption>Mean certified upper bound on the algebraic degree of the
-output bits of <span
-class="math inline"><em>S</em><sup>(<em>r</em>)</sup></span>. For
-Dipper, bits are grouped by the word of the last ARX layer that produced
-them.</figcaption>
-</figure>
+# Specification of the analysed cipher
 
-<div id="tab:deg1">
+The results of this paper depend only on the round function, because
+every certificate holds for arbitrary independent round keys. The round
+function is fixed by
+Section 3 and confirmed by the published
+Dipper-64/128 test vectors, which exercise all 28 rounds.
+Appendix A lists the vectors together with
+intermediate round keys and states.
 
-| $i$            |  0  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  | 10  | 11  | 12  | 13  | 14  | 15  |
-|:---------------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| $A\boxplus B$  |  3  |  5  |  7  |  8  |  9  | 11  | 13  | 15  | 16  | 18  | 20  | 21  | 22  | 24  | 25  | 26  |
-| $C\boxplus D$  |  2  |  4  |  6  |  6  |  8  | 10  | 12  | 12  | 14  | 16  | 18  | 18  | 20  | 22  | 24  | 24  |
-| $B$ (retained) |  2  |  2  |  3  |  3  |  2  |  2  |  3  |  3  |  2  |  2  |  3  |  3  |  2  |  2  |  3  |  3  |
+Two discrepancies with the key-schedule text of (Huseynli, Imamverdiyev,
+and Alizadeh 2026) were found.
 
-Certified degree bounds after one round, by bit position $i$ in the
-output of the ARX layer.
+1.  The Dipper-64/128 vectors are reproduced when the round key is
+    $RK_r=K^{(r)}[63{:}0]$, while Equation (7) of (Huseynli,
+    Imamverdiyev, and Alizadeh 2026) states $K^{(r)}[127{:}64]$.
 
-</div>
+2.  The two Dipper-64/96 vectors are not reproduced by the key schedule
+    as written. They are also not reproduced by any variant in a
+    brute-force search that covered:
 
-Three observations follow from
-Figure 1 and
-Table 6.
+    - all 720 word permutations of the key update;
 
-*The addition acts immediately.* After one round, the bound of bit $i$
-of $A\boxplus B$ grows almost linearly with $i$, from 3 to 26, as
-Lemma 2 predicts. The retained word $B$ stays at
-the S-box degree, 2 or 3. Bits that share S-boxes explain why the growth
-is slower than $3(i+1)$.
+    - all placements and directions of the two word rotations;
 
-*Retained words lag by about one round.* For Dipper the mean bound of
-the added words reaches 60 at $r=3$, while the retained words need one
-more round. After five rounds all added-word bits have bound 63, while
-six retained-word bits, $\{1,19,24,51,56,58\}$, are still at 62. A bound
-of 62 means that the bit is balanced over every 63-dimensional cube, and
-these six bits are indeed exactly the bits certified for all 64 maximal
-cubes at five rounds. The same six bits carry the six-round certificate
-of the $2^{60}$ cube
-(Table 3).
+    - every 3- or 4-subset of S-box words;
 
-*The variants are slower by three to four rounds.*
-$\mathrm{Dipper}^{\oplus}$ and $\mathrm{Dipper}^{\varnothing}$ reach
-bound 63 on every bit only after nine and ten rounds, against six for
-Dipper. This matches the longest certified properties of
-Table 5 (9 and 10 rounds against 6). In the
-linear variants the degree grows only through the S-boxes, and each
-round multiplies it by at most three. In Dipper, each addition
-contributes the extra factor of
-Lemma 2.
+    - all six round-constant positions;
 
-These bounds are upper bounds: a bound of 63 does not prove that a
-degree-63 monomial occurs. Proving degree lower bounds, as in (Hebborn
-et al. 2020), would turn the seven-round model bound into an exact
-statement. Section 11 discusses this.
+    - three extraction windows.
 
-# Specification check
-
-Our text-faithful implementation of Dipper-64/128 reproduces both
-published test vectors only when the round key is taken as
-$RK_r=K^{(r)}[63{:}0]$. Equation (7) of (Huseynli, Imamverdiyev, and
-Alizadeh 2026) states $K^{(r)}[127{:}64]$. For Dipper-64/96 we could not
-reproduce either published test vector. This remained true under a
-brute-force search over all 720 word permutations of the key update, all
-placements and directions of the two word rotations, every 3- or
-4-subset of S-box words, all six round-constant positions and three
-extraction windows. The round function itself is confirmed by the
-128-bit vectors. None of the integral results depends on the key
-schedule, because every certificate holds for arbitrary independent
-round keys. This is an erratum to our design paper: before submission,
-the 96-bit schedule must be checked against the reference code, and
-intermediate round keys should be published with the test vectors.
+<span style="color: red">\[To be completed by the authors before
+submission: the Dipper-64/96 key schedule as implemented in the
+reference code, its test vectors, intermediate round keys, and the
+corresponding correction to (Huseynli, Imamverdiyev, and Alizadeh
+2026).\]</span>
 
 # Discussion
 
 #### Security implications.
 
-The integral properties certified here reach seven of Dipper’s 28 rounds
-(six on $S^{(r)}$, plus the keyless final round), and the only key
-recovery we derived reaches eight rounds with $2^{63}$ data. Integral
-attacks therefore leave a large margin. This is consistent with the
-differential, linear and impossible-differential bounds of (Huseynli,
-Imamverdiyev, and Alizadeh 2026). None of these results is a proof of
-security.
+The integral properties certified here reach six of Dipper’s 28 rounds
+on the state, and seven with the keyless final-round inversion. The
+filtering extension of
+Section 9 would need half the codebook to reach
+eight rounds. Integral attacks therefore leave a large margin. This is
+consistent with the differential, linear and impossible-differential
+bounds of (Huseynli, Imamverdiyev, and Alizadeh 2026). None of these
+results is a proof of security.
 
 #### Design implication.
 
-The ablation and the degree bounds agree: the two half-state additions
-make Dipper reach full degree three to four rounds earlier than an
-otherwise identical round without carries. The degree is also uneven
-within the state. The retained operands are the slowest part, and every
-certified property at the boundary lives there. A designer who wants
-faster integral saturation could therefore target the retained words,
-for example by alternating which words are added in consecutive rounds.
-We have not evaluated this change.
+The ablation and the degree bounds point the same way. With the two
+half-state additions, the certifiable integral properties end three to
+four rounds earlier than for an otherwise identical round without
+carries. Within the state, the retained operands are the part whose
+degree bound grows most slowly, and every certified property at the
+boundary lives there. A designer who wants integral saturation to happen
+sooner could therefore target the retained words, for example by
+alternating which words are added in consecutive rounds. We have not
+evaluated this change.
 
 #### Towards exact bounds.
 
-The main open point is the gap between “no certificate” and “no
-distinguisher”. Hebborn et al. (Hebborn et al. 2020, 2021) prove the
-presence of monomials by finding a key monomial with an odd number of
-trails, and Zeng and Tian (Zeng and Tian 2024) adapt the method to
-ciphers without a whitening key, a class that includes Dipper. We tried
-a direct version (take the key monomial of one trail, then count all
-trails with that monomial) on two seven-round, 63-dimensional instances.
-With 20 random key monomials per instance we found no odd count within
-the enumeration limit of $2\cdot10^4$ trails, so the question remains
-open. A tailored choice of key monomials, as in (Hebborn et al. 2021),
-is the most promising route.
+The main open question is the gap between “no certificate” and “no
+distinguisher”. Closing it requires proving that monomials are present,
+for each relevant cube separately
+(Remark 1). Hebborn et al. (Hebborn et al.
+2020, 2021) prove presence by finding a key monomial with an odd number
+of trails; Zeng and Tian (Zeng and Tian 2024) adapt the method to
+ciphers without a whitening key. We tried a direct version on two
+seven-round, 63-dimensional instances: take the key monomial of one
+trail, then count all trails with that monomial. With 20 random key
+monomials per instance we found no odd count within the enumeration
+limit of $2\cdot10^4$ trails. A tailored choice of key monomials, as
+in (Hebborn et al. 2021), is the most promising route.
 
-# Limitations
+#### Limitations.
 
-\(1\) The round bound at seven rounds holds within existence-based
-models. It does not exclude a seven-round integral property that depends
-on trail cancellation, or other kinds of integral distinguishers: input
-sets that are not bit-aligned cubes (affine subspaces in other bases,
-non-affine sets), or output functions other than single bits. (2)
-Independent round keys make the certificates stronger (they hold for all
-keys) but may miss properties that depend on the key schedule. (3) The
-data-complexity frontier comes from greedy search and gives upper
-bounds. (4) The gap bits of
-Section 7 are unresolved. (5) The eight-round
-key recovery needs $2^{63}$ data and is theoretical.
+- The seven-round statement holds within an existence-based model. It
+  does not exclude a seven-round property that depends on trail
+  cancellation. It also says nothing about input sets that are not
+  bit-aligned cubes, or about output functions other than single bits.
+
+- Independent round keys make the certificates stronger, since they hold
+  for all keys. For the same reason they may miss properties that depend
+  on the key schedule.
+
+- The data complexities are those of the smallest certified cubes found
+  by a greedy search.
+
+- The gap bits of
+  Section 8 are unresolved.
+
+- Degree results are upper bounds.
+
+- The filtering extension relies on an extrapolated survival rate.
 
 # Conclusion
 
-The experimental five-round integral bound of Dipper is now a certified
-all-key result. Certified properties extend to six rounds ($2^{60}$
-data), and to seven rounds with the keyless final-round inversion.
-Within the model no bit-aligned cube reaches seven rounds. In terms of
-certified properties, the two half-state modular additions cost three to
-four integral rounds compared with XOR or no addition, and only
-retained-operand bits are certified at the boundary. On Dipper, exact
-monomial prediction brings no precision gain over the conventional
-division property, partly because a full-state key addition precedes
-each S-box layer. The remaining imprecision appears only at two and
-three rounds, where some bits are empirically zero but uncertified; they
-are either lost to trail cancellation or nonzero with small probability.
-A degree lemma for modular addition and certified degree bounds explain
-the mechanism: the added words reach full degree about one round before
-the retained words, and three to four rounds before the variants without
-carries. Dipper’s 28 rounds leave a large margin against these
-properties.
+The experimental five-round integral bound of Dipper is now a
+key-independent result, backed by checked DRAT proofs. Certified
+properties extend to six rounds, with $2^{60}$ data for the smallest
+cube found, and to seven rounds with the keyless final-round inversion.
+Within the existence-based model, no bit-aligned cube reaches seven
+rounds, and every trail behind this statement has been validated
+independently. The two half-state modular additions account for the
+difference between six certified rounds and the nine or ten rounds of
+otherwise identical rounds without carries. Only retained-operand bits
+are certified at the boundary. This is consistent with the exact degree
+of the addition output bits and with the degree upper bounds for every
+output bit and round, which grow fastest on the added words. On every
+Dipper instance we examined, the existence model with exact local
+transitions certifies the same bits as the conventional division
+property, partly because a full-state key addition precedes each S-box
+layer. Separating “no certificate” from “no distinguisher” at seven
+rounds remains open.
 
 # Data and code availability
 
-Reference implementation, SAT models, scripts, raw JSON results and this
-paper’s sources: <https://github.com/AlexGuseinov/dipper-integral>.
-`make test` runs all validation checks; `make reproduce` regenerates
-every table.
+The reference implementation, SAT models, scripts, raw JSON results, the
+proof-checking pipeline and the sources of this paper are available at
+<https://github.com/AlexGuseinov/dipper-integral>. The CNF files and
+DRAT proofs (about 60 MB) are provided as a release archive of the
+repository. `make test` runs all validation checks, `make reproduce`
+regenerates every table and figure, and `make certificates` regenerates
+and checks all proofs and trails.
+
+# Test vectors and intermediate values
+
+Dipper-64/128 under the convention $RK_r=K^{(r)}[63{:}0]$
+(Section 10); all values in hexadecimal, most
+significant bit first.
+
+<div class="center">
+
+|              | Vector 1                           | Vector 2                           |
+|:-------------|:-----------------------------------|:-----------------------------------|
+| $K$          | `000102030405060708090A0B0C0D0E0F` | `FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF` |
+| $P$          | `0123456789ABCDEF`                 | `FFFFFFFFFFFFFFFF`                 |
+| $RK_1$       | `08090A0B0C0D0E0F`                 | `FFFFFFFFFFFFFFFF`                 |
+| $S^{(1)}$    | `87D2D72CD66C68F2`                 | `3118311831183108`                 |
+| $RK_2$       | `140506076303E0F0`                 | `EFFFFFFFEFFFFFFF`                 |
+| $S^{(2)}$    | `41C18243B4605E18`                 | `01A6DC1CB8EEB9D1`                 |
+| $RK_3$       | `1001020208C00F0E`                 | `EFFFFFFEEBFFFFFF`                 |
+| $S^{(3)}$    | `22C358EDC3BD1695`                 | `F49F4481BC92B880`                 |
+| $RK_{28}$    | `78090A148A9BF0E0`                 | `FFFFFFE02664FFFF`                 |
+| $C=S^{(28)}$ | `4B46284387969060`                 | `6ABB4518063706B0`                 |
+
+</div>
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 
@@ -948,6 +1256,14 @@ Bellini, Emanuele, Mohamed Rachidi, and Sharwan K. Tiwari. 2026.
 “CLAASP-MP: An Automated MILP Framework for Monomial Prediction.”
 Cryptology ePrint Archive, Paper 2026/735.
 <https://eprint.iacr.org/2026/735>.
+
+</div>
+
+<div id="ref-cadical2024" class="csl-entry">
+
+Biere, Armin, Tobias Faller, Katalin Fazekas, Mathias Fleury, Nils
+Froleyks, and Florian Pollitt. 2024. “CaDiCaL 2.0.” In *Computer Aided
+Verification – CAV 2024*, 14681:133–52. LNCS. Springer.
 
 </div>
 
@@ -1206,6 +1522,15 @@ Wang, Qingju, Yonglin Hao, Yosuke Todo, Chaoyun Li, Takanori Isobe, and
 Willi Meier. 2018. “Improved Division Property Based Cube Attacks
 Exploiting Algebraic Properties of Superpoly.” In *Advances in
 Cryptology – CRYPTO 2018*, 10991:275–305. LNCS. Springer.
+
+</div>
+
+<div id="ref-drattrim2014" class="csl-entry">
+
+Wetzler, Nathan, Marijn J. H. Heule, and Warren A. Hunt Jr. 2014.
+“<span class="nocase">DRAT-trim</span>: Efficient Checking and Trimming
+Using Expressive Clausal Proofs.” In *Theory and Applications of
+Satisfiability Testing – SAT 2014*, 8561:422–29. LNCS. Springer.
 
 </div>
 

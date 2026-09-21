@@ -1,0 +1,5 @@
+add mp 8 max 0 cubes w/ cert 0 timeouts 0 11.1s
+add mp 9 max 0 cubes w/ cert 0 timeouts 0 12.2s
+add bdp 8 max 0 cubes w/ cert 0 timeouts 0 9.0s
+add bdp 9 max 0 cubes w/ cert 0 timeouts 0 10.3s
+total 42.5

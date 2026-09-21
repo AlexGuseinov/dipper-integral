@@ -1,6 +1,6 @@
 PY ?= python3
 
-.PHONY: test reproduce quick summary paper clean
+.PHONY: test reproduce quick summary paper clean certificates tools
 
 test:            ## fast validation: test vectors, inverses, local models, model soundness
 	$(PY) -m tests.test_vectors
@@ -12,6 +12,7 @@ quick: test      ## ~15 min: Step 1 reproduction, benchmark, Dipper maximal cube
 	$(PY) scripts/step1_empirical_integral.py add 7 1000
 	$(PY) scripts/benchmark_spn.py
 	$(PY) scripts/step3_maximal_cubes.py add
+	$(PY) scripts/step3_maximal_cubes.py add 8,9 mp,bdp
 
 reproduce: quick ## everything (several hours on 2 cores)
 	$(PY) scripts/step1_empirical_integral.py xor 8 400
@@ -31,6 +32,7 @@ reproduce: quick ## everything (several hours on 2 cores)
 	$(PY) scripts/step6_degree.py add 7
 	$(PY) scripts/step6_degree.py xor,none 11
 	$(PY) scripts/step6_gap_resolution.py
+	$(PY) scripts/step6_gap_small.py 800
 	$(PY) scripts/step6_presence_attempt.py
 	$(PY) scripts/figures.py
 	$(PY) scripts/summarize.py
@@ -43,3 +45,15 @@ paper:
 
 clean:
 	cd paper && latexmk -C
+
+# External tools for checkable certificates (CaDiCaL + drat-trim), built locally
+TOOLS ?= .tools
+tools:
+	mkdir -p $(TOOLS)
+	test -d $(TOOLS)/cadical || git clone --depth 1 https://github.com/arminbiere/cadical.git $(TOOLS)/cadical
+	test -x $(TOOLS)/cadical/build/cadical || (cd $(TOOLS)/cadical && ./configure && make -j2)
+	test -d $(TOOLS)/drat-trim || git clone --depth 1 https://github.com/marijnheule/drat-trim.git $(TOOLS)/drat-trim
+	test -x $(TOOLS)/drat-trim/drat-trim || (cd $(TOOLS)/drat-trim && make)
+
+certificates: tools   ## DRAT proofs for all boundary certificates + validated trails
+	$(PY) scripts/step7_certificates.py $(TOOLS)/cadical/build/cadical $(TOOLS)/drat-trim/drat-trim certificates

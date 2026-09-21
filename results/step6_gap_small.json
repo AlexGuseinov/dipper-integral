@@ -1,0 +1,60 @@
+[
+ {
+  "cube": "random8",
+  "active": [
+   5,
+   17,
+   21,
+   22,
+   28,
+   31,
+   35,
+   38
+  ],
+  "rounds": 3,
+  "bit": 19,
+  "support": 33,
+  "degree_bound": 23,
+  "evaluated": 2095482,
+  "max_weight_reached": 7,
+  "verdict": "unfinished (time limit)",
+  "witness": null,
+  "seconds": 800.0
+ },
+ {
+  "cube": "random4",
+  "active": [
+   0,
+   7,
+   35,
+   43
+  ],
+  "rounds": 2,
+  "bit": 21,
+  "support": 33,
+  "degree_bound": 24,
+  "evaluated": 3813325,
+  "max_weight_reached": 7,
+  "verdict": "unfinished (time limit)",
+  "witness": null,
+  "seconds": 800.0
+ },
+ {
+  "cube": "random4",
+  "active": [
+   0,
+   7,
+   35,
+   43
+  ],
+  "rounds": 3,
+  "bit": 19,
+  "support": 38,
+  "degree_bound": 27,
+  "evaluated": 2652480,
+  "max_weight_reached": 6,
+  "verdict": "unfinished (time limit)",
+  "witness": null,
+  "seconds": 800.0
+ }
+]

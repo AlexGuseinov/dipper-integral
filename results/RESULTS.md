@@ -33,18 +33,18 @@ Smallest certified cubes found (greedy; upper bounds on data):
 | 3 | 2 | | |
 | 4 | 4 | | |
 | 5 | 16 | 7 | 3 |
-| 6 | 60 (constant nibble 4–7, 6 bits) | 22 | 8 |
+| 6 | 60 (constant nibble 4–7, 6 bits; smallest found, not proven minimal) | 22 | 8 |
 | 7 | — | 44 | 15 |
 | 8 | — | 59 | 48 |
 | 9 | — | 63 | 59 |
-| 10 | — | — | 63 |
+| 10 | (not computed) | — | 63 |
 
 All frontier cubes of dimension ≤ 16 re-checked experimentally (400 trials): no contradiction [`step3_frontier_empirical.json`].
 
 Mechanism: every certified bit at the 6-round boundary comes, in the last round, from the retained words B/D (D3, D4, D5, D6, D11, B4, B12, B13, B14).
 
 ## Step 4 — model comparison (C2) and tightness
-* Exact MP, gate-level MP and classical BDP: identical certificate sets on all maximal cubes (Dipper r=4–7; variants up to r=11 for MP/BDP, r≤7 for MP-circuit) and on 140 extra instances. Time for the 140: 8.4 s / 8.8 s / 6.2 s.
+* MP-EL (monomial-trail existence model with exact local transitions), gate-level MP and classical BDP: identical certificate sets on all maximal cubes (Dipper r=4–9; XOR variant up to r=10, no-add variant up to r=11 for MP-EL/BDP; r≤7 for MP-circuit). This shows that the two existence models agree on the tested instances — not that cancellation-aware MP has no advantage and on 140 extra instances. Time for the 140: 8.4 s / 8.8 s / 6.2 s.
 * Tightness vs experiment (28 cubes, dim 4–16, 200 trials; gaps re-tested with 3000/1000):
 
 | r | certified | empirically zero | gap | persistent |
@@ -54,7 +54,7 @@ Mechanism: every certified bit at the 6-round boundary comes, in the last round,
 | 4 | 91 | 93 | 2 | 0 |
 | 5 | 6 | 7 | 1 | 0 |
 
-* Exact trail-parity resolution attempted on one persistent gap bit: > 10^5 trials at 2 rounds (cap) [`step4_parity_attempt.json`].
+* Exact trail-parity resolution attempted on one persistent gap bit: > 10^5 trails at 2 rounds (cap) [`step4_parity_attempt.json`].
 
 ## C3 — ablation (identical cubes/models/budgets, no timeouts)
 
@@ -65,15 +65,21 @@ Mechanism: every certified bit at the 6-round boundary comes, in the last round,
 | no addition | 10 | 2 | 11 | 7 |
 
 ## Step 5 — consequences [`step5_key_recovery.py`, `step5_attack_smallscale.py`]
-* 7-round distinguisher on T^{-1}(C) (free final round), 2^60 data.
-* 8-round partial key recovery: bit 1 (word D) needs only 4 bits of RK8; 8 structures of 2^60 → 2^63 data, 2^63 partial decryptions; recovers 4 bits. Theoretical (half the codebook).
+* 7-round distinguisher on T^{-1}(C) (free final round); smallest certified cube found: 2^60.
+* Proposed partial-key filtering over one further round (NOT a validated 8-round attack): bit 1 (word D) depends on 4 bits of RK8; with the survival rate measured at small scale (extrapolated), ~8 structures of 2^60 (2^63 data) would identify 4 round-key bits.
 * Small-scale end-to-end validation (6 rounds, 200 keys): right key always survives; wrong-guess survival ≈ 0.565/structure; 1.13 candidates after 8 structures.
 
 ## Step 6 — degree mechanism and exactness attempts
 * Lemma: deg((x⊞y)_i) = i+1 (Kummer + Braeken–Semaev), verified exhaustively n ≤ 8 [`tests/test_local_models.py`].
-* Certified degree bounds for every output bit [`step6_degree.py`, `step6_degree_*.json`, figure `paper/fig_degree.pdf`]:
+* Certified degree UPPER bounds (never actual degrees) for every output bit [`step6_degree.py`, `step6_degree_*.json`, figure `paper/fig_degree.pdf`]:
   * Dipper after 1 round: bit i of A⊞B has bound 3,5,7,…,26 (≈ linear in i); retained B stays 2–3.
-  * Dipper: every bit reaches 63 at r=6; at r=5 exactly six retained-word bits {1,19,24,51,56,58} have bound 62 (= the bits certified for all 64 maximal cubes).
-  * Dipper-XOR: all bits 63 at r=9; Dipper-no-add: at r=10.
+  * Dipper: from r=6 on every bound is 63 (uninformative); at r=5 exactly six retained-word bits {1,19,24,51,56,58} have bound 62 (= the bits certified for all 64 maximal cubes).
+  * Dipper-XOR: all bounds 63 from r=9; Dipper-no-add: from r=10. Degree bounds do not determine the certificate boundary (certificates are per cube).
 * Exact decision of the 46 persistent gap bits [`step6_gap_resolution.json`]: key support 33–88 bits, key-degree bound 23–65 → infeasible; open.
 * Presence (exact non-balance) at 7 rounds via key-monomial parity [`step6_presence_attempt.json`]: no odd count found (20 key monomials, cap 2·10^4) on 2 instances; open.
+
+## Step 7 — checkable artifacts [`step7_certificates.py`, `step7_certificates.json`, `make certificates`]
+* 141 DRAT proof runs (138 distinct CNFs) from external CaDiCaL 3.0.1, all VERIFIED by drat-trim: every certified (cube, bit) pair of Dipper r=6 (90), Dipper-XOR r=9 (17), Dipper-no-add r=10 (10), Dipper frontier cubes r=3..6 (18), word cubes A/C r=5 (6).
+* 3 × 4096 SAT answers (Dipper r=7, XOR r=10, no-add r=11): every trail validated by `dipper/witness.py`, which does not use the CNF.
+* Trusted base: correctness of the CNF generator (`dipper/models.py`) rests on the exhaustive local checks and agreement with experiment; DRAT only proves the emitted CNF is UNSAT.
+* Other UNSAT answers (r≤5 maximal cubes, comparison instances, degree bounds) rely on the solver answer alone.

@@ -21,6 +21,16 @@
      "max_balanced": 0,
      "cubes_with_certificate": 0,
      "timeouts": 0
+    },
+    "8": {
+     "max_balanced": 0,
+     "cubes_with_certificate": 0,
+     "timeouts": 0
+    },
+    "9": {
+     "max_balanced": 0,
+     "cubes_with_certificate": 0,
+     "timeouts": 0
     }
    },
    "mpc": {
@@ -62,6 +72,16 @@
      "timeouts": 0
     },
     "7": {
+     "max_balanced": 0,
+     "cubes_with_certificate": 0,
+     "timeouts": 0
+    },
+    "8": {
+     "max_balanced": 0,
+     "cubes_with_certificate": 0,
+     "timeouts": 0
+    },
+    "9": {
      "max_balanced": 0,
      "cubes_with_certificate": 0,
      "timeouts": 0
@@ -297,6 +317,8 @@
   "add/r5 (mp,mpc,bdp)": true,
   "add/r6 (mp,mpc,bdp)": true,
   "add/r7 (mp,mpc,bdp)": true,
+  "add/r8 (mp,bdp)": true,
+  "add/r9 (mp,bdp)": true,
   "none/r4 (mp,bdp,mpc)": true,
   "none/r5 (mp,bdp,mpc)": true,
   "none/r6 (mp,bdp,mpc)": true,

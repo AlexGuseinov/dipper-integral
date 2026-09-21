@@ -205,11 +205,12 @@ def build(active, rounds, model="mp", mode="add"):
             m.add([x[i]] if i in active else [-x[i]])
     table = SBOX_BDP if model == "bdp" else SBOX_MP
     m.masks += list(x)
+    m.trace = [("input", list(x))]
     for _ in range(rounds):
-        x = key_layer(m, x, model)
-        x = sbox_layer(m, x, table)
-        x = mix_layer(m, x, model, mode)
-        x = perm_layer(x)
+        x = key_layer(m, x, model); m.trace.append(("key", list(x)))
+        x = sbox_layer(m, x, table); m.trace.append(("sbox", list(x)))
+        x = mix_layer(m, x, model, mode); m.trace.append(("mix", list(x)))
+        x = perm_layer(x); m.trace.append(("perm", list(x)))
     m.masks += list(x)
     m.masks = sorted(set(m.masks))
     return m, x

@@ -8,3 +8,5 @@ paper/*.bbl
 paper/*.blg
 paper/*.out
 nohup.out
+certificates/
+.tools/
