@@ -34,7 +34,14 @@ reproduce: quick ## everything (several hours on 2 cores)
 	$(PY) scripts/step6_gap_resolution.py
 	$(PY) scripts/step6_gap_small.py 800
 	$(PY) scripts/step6_presence_attempt.py
+	$(PY) -m tests.test_count             # trail counting vs ANF (slow: ~2 h at 3 rounds)
+	$(PY) scripts/step14_forced_masks.py
+	$(PY) scripts/step16_projection_check.py
+	$(PY) scripts/step17_presence_probe.py
+	$(PY) scripts/step18_hardbits.py 7,20,23,34,37,45,54
+	$(PY) scripts/step22_gap_presence.py results/step4_tightness_add.json
 	$(PY) scripts/figures.py
+	$(PY) scripts/figures2.py
 	$(PY) scripts/summarize.py
 
 summary:
