@@ -1,0 +1,47 @@
+{'cube': 'nibbles[13]', 'rounds': 2, 'bit': 28, 'examined': 14, 'secs': 0.2, 'status': 'odd', 'count': 9, 'witness_ok': True}
+{'cube': 'nibbles[13]', 'rounds': 2, 'bit': 31, 'examined': 8, 'secs': 0.1, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'nibbles[4]', 'rounds': 2, 'bit': 6, 'examined': 6, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'nibbles[2, 8]', 'rounds': 2, 'bit': 6, 'examined': 6, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'nibbles[2, 8]', 'rounds': 2, 'bit': 23, 'examined': 17, 'secs': 0.2, 'status': 'odd', 'count': 3, 'witness_ok': True}
+{'cube': 'nibbles[2, 8]', 'rounds': 2, 'bit': 39, 'examined': 3, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'nibbles[4, 9, 12]', 'rounds': 2, 'bit': 14, 'examined': 6, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'nibbles[4, 9, 12]', 'rounds': 2, 'bit': 23, 'examined': 23, 'secs': 0.2, 'status': 'odd', 'count': 3, 'witness_ok': True}
+{'cube': 'nibbles[4, 9, 12]', 'rounds': 2, 'bit': 28, 'examined': 2, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'nibbles[4, 9, 12]', 'rounds': 2, 'bit': 30, 'examined': 1, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'nibbles[4, 9, 12]', 'rounds': 2, 'bit': 44, 'examined': 1, 'secs': 0.0, 'status': 'odd', 'count': 3, 'witness_ok': True}
+{'cube': 'nibbles[4, 9, 12]', 'rounds': 2, 'bit': 45, 'examined': 1, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'nibbles[4, 9, 12]', 'rounds': 2, 'bit': 47, 'examined': 4, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'nibbles[4, 9, 12]', 'rounds': 2, 'bit': 61, 'examined': 7, 'secs': 0.0, 'status': 'odd', 'count': 3, 'witness_ok': True}
+{'cube': 'nibbles[4, 9, 12]', 'rounds': 3, 'bit': 9, 'examined': 3, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'nibbles[4, 9, 12]', 'rounds': 3, 'bit': 26, 'examined': 3, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'nibbles[2, 4, 8]', 'rounds': 2, 'bit': 6, 'examined': 6, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'nibbles[2, 4, 8]', 'rounds': 2, 'bit': 23, 'examined': 17, 'secs': 0.1, 'status': 'odd', 'count': 3, 'witness_ok': True}
+{'cube': 'nibbles[2, 4, 8]', 'rounds': 2, 'bit': 36, 'examined': 1, 'secs': 0.0, 'status': 'odd', 'count': 3, 'witness_ok': True}
+{'cube': 'nibbles[2, 4, 8]', 'rounds': 2, 'bit': 39, 'examined': 3, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'nibbles[2, 4, 8]', 'rounds': 2, 'bit': 53, 'examined': 16, 'secs': 0.1, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random4', 'rounds': 2, 'bit': 23, 'examined': 146, 'secs': 3.0, 'status': 'odd', 'count': 3, 'witness_ok': True}
+{'cube': 'random4', 'rounds': 3, 'bit': 16, 'examined': 7, 'secs': 0.1, 'status': 'odd', 'count': 3, 'witness_ok': True}
+{'cube': 'random4', 'rounds': 3, 'bit': 33, 'examined': 51, 'secs': 0.7, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random4', 'rounds': 2, 'bit': 21, 'examined': 1, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random4', 'rounds': 3, 'bit': 16, 'examined': 3, 'secs': 0.1, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random4', 'rounds': 3, 'bit': 19, 'examined': 12, 'secs': 0.1, 'status': 'odd', 'count': 3, 'witness_ok': True}
+{'cube': 'random4', 'rounds': 3, 'bit': 33, 'examined': 3, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random4', 'rounds': 3, 'bit': 41, 'examined': 15, 'secs': 0.2, 'status': 'odd', 'count': 3, 'witness_ok': True}
+{'cube': 'random8', 'rounds': 3, 'bit': 16, 'examined': 4, 'secs': 0.1, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random8', 'rounds': 3, 'bit': 19, 'examined': 5, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random8', 'rounds': 3, 'bit': 48, 'examined': 7, 'secs': 0.1, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random8', 'rounds': 3, 'bit': 26, 'examined': 8, 'secs': 0.1, 'status': 'odd', 'count': 3, 'witness_ok': True}
+{'cube': 'random8', 'rounds': 3, 'bit': 18, 'examined': 26, 'secs': 0.4, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random12', 'rounds': 3, 'bit': 11, 'examined': 8, 'secs': 0.1, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random12', 'rounds': 3, 'bit': 18, 'examined': 9, 'secs': 0.1, 'status': 'odd', 'count': 5, 'witness_ok': True}
+{'cube': 'random12', 'rounds': 3, 'bit': 41, 'examined': 6, 'secs': 0.1, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random12', 'rounds': 3, 'bit': 9, 'examined': 32, 'secs': 0.4, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random12', 'rounds': 3, 'bit': 16, 'examined': 71, 'secs': 1.1, 'status': 'odd', 'count': 5, 'witness_ok': True}
+{'cube': 'random12', 'rounds': 3, 'bit': 26, 'examined': 55, 'secs': 0.9, 'status': 'odd', 'count': 3, 'witness_ok': True}
+{'cube': 'random12', 'rounds': 3, 'bit': 43, 'examined': 3, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random12', 'rounds': 3, 'bit': 50, 'examined': 24, 'secs': 0.5, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random12', 'rounds': 3, 'bit': 16, 'examined': 2, 'secs': 0.1, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random12', 'rounds': 3, 'bit': 33, 'examined': 3, 'secs': 0.0, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random12', 'rounds': 3, 'bit': 9, 'examined': 25, 'secs': 0.4, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cube': 'random12', 'rounds': 3, 'bit': 26, 'examined': 62, 'secs': 0.7, 'status': 'odd', 'count': 1, 'witness_ok': True}
+{'cases': 46, 'odd_with_valid_witness': 46, 'unresolved': [], 'seconds': 11.0}

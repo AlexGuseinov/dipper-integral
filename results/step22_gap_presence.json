@@ -1,0 +1,1203 @@
+{
+ "summary": {
+  "cases": 46,
+  "odd_with_valid_witness": 46,
+  "unresolved": [],
+  "seconds": 11.0
+ },
+ "cases": [
+  {
+   "cube": "nibbles[13]",
+   "active": [
+    52,
+    53,
+    54,
+    55
+   ],
+   "rounds": 2,
+   "bit": 28,
+   "examined": 14,
+   "secs": 0.2,
+   "status": "odd",
+   "count": 9,
+   "witness_ok": true,
+   "pattern": [
+    "D60ED3D4353A68BF",
+    "DD0E908400000000"
+   ]
+  },
+  {
+   "cube": "nibbles[13]",
+   "active": [
+    52,
+    53,
+    54,
+    55
+   ],
+   "rounds": 2,
+   "bit": 31,
+   "examined": 8,
+   "secs": 0.1,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "D70D349DF3DFE3DD",
+    "2252905D00000000"
+   ]
+  },
+  {
+   "cube": "nibbles[4]",
+   "active": [
+    16,
+    17,
+    18,
+    19
+   ],
+   "rounds": 2,
+   "bit": 6,
+   "examined": 6,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "37FBE7E3BEF0DD73",
+    "00000000DD045B10"
+   ]
+  },
+  {
+   "cube": "nibbles[2, 8]",
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 2,
+   "bit": 6,
+   "examined": 6,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "377BE7E0DE037073",
+    "000000009D005990"
+   ]
+  },
+  {
+   "cube": "nibbles[2, 8]",
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 2,
+   "bit": 23,
+   "examined": 17,
+   "secs": 0.2,
+   "status": "odd",
+   "count": 3,
+   "witness_ok": true,
+   "pattern": [
+    "DA04F0F07377D09B",
+    "000000007E045C00"
+   ]
+  },
+  {
+   "cube": "nibbles[2, 8]",
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 2,
+   "bit": 39,
+   "examined": 3,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "DBDBD4500DDDB0DB",
+    "00000000C2000B30"
+   ]
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 2,
+   "bit": 14,
+   "examined": 6,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "A8E0730BFBD03639",
+    "A1D4900C00000000"
+   ]
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 2,
+   "bit": 23,
+   "examined": 23,
+   "secs": 0.2,
+   "status": "odd",
+   "count": 3,
+   "witness_ok": true,
+   "pattern": [
+    "DE90D80B00F0E0E3",
+    "000000008C049910"
+   ]
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 2,
+   "bit": 28,
+   "examined": 2,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "EAB0EE056D507FD4",
+    "9965A01100000000"
+   ]
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 2,
+   "bit": 30,
+   "examined": 1,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "EED035007BD09DE5",
+    "900C000400000000"
+   ]
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 2,
+   "bit": 44,
+   "examined": 1,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 3,
+   "witness_ok": true,
+   "pattern": [
+    "DAE0B00B7E709BB3",
+    "50A1000D00000000"
+   ]
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 2,
+   "bit": 45,
+   "examined": 1,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "A3B0EA0DDB40B7EB",
+    "05CDF34900000000"
+   ]
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 2,
+   "bit": 47,
+   "examined": 4,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "3DD0350DB5B0E3E3",
+    "9007500300000000"
+   ]
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 2,
+   "bit": 61,
+   "examined": 7,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 3,
+   "witness_ok": true,
+   "pattern": [
+    "DDB05E053EB09BB7",
+    "10AC904900000000"
+   ]
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 3,
+   "bit": 9,
+   "examined": 3,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "3D703E09BEB0DDBD",
+    "0000000000000010",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "nibbles[4, 9, 12]",
+   "active": [
+    16,
+    17,
+    18,
+    19,
+    36,
+    37,
+    38,
+    39,
+    48,
+    49,
+    50,
+    51
+   ],
+   "rounds": 3,
+   "bit": 26,
+   "examined": 3,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "DDE08B0B0070303D",
+    "0000000000000021",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "nibbles[2, 4, 8]",
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    16,
+    17,
+    18,
+    19,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 2,
+   "bit": 6,
+   "examined": 6,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "377BE7E03EF00073",
+    "0000000093005910"
+   ]
+  },
+  {
+   "cube": "nibbles[2, 4, 8]",
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    16,
+    17,
+    18,
+    19,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 2,
+   "bit": 23,
+   "examined": 17,
+   "secs": 0.1,
+   "status": "odd",
+   "count": 3,
+   "witness_ok": true,
+   "pattern": [
+    "DA04F0F03370D09B",
+    "000000007D045C00"
+   ]
+  },
+  {
+   "cube": "nibbles[2, 4, 8]",
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    16,
+    17,
+    18,
+    19,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 2,
+   "bit": 36,
+   "examined": 1,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 3,
+   "witness_ok": true,
+   "pattern": [
+    "DEEED8B0EEB0A0DD",
+    "000000002A010D00"
+   ]
+  },
+  {
+   "cube": "nibbles[2, 4, 8]",
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    16,
+    17,
+    18,
+    19,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 2,
+   "bit": 39,
+   "examined": 3,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "DBDBD4500DD000DB",
+    "00000000C2000B30"
+   ]
+  },
+  {
+   "cube": "nibbles[2, 4, 8]",
+   "active": [
+    8,
+    9,
+    10,
+    11,
+    16,
+    17,
+    18,
+    19,
+    32,
+    33,
+    34,
+    35
+   ],
+   "rounds": 2,
+   "bit": 53,
+   "examined": 16,
+   "secs": 0.1,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "ABDDDA30D3D0A077",
+    "00000000AD018510"
+   ]
+  },
+  {
+   "cube": "random4",
+   "active": [
+    21,
+    29,
+    30,
+    57
+   ],
+   "rounds": 2,
+   "bit": 23,
+   "examined": 146,
+   "secs": 3.0,
+   "status": "odd",
+   "count": 3,
+   "witness_ok": true,
+   "pattern": [
+    "D1DBD87E1E1EDDBF",
+    "000000003A0BDD20"
+   ]
+  },
+  {
+   "cube": "random4",
+   "active": [
+    21,
+    29,
+    30,
+    57
+   ],
+   "rounds": 3,
+   "bit": 16,
+   "examined": 7,
+   "secs": 0.1,
+   "status": "odd",
+   "count": 3,
+   "witness_ok": true,
+   "pattern": [
+    "DDE77B3D1B57DDED",
+    "0000000000005000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random4",
+   "active": [
+    21,
+    29,
+    30,
+    57
+   ],
+   "rounds": 3,
+   "bit": 33,
+   "examined": 51,
+   "secs": 0.7,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "A1BBAD7A159BDD7D",
+    "0000000000009200",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random4",
+   "active": [
+    0,
+    7,
+    35,
+    43
+   ],
+   "rounds": 2,
+   "bit": 21,
+   "examined": 1,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "00000001D9BBD73C",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random4",
+   "active": [
+    0,
+    7,
+    35,
+    43
+   ],
+   "rounds": 3,
+   "bit": 16,
+   "examined": 3,
+   "secs": 0.1,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "ADEAF3F3B3DD7D56",
+    "0000000000005000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random4",
+   "active": [
+    0,
+    7,
+    35,
+    43
+   ],
+   "rounds": 3,
+   "bit": 19,
+   "examined": 12,
+   "secs": 0.1,
+   "status": "odd",
+   "count": 3,
+   "witness_ok": true,
+   "pattern": [
+    "000005E03ED73B36",
+    "0000000000000000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random4",
+   "active": [
+    0,
+    7,
+    35,
+    43
+   ],
+   "rounds": 3,
+   "bit": 33,
+   "examined": 3,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "DF7AF3D63ED3BB36",
+    "0000000000001000",
+    "0000000000000002"
+   ]
+  },
+  {
+   "cube": "random4",
+   "active": [
+    0,
+    7,
+    35,
+    43
+   ],
+   "rounds": 3,
+   "bit": 41,
+   "examined": 15,
+   "secs": 0.2,
+   "status": "odd",
+   "count": 3,
+   "witness_ok": true,
+   "pattern": [
+    "DDDDF0D5BBD40D62",
+    "0000C00000000000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random8",
+   "active": [
+    5,
+    17,
+    21,
+    22,
+    28,
+    31,
+    35,
+    38
+   ],
+   "rounds": 3,
+   "bit": 16,
+   "examined": 4,
+   "secs": 0.1,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "DBA7EE972919DD9D",
+    "0000000000002000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random8",
+   "active": [
+    5,
+    17,
+    21,
+    22,
+    28,
+    31,
+    35,
+    38
+   ],
+   "rounds": 3,
+   "bit": 19,
+   "examined": 5,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "00000DA06D19D01D",
+    "0000000000000000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random8",
+   "active": [
+    10,
+    16,
+    18,
+    30,
+    39,
+    58,
+    61,
+    63
+   ],
+   "rounds": 3,
+   "bit": 48,
+   "examined": 7,
+   "secs": 0.1,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "037778379D42D335",
+    "000000C000000000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random8",
+   "active": [
+    5,
+    6,
+    24,
+    35,
+    46,
+    52,
+    56,
+    58
+   ],
+   "rounds": 3,
+   "bit": 26,
+   "examined": 8,
+   "secs": 0.1,
+   "status": "odd",
+   "count": 3,
+   "witness_ok": true,
+   "pattern": [
+    "D2CE9EE79400FF1F",
+    "0000000000000000",
+    "0000000200000000"
+   ]
+  },
+  {
+   "cube": "random8",
+   "active": [
+    14,
+    29,
+    30,
+    31,
+    42,
+    55,
+    58,
+    60
+   ],
+   "rounds": 3,
+   "bit": 18,
+   "examined": 26,
+   "secs": 0.4,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "C359B9DF1B0F035D",
+    "0000080000000000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random12",
+   "active": [
+    13,
+    14,
+    15,
+    23,
+    26,
+    28,
+    34,
+    39,
+    45,
+    55,
+    58,
+    60
+   ],
+   "rounds": 3,
+   "bit": 11,
+   "examined": 8,
+   "secs": 0.1,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "C35EC353A92D1DD0",
+    "0000C00200000000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random12",
+   "active": [
+    13,
+    14,
+    15,
+    23,
+    26,
+    28,
+    34,
+    39,
+    45,
+    55,
+    58,
+    60
+   ],
+   "rounds": 3,
+   "bit": 18,
+   "examined": 9,
+   "secs": 0.1,
+   "status": "odd",
+   "count": 5,
+   "witness_ok": true,
+   "pattern": [
+    "CA5DD869C95417D0",
+    "00001A4000000000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random12",
+   "active": [
+    13,
+    14,
+    15,
+    23,
+    26,
+    28,
+    34,
+    39,
+    45,
+    55,
+    58,
+    60
+   ],
+   "rounds": 3,
+   "bit": 41,
+   "examined": 6,
+   "secs": 0.1,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "C93DD35AA3281380",
+    "0000C00000000000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random12",
+   "active": [
+    3,
+    5,
+    6,
+    13,
+    19,
+    24,
+    27,
+    33,
+    34,
+    50,
+    57,
+    58
+   ],
+   "rounds": 3,
+   "bit": 9,
+   "examined": 32,
+   "secs": 0.4,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "D8DAEED9D2055B87",
+    "0000000000000050",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random12",
+   "active": [
+    3,
+    5,
+    6,
+    13,
+    19,
+    24,
+    27,
+    33,
+    34,
+    50,
+    57,
+    58
+   ],
+   "rounds": 3,
+   "bit": 16,
+   "examined": 71,
+   "secs": 1.1,
+   "status": "odd",
+   "count": 5,
+   "witness_ok": true,
+   "pattern": [
+    "D1EB3ED8B2D59D83",
+    "0000000000002000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random12",
+   "active": [
+    3,
+    5,
+    6,
+    13,
+    19,
+    24,
+    27,
+    33,
+    34,
+    50,
+    57,
+    58
+   ],
+   "rounds": 3,
+   "bit": 26,
+   "examined": 55,
+   "secs": 0.9,
+   "status": "odd",
+   "count": 3,
+   "witness_ok": true,
+   "pattern": [
+    "E97AE53870759D15",
+    "0000000000000028",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random12",
+   "active": [
+    3,
+    5,
+    6,
+    13,
+    19,
+    24,
+    27,
+    33,
+    34,
+    50,
+    57,
+    58
+   ],
+   "rounds": 3,
+   "bit": 43,
+   "examined": 3,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "B1B3D3E1F2D55E83",
+    "0000000000000000",
+    "0000000100000000"
+   ]
+  },
+  {
+   "cube": "random12",
+   "active": [
+    3,
+    5,
+    6,
+    13,
+    19,
+    24,
+    27,
+    33,
+    34,
+    50,
+    57,
+    58
+   ],
+   "rounds": 3,
+   "bit": 50,
+   "examined": 24,
+   "secs": 0.5,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "B1737871D042CB17",
+    "0000000000002000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random12",
+   "active": [
+    0,
+    1,
+    13,
+    27,
+    35,
+    36,
+    38,
+    42,
+    47,
+    50,
+    54,
+    61
+   ],
+   "rounds": 3,
+   "bit": 16,
+   "examined": 2,
+   "secs": 0.1,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "CD9973267330DDE8",
+    "0000000000002000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random12",
+   "active": [
+    0,
+    1,
+    13,
+    27,
+    35,
+    36,
+    38,
+    42,
+    47,
+    50,
+    54,
+    61
+   ],
+   "rounds": 3,
+   "bit": 33,
+   "examined": 3,
+   "secs": 0.0,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "1F3A7A8636D39BB4",
+    "0000000000000000",
+    "0000000000000002"
+   ]
+  },
+  {
+   "cube": "random12",
+   "active": [
+    10,
+    13,
+    15,
+    22,
+    27,
+    31,
+    32,
+    44,
+    51,
+    52,
+    60,
+    61
+   ],
+   "rounds": 3,
+   "bit": 9,
+   "examined": 25,
+   "secs": 0.4,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "07C56DEE36BA4978",
+    "0000000000000000",
+    "0000000000000000"
+   ]
+  },
+  {
+   "cube": "random12",
+   "active": [
+    10,
+    13,
+    15,
+    22,
+    27,
+    31,
+    32,
+    44,
+    51,
+    52,
+    60,
+    61
+   ],
+   "rounds": 3,
+   "bit": 26,
+   "examined": 62,
+   "secs": 0.7,
+   "status": "odd",
+   "count": 1,
+   "witness_ok": true,
+   "pattern": [
+    "4EC6A3BE569F0377",
+    "0000000000000000",
+    "0000000200000000"
+   ]
+  }
+ ]
+}
