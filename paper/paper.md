@@ -93,25 +93,6 @@ reference="sec:results"} shows that the first weakness is not
 hypothetical for Dipper: with 80 trials, two bits look balanced that are
 not.
 
-#### The idea in plain words.
-
-Fix all plaintext bits except a chosen set, encrypt every combination of
-the chosen bits, and XOR the results. If some output bit of this sum is
-zero whatever the key, the attacker has a distinguisher. Proving “zero
-for every key” cannot be done by trying keys; it needs an algebraic
-argument. We use one that a SAT solver can check: the output bit can
-only depend on all chosen bits through a chain of intermediate
-monomials, a *monomial trail*. If no trail exists, the sum is zero for
-every key. If trails exist, counting them can prove the opposite.
-Figure [1](#fig:overview){reference-type="ref" reference="fig:overview"}
-shows the three possible outcomes and how each one is checked.
-
-![The three possible answers for one question (cube, rounds, output bit)
-and how each answer is checked independently. Blue: the property holds
-for all keys. Grey: the model cannot decide. Orange: the property is
-proven not to hold.](fig_overview.png){#fig:overview
-width="\\linewidth"}
-
 #### Research questions.
 
 We ask three questions. (Q1) Which integral properties of reduced-round
@@ -161,50 +142,6 @@ than the conventional division property?
     trial without being certified are all unbalanced. On these instances
     the certificates are therefore exactly the balanced bits, and a
     model that counts trails could not certify more.
-
-Table [1](#tab:glance){reference-type="ref" reference="tab:glance"}
-summarises the main answers in one place.
-
-::: {#tab:glance}
-  ------------------------------------------------------------------------------
-  Question                     Answer
-  ---------------------------- -------------------------------------------------
-  Do the published five-round  Yes, all of them are certified.
-  properties hold for every    
-  key?                         
-
-  How far do certified         Six rounds on the state (data $2^{60}$ for the
-  properties reach?            smallest cube found), seven with the free final
-                               round.
-
-  Is there a seven-round       None in the model for any bit-aligned cube. For
-  property?                    all cubes that keep bit 0 constant, every output
-                               bit is proven unbalanced.
-
-  What does the modular        Without it (XOR or removed) properties reach nine
-  addition contribute?         or ten rounds instead of six
-                               (Figure [4](#fig:ablation){reference-type="ref"
-                               reference="fig:ablation"}).
-
-  Where do the longest         Only in the two words that bypass the addition
-  properties live?             (Figure [3](#fig:state){reference-type="ref"
-                               reference="fig:state"}).
-
-  Can random-key experiments   No: 46 bits were zero in all 3200 trials, but
-  be trusted?                  none of them is balanced
-                               (Figure [6](#fig:tight){reference-type="ref"
-                               reference="fig:tight"}).
-
-  Does the exact addition      Not on any instance we examined; both certify the
-  model beat the division      same bits.
-  property?                    
-  ------------------------------------------------------------------------------
-
-  : Main results at a glance. “Certified”: holds for all round keys,
-  backed by a checked proof. “Proven unbalanced”: a presence proof
-  (Lemma [5](#lem:presence){reference-type="ref"
-  reference="lem:presence"}).
-:::
 
 Behind these results are three technical tools: the exact local rule for
 Dipper’s ARX map (Lemma [1](#lem:addret){reference-type="ref"
@@ -373,7 +310,7 @@ $a_{\mathbf 1}$ and is zero for a balanced function.
 
 ## The Dipper cipher
 
-Figure [2](#fig:round){reference-type="ref" reference="fig:round"} shows
+Figure [1](#fig:round){reference-type="ref" reference="fig:round"} shows
 one round.
 
 <figure id="fig:round">
@@ -831,7 +768,7 @@ and PRESENT (Bogdanov et al. 2007):
 We evaluated cube sums for random constants and independent random round
 keys in three settings:
 
--   the word cubes of Table [2](#tab:words){reference-type="ref"
+-   the word cubes of Table [1](#tab:words){reference-type="ref"
     reference="tab:words"}, with 1016 trials;
 
 -   the 28 cubes of the tightness study in
@@ -839,7 +776,7 @@ keys in three settings:
     reference="sec:tightness"}, with 200 trials per cube and round;
 
 -   every cube of dimension at most 16 in
-    Table [4](#tab:frontier){reference-type="ref"
+    Table [3](#tab:frontier){reference-type="ref"
     reference="tab:frontier"}, including those of the variants, with 400
     trials.
 
@@ -874,7 +811,7 @@ and Hunt 2014):
 -   every such pair of $\mathrm{Dipper}^{\oplus}$ at nine rounds and of
     $\mathrm{Dipper}^{\varnothing}$ at ten rounds;
 
--   the smallest cubes of Table [4](#tab:frontier){reference-type="ref"
+-   the smallest cubes of Table [3](#tab:frontier){reference-type="ref"
     reference="tab:frontier"} for Dipper;
 
 -   the five-round word-cube properties.
@@ -891,7 +828,7 @@ trails passed the check. The 110 trails behind the presence proofs of
 Sections [6](#sec:results){reference-type="ref" reference="sec:results"}
 and [8](#sec:tightness){reference-type="ref" reference="sec:tightness"}
 passed the same check. The other UNSAT answers, e.g. the certificates at
-$r\le5$ in Table [3](#tab:maximal){reference-type="ref"
+$r\le5$ in Table [2](#tab:maximal){reference-type="ref"
 reference="tab:maximal"}, the comparison instances and the degree
 bounds, rely on the solver answer alone. The CNF hashes, the tool
 versions and the verification log are part of the repository.
@@ -900,7 +837,7 @@ versions and the verification log are part of the repository.
 
 ## Reproducing the published experiment
 
-Table [2](#tab:words){reference-type="ref" reference="tab:words"}
+Table [1](#tab:words){reference-type="ref" reference="tab:words"}
 repeats the published experiment: one 16-bit word is saturated, the
 other 48 bits are constant, and 1016 trials are run (1000 with
 independent random round keys, 16 with the real 128-bit key schedule). A
@@ -938,7 +875,7 @@ confirmed $\bigoplus T^{-1}(S^{(r+1)})=\bigoplus S^{(r)}$
 By Lemma [3](#lem:mono){reference-type="ref" reference="lem:mono"}, the
 64 cubes of dimension 63 (one constant bit $p$) decide which rounds
 admit a certificate for some bit-aligned cube.
-Table [3](#tab:maximal){reference-type="ref" reference="tab:maximal"}
+Table [2](#tab:maximal){reference-type="ref" reference="tab:maximal"}
 summarises them. At six rounds, certificates exist for 14 of the 64
 positions of the constant bit, and the best positions $p\in\{4,6,7\}$
 give nine balanced bits, $\{1,18,19,24,41,48,51,56,58\}$. At seven,
@@ -970,7 +907,7 @@ six-round properties give seven-round distinguishers on $T^{-1}(C)$.
 
 Starting from certified cubes, we removed active bits one at a time as
 long as some bit stayed certified, restarting from several cubes and
-random orders. Table [4](#tab:frontier){reference-type="ref"
+random orders. Table [3](#tab:frontier){reference-type="ref"
 reference="tab:frontier"} lists the smallest certified cubes *found* in
 this way. They are upper bounds on the data required, not proven minima.
 At five rounds the smallest cube found has size $2^{16}$, the size of
@@ -993,7 +930,7 @@ six bits.
 
 ## Seven rounds: presence proofs
 
-The seven-round entries of Table [3](#tab:maximal){reference-type="ref"
+The seven-round entries of Table [2](#tab:maximal){reference-type="ref"
 reference="tab:maximal"} say only that the model has a trail. For the
 cube $I_0$ with constant bit $p=0$ we searched for a presence proof
 (Lemma [5](#lem:presence){reference-type="ref"
@@ -1022,26 +959,17 @@ $B_4,B_{12},B_{13},B_{14}$. The same holds for the five-round word-cube
 properties. Bits $\{51,56,58\}$ of the word-$C$ cube map to
 $D_3,B_4,B_{14}$, and bits $\{1,19,24\}$ of the word-$A$ cube map to
 $D_5,D_{11},B_{12}$. No output bit of the last-round additions is
-certified at the boundary (Figure [3](#fig:state){reference-type="ref"
-reference="fig:state"}).
-
-![Where the nine six-round balanced bits sit in the last round, before
-the final bit permutation. Each row is one 16-bit word; grey rows are
-outputs of a modular addition ($A\boxplus B$, $C\boxplus D$), white rows
-are the retained words. All nine balanced bits (blue, with their bit
-index) lie in the retained words $B$ and $D$.](fig_state.png){#fig:state
-width="0.82\\linewidth"}
-
-This is an observation about the certified bits, not a claim about every
-output bit of the additions: bit 0 of $A\boxplus B$, for example, is
-linear. Section [7.2](#sec:degree){reference-type="ref"
-reference="sec:degree"} relates it to degree.
+certified at the boundary. This is an observation about the certified
+bits, not a claim about every output bit of the additions: bit 0 of
+$A\boxplus B$, for example, is linear.
+Section [7.2](#sec:degree){reference-type="ref" reference="sec:degree"}
+relates it to degree.
 
 # The role of the modular addition
 
 ## Ablation
 
-Table [5](#tab:ablation){reference-type="ref" reference="tab:ablation"}
+Table [4](#tab:ablation){reference-type="ref" reference="tab:ablation"}
 compares Dipper with $\mathrm{Dipper}^{\oplus}$ and
 $\mathrm{Dipper}^{\varnothing}$. The three ciphers were analysed under
 identical conditions: all 64 maximal cubes,
@@ -1051,19 +979,18 @@ solver settings (conflict budget $10^5$ with a $5\cdot10^6$ retry; no
 instance was left unresolved). Within the model, the two additions
 shorten the longest certified property from nine rounds (XOR) or ten
 rounds (no addition) to six. The empirical word-cube experiment
-(Table [2](#tab:words){reference-type="ref" reference="tab:words"})
+(Table [1](#tab:words){reference-type="ref" reference="tab:words"})
 orders the three ciphers the same way: 5, 6 and 7 rounds. The data
 needed shifts in the same direction. For six rounds the smallest
 certified cubes found have size $2^{60}$ for Dipper, $2^{22}$ for
 $\mathrm{Dipper}^{\oplus}$ and $2^{8}$ for
 $\mathrm{Dipper}^{\varnothing}$.
-Figure [4](#fig:ablation){reference-type="ref" reference="fig:ablation"}
-shows this round by round. In short, the two additions make the data
-requirement grow to the full codebook three to four rounds earlier.
+Figure [2](#fig:ablation){reference-type="ref" reference="fig:ablation"}
+shows this round by round.
 
 ![Data needed by the smallest certified cube found, per round, for
 Dipper and the two variants without carries (values of
-Table [4](#tab:frontier){reference-type="ref"
+Table [3](#tab:frontier){reference-type="ref"
 reference="tab:frontier"}). A cross marks the first round at which no
 bit-aligned cube has a certificate. Dipper’s curve reaches the full
 codebook three to four rounds earlier.](fig_ablation.png){#fig:ablation
@@ -1121,8 +1048,8 @@ lower.](fig_degree.png){#fig:degree width="0.78\\linewidth"}
   in the output of the ARX layer.
 :::
 
-Figure [5](#fig:degree){reference-type="ref" reference="fig:degree"} and
-Table [6](#tab:deg1){reference-type="ref" reference="tab:deg1"} support
+Figure [3](#fig:degree){reference-type="ref" reference="fig:degree"} and
+Table [5](#tab:deg1){reference-type="ref" reference="tab:deg1"} support
 three observations. All three concern upper bounds.
 
 *The addition acts immediately.* After one round, the bound on bit $i$
@@ -1140,7 +1067,7 @@ retained-word bits, $\{1,19,24,51,56,58\}$, still have bound 62. A bound
 of 62 certifies the bit over every 63-dimensional cube. These six bits
 are exactly the bits certified for all 64 maximal cubes at five rounds,
 and the same six bits carry the six-round certificate of the $2^{60}$
-cube (Table [4](#tab:frontier){reference-type="ref"
+cube (Table [3](#tab:frontier){reference-type="ref"
 reference="tab:frontier"}).
 
 *The bounds become uninformative three to four rounds earlier with the
@@ -1148,7 +1075,7 @@ additions.* From $r=6$ on, every bound for Dipper is 63; for
 $\mathrm{Dipper}^{\oplus}$ and $\mathrm{Dipper}^{\varnothing}$ this
 happens only from $r=9$ and $r=10$ on (the last rounds with a bound
 below 63 are 5, 8 and 9, respectively). The ordering matches
-Table [5](#tab:ablation){reference-type="ref" reference="tab:ablation"},
+Table [4](#tab:ablation){reference-type="ref" reference="tab:ablation"},
 but degree bounds do not determine the certificate boundary: at six
 rounds Dipper still has certificates for particular 63-dimensional cubes
 although every bound is 63, and $\mathrm{Dipper}^{\oplus}$ at eight
@@ -1178,7 +1105,7 @@ similar cost (8.4 s, 8.8 s and 6.2 s in total). This shows that the two
 *existence* models agree on the tested instances. It does not show that
 cancellation-aware monomial prediction would have no advantage over
 <span class="sans-serif">BDP</span> in general; for the instances of
-Table [7](#tab:tight){reference-type="ref" reference="tab:tight"}, the
+Table [6](#tab:tight){reference-type="ref" reference="tab:tight"}, the
 end of this section shows that it has none. Part of the agreement is
 structural. Every S-box layer of Dipper is preceded by a full-state key
 addition. In <span class="sans-serif">MP-EL</span> the composition “key
@@ -1189,7 +1116,7 @@ and there we observed no difference.
 
 #### Certificates versus experiment.
 
-Table [7](#tab:tight){reference-type="ref" reference="tab:tight"}
+Table [6](#tab:tight){reference-type="ref" reference="tab:tight"}
 compares certificates with experiment on 28 cubes of dimension 4–16:
 word-aligned, nibble-aligned and random. A bit is *empirically zero* if
 its sum is zero in 200 trials, and it is a *gap* bit if it is
@@ -1207,14 +1134,7 @@ unbalanced.
 Such a bit is either an exact property lost to cancellation
 (Example [1](#ex:cancel){reference-type="ref" reference="ex:cancel"}) or
 a sum that is nonzero only with small probability. We tried two exact
-methods on these bits. Figure [6](#fig:tight){reference-type="ref"
-reference="fig:tight"} shows the outcome, which is explained below.
-
-![What happened to the bits that looked balanced in the first 200
-random-key trials. Blue: certified, hence balanced for every key. Grey:
-a later trial gave a nonzero sum. Orange: zero in all 3200 trials, but
-proven unbalanced by a presence proof. At every round, every bit ends up
-decided.](fig_tight.png){#fig:tight width="0.9\\linewidth"}
+methods on these bits.
 
 -   *Trail parity per key monomial.* For bit 30 of a 12-dimensional
     random cube at two rounds, the number of trails exceeded our
@@ -1247,7 +1167,7 @@ Section [6](#sec:results){reference-type="ref" reference="sec:results"}
 in a stronger form: sampling keys cannot detect it, and only an
 algebraic argument decides it. Every other bit that is not certified had
 a nonzero sum in some trial. Hence every bit of the 112 instances in
-Table [7](#tab:tight){reference-type="ref" reference="tab:tight"} is
+Table [6](#tab:tight){reference-type="ref" reference="tab:tight"} is
 decided, and on every instance the certified bits are exactly the
 balanced bits. On these instances the existence model loses nothing to
 cancellation, and a model that counts trails could not certify more. The
