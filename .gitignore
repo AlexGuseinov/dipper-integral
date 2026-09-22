@@ -10,3 +10,14 @@ paper/*.out
 nohup.out
 certificates/
 .tools/
+
+# Springer build outputs
+paper/springer/*.aux
+paper/springer/*.bbl
+paper/springer/*.blg
+paper/springer/*.log
+paper/springer/*.out
+paper/springer/*.fls
+paper/springer/*.fdb_latexmk
+paper/springer/main.pdf
+results/*.tmp

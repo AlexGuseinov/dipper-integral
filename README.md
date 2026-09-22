@@ -15,8 +15,8 @@ evidence with SAT-based certificates that hold **for every choice of round keys*
 |---|---|
 | Published 5-round word-saturation integrals | reproduced; certified for all keys |
 | Longest certified property | **6 rounds** (9 balanced bits with 2^63 data; 6 bits with the smallest cube found, 2^60) |
-| 7 rounds | no certificate for **any** cube (exhaustive within the model, monotonicity lemma); for every cube keeping bit 0 constant, **all 64 output bits proven unbalanced** (presence proofs, odd trail counts) |
-| Persistent gap bits | all 46 bits that were zero in 3200 random-key trials without a certificate are **proven unbalanced** → certificates are exact on all 112 tested instances |
+| 7 rounds | no certificate for **any** cube; **presence proofs for all 64×64 (cube of dim. 63, output bit) pairs** → no bit-aligned cube has a balanced bit after 7 rounds (independent round keys); 32 620 enumerated trails re-validated |
+| Persistent gap bits | all 46 bits that were zero in 3200 random-key trials without a certificate are **proven unbalanced**; explicit round keys with nonzero sum for 31 of them (checked with the reference code) → certificates are exact on all 112 tested instances |
 | Free final round (no whitening key) | every r-round property is an (r+1)-round property of T⁻¹(C) → 7-round distinguisher |
 | Key filtering (secondary) | proposed 1-round extension recovering 4 bits of RK₈ with ~2^63 data (extrapolated; not a validated attack) |
 | Ablation: ⊞ → ⊕ / addition removed | 9 / 10 certified rounds (vs 6) |

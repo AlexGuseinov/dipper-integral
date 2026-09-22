@@ -120,3 +120,20 @@ trails); minimising returns the all-zero pattern and every count exceeds the cap
 Search cost is dominated by patterns whose count is large and is then discarded,
 so the cap is kept small (1500) and the number of restarts large; a large cap is
 wasted work.
+
+## Seven rounds for all cubes, and final checks (step21–step24)
+
+* **step21 — presence at 7 rounds for every constant-bit position.** For each of the 64 cubes of
+  dimension 63 and each of the 64 output bits of S^(7): a key pattern with an odd trail count and a
+  validated trail — **4096/4096**. With Lemma (monotonicity of balancedness), no bit-aligned cube has a
+  balanced output bit after seven rounds, for independent round keys. Counts 1–1397 (1958 equal 1).
+  How found: whole patterns reused from another position 605, partial patterns (rounds 3–7 or 4–7 kept,
+  earlier rounds searched afresh) 2107, random search 1384. About 8 core-hours in total, most of it spent
+  before the partial-pattern reuse was added. Data: `results/step21_presence_{odd,even}_p.json`.
+* **step23 — explicit keys for the gap bits.** If v is the key pattern of a presence proof, some round key
+  supported inside v gives cube sum 1 (the sum over all such keys equals the coefficient of k^v). Sampling
+  sparse keys inside v found such round keys for **31 of the 46** gap bits; each re-checked with the scalar
+  reference implementation. `results/step23_gap_witness_keys.json`.
+* **step24 — every trail of every presence proof.** All trails of all 4142 presence proofs (4096 + 46) were
+  enumerated again, each of the **32 620** trails passed the CNF-independent checker, and every count was
+  confirmed odd. `results/step24_all_trails_verified.json`.

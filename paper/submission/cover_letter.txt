@@ -1,0 +1,26 @@
+Dear Editor,
+
+Please find enclosed our manuscript "Certified Integral Properties of the Dipper Block Cipher: Monomial-Trail Analysis and the Role of the Half-State Modular Addition", which we submit for consideration as an original research article in Cryptography and Communications.
+
+The manuscript studies integral properties of a hybrid SPN-ARX block cipher, whose round combines 4-bit S-boxes and a bit permutation with modular additions on half of the state. Integral properties of such rounds are usually evaluated by experiments with a few random keys. We replace this evidence by key-independent results obtained with monomial-trail (monomial prediction) models, using an exact local rule for the addition derived from the Braeken-Semaev characterisation. The main results are:
+
+- Certificates for all round keys of the published five-round properties and of new six-round properties, each boundary result backed by a DRAT proof checked with drat-trim or by a monomial trail validated independently of the SAT encoding.
+- Presence proofs (key monomials with an odd number of monomial trails) for all 4096 pairs of a 63-dimensional cube and an output bit. They show that no bit-aligned cube yields a balanced output bit after seven rounds, for independent round keys, so the certified six-round boundary is exact. All 32,620 trails behind these proofs were re-enumerated and validated independently of the SAT encoding.
+- Presence proofs showing that 46 bits that stayed zero in thousands of random-key trials, without being certified, are not balanced. This shows concretely that random-key testing can mislead.
+- A controlled ablation isolating the effect of the modular additions (six certified rounds versus nine and ten without carries), and the observation that at the boundary all certified bits lie in the words that bypass the addition, which we relate to the degree of the addition output bits.
+
+We believe the work fits the journal's scope in Boolean functions and the algebraic analysis of symmetric primitives. In particular, it combines exact algebraic statements with checkable proof artifacts.
+
+For transparency: Dipper was proposed by the authors in earlier work (Cryptography, 2026, doi:10.3390/cryptography10040052). The present manuscript evaluates that design independently of the design paper's own methods and corrects two statements of its key-schedule description against the reference implementation. All code, data, proofs and scripts are publicly available at https://github.com/AlexGuseinov/dipper-integral.
+
+The manuscript is original, has not been published before, and is not under consideration for publication elsewhere. All authors have approved the submission, and we declare no competing interests.
+
+Sincerely,
+
+Ali Huseynli (corresponding author)
+Department of Cybersecurity, Faculty of Information Technologies and Telecommunications
+Azerbaijan Technical University, Baku, Azerbaijan
+ali.huseynli@student.aztu.edu.az
+ORCID: 0009-0003-4959-2887
+
+on behalf of the co-authors Yadigar Imamverdiyev and Jalal Alizadeh

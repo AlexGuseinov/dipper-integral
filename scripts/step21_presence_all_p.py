@@ -13,7 +13,7 @@ from dipper.count import TrailCounter, greedy_key_pattern_fast as greedy_key_pat
 from dipper.witness import check_trail
 
 rounds = 7
-STAGES = [(3000, 200), (800, 1500), (300, 8000), (100, 40000)]
+STAGES = [(4000, 40), (800, 400), (300, 3000), (100, 40000)]
 ps = [int(x) for x in sys.argv[1].split(",")]
 OUT = sys.argv[2]
 res = json.load(open(OUT)) if os.path.exists(OUT) else {}
@@ -67,7 +67,41 @@ for p in ps:
             if n is not None and n % 2 == 1:
                 hit, how = ("odd", n, (list(pat), tr[0])), "seed"
                 break
-        if not hit:                                          # 2) staged random search
+        if not hit:                                          # 2) partial seeds: keep rounds >= keep, redo the rest
+            base = [c.out[i] if i == j else -c.out[i] for i in range(64)]
+            for keep in (2, 3):
+                for pat in seeds.get(j, []):
+                    fixed = [-v for v in c.kv[0]]
+                    for t in range(keep, rounds):
+                        fixed += [c.kv[t][i] if (pat[t] >> i) & 1 else -c.kv[t][i] for i in range(64)]
+                    if not c.s.solve(assumptions=base + fixed):
+                        continue
+                    prng = random.Random(31 * p + j + keep)
+                    free = [(t, i) for t in range(1, keep) for i in range(64)]
+                    for _ in range(8):
+                        prng.shuffle(free)
+                        fx = list(fixed)
+                        c.s.solve(assumptions=base + fx)
+                        model = set(l for l in c.s.get_model() if l > 0)
+                        for t, i in free:
+                            lit = c.kv[t][i]
+                            if lit in model:
+                                fx.append(lit); continue
+                            if c.s.solve(assumptions=base + fx + [lit]):
+                                fx.append(lit); model = set(l for l in c.s.get_model() if l > 0)
+                        cand = [sum(1 << i for i, v in enumerate(row) if v in model) for row in c.kv]
+                        if tuple(cand) in seen:
+                            continue
+                        seen.add(tuple(cand))
+                        n, tr = c.count(cand, j, cap=40, return_trails=1)
+                        if n is not None and n % 2 == 1:
+                            hit, how = ("odd", n, (cand, tr[0])), f"partial seed (rounds>={keep + 1})"
+                            break
+                    if hit:
+                        break
+                if hit:
+                    break
+        if not hit:                                          # 3) staged random search
             for tries, cap in STAGES:
                 rng = random.Random(7919 * p + 1009 * j + cap)
                 for _ in range(tries):
