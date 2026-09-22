@@ -127,3 +127,31 @@ def find_odd_pattern(counter, j, rng, tries=100, cap=100000, forced_zero=(), dir
             return {"status": "odd", "pattern": pat, "count": n, "examined": len(seen),
                     "trail": trails[0] if trails else None, "capped": capped}
     return {"status": "even/capped", "examined": len(seen), "capped": capped}
+
+
+def greedy_key_pattern_fast(counter, j, rng, forced_zero=(), direction="max"):
+    """Same result as greedy_key_pattern (same visiting order, same decisions),
+    with fewer SAT calls: a position that the current model already assigns the
+    desired value is accepted without a new solve, because that model witnesses
+    satisfiability of the extended assumption set."""
+    base = [counter.out[i] if i == j else -counter.out[i] for i in range(64)]
+    fixed = []
+    for t in forced_zero:
+        fixed += [-v for v in counter.kv[t]]
+    if not counter.s.solve(assumptions=base + fixed):
+        return None
+    model = set(l for l in counter.s.get_model() if l > 0)
+    order = [(t, i) for t in range(counter.rounds) if t not in forced_zero for i in range(64)]
+    rng.shuffle(order)
+    sign = 1 if direction == "max" else -1
+    for t, i in order:
+        lit = sign * counter.kv[t][i]
+        if (lit > 0 and lit in model) or (lit < 0 and -lit not in model):
+            fixed = fixed + [lit]
+            continue
+        trial = fixed + [lit]
+        if counter.s.solve(assumptions=base + trial):
+            fixed = trial
+            model = set(l for l in counter.s.get_model() if l > 0)
+    val = model
+    return [sum(1 << i for i, v in enumerate(row) if v in val) for row in counter.kv]

@@ -44,7 +44,7 @@ All frontier cubes of dimension ≤ 16 re-checked experimentally (400 trials): n
 Mechanism: every certified bit at the 6-round boundary comes, in the last round, from the retained words B/D (D3, D4, D5, D6, D11, B4, B12, B13, B14).
 
 ## Step 4 — model comparison (C2) and tightness
-* MP-EL (monomial-trail existence model with exact local transitions), gate-level MP and classical BDP: identical certificate sets on all maximal cubes (Dipper r=4–9; XOR variant up to r=10, no-add variant up to r=11 for MP-EL/BDP; r≤7 for MP-circuit). This shows that the two existence models agree on the tested instances — not that cancellation-aware MP has no advantage and on 140 extra instances. Time for the 140: 8.4 s / 8.8 s / 6.2 s.
+* MP-EL (monomial-trail existence model with exact local transitions), gate-level MP and classical BDP: identical certificate sets on all maximal cubes (Dipper r=4–9; XOR variant up to r=10, no-add variant up to r=11 for MP-EL/BDP; r≤7 for MP-circuit). The same holds on 140 further instances (the 28 cubes of Step 4 at r = 2–6); time for the 140: 8.4 s / 8.8 s / 6.2 s. This shows that the two existence models agree on the tested instances; that cancellation-aware counting cannot certify more is shown only for the 112 tightness instances (step22, below).
 * Tightness vs experiment (28 cubes, dim 4–16, 200 trials; gaps re-tested with 3000/1000):
 
 | r | certified | empirically zero | gap | persistent |
@@ -75,8 +75,8 @@ Mechanism: every certified bit at the 6-round boundary comes, in the last round,
   * Dipper after 1 round: bit i of A⊞B has bound 3,5,7,…,26 (≈ linear in i); retained B stays 2–3.
   * Dipper: from r=6 on every bound is 63 (uninformative); at r=5 exactly six retained-word bits {1,19,24,51,56,58} have bound 62 (= the bits certified for all 64 maximal cubes).
   * Dipper-XOR: all bounds 63 from r=9; Dipper-no-add: from r=10. Degree bounds do not determine the certificate boundary (certificates are per cube).
-* Exact decision of the 46 persistent gap bits [`step6_gap_resolution.json`]: key support 33–88 bits, key-degree bound 23–65 → infeasible; open.
-* Presence (exact non-balance) at 7 rounds via key-monomial parity [`step6_presence_attempt.json`]: no odd count found (20 key monomials, cap 2·10^4) on 2 instances; open.
+* Exact decision of the 46 persistent gap bits [`step6_gap_resolution.json`]: key support 33–88 bits, key-degree bound 23–65 → infeasible by evaluation. **Superseded:** all 46 decided (not balanced) by presence proofs, see step22.
+* Presence (exact non-balance) at 7 rounds via key-monomial parity [`step6_presence_attempt.json`]: no odd count found (20 key monomials, cap 2·10^4) on 2 instances. **Superseded:** maximal key patterns give presence proofs for every bit, see step17–step21.
 
 ## Step 7 — checkable artifacts [`step7_certificates.py`, `step7_certificates.json`, `make certificates`]
 * 141 DRAT proof runs (138 distinct CNFs) from external CaDiCaL 3.0.1, all VERIFIED by drat-trim: every certified (cube, bit) pair of Dipper r=6 (90), Dipper-XOR r=9 (17), Dipper-no-add r=10 (10), Dipper frontier cubes r=3..6 (18), word cubes A/C r=5 (6).
@@ -104,7 +104,7 @@ the presence/forced-mask claims reported there.
   (8 odd); all agree.
 * **step17/step18/step20 — presence at 7 rounds.** Cube = all input bits except
   bit 0 (dimension 63), `add` mode. For **every one of the 64 output bits** a key
-  pattern with an **odd** trail count was found (counts 1–81, median 3), and the
+  pattern with an **odd** trail count was found (counts 1–81, median 2), and the
   returned trail was re-checked by the CNF-independent witness checker: 64/64
   valid. Consolidated in `results/step20_presence_r7_complete.json`.
   Consequence: this cube yields **no** 7-round integral distinguisher — the

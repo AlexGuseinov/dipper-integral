@@ -9,32 +9,34 @@ Usage: step21_presence_all_p.py <p-list> <outfile>
 """
 import glob, json, os, random, sys, time
 sys.path.insert(0, ".")
-from dipper.count import TrailCounter, greedy_key_pattern
+from dipper.count import TrailCounter, greedy_key_pattern_fast as greedy_key_pattern
 from dipper.witness import check_trail
 
 rounds = 7
-STAGES = [(2000, 1500), (800, 8000), (200, 40000)]
+STAGES = [(3000, 200), (800, 1500), (300, 8000), (100, 40000)]
 ps = [int(x) for x in sys.argv[1].split(",")]
 OUT = sys.argv[2]
 res = json.load(open(OUT)) if os.path.exists(OUT) else {}
 
 
-def known_patterns():
-    """bit -> list of patterns (ints) that were odd for some constant-bit position."""
-    seeds = {}
+def known_patterns(p):
+    """bit -> patterns that were odd for bit j at other constant-bit positions,
+    closest positions first (same nibble, then same word, then the rest), at most 12."""
+    src = {}
     p0 = json.load(open("results/step20_presence_r7_complete.json"))["per_bit"]
     for j, v in p0.items():
-        seeds.setdefault(int(j), []).append(tuple(int(m, 16) for m in v["pattern"]))
+        src.setdefault(int(j), []).append((0, tuple(int(m, 16) for m in v["pattern"])))
     for f in glob.glob("results/step21_presence_*_p.json"):
         try:
             d = json.load(open(f))
         except Exception:
             continue
-        for rec in d.values():
+        for q, rec in d.items():
             for j, b in rec.get("bits", {}).items():
                 if b.get("witness_ok"):
-                    seeds.setdefault(int(j), []).append(tuple(int(m, 16) for m in b["pattern"]))
-    return seeds
+                    src.setdefault(int(j), []).append((int(q), tuple(int(m, 16) for m in b["pattern"])))
+    rank = lambda q: (q // 4 != p // 4, q // 16 != p // 16, abs(q - p))
+    return {j: [pat for q, pat in sorted(v, key=lambda x: rank(x[0])) if q != p][:12] for j, v in src.items()}
 
 
 def save():
@@ -50,7 +52,7 @@ for p in ps:
     t0 = time.time()
     active = sorted(set(range(64)) - {p})
     c = TrailCounter(active, rounds)
-    seeds = known_patterns()
+    seeds = known_patterns(p)
     for j in range(64):
         if str(j) in rec["bits"] and rec["bits"][str(j)].get("witness_ok"):
             continue
@@ -61,7 +63,7 @@ for p in ps:
             seen.add(pat)
             if not c.exists(list(pat), j):
                 continue
-            n, tr = c.count(list(pat), j, cap=1500, return_trails=1)
+            n, tr = c.count(list(pat), j, cap=200, return_trails=1)
             if n is not None and n % 2 == 1:
                 hit, how = ("odd", n, (list(pat), tr[0])), "seed"
                 break
