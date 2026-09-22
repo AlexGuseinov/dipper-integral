@@ -1,6 +1,6 @@
 PY ?= python3
 
-.PHONY: test reproduce quick summary paper clean certificates tools
+.PHONY: test reproduce quick summary paper springer clean certificates tools
 
 test:            ## fast validation: test vectors, inverses, local models, model soundness
 	$(PY) -m tests.test_vectors
@@ -40,6 +40,10 @@ reproduce: quick ## everything (several hours on 2 cores)
 	$(PY) scripts/step17_presence_probe.py
 	$(PY) scripts/step18_hardbits.py 7,20,23,34,37,45,54
 	$(PY) scripts/step22_gap_presence.py results/step4_tightness_add.json
+	$(PY) scripts/step21_presence_all_p.py $$(seq -s, 1 2 63) results/step21_presence_odd_p.json
+	$(PY) scripts/step21_presence_all_p.py $$(seq -s, 2 2 63) results/step21_presence_even_p.json
+	$(PY) scripts/step23_gap_witness_keys.py 60000
+	$(PY) scripts/step23b_gap_witness_lowweight.py 24
 	$(PY) scripts/figures.py
 	$(PY) scripts/figures2.py
 	$(PY) scripts/summarize.py
@@ -49,6 +53,9 @@ summary:
 
 paper:
 	cd paper && latexmk -pdf -interaction=nonstopmode paper.tex
+
+springer:        ## journal version (needs sn-jnl.cls + sn-mathphys-num.bst in paper/springer/)
+	cd paper && $(PY) tools/make_springer.py
 
 clean:
 	cd paper && latexmk -C

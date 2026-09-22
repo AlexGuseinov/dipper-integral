@@ -1,0 +1,16 @@
+('nibbles[4, 9, 12]', 3, 26) none 104 0.1 None
+('nibbles[2, 4, 8]', 2, 6) none 1196 0.7 None
+('nibbles[2, 4, 8]', 2, 23) none 1742 1.1 None
+('random4', 2, 21) none 26 0.0 None
+('random4', 3, 19) none 26 0.0 None
+('random4', 3, 33) none 104 0.0 None
+('random4', 3, 41) none 104 0.0 None
+('random12', 3, 11) none 182 0.2 None
+('random12', 3, 41) none 104 0.1 None
+('random12', 3, 9) none 104 0.1 None
+('random12', 3, 16) none 52 0.0 None
+('random12', 3, 43) none 52 0.0 None
+('random12', 3, 33) none 52 0.0 None
+('random12', 3, 9) none 26 0.0 None
+('random12', 3, 26) none 52 0.1 None
+{'cases': 46, 'with_explicit_key': 31} 2.6

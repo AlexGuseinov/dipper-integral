@@ -1,0 +1,300 @@
+\begin{thebibliography}{44}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Knudsen and Wagner(2002)]{knudsen2002integral}
+Lars~R. Knudsen and David Wagner.
+\newblock Integral cryptanalysis.
+\newblock In \emph{Fast Software Encryption -- FSE 2002}, volume 2365 of
+  \emph{LNCS}, pages 112--127. Springer, 2002.
+
+\bibitem[Todo(2015{\natexlab{a}})]{todo2015}
+Yosuke Todo.
+\newblock Structural evaluation by generalized integral property.
+\newblock In \emph{Advances in Cryptology -- EUROCRYPT 2015}, volume 9056 of
+  \emph{LNCS}, pages 287--314. Springer, 2015{\natexlab{a}}.
+
+\bibitem[Todo and Morii(2016)]{todo2016bit}
+Yosuke Todo and Masakatu Morii.
+\newblock Bit-based division property and application to {Simon} family.
+\newblock In \emph{Fast Software Encryption -- FSE 2016}, volume 9783 of
+  \emph{LNCS}, pages 357--377. Springer, 2016.
+
+\bibitem[Xiang et~al.(2016)Xiang, Zhang, Bao, and Lin]{xiang2016milp}
+Zejun Xiang, Wentao Zhang, Zhenzhen Bao, and Dongdai Lin.
+\newblock Applying {MILP} method to searching integral distinguishers based on
+  division property for 6 lightweight block ciphers.
+\newblock In \emph{Advances in Cryptology -- ASIACRYPT 2016}, volume 10031 of
+  \emph{LNCS}, pages 648--678. Springer, 2016.
+
+\bibitem[Hu et~al.(2020{\natexlab{a}})Hu, Sun, Wang, and Wang]{hu2020mp}
+Kai Hu, Siwei Sun, Meiqin Wang, and Qingju Wang.
+\newblock An algebraic formulation of the division property: Revisiting degree
+  evaluations, cube attacks, and key-independent sums.
+\newblock In \emph{Advances in Cryptology -- ASIACRYPT 2020}, volume 12491 of
+  \emph{LNCS}, pages 446--476. Springer, 2020{\natexlab{a}}.
+
+\bibitem[Hao et~al.(2020)Hao, Leander, Meier, Todo, and Wang]{hao2020}
+Yonglin Hao, Gregor Leander, Willi Meier, Yosuke Todo, and Qingju Wang.
+\newblock Modeling for three-subset division property without unknown subset.
+\newblock In \emph{Advances in Cryptology -- EUROCRYPT 2020}, volume 12105 of
+  \emph{LNCS}, pages 466--495. Springer, 2020.
+
+\bibitem[Lipmaa and Moriai(2002)]{lipmaa2001}
+Helger Lipmaa and Shiho Moriai.
+\newblock Efficient algorithms for computing differential properties of
+  addition.
+\newblock In \emph{Fast Software Encryption -- FSE 2001}, volume 2355 of
+  \emph{LNCS}, pages 336--350. Springer, 2002.
+
+\bibitem[Wall{\'e}n(2003)]{wallen2003}
+Johan Wall{\'e}n.
+\newblock Linear approximations of addition modulo $2^n$.
+\newblock In \emph{Fast Software Encryption -- FSE 2003}, volume 2887 of
+  \emph{LNCS}, pages 261--273. Springer, 2003.
+
+\bibitem[Braeken and Semaev(2005)]{braeken2005}
+An~Braeken and Igor Semaev.
+\newblock The {ANF} of the composition of addition and multiplication mod $2^n$
+  with a {B}oolean function.
+\newblock In \emph{Fast Software Encryption -- FSE 2005}, volume 3557 of
+  \emph{LNCS}, pages 112--125. Springer, 2005.
+
+\bibitem[Sun et~al.(2016)Sun, Wang, and Wang]{sun2016arx}
+Ling Sun, Wei Wang, and Meiqin Wang.
+\newblock {MILP}-aided bit-based division property for {ARX}-based block
+  cipher.
+\newblock Cryptology ePrint Archive, Paper 2016/1101, 2016.
+\newblock URL \url{https://eprint.iacr.org/2016/1101}.
+
+\bibitem[Sun et~al.(2017)Sun, Wang, Liu, and Wang]{sun2017sat}
+Ling Sun, Wei Wang, Ru~Liu, and Meiqin Wang.
+\newblock Automatic search of bit-based division property for {ARX} ciphers and
+  word-based division property.
+\newblock In \emph{Advances in Cryptology -- ASIACRYPT 2017}, volume 10624 of
+  \emph{LNCS}, pages 128--157. Springer, 2017.
+
+\bibitem[Beaulieu et~al.(2015)Beaulieu, Shors, Smith, Treatman-Clark, Weeks,
+  and Wingers]{simonspeck2015}
+Ray Beaulieu, Douglas Shors, Jason Smith, Stefan Treatman-Clark, Bryan Weeks,
+  and Louis Wingers.
+\newblock The {SIMON} and {SPECK} lightweight block ciphers.
+\newblock In \emph{Proceedings of the 52nd Design Automation Conference (DAC)}.
+  ACM, 2015.
+
+\bibitem[Huseynli et~al.(2026)Huseynli, Imamverdiyev, and Alizadeh]{dipper2026}
+Ali Huseynli, Yadigar Imamverdiyev, and Jalal Alizadeh.
+\newblock Dipper: A lightweight hybrid {SPN}--{ARX} block cipher.
+\newblock \emph{Cryptography}, 10\penalty0 (4):\penalty0 52, 2026.
+\newblock \doi{10.3390/cryptography10040052}.
+
+\bibitem[Banik et~al.(2017)Banik, Pandey, Peyrin, Sasaki, Sim, and
+  Todo]{gift2017}
+Subhadeep Banik, Sumit~Kumar Pandey, Thomas Peyrin, Yu~Sasaki, Siang~Meng Sim,
+  and Yosuke Todo.
+\newblock {GIFT}: A small {Present}.
+\newblock In \emph{Cryptographic Hardware and Embedded Systems -- CHES 2017},
+  volume 10529 of \emph{LNCS}, pages 321--345. Springer, 2017.
+
+\bibitem[Hu and Yap(2024)]{huyap2024}
+Kai Hu and Trevor Yap.
+\newblock Perfect monomial prediction for modular addition.
+\newblock \emph{IACR Transactions on Symmetric Cryptology}, 2024.
+\newblock Cryptology ePrint Archive, Paper 2024/1335.
+
+\bibitem[Daemen et~al.(1997)Daemen, Knudsen, and Rijmen]{square1997}
+Joan Daemen, Lars~R. Knudsen, and Vincent Rijmen.
+\newblock The block cipher {Square}.
+\newblock In \emph{Fast Software Encryption -- FSE 1997}, volume 1267 of
+  \emph{LNCS}, pages 149--165. Springer, 1997.
+
+\bibitem[Lucks(2002)]{lucks2001}
+Stefan Lucks.
+\newblock The saturation attack -- a bait for {Twofish}.
+\newblock In \emph{Fast Software Encryption -- FSE 2001}, volume 2355 of
+  \emph{LNCS}, pages 1--15. Springer, 2002.
+
+\bibitem[Z'aba et~al.(2008)Z'aba, Raddum, Henricksen, and Dawson]{zaba2008}
+Muhammad~Reza Z'aba, H{\aa}vard Raddum, Matt Henricksen, and Ed~Dawson.
+\newblock Bit-pattern based integral attack.
+\newblock In \emph{Fast Software Encryption -- FSE 2008}, volume 5086 of
+  \emph{LNCS}, pages 363--381. Springer, 2008.
+
+\bibitem[Lai(1994)]{lai1994}
+Xuejia Lai.
+\newblock Higher order derivatives and differential cryptanalysis.
+\newblock In \emph{Communications and Cryptography: Two Sides of One Tapestry},
+  pages 227--233. Springer, 1994.
+
+\bibitem[Knudsen(1995)]{knudsen1994}
+Lars~R. Knudsen.
+\newblock Truncated and higher order differentials.
+\newblock In \emph{Fast Software Encryption -- FSE 1994}, volume 1008 of
+  \emph{LNCS}, pages 196--211. Springer, 1995.
+
+\bibitem[Canteaut and Videau(2002)]{canteaut2002}
+Anne Canteaut and Marion Videau.
+\newblock Degree of composition of highly nonlinear functions and applications
+  to higher order differential cryptanalysis.
+\newblock In \emph{Advances in Cryptology -- EUROCRYPT 2002}, volume 2332 of
+  \emph{LNCS}, pages 518--533. Springer, 2002.
+
+\bibitem[Boura et~al.(2011)Boura, Canteaut, and De~Canni{\`e}re]{boura2011}
+Christina Boura, Anne Canteaut, and Christophe De~Canni{\`e}re.
+\newblock Higher-order differential properties of {Keccak} and {Luffa}.
+\newblock In \emph{Fast Software Encryption -- FSE 2011}, volume 6733 of
+  \emph{LNCS}, pages 252--269. Springer, 2011.
+
+\bibitem[Dinur and Shamir(2009)]{dinur2009}
+Itai Dinur and Adi Shamir.
+\newblock Cube attacks on tweakable black box polynomials.
+\newblock In \emph{Advances in Cryptology -- EUROCRYPT 2009}, volume 5479 of
+  \emph{LNCS}, pages 278--299. Springer, 2009.
+
+\bibitem[Todo(2015{\natexlab{b}})]{todo2015misty}
+Yosuke Todo.
+\newblock Integral cryptanalysis on full {MISTY1}.
+\newblock In \emph{Advances in Cryptology -- CRYPTO 2015}, volume 9215 of
+  \emph{LNCS}, pages 413--432. Springer, 2015{\natexlab{b}}.
+
+\bibitem[Eskandari et~al.(2019)Eskandari, Kidmose, K{\"o}lbl, and
+  Tiessen]{eskandari2018}
+Zahra Eskandari, Andreas~Brasen Kidmose, Stefan K{\"o}lbl, and Tyge Tiessen.
+\newblock Finding integral distinguishers with ease.
+\newblock In \emph{Selected Areas in Cryptography -- SAC 2018}, volume 11349 of
+  \emph{LNCS}. Springer, 2019.
+
+\bibitem[Todo et~al.(2017)Todo, Isobe, Hao, and Meier]{todo2017cube}
+Yosuke Todo, Takanori Isobe, Yonglin Hao, and Willi Meier.
+\newblock Cube attacks on non-blackbox polynomials based on division property.
+\newblock In \emph{Advances in Cryptology -- CRYPTO 2017}, volume 10403 of
+  \emph{LNCS}, pages 250--279. Springer, 2017.
+
+\bibitem[Wang et~al.(2018)Wang, Hao, Todo, Li, Isobe, and Meier]{wang2018cube}
+Qingju Wang, Yonglin Hao, Yosuke Todo, Chaoyun Li, Takanori Isobe, and Willi
+  Meier.
+\newblock Improved division property based cube attacks exploiting algebraic
+  properties of superpoly.
+\newblock In \emph{Advances in Cryptology -- CRYPTO 2018}, volume 10991 of
+  \emph{LNCS}, pages 275--305. Springer, 2018.
+
+\bibitem[Hu and Wang(2019)]{huwang2019}
+Kai Hu and Meiqin Wang.
+\newblock Automatic search for a variant of division property using three
+  subsets.
+\newblock In \emph{Topics in Cryptology -- CT-RSA 2019}, volume 11405 of
+  \emph{LNCS}, pages 412--432. Springer, 2019.
+
+\bibitem[Hu et~al.(2020{\natexlab{b}})Hu, Wang, and Wang]{hu2020linear}
+Kai Hu, Qingju Wang, and Meiqin Wang.
+\newblock Finding bit-based division property for ciphers with complex linear
+  layers.
+\newblock \emph{IACR Transactions on Symmetric Cryptology}, 2020\penalty0 (1),
+  2020{\natexlab{b}}.
+
+\bibitem[Zhang and Rijmen(2019)]{zhang2019}
+Wenying Zhang and Vincent Rijmen.
+\newblock Division cryptanalysis of block ciphers with a binary diffusion
+  layer.
+\newblock \emph{IET Information Security}, 13\penalty0 (2), 2019.
+
+\bibitem[Bellini et~al.(2026)Bellini, Rachidi, and Tiwari]{bellini2026claaspmp}
+Emanuele Bellini, Mohamed Rachidi, and Sharwan~K. Tiwari.
+\newblock {CLAASP-MP}: An automated {MILP} framework for monomial prediction.
+\newblock Cryptology ePrint Archive, Paper 2026/735, 2026.
+\newblock URL \url{https://eprint.iacr.org/2026/735}.
+
+\bibitem[Hebborn et~al.(2020)Hebborn, Lambin, Leander, and Todo]{hebborn2020}
+Phil Hebborn, Baptiste Lambin, Gregor Leander, and Yosuke Todo.
+\newblock Lower bounds on the degree of block ciphers.
+\newblock In \emph{Advances in Cryptology -- ASIACRYPT 2020}, volume 12491 of
+  \emph{LNCS}, pages 537--566. Springer, 2020.
+
+\bibitem[Hebborn et~al.(2021)Hebborn, Lambin, Leander, and Todo]{hebborn2021}
+Phil Hebborn, Baptiste Lambin, Gregor Leander, and Yosuke Todo.
+\newblock Strong and tight security guarantees against integral distinguishers.
+\newblock In \emph{Advances in Cryptology -- ASIACRYPT 2021}, volume 13090 of
+  \emph{LNCS}. Springer, 2021.
+
+\bibitem[Zeng and Tian(2024)]{zeng2024}
+Fanyang Zeng and Tian Tian.
+\newblock On the security bounds for block ciphers without whitening key
+  addition against integral distinguishers.
+\newblock In \emph{Information Security and Privacy -- ACISP 2024}, volume
+  14895 of \emph{LNCS}. Springer, 2024.
+
+\bibitem[Peng et~al.(2026)Peng, He, Hu, and Wang]{peng2026}
+Shuo Peng, Jiahui He, Kai Hu, and Meiqin Wang.
+\newblock Delving deep into security guarantees against integral distinguishers
+  with applications to {PRESENT}, {TWINE} and {LBLOCK}.
+\newblock Cryptology ePrint Archive, Paper 2026/961, 2026.
+
+\bibitem[Beierle et~al.(2025)Beierle, Hebborn, Leander, and
+  Perehuda]{beierle2025}
+Christof Beierle, Phil Hebborn, Gregor Leander, and Yevhen Perehuda.
+\newblock Integral resistance of block ciphers with key whitening by modular
+  addition.
+\newblock In \emph{Advances in Cryptology -- {CRYPTO} 2025}, Lecture Notes in
+  Computer Science. Springer, 2025.
+\newblock Cryptology ePrint Archive, Paper 2025/1050.
+
+\bibitem[Gerhalter and Eichlseder(2026)]{gerhalter2026}
+Simon Gerhalter and Maria Eichlseder.
+\newblock Integral resistance and degree bounds for complex linear layers:
+  Application to {PRINCE} and lower-latency alternatives.
+\newblock Cryptology ePrint Archive, Paper 2026/786; to appear in SAC 2026,
+  2026.
+
+\bibitem[Hadipour and Eichlseder(2022)]{hadipour2022}
+Hosein Hadipour and Maria Eichlseder.
+\newblock Integral cryptanalysis of {WARP} based on monomial prediction.
+\newblock \emph{IACR Transactions on Symmetric Cryptology}, 2022\penalty0 (2),
+  2022.
+
+\bibitem[Wetzler et~al.(2014)Wetzler, Heule, and Hunt]{drattrim2014}
+Nathan Wetzler, Marijn J.~H. Heule, and Warren~A. Hunt, Jr.
+\newblock {DRAT-trim}: Efficient checking and trimming using expressive clausal
+  proofs.
+\newblock In \emph{Theory and Applications of Satisfiability Testing -- SAT
+  2014}, volume 8561 of \emph{LNCS}, pages 422--429. Springer, 2014.
+
+\bibitem[Biere et~al.(2020)Biere, Fazekas, Fleury, and Heisinger]{cadical2020}
+Armin Biere, Katalin Fazekas, Mathias Fleury, and Maximilian Heisinger.
+\newblock {CaDiCaL}, {Kissat}, {Paracooba}, {Plingeling} and {Treengeling}
+  entering the {SAT} competition 2020.
+\newblock Proceedings of SAT Competition 2020 B-2020-1, University of Helsinki,
+  2020.
+
+\bibitem[Biere et~al.(2024)Biere, Faller, Fazekas, Fleury, Froleyks, and
+  Pollitt]{cadical2024}
+Armin Biere, Tobias Faller, Katalin Fazekas, Mathias Fleury, Nils Froleyks, and
+  Florian Pollitt.
+\newblock {CaDiCaL} 2.0.
+\newblock In \emph{Computer Aided Verification -- CAV 2024}, volume 14681 of
+  \emph{LNCS}, pages 133--152. Springer, 2024.
+
+\bibitem[Ignatiev et~al.(2018)Ignatiev, Morgado, and Marques-Silva]{pysat2018}
+Alexey Ignatiev, Antonio Morgado, and Joao Marques-Silva.
+\newblock {PySAT}: A {Python} toolkit for prototyping with {SAT} oracles.
+\newblock In \emph{Theory and Applications of Satisfiability Testing -- SAT
+  2018}, volume 10929 of \emph{LNCS}, pages 428--437. Springer, 2018.
+
+\bibitem[Kummer(1852)]{kummer1852}
+Ernst~Eduard Kummer.
+\newblock {\"U}ber die erg{\"a}nzungss{\"a}tze zu den allgemeinen
+  reciprocit{\"a}tsgesetzen.
+\newblock \emph{Journal f{\"u}r die reine und angewandte Mathematik},
+  44:\penalty0 93--146, 1852.
+
+\bibitem[Bogdanov et~al.(2007)Bogdanov, Knudsen, Leander, Paar, Poschmann,
+  Robshaw, Seurin, and Vikkelsoe]{present2007}
+Andrey Bogdanov, Lars~R. Knudsen, Gregor Leander, Christof Paar, Axel
+  Poschmann, Matthew J.~B. Robshaw, Yannick Seurin, and Charlotte Vikkelsoe.
+\newblock {PRESENT}: An ultra-lightweight block cipher.
+\newblock In \emph{Cryptographic Hardware and Embedded Systems -- CHES 2007},
+  volume 4727 of \emph{LNCS}, pages 450--466. Springer, 2007.
+
+\end{thebibliography}
