@@ -21,10 +21,11 @@ fig, ax = plt.subplots(figsize=(5.4, 3.2))
 for name, (d, stop, col, mk) in front.items():
     xs = sorted(d); ys = [d[x] for x in xs]
     ax.plot(xs, ys, color=col, lw=2, marker=mk, ms=5, label=name)
+    ax.plot([xs[-1], stop], [ys[-1], 66], color=col, lw=1.2, ls=(0, (2, 2)))
     ax.plot([stop], [66], marker="x", ms=7, mew=2, color=col, clip_on=False)
 ax.axhline(64, color=ink, lw=0.8, ls=":")
 ax.text(2.55, 64.8, "full codebook ($2^{64}$)", fontsize=7.5, color=ink, va="bottom")
-ax.plot([], [], ls="none", marker="x", ms=6, mew=2, color=muted, label="first round with no certificate")
+ax.plot([], [], ls="none", marker="x", ms=6, mew=2, color=muted, label="no cube certified (> full codebook)")
 ax.set_xlabel("rounds $r$")
 ax.set_ylabel(r"data: $\log_2$(chosen plaintexts)")
 ax.set_xticks(range(3, 12)); ax.set_xlim(2.5, 11.5); ax.set_ylim(0, 70)
