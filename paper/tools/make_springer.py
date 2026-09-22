@@ -41,6 +41,9 @@ The authors have no competing interests to declare that are relevant to the cont
 \bmhead{Data and code availability}
 """ + data_text + r"""
 
+\bmhead{Ethics approval and consent to participate}
+Not applicable.
+
 \bmhead{Author contributions}
 Ali Huseynli: conceptualization, methodology, software, formal analysis, investigation, writing -- original draft. Yadigar Imamverdiyev: supervision, validation, writing -- review and editing. Jalal Alizadeh: supervision, validation, writing -- review and editing. All authors read and approved the final manuscript.
 """

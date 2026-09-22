@@ -231,3 +231,318 @@ p=9 j=33 search cap=1500 count=1 ok=True ex=15 2.0s
 p=9 j=34 search cap=1500 count=1 ok=True ex=91 11.7s
 p=9 j=35 search cap=1500 count=1 ok=True ex=50 4.2s
 p=9 j=36 search cap=1500 count=1 ok=True ex=143 27.5s
+p=9 j=37 search cap=1500 count=1 ok=True ex=641 186.8s
+p=9 j=38 search cap=1500 count=1 ok=True ex=132 18.6s
+p=9 j=39 search cap=1500 count=1 ok=True ex=31 4.6s
+p=9 j=40 search cap=1500 count=1 ok=True ex=121 17.0s
+p=9 j=41 search cap=1500 count=1 ok=True ex=17 4.1s
+p=9 j=42 search cap=1500 count=1 ok=True ex=12 1.6s
+p=9 j=43 search cap=1500 count=1 ok=True ex=21 3.4s
+p=9 j=44 search cap=1500 count=1 ok=True ex=217 33.5s
+p=9 j=45 search cap=1500 count=1 ok=True ex=63 14.2s
+p=9 j=46 search cap=1500 count=1 ok=True ex=23 3.6s
+p=9 j=47 search cap=1500 count=1 ok=True ex=53 7.6s
+p=9 j=48 search cap=1500 count=5 ok=True ex=9 1.5s
+p=9 j=49 search cap=1500 count=15 ok=True ex=23 7.5s
+p=9 j=50 search cap=1500 count=1 ok=True ex=54 8.8s
+p=9 j=51 search cap=1500 count=1 ok=True ex=43 7.8s
+p=9 j=52 search cap=1500 count=1 ok=True ex=12 2.1s
+p=9 j=53 search cap=1500 count=1 ok=True ex=161 39.9s
+p=9 j=54 search cap=1500 count=1 ok=True ex=212 45.9s
+p=9 j=55 search cap=1500 count=1 ok=True ex=52 8.5s
+p=9 j=56 search cap=1500 count=1 ok=True ex=11 1.6s
+p=9 j=57 search cap=1500 count=1 ok=True ex=60 7.2s
+p=9 j=58 search cap=1500 count=1 ok=True ex=14 3.1s
+p=9 j=59 search cap=1500 count=1 ok=True ex=15 3.3s
+p=9 j=60 search cap=1500 count=1 ok=True ex=60 7.9s
+p=9 j=61 search cap=1500 count=1 ok=True ex=68 14.9s
+p=9 j=62 search cap=1500 count=1 ok=True ex=44 7.7s
+p=9 j=63 search cap=1500 count=1 ok=True ex=20 2.0s
+== p=9 resolved 64/64 unresolved=[] 1176.7s
+p=11 j=0 seed count=1 ok=True ex=8 0.1s
+p=11 j=1 seed count=297 ok=True ex=2 0.2s
+p=11 j=2 seed count=1 ok=True ex=9 0.8s
+p=11 j=3 search cap=1500 count=1 ok=True ex=1009 100.8s
+p=11 j=4 seed count=1 ok=True ex=9 1.0s
+p=11 j=5 search cap=1500 count=7 ok=True ex=164 15.2s
+p=11 j=6 seed count=1 ok=True ex=8 1.0s
+p=11 j=7 seed count=1 ok=True ex=8 0.0s
+p=11 j=8 search cap=1500 count=7 ok=True ex=11 0.1s
+p=11 j=9 search cap=1500 count=1 ok=True ex=21 1.6s
+p=11 j=10 search cap=1500 count=1 ok=True ex=90 8.4s
+p=11 j=11 seed count=3 ok=True ex=9 0.9s
+p=11 j=12 seed count=15 ok=True ex=9 1.8s
+p=11 j=13 seed count=1 ok=True ex=9 1.0s
+p=11 j=14 search cap=1500 count=1 ok=True ex=82 8.2s
+p=11 j=15 search cap=1500 count=1 ok=True ex=131 16.2s
+p=11 j=16 seed count=1 ok=True ex=8 1.0s
+p=11 j=17 seed count=3 ok=True ex=8 1.1s
+p=11 j=18 seed count=1 ok=True ex=8 0.9s
+p=11 j=19 search cap=1500 count=1 ok=True ex=12 1.0s
+p=11 j=20 seed count=1 ok=True ex=8 0.0s
+p=11 j=21 seed count=5 ok=True ex=8 1.0s
+p=11 j=22 search cap=1500 count=3 ok=True ex=177 18.7s
+p=11 j=23 seed count=1 ok=True ex=8 2.4s
+p=11 j=24 seed count=1 ok=True ex=9 0.7s
+p=11 j=25 seed count=1 ok=True ex=8 1.3s
+p=11 j=26 seed count=91 ok=True ex=2 0.8s
+p=11 j=27 search cap=1500 count=1 ok=True ex=277 24.0s
+p=11 j=28 seed count=3 ok=True ex=9 1.9s
+p=11 j=29 seed count=3 ok=True ex=9 3.6s
+p=11 j=30 search cap=1500 count=1 ok=True ex=42 3.4s
+p=11 j=31 search cap=1500 count=27 ok=True ex=74 10.1s
+p=11 j=32 search cap=1500 count=3 ok=True ex=20 2.3s
+p=11 j=33 seed count=1 ok=True ex=9 0.0s
+p=11 j=34 seed count=1 ok=True ex=8 0.9s
+p=11 j=35 seed count=1 ok=True ex=8 0.0s
+p=11 j=36 seed count=1 ok=True ex=9 2.0s
+p=11 j=37 seed count=1 ok=True ex=9 2.0s
+p=11 j=38 search cap=1500 count=1 ok=True ex=37 3.9s
+p=11 j=39 seed count=1 ok=True ex=9 0.0s
+p=11 j=40 seed count=1 ok=True ex=10 1.7s
+p=11 j=41 search cap=1500 count=1 ok=True ex=48 3.9s
+p=11 j=42 search cap=1500 count=1 ok=True ex=26 1.6s
+p=11 j=43 search cap=1500 count=1 ok=True ex=22 2.3s
+p=11 j=44 search cap=1500 count=3 ok=True ex=42 2.8s
+p=11 j=45 seed count=1 ok=True ex=10 1.7s
+p=11 j=46 seed count=1 ok=True ex=9 0.9s
+p=11 j=47 search cap=1500 count=1 ok=True ex=54 3.4s
+p=11 j=48 seed count=5 ok=True ex=10 0.9s
+p=11 j=49 search cap=1500 count=1 ok=True ex=48 5.3s
+p=11 j=50 seed count=1 ok=True ex=9 0.9s
+p=11 j=51 seed count=1 ok=True ex=9 3.5s
+p=11 j=52 seed count=1 ok=True ex=9 0.8s
+p=11 j=53 seed count=1 ok=True ex=10 1.8s
+p=11 j=54 seed count=1 ok=True ex=9 0.0s
+p=11 j=55 seed count=1 ok=True ex=9 1.6s
+p=11 j=56 search cap=1500 count=5 ok=True ex=11 0.1s
+p=11 j=57 seed count=1 ok=True ex=9 0.9s
+p=11 j=58 search cap=1500 count=1 ok=True ex=21 1.3s
+p=11 j=59 search cap=1500 count=1 ok=True ex=34 1.8s
+p=11 j=60 seed count=1 ok=True ex=9 2.0s
+p=11 j=61 seed count=1 ok=True ex=10 1.9s
+p=11 j=62 seed count=1 ok=True ex=9 0.8s
+p=11 j=63 search cap=1500 count=3 ok=True ex=14 0.2s
+== p=11 resolved 64/64 unresolved=[] 120.2s
+p=12 j=0 search cap=1500 count=1 ok=True ex=64 2.6s
+p=12 j=1 search cap=1500 count=1 ok=True ex=23 1.2s
+p=12 j=2 search cap=1500 count=1 ok=True ex=23 1.3s
+p=12 j=3 search cap=1500 count=1 ok=True ex=34 1.9s
+p=12 j=4 search cap=1500 count=1 ok=True ex=18 0.3s
+p=12 j=5 search cap=1500 count=3 ok=True ex=149 11.3s
+p=12 j=6 search cap=1500 count=9 ok=True ex=207 17.7s
+p=12 j=7 search cap=1500 count=3 ok=True ex=322 47.2s
+p=12 j=8 search cap=1500 count=5 ok=True ex=58 3.6s
+p=12 j=9 search cap=1500 count=5 ok=True ex=20 1.2s
+p=12 j=10 search cap=1500 count=3 ok=True ex=170 10.1s
+p=12 j=11 search cap=1500 count=1 ok=True ex=37 2.6s
+p=12 j=12 search cap=1500 count=7 ok=True ex=42 3.7s
+p=12 j=13 search cap=1500 count=3 ok=True ex=16 0.2s
+p=12 j=14 search cap=1500 count=9 ok=True ex=11 1.9s
+p=12 j=15 search cap=1500 count=1 ok=True ex=74 8.9s
+p=12 j=16 search cap=1500 count=1 ok=True ex=37 1.0s
+p=12 j=17 search cap=1500 count=1 ok=True ex=25 1.1s
+p=12 j=18 search cap=1500 count=1 ok=True ex=10 0.0s
+p=12 j=19 search cap=1500 count=3 ok=True ex=17 0.3s
+p=12 j=20 search cap=1500 count=5 ok=True ex=72 7.9s
+p=12 j=21 search cap=1500 count=3 ok=True ex=50 3.0s
+p=12 j=22 search cap=1500 count=1 ok=True ex=32 2.3s
+p=12 j=23 search cap=1500 count=1 ok=True ex=587 81.2s
+p=12 j=24 search cap=1500 count=1 ok=True ex=20 1.4s
+p=12 j=25 search cap=1500 count=1 ok=True ex=37 1.4s
+p=12 j=26 search cap=1500 count=3 ok=True ex=69 2.8s
+p=12 j=27 search cap=1500 count=1 ok=True ex=96 7.6s
+p=12 j=28 search cap=1500 count=9 ok=True ex=32 3.6s
+p=12 j=29 search cap=1500 count=7 ok=True ex=34 3.0s
+p=12 j=30 search cap=1500 count=3 ok=True ex=60 5.7s
+p=12 j=31 search cap=1500 count=3 ok=True ex=54 2.9s
+p=12 j=32 search cap=1500 count=1 ok=True ex=12 1.0s
+p=12 j=33 search cap=1500 count=1 ok=True ex=28 1.6s
+p=12 j=34 search cap=1500 count=1 ok=True ex=131 9.8s
+p=12 j=35 search cap=1500 count=1 ok=True ex=22 0.5s
+p=12 j=36 search cap=1500 count=3 ok=True ex=46 3.5s
+p=12 j=37 search cap=1500 count=1 ok=True ex=426 70.6s
+p=12 j=38 search cap=1500 count=1 ok=True ex=31 3.3s
+p=12 j=39 search cap=1500 count=1 ok=True ex=78 8.6s
+p=12 j=40 search cap=1500 count=1 ok=True ex=32 2.7s
+p=12 j=41 search cap=1500 count=1 ok=True ex=27 0.6s
+p=12 j=42 search cap=1500 count=1 ok=True ex=34 2.1s
+p=12 j=43 search cap=1500 count=7 ok=True ex=28 0.8s
+p=12 j=44 search cap=1500 count=3 ok=True ex=67 6.3s
+p=12 j=45 search cap=1500 count=1 ok=True ex=20 1.2s
+p=12 j=46 search cap=1500 count=1 ok=True ex=24 2.4s
+p=12 j=47 search cap=1500 count=1 ok=True ex=86 4.4s
+p=12 j=48 search cap=1500 count=1 ok=True ex=26 0.9s
+p=12 j=49 search cap=1500 count=1 ok=True ex=11 1.1s
+p=12 j=50 seed count=27 ok=True ex=4 0.0s
+p=12 j=51 search cap=1500 count=1 ok=True ex=21 0.4s
+p=12 j=52 search cap=1500 count=5 ok=True ex=13 0.1s
+p=12 j=53 search cap=1500 count=3 ok=True ex=543 83.6s
+p=12 j=54 search cap=1500 count=3 ok=True ex=420 66.7s
+p=12 j=55 search cap=1500 count=1 ok=True ex=15 1.7s
+p=12 j=56 search cap=1500 count=57 ok=True ex=11 0.1s
+p=12 j=57 search cap=1500 count=1 ok=True ex=76 7.8s
+p=12 j=58 search cap=1500 count=3 ok=True ex=13 2.6s
+p=12 j=59 search cap=1500 count=3 ok=True ex=16 0.2s
+p=12 j=60 search cap=1500 count=1 ok=True ex=11 0.1s
+p=12 j=61 search cap=1500 count=7 ok=True ex=19 2.3s
+p=12 j=62 search cap=1500 count=21 ok=True ex=15 1.6s
+p=12 j=63 seed count=473 ok=True ex=4 0.4s
+== p=12 resolved 64/64 unresolved=[] 530.2s
+p=13 j=0 search cap=1500 count=1 ok=True ex=52 2.7s
+p=13 j=1 search cap=1500 count=3 ok=True ex=27 1.1s
+p=13 j=2 search cap=1500 count=1 ok=True ex=32 2.3s
+p=13 j=3 search cap=1500 count=1 ok=True ex=243 16.9s
+p=13 j=4 search cap=1500 count=1 ok=True ex=16 0.7s
+p=13 j=5 search cap=1500 count=15 ok=True ex=63 5.8s
+p=13 j=6 search cap=1500 count=3 ok=True ex=37 4.8s
+p=13 j=7 search cap=1500 count=1 ok=True ex=255 28.8s
+p=13 j=8 search cap=1500 count=3 ok=True ex=21 3.1s
+p=13 j=9 search cap=1500 count=1 ok=True ex=24 0.4s
+p=13 j=10 search cap=1500 count=1 ok=True ex=163 10.0s
+p=13 j=11 search cap=1500 count=1 ok=True ex=16 1.6s
+p=13 j=12 search cap=1500 count=7 ok=True ex=29 2.3s
+p=13 j=13 search cap=1500 count=3 ok=True ex=30 2.7s
+p=13 j=14 search cap=1500 count=1 ok=True ex=38 5.9s
+p=13 j=15 search cap=1500 count=3 ok=True ex=125 11.8s
+p=13 j=16 search cap=1500 count=13 ok=True ex=18 0.2s
+p=13 j=17 search cap=1500 count=1 ok=True ex=285 20.5s
+p=13 j=18 search cap=1500 count=1 ok=True ex=13 0.1s
+p=13 j=19 search cap=1500 count=1 ok=True ex=16 1.0s
+p=13 j=20 search cap=1500 count=3 ok=True ex=784 123.0s
+p=13 j=21 search cap=1500 count=1 ok=True ex=110 10.5s
+p=13 j=22 search cap=1500 count=1 ok=True ex=142 12.0s
+p=13 j=23 search cap=1500 count=3 ok=True ex=84 15.1s
+p=13 j=24 search cap=1500 count=1 ok=True ex=25 1.5s
+p=13 j=25 search cap=1500 count=1 ok=True ex=11 0.0s
+p=13 j=26 search cap=1500 count=1 ok=True ex=10 0.0s
+p=13 j=27 search cap=1500 count=5 ok=True ex=34 2.7s
+p=13 j=28 search cap=1500 count=1 ok=True ex=30 3.5s
+p=13 j=29 search cap=1500 count=1 ok=True ex=23 2.3s
+p=13 j=30 search cap=1500 count=3 ok=True ex=80 6.8s
+p=13 j=31 search cap=1500 count=1 ok=True ex=36 2.5s
+p=13 j=32 search cap=1500 count=1 ok=True ex=37 3.4s
+p=13 j=33 search cap=1500 count=5 ok=True ex=30 2.0s
+p=13 j=34 search cap=1500 count=3 ok=True ex=67 6.6s
+p=13 j=35 search cap=1500 count=9 ok=True ex=47 3.7s
+p=13 j=36 search cap=1500 count=9 ok=True ex=34 2.6s
+p=13 j=37 search cap=1500 count=1 ok=True ex=189 41.0s
+p=13 j=38 search cap=1500 count=5 ok=True ex=102 6.3s
+p=13 j=39 search cap=1500 count=1 ok=True ex=94 11.1s
+p=13 j=40 search cap=1500 count=1 ok=True ex=22 4.0s
+p=13 j=41 search cap=1500 count=1 ok=True ex=71 2.1s
+p=13 j=42 search cap=1500 count=1 ok=True ex=35 3.2s
+p=13 j=43 search cap=1500 count=15 ok=True ex=22 0.4s
+p=13 j=44 search cap=1500 count=25 ok=True ex=34 5.5s
+p=13 j=45 search cap=1500 count=3 ok=True ex=76 4.4s
+p=13 j=46 search cap=1500 count=1 ok=True ex=18 2.7s
+p=13 j=47 search cap=1500 count=3 ok=True ex=30 0.8s
+p=13 j=48 search cap=1500 count=7 ok=True ex=46 2.3s
+p=13 j=49 search cap=1500 count=1 ok=True ex=17 1.4s
+p=13 j=50 search cap=1500 count=1 ok=True ex=47 4.2s
+p=13 j=51 search cap=1500 count=1 ok=True ex=12 0.0s
+p=13 j=52 search cap=1500 count=1 ok=True ex=68 5.7s
+p=13 j=53 search cap=1500 count=1 ok=True ex=60 9.8s
+p=13 j=54 search cap=1500 count=1 ok=True ex=93 15.9s
+p=13 j=55 search cap=1500 count=1 ok=True ex=24 2.0s
+p=13 j=56 search cap=1500 count=15 ok=True ex=14 1.4s
+p=13 j=57 search cap=1500 count=1 ok=True ex=62 9.3s
+p=13 j=58 search cap=1500 count=3 ok=True ex=15 4.9s
+p=13 j=59 search cap=1500 count=1 ok=True ex=40 2.4s
+p=13 j=60 search cap=1500 count=1 ok=True ex=18 2.7s
+p=13 j=61 search cap=1500 count=1 ok=True ex=13 1.3s
+p=13 j=62 search cap=1500 count=1 ok=True ex=26 2.2s
+p=13 j=63 search cap=1500 count=1 ok=True ex=19 4.3s
+== p=13 resolved 64/64 unresolved=[] 472.9s
+p=14 j=0 search cap=1500 count=1 ok=True ex=35 1.1s
+p=14 j=1 search cap=1500 count=7 ok=True ex=59 2.9s
+p=14 j=2 search cap=1500 count=5 ok=True ex=41 1.6s
+p=14 j=3 search cap=1500 count=1 ok=True ex=534 29.2s
+p=14 j=4 search cap=1500 count=1 ok=True ex=32 0.8s
+p=14 j=5 search cap=1500 count=3 ok=True ex=88 7.7s
+p=14 j=6 search cap=1500 count=1 ok=True ex=136 13.3s
+p=14 j=7 search cap=1500 count=3 ok=True ex=933 141.3s
+p=14 j=8 seed count=5 ok=True ex=4 0.0s
+p=14 j=9 search cap=1500 count=3 ok=True ex=29 1.3s
+p=14 j=10 search cap=1500 count=3 ok=True ex=15 0.1s
+p=14 j=11 search cap=1500 count=3 ok=True ex=26 1.3s
+p=14 j=12 search cap=1500 count=1 ok=True ex=13 1.1s
+p=14 j=13 search cap=1500 count=1 ok=True ex=18 0.3s
+p=14 j=14 search cap=1500 count=3 ok=True ex=31 2.6s
+p=14 j=15 search cap=1500 count=1 ok=True ex=31 2.3s
+p=14 j=16 search cap=1500 count=9 ok=True ex=55 3.3s
+p=14 j=17 search cap=1500 count=9 ok=True ex=47 1.8s
+p=14 j=18 search cap=1500 count=1 ok=True ex=39 1.0s
+p=14 j=19 search cap=1500 count=1 ok=True ex=18 0.2s
+p=14 j=20 search cap=1500 count=1 ok=True ex=47 4.4s
+p=14 j=21 search cap=1500 count=5 ok=True ex=92 5.8s
+p=14 j=22 search cap=1500 count=1 ok=True ex=27 1.5s
+p=14 j=23 search cap=1500 count=3 ok=True ex=106 15.2s
+p=14 j=24 search cap=1500 count=9 ok=True ex=18 1.2s
+p=14 j=25 search cap=1500 count=3 ok=True ex=35 0.8s
+p=14 j=26 search cap=1500 count=3 ok=True ex=14 0.1s
+p=14 j=27 search cap=1500 count=7 ok=True ex=36 1.5s
+p=14 j=28 search cap=1500 count=1 ok=True ex=20 0.5s
+p=14 j=29 search cap=1500 count=1 ok=True ex=35 3.1s
+p=14 j=30 search cap=1500 count=7 ok=True ex=17 1.4s
+p=14 j=31 search cap=1500 count=3 ok=True ex=33 2.5s
+p=14 j=32 search cap=1500 count=1 ok=True ex=16 0.1s
+p=14 j=33 search cap=1500 count=1 ok=True ex=19 0.3s
+p=14 j=34 seed count=1 ok=True ex=4 0.0s
+p=14 j=35 search cap=1500 count=1 ok=True ex=12 0.0s
+p=14 j=36 search cap=1500 count=1 ok=True ex=66 5.5s
+p=14 j=37 search cap=1500 count=1 ok=True ex=58 13.5s
+p=14 j=38 search cap=1500 count=1 ok=True ex=41 1.8s
+p=14 j=39 search cap=1500 count=1 ok=True ex=232 23.7s
+p=14 j=40 search cap=1500 count=1 ok=True ex=90 6.5s
+p=14 j=41 search cap=1500 count=1 ok=True ex=18 0.2s
+p=14 j=42 search cap=1500 count=1 ok=True ex=18 1.3s
+p=14 j=43 search cap=1500 count=3 ok=True ex=16 0.1s
+p=14 j=44 search cap=1500 count=3 ok=True ex=16 0.1s
+p=14 j=45 search cap=1500 count=3 ok=True ex=97 6.7s
+p=14 j=46 search cap=1500 count=3 ok=True ex=38 1.0s
+p=14 j=47 search cap=1500 count=1 ok=True ex=26 0.9s
+p=14 j=48 search cap=1500 count=1 ok=True ex=19 0.2s
+p=14 j=49 search cap=1500 count=3 ok=True ex=16 0.6s
+p=14 j=50 search cap=1500 count=1 ok=True ex=42 1.5s
+p=14 j=51 search cap=1500 count=3 ok=True ex=19 0.3s
+p=14 j=52 search cap=1500 count=3 ok=True ex=31 1.4s
+p=14 j=53 search cap=1500 count=1 ok=True ex=114 13.2s
+p=14 j=54 search cap=1500 count=1 ok=True ex=44 3.3s
+p=14 j=55 search cap=1500 count=21 ok=True ex=32 2.4s
+p=14 j=56 search cap=1500 count=1 ok=True ex=15 0.1s
+p=14 j=57 search cap=1500 count=1 ok=True ex=108 10.4s
+p=14 j=58 search cap=1500 count=1 ok=True ex=18 1.3s
+p=14 j=59 search cap=1500 count=1 ok=True ex=20 0.3s
+p=14 j=60 search cap=1500 count=27 ok=True ex=37 2.1s
+p=14 j=61 search cap=1500 count=1 ok=True ex=67 3.0s
+p=14 j=62 search cap=1500 count=1 ok=True ex=28 0.9s
+p=14 j=63 search cap=1500 count=1 ok=True ex=15 0.2s
+== p=14 resolved 64/64 unresolved=[] 354.3s
+p=15 j=0 seed count=1 ok=True ex=13 0.1s
+p=15 j=1 seed count=7 ok=True ex=13 0.8s
+p=15 j=2 seed count=5 ok=True ex=14 0.9s
+p=15 j=3 seed count=1 ok=True ex=15 0.7s
+p=15 j=4 seed count=1 ok=True ex=14 0.0s
+p=15 j=5 seed count=3 ok=True ex=15 0.7s
+p=15 j=6 seed count=1 ok=True ex=13 0.0s
+p=15 j=7 seed count=3 ok=True ex=12 0.0s
+p=15 j=8 seed count=3 ok=True ex=13 1.5s
+p=15 j=9 seed count=3 ok=True ex=14 0.0s
+p=15 j=10 seed count=3 ok=True ex=13 0.0s
+p=15 j=11 seed count=3 ok=True ex=13 0.7s
+p=15 j=12 search cap=1500 count=1 ok=True ex=18 2.4s
+p=15 j=13 seed count=1 ok=True ex=13 0.0s
+p=15 j=14 seed count=3 ok=True ex=12 1.7s
+p=15 j=15 search cap=1500 count=9 ok=True ex=120 8.7s
+p=15 j=16 seed count=9 ok=True ex=12 0.0s
+p=15 j=17 search cap=1500 count=1 ok=True ex=128 9.4s
+p=15 j=18 search cap=1500 count=1 ok=True ex=61 2.2s
+p=15 j=19 seed count=1 ok=True ex=13 0.0s
+p=15 j=20 seed count=1 ok=True ex=12 0.0s
+p=15 j=21 seed count=5 ok=True ex=12 0.7s
+p=15 j=22 seed count=1 ok=True ex=13 0.0s
+p=15 j=23 search cap=1500 count=1 ok=True ex=82 11.7s
+p=15 j=24 seed count=9 ok=True ex=13 0.8s
+p=15 j=25 seed count=3 ok=True ex=12 0.0s
+p=15 j=26 seed count=3 ok=True ex=11 0.0s
