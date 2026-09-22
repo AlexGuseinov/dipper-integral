@@ -109,7 +109,7 @@ shows the three possible outcomes and how each one is checked.
 ![The three possible answers for one question (cube, rounds, output bit)
 and how each answer is checked independently. Blue: the property holds
 for all keys. Grey: the model cannot decide. Orange: the property is
-proven not to hold.](fig_overview.pdf){#fig:overview
+proven not to hold.](fig_overview.png){#fig:overview
 width="\\linewidth"}
 
 #### Research questions.
@@ -1029,7 +1029,7 @@ reference="fig:state"}).
 the final bit permutation. Each row is one 16-bit word; grey rows are
 outputs of a modular addition ($A\boxplus B$, $C\boxplus D$), white rows
 are the retained words. All nine balanced bits (blue, with their bit
-index) lie in the retained words $B$ and $D$.](fig_state.pdf){#fig:state
+index) lie in the retained words $B$ and $D$.](fig_state.png){#fig:state
 width="0.82\\linewidth"}
 
 This is an observation about the certified bits, not a claim about every
@@ -1066,7 +1066,7 @@ Dipper and the two variants without carries (values of
 Table [4](#tab:frontier){reference-type="ref"
 reference="tab:frontier"}). A cross marks the first round at which no
 bit-aligned cube has a certificate. Dipper’s curve reaches the full
-codebook three to four rounds earlier.](fig_ablation.pdf){#fig:ablation
+codebook three to four rounds earlier.](fig_ablation.png){#fig:ablation
 width="0.78\\linewidth"}
 
 ::: {#tab:ablation}
@@ -1108,7 +1108,7 @@ for each variant were resolved without timeouts.
 ![Mean certified *upper bound* on the algebraic degree of the output
 bits of $S^{(r)}$. For Dipper, bits are grouped by the word of the last
 ARX layer that produced them. Actual degrees may be
-lower.](fig_degree.pdf){#fig:degree width="0.78\\linewidth"}
+lower.](fig_degree.png){#fig:degree width="0.78\\linewidth"}
 
 ::: {#tab:deg1}
   $i$               0   1   2   3   4   5    6    7    8    9    10   11   12   13   14   15
@@ -1214,7 +1214,7 @@ reference="fig:tight"} shows the outcome, which is explained below.
 random-key trials. Blue: certified, hence balanced for every key. Grey:
 a later trial gave a nonzero sum. Orange: zero in all 3200 trials, but
 proven unbalanced by a presence proof. At every round, every bit ends up
-decided.](fig_tight.pdf){#fig:tight width="0.9\\linewidth"}
+decided.](fig_tight.png){#fig:tight width="0.9\\linewidth"}
 
 -   *Trail parity per key monomial.* For bit 30 of a 12-dimensional
     random cube at two rounds, the number of trails exceeded our
