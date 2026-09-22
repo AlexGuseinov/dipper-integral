@@ -1,0 +1,15 @@
+  bit 7 stage(tries=2000,cap=1500) examined=406 counted=364 capped=42 min=1 HIT
+7 {'examined': 406, 'secs': 94.6, 'capped': 42, 'counted': 364, 'min': 1, 'status': 'odd', 'count': 1, 'witness_ok': True, 'witness_note': 'ok'}
+  bit 20 stage(tries=2000,cap=1500) examined=120 counted=114 capped=6 min=1 HIT
+20 {'examined': 120, 'secs': 22.6, 'capped': 6, 'counted': 114, 'min': 1, 'status': 'odd', 'count': 1, 'witness_ok': True, 'witness_note': 'ok'}
+  bit 23 stage(tries=2000,cap=1500) examined=19 counted=18 capped=1 min=8 HIT
+23 {'examined': 19, 'secs': 2.9, 'capped': 1, 'counted': 18, 'min': 8, 'status': 'odd', 'count': 9, 'witness_ok': True, 'witness_note': 'ok'}
+  bit 34 stage(tries=2000,cap=1500) examined=37 counted=37 capped=0 min=2 HIT
+34 {'examined': 37, 'secs': 5.3, 'capped': 0, 'counted': 37, 'min': 2, 'status': 'odd', 'count': 9, 'witness_ok': True, 'witness_note': 'ok'}
+  bit 37 stage(tries=2000,cap=1500) examined=2000 counted=1847 capped=153 min=2 -
+  bit 37 stage(tries=800,cap=8000) examined=2117 counted=1964 capped=153 min=1 HIT
+37 {'examined': 2117, 'secs': 508.0, 'capped': 153, 'counted': 1964, 'min': 1, 'status': 'odd', 'count': 1, 'witness_ok': True, 'witness_note': 'ok'}
+  bit 45 stage(tries=2000,cap=1500) examined=158 counted=153 capped=5 min=1 HIT
+45 {'examined': 158, 'secs': 26.1, 'capped': 5, 'counted': 153, 'min': 1, 'status': 'odd', 'count': 1, 'witness_ok': True, 'witness_note': 'ok'}
+  bit 54 stage(tries=2000,cap=1500) examined=78 counted=73 capped=5 min=3 HIT
+54 {'examined': 78, 'secs': 17.9, 'capped': 5, 'counted': 73, 'min': 3, 'status': 'odd', 'count': 3, 'witness_ok': True, 'witness_note': 'ok'}

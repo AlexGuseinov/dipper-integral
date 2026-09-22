@@ -1,0 +1,2 @@
+r=3 dim=5: 10 coefficients agree (3 odd)  2024s
+r=3 dim=7: 10 coefficients agree (5 odd)  3158s

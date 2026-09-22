@@ -1,0 +1,560 @@
+{
+ "comparisons": 31,
+ "disagreements": 0,
+ "capped": 20,
+ "max_count": 6064,
+ "seconds": 357.0,
+ "rows": [
+  {
+   "rounds": 2,
+   "dim": 6,
+   "cube": [
+    3,
+    9,
+    25,
+    41,
+    60,
+    63
+   ],
+   "bit": 7,
+   "pattern_weight": 0,
+   "count_masks": 113,
+   "count_all": 113,
+   "agree": true
+  },
+  {
+   "rounds": 2,
+   "dim": 6,
+   "cube": [
+    8,
+    27,
+    35,
+    52,
+    55,
+    56
+   ],
+   "bit": 53,
+   "pattern_weight": 0,
+   "count_masks": 108,
+   "count_all": 108,
+   "agree": true
+  },
+  {
+   "rounds": 2,
+   "dim": 6,
+   "cube": [
+    8,
+    27,
+    35,
+    52,
+    55,
+    56
+   ],
+   "bit": 45,
+   "pattern_weight": 4,
+   "count_masks": 1160,
+   "count_all": 1160,
+   "agree": true
+  },
+  {
+   "rounds": 2,
+   "dim": 6,
+   "cube": [
+    28,
+    30,
+    32,
+    34,
+    35,
+    51
+   ],
+   "bit": 31,
+   "pattern_weight": 2,
+   "count_masks": 456,
+   "count_all": 456,
+   "agree": true
+  },
+  {
+   "rounds": 2,
+   "dim": 6,
+   "cube": [
+    0,
+    1,
+    2,
+    16,
+    46,
+    63
+   ],
+   "bit": 31,
+   "pattern_weight": 0,
+   "count_masks": 2716,
+   "count_all": 2716,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    0,
+    4,
+    29,
+    32,
+    47,
+    51
+   ],
+   "bit": 11,
+   "pattern_weight": 5,
+   "count_masks": 1,
+   "count_all": 1,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    0,
+    4,
+    29,
+    32,
+    47,
+    51
+   ],
+   "bit": 8,
+   "pattern_weight": 0,
+   "count_masks": 6064,
+   "count_all": 6064,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    0,
+    4,
+    29,
+    32,
+    47,
+    51
+   ],
+   "bit": 60,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    0,
+    4,
+    29,
+    32,
+    47,
+    51
+   ],
+   "bit": 32,
+   "pattern_weight": 0,
+   "count_masks": 4990,
+   "count_all": 4990,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    10,
+    24,
+    41,
+    50,
+    57,
+    59
+   ],
+   "bit": 33,
+   "pattern_weight": 3,
+   "count_masks": 1,
+   "count_all": 1,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    10,
+    24,
+    41,
+    50,
+    57,
+    59
+   ],
+   "bit": 14,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    10,
+    24,
+    41,
+    50,
+    57,
+    59
+   ],
+   "bit": 6,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    10,
+    24,
+    41,
+    50,
+    57,
+    59
+   ],
+   "bit": 46,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    16,
+    42,
+    56,
+    58,
+    59,
+    63
+   ],
+   "bit": 6,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    16,
+    42,
+    56,
+    58,
+    59,
+    63
+   ],
+   "bit": 4,
+   "pattern_weight": 0,
+   "count_masks": 24,
+   "count_all": 24,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    16,
+    42,
+    56,
+    58,
+    59,
+    63
+   ],
+   "bit": 7,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    4,
+    20,
+    22,
+    35,
+    38,
+    55
+   ],
+   "bit": 7,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    4,
+    20,
+    22,
+    35,
+    38,
+    55
+   ],
+   "bit": 49,
+   "pattern_weight": 3,
+   "count_masks": 340,
+   "count_all": 340,
+   "agree": true
+  },
+  {
+   "rounds": 3,
+   "dim": 6,
+   "cube": [
+    4,
+    20,
+    22,
+    35,
+    38,
+    55
+   ],
+   "bit": 45,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 4,
+   "dim": 8,
+   "cube": [
+    11,
+    14,
+    20,
+    22,
+    24,
+    41,
+    52,
+    63
+   ],
+   "bit": 47,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 4,
+   "dim": 8,
+   "cube": [
+    11,
+    14,
+    20,
+    22,
+    24,
+    41,
+    52,
+    63
+   ],
+   "bit": 17,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 4,
+   "dim": 8,
+   "cube": [
+    11,
+    14,
+    20,
+    22,
+    24,
+    41,
+    52,
+    63
+   ],
+   "bit": 32,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 4,
+   "dim": 8,
+   "cube": [
+    11,
+    14,
+    20,
+    22,
+    24,
+    41,
+    52,
+    63
+   ],
+   "bit": 30,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 4,
+   "dim": 8,
+   "cube": [
+    3,
+    7,
+    8,
+    40,
+    54,
+    55,
+    56,
+    63
+   ],
+   "bit": 9,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 4,
+   "dim": 8,
+   "cube": [
+    3,
+    7,
+    8,
+    40,
+    54,
+    55,
+    56,
+    63
+   ],
+   "bit": 63,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 4,
+   "dim": 8,
+   "cube": [
+    3,
+    7,
+    8,
+    40,
+    54,
+    55,
+    56,
+    63
+   ],
+   "bit": 23,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 4,
+   "dim": 8,
+   "cube": [
+    3,
+    7,
+    8,
+    40,
+    54,
+    55,
+    56,
+    63
+   ],
+   "bit": 1,
+   "pattern_weight": 2,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 4,
+   "dim": 8,
+   "cube": [
+    14,
+    21,
+    22,
+    34,
+    43,
+    52,
+    56,
+    58
+   ],
+   "bit": 0,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 4,
+   "dim": 8,
+   "cube": [
+    14,
+    21,
+    22,
+    34,
+    43,
+    52,
+    56,
+    58
+   ],
+   "bit": 30,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 4,
+   "dim": 8,
+   "cube": [
+    14,
+    21,
+    22,
+    34,
+    43,
+    52,
+    56,
+    58
+   ],
+   "bit": 43,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  },
+  {
+   "rounds": 4,
+   "dim": 8,
+   "cube": [
+    14,
+    21,
+    22,
+    34,
+    43,
+    52,
+    56,
+    58
+   ],
+   "bit": 10,
+   "pattern_weight": 0,
+   "count_masks": null,
+   "count_all": null,
+   "agree": true
+  }
+ ]
+}

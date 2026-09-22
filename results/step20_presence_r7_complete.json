@@ -1,0 +1,1243 @@
+{
+ "cube": "all bits except 0 active (dim 63)",
+ "rounds": 7,
+ "mode": "add",
+ "bits_resolved": 64,
+ "bits_missing": [],
+ "witness_validated": 64,
+ "count_min": 1,
+ "count_max": 81,
+ "count_median": 3,
+ "per_bit": {
+  "0": {
+   "status": "odd",
+   "examined": 39,
+   "capped": 0,
+   "secs": 13.9,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "8801004802400034",
+    "1041410D24C90215",
+    "1CCC001FA6347D1B",
+    "000000007B37554D",
+    "0000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "1": {
+   "status": "odd",
+   "examined": 30,
+   "capped": 0,
+   "secs": 1.2,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "0010004420040002",
+    "0038901A45D51F31",
+    "AD94A21100000000",
+    "0000100000000000",
+    "0000000000000800"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "2": {
+   "status": "odd",
+   "examined": 37,
+   "capped": 0,
+   "secs": 2.4,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "8080044002040051",
+    "00B014826A531053",
+    "557A862C7400A206",
+    "ADE4352500000000",
+    "0000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "3": {
+   "status": "odd",
+   "examined": 64,
+   "capped": 0,
+   "secs": 17.3,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "003800C000000213",
+    "885800B446265680",
+    "D6B7D8B0EB0B1F43",
+    "0000000023357911",
+    "0000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "4": {
+   "status": "odd",
+   "examined": 92,
+   "capped": 0,
+   "secs": 8.9,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "002B000C00020021",
+    "D0295010091566E8",
+    "400CC00600000000",
+    "0000480000000000",
+    "0000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "5": {
+   "status": "odd",
+   "examined": 10,
+   "capped": 0,
+   "secs": 1.5,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0032004002220000",
+    "088351E12F9C9938",
+    "285A431E87B74D53",
+    "200EE6CCAB214D63",
+    "0000000010000010"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "6": {
+   "status": "odd",
+   "examined": 77,
+   "capped": 0,
+   "secs": 9.7,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "0890009800401002",
+    "8EAAB19BBAAC5113",
+    "17DDFEED1EC3DF39",
+    "E6F2173E7539B56F",
+    "00000000D20C1B30"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "7": {
+   "examined": 406,
+   "secs": 94.6,
+   "capped": 42,
+   "counted": 364,
+   "min": 1,
+   "status": "odd",
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0080004900420200",
+    "834355074D0715A1",
+    "5AEE7FAD602AC3A5",
+    "591B0DEA3A5F1D61",
+    "00000000532A93D9"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step18"
+  },
+  "8": {
+   "status": "odd",
+   "examined": 12,
+   "capped": 0,
+   "secs": 0.5,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "0038008500420111",
+    "E3977CB7D0EC5541",
+    "52CDB4D905A7155F",
+    "DE98943D00000000",
+    "0000100000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "9": {
+   "status": "odd",
+   "examined": 79,
+   "capped": 0,
+   "secs": 4.1,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "0080405000600070",
+    "E045E1A4333D1A11",
+    "8135D59C00000010",
+    "0000000000000001",
+    "0000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "10": {
+   "status": "odd",
+   "examined": 166,
+   "capped": 0,
+   "secs": 17.3,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0000004000420160",
+    "A12738C86EA6F604",
+    "8DEFA3C93A15CA05",
+    "000000006842FD88",
+    "0000004000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "11": {
+   "status": "odd",
+   "examined": 3,
+   "capped": 0,
+   "secs": 0.1,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0080448400001025",
+    "491D5995B86D230E",
+    "DE0F41D1D1895735",
+    "0000801000000000",
+    "0000080000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "12": {
+   "status": "odd",
+   "examined": 20,
+   "capped": 0,
+   "secs": 1.0,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000010000",
+    "8018000520220000",
+    "23A558F01A0C3361",
+    "A4CD26F80ECF5B1D",
+    "94C2EAC300000000",
+    "1000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "13": {
+   "status": "odd",
+   "examined": 13,
+   "capped": 0,
+   "secs": 0.6,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000010000",
+    "0001000800001105",
+    "09838FB6A38ED265",
+    "1DF8F8CD0A7446F5",
+    "DE31139D00009049",
+    "A008C00000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "14": {
+   "status": "odd",
+   "examined": 18,
+   "capped": 0,
+   "secs": 1.9,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0089000100000042",
+    "2B70958ED01C4350",
+    "C336D17AEA4B3980",
+    "CD961D2DFE471475",
+    "931AF03A00000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "15": {
+   "status": "odd",
+   "examined": 15,
+   "capped": 0,
+   "secs": 5.7,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000200000000",
+    "0082000000220000",
+    "1A09C0092C8C3707",
+    "19A78AE64115A059",
+    "5BC7C5EF9DC23551",
+    "9E07DE6F00000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "16": {
+   "status": "odd",
+   "examined": 19,
+   "capped": 0,
+   "secs": 1.8,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "00A0041520021011",
+    "002408C306311B05",
+    "410210D300000000",
+    "0000000000004000",
+    "0000000000000001"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "17": {
+   "status": "odd",
+   "examined": 5,
+   "capped": 0,
+   "secs": 0.3,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "808000C000000015",
+    "82CA80B506036724",
+    "19CA8C6B4B424790",
+    "00000000DA12579D",
+    "0000000000000060"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "18": {
+   "status": "odd",
+   "examined": 18,
+   "capped": 0,
+   "secs": 1.3,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000010000",
+    "00A0000800040103",
+    "A92113C800001020",
+    "0000804000000000",
+    "0000000000000000",
+    "0000000000000200"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "19": {
+   "status": "odd",
+   "examined": 8,
+   "capped": 0,
+   "secs": 0.4,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000200000000",
+    "002000C100000003",
+    "1010C05844832239",
+    "882B861C00000000",
+    "0000000000004000",
+    "0000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "20": {
+   "examined": 120,
+   "secs": 22.6,
+   "capped": 6,
+   "counted": 114,
+   "min": 1,
+   "status": "odd",
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "0010040C20041153",
+    "69251E0D0FC0740E",
+    "B6352CDBAB315151",
+    "8E9DBEED597F035D",
+    "00000000A2097508"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step18"
+  },
+  "21": {
+   "status": "odd",
+   "examined": 164,
+   "capped": 0,
+   "secs": 16.9,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "001208C800200211",
+    "0910C8780ABC1149",
+    "5059186D0A0DE730",
+    "0000140000000010",
+    "0000000000000020"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "22": {
+   "status": "odd",
+   "examined": 163,
+   "capped": 0,
+   "secs": 31.2,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000010000",
+    "000A00C020400001",
+    "A0C6F5855887E35A",
+    "DABD0C9DCADCE754",
+    "D0CA933ABB29B599",
+    "0000000058000960"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "23": {
+   "examined": 19,
+   "secs": 2.9,
+   "capped": 1,
+   "counted": 18,
+   "min": 8,
+   "status": "odd",
+   "count": 9,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0001408120060043",
+    "29DADC34704F7318",
+    "2D1AD15AA9335D2A",
+    "0000000068058253",
+    "0000000000200000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step18"
+  },
+  "24": {
+   "status": "odd",
+   "examined": 16,
+   "capped": 0,
+   "secs": 0.8,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0008005004400213",
+    "130B05180A785103",
+    "02ADF3E000000000",
+    "0000C00000000000",
+    "0000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "25": {
+   "status": "odd",
+   "examined": 3,
+   "capped": 0,
+   "secs": 0.1,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "801800C100021104",
+    "187C480E42A42525",
+    "A53D3B4038342F18",
+    "A915C17700000000",
+    "0000100000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "26": {
+   "status": "odd",
+   "examined": 17,
+   "capped": 0,
+   "secs": 1.3,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0010444020240002",
+    "1E029EC814056302",
+    "31341E3300000000",
+    "0000000000000000",
+    "0000000800000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "27": {
+   "status": "odd",
+   "examined": 205,
+   "capped": 0,
+   "secs": 41.2,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "000004D422000004",
+    "903DCD96905C4151",
+    "DD49A0FFBCB6933D",
+    "00000000021BD965",
+    "0000008000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "28": {
+   "status": "odd",
+   "examined": 93,
+   "capped": 0,
+   "secs": 16.5,
+   "count": 9,
+   "pattern": [
+    "0000000000000000",
+    "0000000200000000",
+    "0001000C00040051",
+    "017040C104790117",
+    "33DC6D5E40737763",
+    "3EA1579AEDD3F55C",
+    "1A13709800000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "29": {
+   "status": "odd",
+   "examined": 45,
+   "capped": 0,
+   "secs": 3.4,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "0090448500200020",
+    "B809E485CD8B5195",
+    "A3499D4D7704E95E",
+    "916494A900000000",
+    "A000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "30": {
+   "status": "odd",
+   "examined": 32,
+   "capped": 0,
+   "secs": 2.4,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0000081400040024",
+    "80428088248231D3",
+    "2FCA0609EBB392A0",
+    "AEEADD9BBD033925",
+    "8011200300000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "31": {
+   "status": "odd",
+   "examined": 12,
+   "capped": 0,
+   "secs": 0.7,
+   "count": 21,
+   "pattern": [
+    "0000000000000000",
+    "0000000000010000",
+    "0809000D20400010",
+    "294B8054A3925506",
+    "BA9D366D77DBEAEE",
+    "D95BEDCA3E2937B9",
+    "9479B01D00000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "32": {
+   "status": "odd",
+   "examined": 12,
+   "capped": 0,
+   "secs": 2.6,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "8030400C00401120",
+    "193005BA212C3C43",
+    "D3992E5723821F9E",
+    "80A7108D00000000",
+    "0000000000001000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "33": {
+   "status": "odd",
+   "examined": 3,
+   "capped": 0,
+   "secs": 0.1,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000200000000",
+    "0001000000000021",
+    "010D949C20300003",
+    "002C119800000000",
+    "0000000000009100",
+    "0000000000000008"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "34": {
+   "examined": 37,
+   "secs": 5.3,
+   "capped": 0,
+   "counted": 37,
+   "min": 2,
+   "status": "odd",
+   "count": 9,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "0000401002000025",
+    "C970431435274A58",
+    "BF69AC652E4ED735",
+    "000000000D3E559D",
+    "0000000000000010"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step18"
+  },
+  "35": {
+   "status": "odd",
+   "examined": 33,
+   "capped": 0,
+   "secs": 2.3,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0002008504040001",
+    "8174465E60383D03",
+    "D7DDE565AE485166",
+    "E9CADE9200000000",
+    "0000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "36": {
+   "status": "odd",
+   "examined": 296,
+   "capped": 0,
+   "secs": 59.9,
+   "count": 9,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "0018000800400053",
+    "130BC9419A09D0A5",
+    "A7E8CCC81D9C409E",
+    "A7426DED80626F0A",
+    "0000000045020520"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "37": {
+   "examined": 2117,
+   "secs": 508.0,
+   "capped": 153,
+   "counted": 1964,
+   "min": 1,
+   "status": "odd",
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000010000",
+    "0080005902420010",
+    "A3001400400AC308",
+    "B5A641B34C5ADE61",
+    "CD4EC3286D347008",
+    "00000000CC0317B3"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step18"
+  },
+  "38": {
+   "status": "odd",
+   "examined": 69,
+   "capped": 0,
+   "secs": 22.4,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000010000",
+    "0010400000001143",
+    "099A0CBDEB4876F9",
+    "A344CBBADD00A726",
+    "00008800B28B5941",
+    "0000000008000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "39": {
+   "status": "odd",
+   "examined": 7,
+   "capped": 0,
+   "secs": 0.8,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "8080000C00021043",
+    "0A2981C770840063",
+    "94D6D111000003A9",
+    "9002600000000000",
+    "0000000000001000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "40": {
+   "status": "odd",
+   "examined": 270,
+   "capped": 0,
+   "secs": 47.9,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0081041C20401151",
+    "0CA32C7C143A611D",
+    "D3A1A9ECE0863D96",
+    "0000000057483D14",
+    "0000001000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "41": {
+   "status": "odd",
+   "examined": 58,
+   "capped": 0,
+   "secs": 3.8,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "00A1408C00200013",
+    "9529AB4A303063A1",
+    "2048508A00000000",
+    "0000804000000000",
+    "0000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "42": {
+   "status": "odd",
+   "examined": 17,
+   "capped": 0,
+   "secs": 1.6,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0018081904040011",
+    "8046C90D60D01631",
+    "90FC4353A2E1131A",
+    "159FD3E700000000",
+    "0000800000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "43": {
+   "status": "odd",
+   "examined": 55,
+   "capped": 0,
+   "secs": 6.0,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000010000",
+    "002840C000261102",
+    "E040C54436987500",
+    "04199C8500000000",
+    "0000000000000000",
+    "0000000200000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "44": {
+   "status": "odd",
+   "examined": 33,
+   "capped": 0,
+   "secs": 3.9,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0102000800000200",
+    "9990D02900D91315",
+    "01108A6A0A930EDB",
+    "D80346583300D38E",
+    "90C7E00800000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "45": {
+   "examined": 158,
+   "secs": 26.1,
+   "capped": 5,
+   "counted": 153,
+   "min": 1,
+   "status": "odd",
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000010000",
+    "0010000400021052",
+    "3E59A300AC8B50B2",
+    "45D1617929E02230",
+    "A5CEFA9F066EBD73",
+    "5935C43700000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step18"
+  },
+  "46": {
+   "status": "odd",
+   "examined": 52,
+   "capped": 0,
+   "secs": 5.4,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0010085900040202",
+    "8B1E40A4489C0049",
+    "4ED8CC8909418017",
+    "A70B58DB00001000",
+    "A001100000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "47": {
+   "status": "odd",
+   "examined": 49,
+   "capped": 0,
+   "secs": 6.8,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "003000D820040003",
+    "1110AA90427B9361",
+    "C9D40B4DFA8754AC",
+    "853768925D9D6FC7",
+    "C004500300000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "48": {
+   "status": "odd",
+   "examined": 38,
+   "capped": 0,
+   "secs": 3.0,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0092440400200111",
+    "0114C8D94C953954",
+    "8024E00300000000",
+    "0000200200000000",
+    "0000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "49": {
+   "status": "odd",
+   "examined": 44,
+   "capped": 0,
+   "secs": 3.8,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "0890001000400043",
+    "28E09CB5A10C5047",
+    "A3DFA215CA5ED783",
+    "C2A9628E00000000",
+    "0000000000001000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "50": {
+   "status": "odd",
+   "examined": 47,
+   "capped": 0,
+   "secs": 3.9,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "802800C800620000",
+    "A260C474C2433525",
+    "43CE4720244D7583",
+    "0000000000000000",
+    "0000000000000001"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "51": {
+   "status": "odd",
+   "examined": 19,
+   "capped": 0,
+   "secs": 2.3,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "00A3004D00040000",
+    "08D03854D20DA42C",
+    "D8C6118100003050",
+    "0000100000000000",
+    "0000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "52": {
+   "status": "odd",
+   "examined": 27,
+   "capped": 0,
+   "secs": 4.4,
+   "count": 81,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "0080408402020015",
+    "850C40D0609F9252",
+    "DE9E3F5C6CD61F34",
+    "DE5A64DE5B69351D",
+    "0000000002000050"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "53": {
+   "status": "odd",
+   "examined": 26,
+   "capped": 0,
+   "secs": 9.5,
+   "count": 7,
+   "pattern": [
+    "0000000000000000",
+    "0000000200000000",
+    "0000000400220040",
+    "10A9182062C8160D",
+    "368B40B6E12D3511",
+    "76D2136EC8072F50",
+    "000000003D000390"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "54": {
+   "examined": 78,
+   "secs": 17.9,
+   "capped": 5,
+   "counted": 73,
+   "min": 3,
+   "status": "odd",
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "8080008100000034",
+    "224A488F46853397",
+    "C21BD27C4579EB3C",
+    "51778A9C813B3FBC",
+    "00000000CBDBD364"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step18"
+  },
+  "55": {
+   "status": "odd",
+   "examined": 3,
+   "capped": 0,
+   "secs": 0.2,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000010000",
+    "0000400402040152",
+    "11364CBB66F3B000",
+    "A58E586D1568534D",
+    "0C8DF02B00000000",
+    "0000000020000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "56": {
+   "status": "odd",
+   "examined": 40,
+   "capped": 0,
+   "secs": 3.1,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0090008800000210",
+    "00821E0000AE3D48",
+    "C28957CB00000030",
+    "0000000000000008",
+    "0000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "57": {
+   "status": "odd",
+   "examined": 76,
+   "capped": 0,
+   "secs": 12.5,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "00B000C100420120",
+    "6801044EF7240C8C",
+    "AAABD36CFE016D45",
+    "000000002B18B9A5",
+    "0000001000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "58": {
+   "status": "odd",
+   "examined": 2,
+   "capped": 0,
+   "secs": 0.2,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "0000041020041024",
+    "7A9D8BA7905F6731",
+    "DA0B423E00000050",
+    "0000800800000000",
+    "0000000000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "59": {
+   "status": "odd",
+   "examined": 4,
+   "capped": 0,
+   "secs": 0.2,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000010000",
+    "1020004800240003",
+    "1B89540924B00359",
+    "D9C2BDB5C9632310",
+    "9061701800000000",
+    "0000400000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "60": {
+   "status": "odd",
+   "examined": 14,
+   "capped": 0,
+   "secs": 3.3,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "1009001020000004",
+    "8000059100022101",
+    "14E3EB0EC62D2307",
+    "5020141800001000",
+    "D004900000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "61": {
+   "status": "odd",
+   "examined": 34,
+   "capped": 0,
+   "secs": 4.5,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "000B409800240002",
+    "E36169C6B34A2419",
+    "99B895D5EB3DD5AE",
+    "9F47635537CDBDE9",
+    "9093603300000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "62": {
+   "status": "odd",
+   "examined": 40,
+   "capped": 0,
+   "secs": 14.7,
+   "count": 1,
+   "pattern": [
+    "0000000000000000",
+    "0000000000080000",
+    "0000000004000200",
+    "A000410021001000",
+    "46AE3ACB5B650042",
+    "DAA9BBD4521BD76D",
+    "E32B413900000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  },
+  "63": {
+   "status": "odd",
+   "examined": 3,
+   "capped": 0,
+   "secs": 0.1,
+   "count": 3,
+   "pattern": [
+    "0000000000000000",
+    "0000000000000000",
+    "001A000504020012",
+    "8429048504A13051",
+    "5E1A128F5DAA79E9",
+    "39D7C8880000000A",
+    "9002400000000000"
+   ],
+   "witness_ok": true,
+   "witness_note": "ok",
+   "source": "step17"
+  }
+ }
+}

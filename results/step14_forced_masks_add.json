@@ -1,0 +1,193 @@
+{
+ "mode": "add",
+ "forced_constant_on_nibble": true,
+ "forced_by_nibble_hex": {
+  "0": "FFFBFFFDFFF6FFFF",
+  "1": "FFFFFFFBFFFDFFF6",
+  "2": "FFF6FFFFFFFBFFFD",
+  "3": "FFFDFFF6FFFFFFFB",
+  "4": "FF44FF22FF99FF88",
+  "5": "FF00FF00FF00FF88",
+  "6": "FF00FF00FF00FF00",
+  "7": "FF66FFBBFF99FFCC",
+  "8": "FEFFF7FFFBFFFDFF",
+  "9": "FDFFFEFFF7FFFBFF",
+  "10": "FBFFFDFFFEFFF7FF",
+  "11": "F7FFFBFFFDFFFEFF",
+  "12": "66FFBBFFDDFFEEFF",
+  "13": "66FF22FF99FFCCFF",
+  "14": "44FF22FF00FF88FF",
+  "15": "00FF00FF00FF00FF"
+ },
+ "sizes_by_nibble": {
+  "0": 60,
+  "1": 60,
+  "2": 60,
+  "3": 60,
+  "4": 42,
+  "5": 34,
+  "6": 32,
+  "7": 50,
+  "8": 60,
+  "9": 60,
+  "10": 60,
+  "11": 60,
+  "12": 54,
+  "13": 46,
+  "14": 38,
+  "15": 32
+ },
+ "intersection_over_all_inputs": 0,
+ "single_position_separable_nibbles": {
+  "6": [
+   7
+  ],
+  "15": [
+   15,
+   45,
+   62
+  ]
+ },
+ "full_support_separable_nibbles": {
+  "6": [
+   0,
+   1,
+   3
+  ],
+  "15": [
+   8,
+   9,
+   10,
+   11
+  ]
+ },
+ "word_single_position": {
+  "C": [
+   4,
+   5,
+   21,
+   22,
+   38,
+   52,
+   55
+  ],
+  "A": [
+   12,
+   29,
+   46,
+   60,
+   63
+  ]
+ },
+ "partitions": {
+  "16 nibbles": {
+   "feasible": false,
+   "supports": {
+    "[0]": null,
+    "[1]": null,
+    "[2]": null,
+    "[3]": null,
+    "[4]": null,
+    "[5]": null,
+    "[6]": [
+     0,
+     1,
+     3
+    ],
+    "[7]": null,
+    "[8]": null,
+    "[9]": null,
+    "[10]": null,
+    "[11]": null,
+    "[12]": null,
+    "[13]": null,
+    "[14]": null,
+    "[15]": [
+     8,
+     9,
+     10,
+     11
+    ]
+   }
+  },
+  "4 words": {
+   "feasible": false,
+   "supports": {
+    "[0, 1, 2, 3]": null,
+    "[4, 5, 6, 7]": [
+     0,
+     1
+    ],
+    "[8, 9, 10, 11]": null,
+    "[12, 13, 14, 15]": [
+     8,
+     12
+    ]
+   }
+  },
+  "2 halves": {
+   "feasible": false,
+   "supports": {
+    "[12, 13, 14, 15, 8, 9, 10, 11]": null,
+    "[4, 5, 6, 7, 0, 1, 2, 3]": null
+   }
+  },
+  "{A},{C},{B,D}": {
+   "feasible": false,
+   "supports": {
+    "[12, 13, 14, 15]": [
+     8,
+     12
+    ],
+    "[4, 5, 6, 7]": [
+     0,
+     1
+    ],
+    "[8, 9, 10, 11, 0, 1, 2, 3]": null
+   }
+  },
+  "{A},{C},{B},{D}": {
+   "feasible": false,
+   "supports": {
+    "[0, 1, 2, 3]": null,
+    "[4, 5, 6, 7]": [
+     0,
+     1
+    ],
+    "[8, 9, 10, 11]": null,
+    "[12, 13, 14, 15]": [
+     8,
+     12
+    ]
+   }
+  },
+  "{A},{B,C,D}": {
+   "feasible": false,
+   "supports": {
+    "[12, 13, 14, 15]": [
+     8,
+     12
+    ],
+    "[8, 9, 10, 11, 4, 5, 6, 7, 0, 1, 2, 3]": null
+   }
+  },
+  "{C},{A,B,D}": {
+   "feasible": false,
+   "supports": {
+    "[4, 5, 6, 7]": [
+     0,
+     1
+    ],
+    "[12, 13, 14, 15, 8, 9, 10, 11, 0, 1, 2, 3]": null
+   }
+  },
+  "{A,C},{B,D}": {
+   "feasible": false,
+   "supports": {
+    "[12, 13, 14, 15, 4, 5, 6, 7]": null,
+    "[8, 9, 10, 11, 0, 1, 2, 3]": null
+   }
+  }
+ },
+ "seconds": 0.7
+}

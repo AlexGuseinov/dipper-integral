@@ -1,0 +1,59 @@
+[
+ {
+  "cube": "nibbles[13]",
+  "active": [
+   52,
+   53,
+   54,
+   55
+  ],
+  "rounds": 2,
+  "bit": 28,
+  "status": "odd",
+  "count": 1,
+  "examined": 3,
+  "witness_ok": true,
+  "pattern": [
+   "3B0F59DD5E7FEFB7",
+   "938870CB00000000"
+  ]
+ },
+ {
+  "cube": "nibbles[13]",
+  "active": [
+   52,
+   53,
+   54,
+   55
+  ],
+  "rounds": 2,
+  "bit": 31,
+  "status": "odd",
+  "count": 1,
+  "examined": 3,
+  "witness_ok": true,
+  "pattern": [
+   "AD0DFDDD5E7FEFB7",
+   "938870CB00000000"
+  ]
+ },
+ {
+  "cube": "nibbles[4]",
+  "active": [
+   16,
+   17,
+   18,
+   19
+  ],
+  "rounds": 2,
+  "bit": 6,
+  "status": "odd",
+  "count": 1,
+  "examined": 15,
+  "witness_ok": true,
+  "pattern": [
+   "DDDBDDF73D30E5DF",
+   "000000006B0A0D00"
+  ]
+ }
+]

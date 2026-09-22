@@ -1,0 +1,12 @@
+r=2 dim=6: 1 comparisons so far
+r=2 dim=6: 3 comparisons so far
+r=2 dim=6: 4 comparisons so far
+r=2 dim=6: 5 comparisons so far
+r=3 dim=6: 9 comparisons so far
+r=3 dim=6: 13 comparisons so far
+r=3 dim=6: 16 comparisons so far
+r=3 dim=6: 19 comparisons so far
+r=4 dim=8: 23 comparisons so far
+r=4 dim=8: 27 comparisons so far
+r=4 dim=8: 31 comparisons so far
+{'comparisons': 31, 'disagreements': 0, 'capped': 20, 'max_count': 6064, 'seconds': 357.0}

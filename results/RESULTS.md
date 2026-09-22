@@ -83,3 +83,40 @@ Mechanism: every certified bit at the 6-round boundary comes, in the last round,
 * 3 × 4096 SAT answers (Dipper r=7, XOR r=10, no-add r=11): every trail validated by `dipper/witness.py`, which does not use the CNF.
 * Trusted base: correctness of the CNF generator (`dipper/models.py`) rests on the exhaustive local checks and agreement with experiment; DRAT only proves the emitted CNF is UNSAT.
 * Other UNSAT answers (r≤5 maximal cubes, comparison instances, degree bounds) rely on the solver answer alone.
+
+## Independent verification round (step14–step20)
+
+Purpose: reproduce, from scratch and without access to the other session's code,
+the presence/forced-mask claims reported there.
+
+* **step14 — forced masks.** `dipper/forced.py` + `scripts/step14_forced_masks.py`.
+  For each input nibble the set of output positions forced to 1 after one round is
+  constant on the nibble; sizes {0–3: 60, 4: 42, 5: 34, 6: 32, 7: 50, 8–11: 60,
+  12: 54, 13: 46, 14: 38, 15: 32}; the intersection over all 64 single-bit inputs
+  is empty; only nibbles 6 and 15 are separable on a single position; no feasible
+  partition of the state into independently-forced blocks exists. This reproduces
+  the reported negative result exactly.
+* **step16 — projection soundness.** 31 (pattern, bit) instances counted with the
+  blocking set restricted to the layer masks and with the blocking set over all
+  variables: 0 disagreements (20 capped on both sides), 357 s.
+* **ANF cross-validation.** `tests/test_count.py`: trail-count parity vs. the
+  Möbius coefficient, 123 coefficients at 2 rounds (3 odd) and 20 at 3 rounds
+  (8 odd); all agree.
+* **step17/step18/step20 — presence at 7 rounds.** Cube = all input bits except
+  bit 0 (dimension 63), `add` mode. For **every one of the 64 output bits** a key
+  pattern with an **odd** trail count was found (counts 1–81, median 3), and the
+  returned trail was re-checked by the CNF-independent witness checker: 64/64
+  valid. Consolidated in `results/step20_presence_r7_complete.json`.
+  Consequence: this cube yields **no** 7-round integral distinguisher — the
+  certified frontier is exact here, not merely a lower bound.
+* **step19 — the three gap bits.** Each of the bits left undecided in Section 8
+  is decided: (nibbles[13], r=2, bit 28), (nibbles[13], r=2, bit 31) and
+  (nibbles[4], r=2, bit 6) all have a key pattern with count 1 and a validated
+  witness.
+
+Method note: the greedy key-pattern search must **maximise** the number of key
+positions taken (each key bit taken pins the state mask to 0 there and removes
+trails); minimising returns the all-zero pattern and every count exceeds the cap.
+Search cost is dominated by patterns whose count is large and is then discarded,
+so the cap is kept small (1500) and the number of restarts large; a large cap is
+wasted work.
