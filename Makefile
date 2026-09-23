@@ -44,6 +44,18 @@ reproduce: quick ## everything (several hours on 2 cores)
 	$(PY) scripts/step21_presence_all_p.py $$(seq -s, 2 2 63) results/step21_presence_even_p.json
 	$(PY) scripts/step23_gap_witness_keys.py 60000
 	$(PY) scripts/step23b_gap_witness_lowweight.py 24
+	$(PY) scripts/step25_exact_degree.py "add:1,2,3,4,5,6;xor:1,2,3,4,5,6" results/step25_degree_part1.json
+	$(PY) scripts/step25_exact_degree.py "none:1,2,3,4,5,6,7,8,9,10,11;xor:7,8,9,10,11" results/step25_degree_part2.json
+	REDO=1 MAX_U=80 $(PY) scripts/step25_exact_degree.py "add:1,2,3;xor:3,4,5,6" results/step25_degree_part1.json
+	$(PY) scripts/step25c_degree_hard.py
+	DEEP=1 DEEP_FROM=0 DEEP_TO=12 $(PY) scripts/step25c_degree_hard.py
+	$(PY) scripts/step25b_anf_degree_r1.py 6,7,20,36,39
+	$(PY) scripts/step25d_degree_summary.py
+	$(PY) scripts/step26_min_cube.py add 6
+	$(PY) scripts/step26_min_cube.py xor 9
+	$(PY) scripts/step26_min_cube.py none 10
+	$(PY) scripts/step27_linear_combinations.py $$(seq -s, 0 63) results/step27_lc_all.json
+	$(PY) scripts/step28_keyschedule_probe.py
 	$(PY) scripts/figures.py
 	$(PY) scripts/figures2.py
 	$(PY) scripts/summarize.py

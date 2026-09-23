@@ -1,0 +1,32 @@
+{
+ "summary": {
+  "sampled": 3,
+  "unsat": 3,
+  "verified": 3,
+  "pool": 9261,
+  "seconds": 1.0
+ },
+ "entries": [
+  {
+   "p": 0,
+   "l": 43,
+   "j": 58,
+   "status": "UNSAT",
+   "drat_verified": true
+  },
+  {
+   "p": 1,
+   "l": 40,
+   "j": 23,
+   "status": "UNSAT",
+   "drat_verified": true
+  },
+  {
+   "p": 2,
+   "l": 43,
+   "j": 33,
+   "status": "UNSAT",
+   "drat_verified": true
+  }
+ ]
+}

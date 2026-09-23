@@ -1,0 +1,4 @@
+128 6 {'odd': 1, 'even': 44, 'capped': 75, 'no_trail': 0, 'secs': 116.9}
+128 7 {'odd': 0, 'even': 14, 'capped': 106, 'no_trail': 0, 'secs': 194.8}
+96 6 {'odd': 0, 'even': 39, 'capped': 81, 'no_trail': 0, 'secs': 135.7}
+96 7 {'odd': 0, 'even': 0, 'capped': 120, 'no_trail': 0, 'secs': 219.1}

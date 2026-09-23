@@ -1,0 +1,1 @@
+xor 9 {'max_constant_bits': 1, 'min_dimension': 63, 'bits_at_min': {8: [[10], [14]], 24: [[10], [14]], 48: [[14]], 51: [[6], [7], [10], [14], [18], [26], [35], [38], [46], [47]], 55: [[10], [14]]}, 'mismatch_with_63dim_results': 0, 'queries': 4144, 'trails_checked': 4127, 'trails_failed': 0, 'secs': 826.6}

@@ -137,3 +137,26 @@ wasted work.
 * **step24 — every trail of every presence proof.** All trails of all 4142 presence proofs (4096 + 46) were
   enumerated again, each of the **32 620** trails passed the CNF-independent checker, and every count was
   confirmed odd. `results/step24_all_trails_verified.json`.
+
+## Exact degree, minimal cube, key schedule (step25–step29)
+
+* **step25 — exact algebraic degree** (plaintext bits, round keys independent). Upper bound: step6.
+  Lower bound: a presence proof for a monomial x^u with wt(u) equal to the bound (step25, second and third
+  passes step25c), or the full ANF for one-round bits (step25b, at most 32 variables). Summary in
+  `results/step25_degree_summary.json`: **exact in 1843 of 1856** (variant, round, bit) cases
+  (Dipper r = 1–7, Dipper-xor and Dipper-none r = 1–11). The other 13 cases: Dipper r = 2 bit 55 in [32, 34];
+  Dipper r = 3 bits 9, 16, 43 in [D-1, D]; Dipper-xor r = 4–6, nine bits in [D-1, D]. Every trail behind a lower
+  bound validated. The one-round ANF (bits 6, 7, 20, 36, 39) agrees with the bounds.
+  Search note: at the degree limit the first-round key part of the monomial is usually forced to be empty,
+  so maximal key patterns fail there; patterns with v_1 = 0 are needed.
+* **step26 — minimal certified cube.** Monotonicity implies that the constant bits of a certified cube lie
+  among the positions whose 63-dimensional cube is certified; the family of certified constant-bit sets is
+  down-closed and searched level by level. Dipper, 6 rounds: **minimum dimension 60**, attained exactly by
+  the cubes with nibble {4,5,6,7} constant (bits 1,19,24,51,56,58) and nibble {12,13,14,15} constant
+  (bits 24,51,56,58). 4456 "no certificate" answers validated as trails. Dipper-xor r = 9 and Dipper-none
+  r = 10: minimum 63.
+* **step28 — real key schedule (probe).** `dipper/models_ks.py` adds the key schedule to MP-EL (master-key
+  variables, COPY into round keys, key S-boxes, round constants). Cube with constant bit 0, six output bits,
+  20 master-key monomials each: 128-bit key r = 6: 1 odd / 44 even / 75 above cap 2000; r = 7: 0 / 14 / 106.
+  96-bit key r = 6: 0 / 39 / 81; r = 7: 0 / 0 / 120. Coefficients cancel in pairs (each master bit feeds
+  several round keys); presence with the key schedule is out of reach with this method.

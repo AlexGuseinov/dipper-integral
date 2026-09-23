@@ -1,0 +1,3 @@
+add|1|7 upper 24 lower 22 1.6 s
+add|2|55 upper 34 lower 32 1.9 s
+add|3|16 upper 50 lower None 43.3 s

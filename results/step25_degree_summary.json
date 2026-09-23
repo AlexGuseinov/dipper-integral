@@ -1,0 +1,9575 @@
+{
+ "summary": {
+  "add|1": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 8.42,
+   "mean_lower": 8.42
+  },
+  "add|2": {
+   "exact": 63,
+   "gaps": {
+    "55": [
+     32,
+     34
+    ]
+   },
+   "mean_upper": 31.05,
+   "mean_lower": 31.02
+  },
+  "add|3": {
+   "exact": 61,
+   "gaps": {
+    "9": [
+     50,
+     51
+    ],
+    "16": [
+     49,
+     50
+    ],
+    "43": [
+     50,
+     51
+    ]
+   },
+   "mean_upper": 54.62,
+   "mean_lower": 54.58
+  },
+  "add|4": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 61.91,
+   "mean_lower": 61.91
+  },
+  "add|5": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 62.91,
+   "mean_lower": 62.91
+  },
+  "add|6": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 63.0,
+   "mean_lower": 63.0
+  },
+  "add|7": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 63.0,
+   "mean_lower": 63.0
+  },
+  "xor|1": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 2.56,
+   "mean_lower": 2.56
+  },
+  "xor|2": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 6.67,
+   "mean_lower": 6.67
+  },
+  "xor|3": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 17.16,
+   "mean_lower": 17.16
+  },
+  "xor|4": {
+   "exact": 60,
+   "gaps": {
+    "18": [
+     45,
+     46
+    ],
+    "22": [
+     45,
+     46
+    ],
+    "58": [
+     41,
+     42
+    ],
+    "62": [
+     41,
+     42
+    ]
+   },
+   "mean_upper": 38.89,
+   "mean_lower": 38.83
+  },
+  "xor|5": {
+   "exact": 62,
+   "gaps": {
+    "10": [
+     55,
+     56
+    ],
+    "14": [
+     55,
+     56
+    ]
+   },
+   "mean_upper": 53.17,
+   "mean_lower": 53.14
+  },
+  "xor|6": {
+   "exact": 61,
+   "gaps": {
+    "9": [
+     58,
+     59
+    ],
+    "13": [
+     58,
+     59
+    ],
+    "56": [
+     58,
+     59
+    ]
+   },
+   "mean_upper": 59.33,
+   "mean_lower": 59.28
+  },
+  "xor|7": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 61.81,
+   "mean_lower": 61.81
+  },
+  "xor|8": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 62.97,
+   "mean_lower": 62.97
+  },
+  "xor|9": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 63.0,
+   "mean_lower": 63.0
+  },
+  "xor|10": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 63.0,
+   "mean_lower": 63.0
+  },
+  "xor|11": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 63.0,
+   "mean_lower": 63.0
+  },
+  "none|1": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 2.5,
+   "mean_lower": 2.5
+  },
+  "none|2": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 5.94,
+   "mean_lower": 5.94
+  },
+  "none|3": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 14.25,
+   "mean_lower": 14.25
+  },
+  "none|4": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 30.09,
+   "mean_lower": 30.09
+  },
+  "none|5": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 47.41,
+   "mean_lower": 47.41
+  },
+  "none|6": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 55.58,
+   "mean_lower": 55.58
+  },
+  "none|7": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 59.92,
+   "mean_lower": 59.92
+  },
+  "none|8": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 61.88,
+   "mean_lower": 61.88
+  },
+  "none|9": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 62.97,
+   "mean_lower": 62.97
+  },
+  "none|10": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 63.0,
+   "mean_lower": 63.0
+  },
+  "none|11": {
+   "exact": 64,
+   "gaps": {},
+   "mean_upper": 63.0,
+   "mean_lower": 63.0
+  }
+ },
+ "per_bit": {
+  "add|1": {
+   "0": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 10,
+    "lower": 10,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 18,
+    "lower": 18,
+    "how": "ANF"
+   },
+   "7": {
+    "upper": 24,
+    "lower": 24,
+    "how": "ANF"
+   },
+   "8": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 11,
+    "lower": 11,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 20,
+    "lower": 20,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 26,
+    "lower": 26,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 20,
+    "lower": 20,
+    "how": "ANF"
+   },
+   "21": {
+    "upper": 4,
+    "lower": 4,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 12,
+    "lower": 12,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 22,
+    "lower": 22,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 14,
+    "lower": 14,
+    "how": "ANF"
+   },
+   "37": {
+    "upper": 22,
+    "lower": 22,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 12,
+    "lower": 12,
+    "how": "ANF"
+   },
+   "40": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 16,
+    "lower": 16,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 24,
+    "lower": 24,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 7,
+    "lower": 7,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 15,
+    "lower": 15,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 16,
+    "lower": 16,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 24,
+    "lower": 24,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 9,
+    "lower": 9,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 25,
+    "lower": 25,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   }
+  },
+  "add|2": {
+   "0": {
+    "upper": 24,
+    "lower": 24,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 26,
+    "lower": 26,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 24,
+    "lower": 24,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 24,
+    "lower": 24,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 24,
+    "lower": 24,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 22,
+    "lower": 22,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 26,
+    "lower": 26,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 38,
+    "lower": 38,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 26,
+    "lower": 26,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 29,
+    "lower": 29,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 4,
+    "lower": 4,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 24,
+    "lower": 24,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 22,
+    "lower": 22,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 27,
+    "lower": 27,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 53,
+    "lower": 53,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 26,
+    "lower": 26,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 25,
+    "lower": 25,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 26,
+    "lower": 26,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 34,
+    "lower": 34,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 22,
+    "lower": 22,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 25,
+    "lower": 25,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 32,
+    "lower": 32,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 26,
+    "lower": 26,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 4,
+    "lower": 4,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 34,
+    "lower": 32,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 22,
+    "lower": 22,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 25,
+    "lower": 25,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 35,
+    "lower": 35,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 33,
+    "lower": 33,
+    "how": "presence"
+   }
+  },
+  "add|3": {
+   "0": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 33,
+    "lower": 33,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 51,
+    "lower": 50,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 50,
+    "lower": 50,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 50,
+    "lower": 49,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 48,
+    "lower": 48,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 32,
+    "lower": 32,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 27,
+    "lower": 27,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 53,
+    "lower": 53,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 51,
+    "lower": 50,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 29,
+    "lower": 29,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 34,
+    "lower": 34,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 32,
+    "lower": 32,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   }
+  },
+  "add|4": {
+   "0": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   }
+  },
+  "add|5": {
+   "0": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   }
+  },
+  "add|6": {
+   "0": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   }
+  },
+  "add|7": {
+   "0": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "1": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "2": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "3": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "4": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "5": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "6": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "7": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "8": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "9": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "10": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "11": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "12": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "13": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "14": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "15": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "16": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "17": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "18": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "19": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "20": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "21": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "22": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "23": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "24": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "25": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "26": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "27": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "28": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "29": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "30": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "31": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "32": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "33": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "34": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "35": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "36": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "37": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "38": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "39": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "40": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "41": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "42": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "43": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "44": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "45": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "46": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "47": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "48": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "49": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "50": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "51": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "52": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "53": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "54": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "55": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "56": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "57": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "58": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "59": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "60": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "61": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "62": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   },
+   "63": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence (step21)"
+   }
+  },
+  "xor|1": {
+   "0": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   }
+  },
+  "xor|2": {
+   "0": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 9,
+    "lower": 9,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 9,
+    "lower": 9,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 9,
+    "lower": 9,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 9,
+    "lower": 9,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 4,
+    "lower": 4,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 7,
+    "lower": 7,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 7,
+    "lower": 7,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 7,
+    "lower": 7,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 4,
+    "lower": 4,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 7,
+    "lower": 7,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 9,
+    "lower": 9,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 9,
+    "lower": 9,
+    "how": "presence"
+   }
+  },
+  "xor|3": {
+   "0": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 22,
+    "lower": 22,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 22,
+    "lower": 22,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 12,
+    "lower": 12,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 19,
+    "lower": 19,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 22,
+    "lower": 22,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 22,
+    "lower": 22,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 22,
+    "lower": 22,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 10,
+    "lower": 10,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 15,
+    "lower": 15,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 19,
+    "lower": 19,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 20,
+    "lower": 20,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 15,
+    "lower": 15,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 19,
+    "lower": 19,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 20,
+    "lower": 20,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 17,
+    "lower": 17,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 20,
+    "lower": 20,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 17,
+    "lower": 17,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 22,
+    "lower": 22,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 16,
+    "lower": 16,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 17,
+    "lower": 17,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 20,
+    "lower": 20,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 16,
+    "lower": 16,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 10,
+    "lower": 10,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 16,
+    "lower": 16,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 19,
+    "lower": 19,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   }
+  },
+  "xor|4": {
+   "0": {
+    "upper": 34,
+    "lower": 34,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 44,
+    "lower": 44,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 34,
+    "lower": 34,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 34,
+    "lower": 34,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 44,
+    "lower": 44,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 34,
+    "lower": 34,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 28,
+    "lower": 28,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 32,
+    "lower": 32,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 45,
+    "lower": 45,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 44,
+    "lower": 44,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 42,
+    "lower": 42,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 34,
+    "lower": 34,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 45,
+    "lower": 45,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 44,
+    "lower": 44,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 34,
+    "lower": 34,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 45,
+    "lower": 45,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 46,
+    "lower": 45,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 34,
+    "lower": 34,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 35,
+    "lower": 35,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 45,
+    "lower": 45,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 46,
+    "lower": 45,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 34,
+    "lower": 34,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 27,
+    "lower": 27,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 36,
+    "lower": 36,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 38,
+    "lower": 38,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 40,
+    "lower": 40,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 41,
+    "lower": 41,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 36,
+    "lower": 36,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 38,
+    "lower": 38,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 44,
+    "lower": 44,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 39,
+    "lower": 39,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 42,
+    "lower": 42,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 41,
+    "lower": 41,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 34,
+    "lower": 34,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 39,
+    "lower": 39,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 45,
+    "lower": 45,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 41,
+    "lower": 41,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 34,
+    "lower": 34,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 38,
+    "lower": 38,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 35,
+    "lower": 35,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 45,
+    "lower": 45,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 35,
+    "lower": 35,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 41,
+    "lower": 41,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 35,
+    "lower": 35,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 45,
+    "lower": 45,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 45,
+    "lower": 45,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 32,
+    "lower": 32,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 35,
+    "lower": 35,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 25,
+    "lower": 25,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 35,
+    "lower": 35,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 40,
+    "lower": 40,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 30,
+    "lower": 30,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 32,
+    "lower": 32,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 38,
+    "lower": 38,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 42,
+    "lower": 41,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 33,
+    "lower": 33,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 38,
+    "lower": 38,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 42,
+    "lower": 41,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   }
+  },
+  "xor|5": {
+   "0": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 50,
+    "lower": 50,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 56,
+    "lower": 55,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 56,
+    "lower": 55,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 49,
+    "lower": 49,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 53,
+    "lower": 53,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 53,
+    "lower": 53,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 53,
+    "lower": 53,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 53,
+    "lower": 53,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 53,
+    "lower": 53,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 50,
+    "lower": 50,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 53,
+    "lower": 53,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 50,
+    "lower": 50,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 50,
+    "lower": 50,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 53,
+    "lower": 53,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 49,
+    "lower": 49,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   }
+  },
+  "xor|6": {
+   "0": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 59,
+    "lower": 58,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 59,
+    "lower": 58,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 59,
+    "lower": 58,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   }
+  },
+  "xor|7": {
+   "0": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   }
+  },
+  "xor|8": {
+   "0": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   }
+  },
+  "xor|9": {
+   "0": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   }
+  },
+  "xor|10": {
+   "0": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   }
+  },
+  "xor|11": {
+   "0": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   }
+  },
+  "none|1": {
+   "0": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 2,
+    "lower": 2,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 3,
+    "lower": 3,
+    "how": "presence"
+   }
+  },
+  "none|2": {
+   "0": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 7,
+    "lower": 7,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 4,
+    "lower": 4,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 7,
+    "lower": 7,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 4,
+    "lower": 4,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 7,
+    "lower": 7,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 7,
+    "lower": 7,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 4,
+    "lower": 4,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 6,
+    "lower": 6,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 4,
+    "lower": 4,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 5,
+    "lower": 5,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 8,
+    "lower": 8,
+    "how": "presence"
+   }
+  },
+  "none|3": {
+   "0": {
+    "upper": 12,
+    "lower": 12,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 12,
+    "lower": 12,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 12,
+    "lower": 12,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 12,
+    "lower": 12,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 9,
+    "lower": 9,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 11,
+    "lower": 11,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 17,
+    "lower": 17,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 17,
+    "lower": 17,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 19,
+    "lower": 19,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 10,
+    "lower": 10,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 11,
+    "lower": 11,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 19,
+    "lower": 19,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 12,
+    "lower": 12,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 10,
+    "lower": 10,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 10,
+    "lower": 10,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 12,
+    "lower": 12,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 10,
+    "lower": 10,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 12,
+    "lower": 12,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 19,
+    "lower": 19,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 17,
+    "lower": 17,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 10,
+    "lower": 10,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 18,
+    "lower": 18,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 13,
+    "lower": 13,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 14,
+    "lower": 14,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 10,
+    "lower": 10,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 11,
+    "lower": 11,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 17,
+    "lower": 17,
+    "how": "presence"
+   }
+  },
+  "none|4": {
+   "0": {
+    "upper": 27,
+    "lower": 27,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 41,
+    "lower": 41,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 26,
+    "lower": 26,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 27,
+    "lower": 27,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 28,
+    "lower": 28,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 36,
+    "lower": 36,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 28,
+    "lower": 28,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 19,
+    "lower": 19,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 21,
+    "lower": 21,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 26,
+    "lower": 26,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 38,
+    "lower": 38,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 37,
+    "lower": 37,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 27,
+    "lower": 27,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 27,
+    "lower": 27,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 26,
+    "lower": 26,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 34,
+    "lower": 34,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 30,
+    "lower": 30,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 35,
+    "lower": 35,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 39,
+    "lower": 39,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 30,
+    "lower": 30,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 32,
+    "lower": 32,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 41,
+    "lower": 41,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 31,
+    "lower": 31,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 32,
+    "lower": 32,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 23,
+    "lower": 23,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 23,
+    "lower": 23,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 35,
+    "lower": 35,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 30,
+    "lower": 30,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 36,
+    "lower": 36,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 27,
+    "lower": 27,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 27,
+    "lower": 27,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 40,
+    "lower": 40,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 24,
+    "lower": 24,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 37,
+    "lower": 37,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 29,
+    "lower": 29,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 22,
+    "lower": 22,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 28,
+    "lower": 28,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 39,
+    "lower": 39,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 37,
+    "lower": 37,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 28,
+    "lower": 28,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 29,
+    "lower": 29,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 27,
+    "lower": 27,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 35,
+    "lower": 35,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 26,
+    "lower": 26,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 27,
+    "lower": 27,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 23,
+    "lower": 23,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 27,
+    "lower": 27,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 35,
+    "lower": 35,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 29,
+    "lower": 29,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 32,
+    "lower": 32,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 30,
+    "lower": 30,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 24,
+    "lower": 24,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 29,
+    "lower": 29,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 39,
+    "lower": 39,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 32,
+    "lower": 32,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 26,
+    "lower": 26,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 26,
+    "lower": 26,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 29,
+    "lower": 29,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 37,
+    "lower": 37,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 29,
+    "lower": 29,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 28,
+    "lower": 28,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 24,
+    "lower": 24,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 25,
+    "lower": 25,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 35,
+    "lower": 35,
+    "how": "presence"
+   }
+  },
+  "none|5": {
+   "0": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 53,
+    "lower": 53,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 45,
+    "lower": 45,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 50,
+    "lower": 50,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 48,
+    "lower": 48,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 38,
+    "lower": 38,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 41,
+    "lower": 41,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 49,
+    "lower": 49,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 48,
+    "lower": 48,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 50,
+    "lower": 50,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 50,
+    "lower": 50,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 48,
+    "lower": 48,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 52,
+    "lower": 52,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 48,
+    "lower": 48,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 48,
+    "lower": 48,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 44,
+    "lower": 44,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 44,
+    "lower": 44,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 50,
+    "lower": 50,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 49,
+    "lower": 49,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 45,
+    "lower": 45,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 43,
+    "lower": 43,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 45,
+    "lower": 45,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 49,
+    "lower": 49,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 41,
+    "lower": 41,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 47,
+    "lower": 47,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 50,
+    "lower": 50,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 46,
+    "lower": 46,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 48,
+    "lower": 48,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 44,
+    "lower": 44,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 48,
+    "lower": 48,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 50,
+    "lower": 50,
+    "how": "presence"
+   }
+  },
+  "none|6": {
+   "0": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 51,
+    "lower": 51,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 53,
+    "lower": 53,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 53,
+    "lower": 53,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 53,
+    "lower": 53,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 56,
+    "lower": 56,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 54,
+    "lower": 54,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 55,
+    "lower": 55,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 57,
+    "lower": 57,
+    "how": "presence"
+   }
+  },
+  "none|7": {
+   "0": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 58,
+    "lower": 58,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 59,
+    "lower": 59,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 60,
+    "lower": 60,
+    "how": "presence"
+   }
+  },
+  "none|8": {
+   "0": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 61,
+    "lower": 61,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   }
+  },
+  "none|9": {
+   "0": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 62,
+    "lower": 62,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   }
+  },
+  "none|10": {
+   "0": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   }
+  },
+  "none|11": {
+   "0": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "1": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "2": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "3": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "4": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "5": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "6": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "7": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "8": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "9": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "10": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "11": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "12": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "13": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "14": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "15": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "16": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "17": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "18": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "19": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "20": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "21": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "22": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "23": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "24": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "25": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "26": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "27": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "28": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "29": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "30": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "31": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "32": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "33": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "34": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "35": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "36": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "37": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "38": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "39": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "40": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "41": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "42": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "43": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "44": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "45": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "46": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "47": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "48": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "49": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "50": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "51": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "52": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "53": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "54": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "55": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "56": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "57": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "58": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "59": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "60": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "61": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "62": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   },
+   "63": {
+    "upper": 63,
+    "lower": 63,
+    "how": "presence"
+   }
+  }
+ }
+}

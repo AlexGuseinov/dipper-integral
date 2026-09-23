@@ -1,0 +1,17 @@
+xor r=3 j=59 D=21 exact=True u_tried=3 count=1 0.9s
+== xor r=3: exact 64/64
+xor r=4 j=18 D=46 exact=False u_tried=60 count=None 45.0s
+xor r=4 j=22 D=46 exact=False u_tried=60 count=None 46.0s
+xor r=4 j=58 D=42 exact=False u_tried=28 count=None 21.1s
+xor r=4 j=62 D=42 exact=False u_tried=28 count=None 21.1s
+== xor r=4: exact 60/64
+xor r=5 j=10 D=56 exact=False u_tried=10 count=None 13.4s
+xor r=5 j=14 D=56 exact=False u_tried=10 count=None 12.5s
+xor r=5 j=18 D=56 exact=True u_tried=3 count=1 2.4s
+xor r=5 j=44 D=54 exact=True u_tried=17 count=1 21.7s
+xor r=5 j=55 D=49 exact=True u_tried=12 count=1 16.6s
+== xor r=5: exact 62/64
+xor r=6 j=9 D=59 exact=False u_tried=4 count=None 12.4s
+xor r=6 j=13 D=59 exact=False u_tried=4 count=None 12.7s
+xor r=6 j=56 D=59 exact=False u_tried=4 count=None 8.0s
+== xor r=6: exact 61/64

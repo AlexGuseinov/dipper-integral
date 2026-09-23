@@ -1,0 +1,54 @@
+{
+ "10": {
+  "max_constant_bits": 1,
+  "min_dimension": 63,
+  "bits_at_min": {
+   "7": [
+    [
+     6
+    ],
+    [
+     10
+    ],
+    [
+     14
+    ],
+    [
+     18
+    ],
+    [
+     30
+    ],
+    [
+     42
+    ],
+    [
+     46
+    ],
+    [
+     47
+    ]
+   ],
+   "8": [
+    [
+     6
+    ]
+   ],
+   "51": [
+    [
+     18
+    ]
+   ]
+  },
+  "per_bit_max_constant": {
+   "7": 1,
+   "8": 1,
+   "51": 1
+  },
+  "mismatch_with_63dim_results": 0,
+  "queries": 4124,
+  "trails_checked": 4114,
+  "trails_failed": 0,
+  "secs": 28.4
+ }
+}

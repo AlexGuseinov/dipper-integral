@@ -1,0 +1,2 @@
+20 {'deps': 32, 'degree': 20, 'secs': 1388.5}
+7 {'deps': 32, 'degree': 24, 'secs': 1397.3}

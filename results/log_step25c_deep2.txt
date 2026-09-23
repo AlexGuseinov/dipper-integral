@@ -1,0 +1,1 @@
+add|3|16 upper 50 lower None 40.4 s

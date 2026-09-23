@@ -1,0 +1,30 @@
+add r=1 j=7 D=24 exact=False u_tried=80 count=None 4.1s
+add r=1 j=20 D=20 exact=False u_tried=80 count=None 4.3s
+add r=1 j=37 D=22 exact=True u_tried=37 count=1 1.9s
+== add r=1: exact 62/64
+add r=2 j=0 D=24 exact=True u_tried=27 count=1 5.9s
+add r=2 j=3 D=24 exact=True u_tried=1 count=1 0.0s
+add r=2 j=4 D=24 exact=False u_tried=80 count=None 18.3s
+add r=2 j=17 D=26 exact=True u_tried=5 count=1 1.0s
+add r=2 j=21 D=29 exact=False u_tried=80 count=None 18.6s
+add r=2 j=22 D=52 exact=True u_tried=16 count=1 3.5s
+add r=2 j=27 D=22 exact=True u_tried=1 count=1 0.0s
+add r=2 j=36 D=54 exact=True u_tried=14 count=1 3.5s
+add r=2 j=40 D=22 exact=True u_tried=57 count=1 13.6s
+add r=2 j=52 D=51 exact=True u_tried=42 count=1 9.4s
+add r=2 j=55 D=34 exact=False u_tried=80 count=None 17.9s
+add r=2 j=57 D=22 exact=True u_tried=9 count=3 1.9s
+== add r=2: exact 61/64
+add r=3 j=9 D=51 exact=False u_tried=80 count=None 38.6s
+add r=3 j=11 D=50 exact=True u_tried=27 count=1 12.4s
+add r=3 j=16 D=50 exact=False u_tried=80 count=None 39.2s
+add r=3 j=19 D=32 exact=True u_tried=30 count=1 14.9s
+add r=3 j=26 D=53 exact=True u_tried=5 count=1 1.9s
+add r=3 j=33 D=51 exact=False u_tried=80 count=None 38.2s
+add r=3 j=38 D=58 exact=True u_tried=1 count=1 0.2s
+add r=3 j=41 D=47 exact=True u_tried=29 count=1 13.5s
+add r=3 j=43 D=51 exact=False u_tried=80 count=None 37.7s
+add r=3 j=48 D=46 exact=True u_tried=2 count=1 0.5s
+add r=3 j=50 D=51 exact=False u_tried=80 count=None 38.7s
+add r=3 j=55 D=58 exact=True u_tried=3 count=1 1.6s
+== add r=3: exact 59/64

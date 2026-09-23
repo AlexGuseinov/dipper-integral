@@ -1,0 +1,11 @@
+p=1 after cycle breaking: blocks [[8, 25], [40, 57]] (279s)
+   block [8, 25] beta [8, 25]: no pattern after 120 samples
+   block [8, 25] beta [8, 25]: no pattern after 120 samples
+   block [8, 25] beta [8, 25]: repaired after 24 samples
+   block [40, 57] beta [40, 57]: repaired by free last round (nibble 9, a=0, t=2)
+p=1 invertible=True cyc0=15 replaced=6 blocks=[(2, 2, 0), (2, 2, 0)] trails=196 fail=0 584.9s
+p=3 after cycle breaking: blocks [[8, 25], [0, 3], [40, 57]] (128s)
+   block [8, 25] beta [8, 25]: repaired by free last round (nibble 11, a=0, t=2)
+   block [0, 3] beta [0, 3]: repaired by free last round (nibble 1, a=0, t=2)
+   block [40, 57] beta [40, 57]: repaired by free last round (nibble 9, a=0, t=2)
+p=3 invertible=True cyc0=31 replaced=8 blocks=[(2, 2, 0), (2, 2, 0), (2, 2, 0)] trails=1773 fail=0 137.3s
