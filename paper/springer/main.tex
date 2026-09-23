@@ -6,8 +6,9 @@
 \usepackage[title]{appendix}
 \usepackage{xcolor}
 \usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{manyfoot}% required by sn-jnl.cls (footnote hook at begin document), as in the template
 \usepackage{url}
-\usepackage{adjustbox}
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta}
 
@@ -345,7 +346,7 @@ Table~\ref{tab:words} repeats the published experiment: one 16-bit word is satur
 
 \begin{table}[t]\centering
 \caption{Balanced bits of $S^{(r)}$ for 16-bit word-saturated cubes. For Dipper, the empirically zero bits (1016 trials) coincide with the certified bits in every entry for $r\ge2$. The last two columns give, for the analysis variants, the last round with empirically zero bits (400 trials) and their number (416 trials: 400 with random round keys, 16 with the real key schedule); these two columns are empirical only. Bold: last round with balanced bits.}\label{tab:words}
-\begin{adjustbox}{max width=\linewidth}\begin{tabular}{lcccccc|cc}
+\begin{tabular}{lcccccc|cc}
 \toprule
 Saturated word & $r{=}1$ & 2 & 3 & 4 & 5 & 6 & $\mathrm{Dipper}^{\oplus}$ & $\mathrm{Dipper}^{\varnothing}$\\
 \midrule
@@ -354,7 +355,7 @@ $B$ & 64 & 56 & \textbf{24} & 0 & 0 & 0 & 5 (7 bits) & 7 (9 bits)\\
 $C$ & 64 & 64 & 64 & 38 & \textbf{3} & 0 & 6 (25 bits) & 7 (4 bits)\\
 $D$ & 64 & 60 & \textbf{25} & 0 & 0 & 0 & 5 (8 bits) & 7 (6 bits)\\
 \bottomrule
-\end{tabular}\end{adjustbox}
+\end{tabular}
 \end{table}
 
 \subsection{Certified properties over all bit-aligned cubes}
@@ -362,7 +363,7 @@ By Lemma~\ref{lem:mono}, the 64 cubes of dimension~63 (one constant bit $p$) dec
 
 \begin{table}[t]\centering
 \caption{Cubes of dimension 63 (constant bit $p$; 64 cubes per row). \MPEL, \MPC{} and \BDP{} give identical results (\MPC{} was run for $r\le7$).}\label{tab:maximal}
-\begin{adjustbox}{max width=\linewidth}\begin{tabular}{cccc}
+\begin{tabular}{cccc}
 \toprule
 Rounds $r$ & cubes with a certificate & max.\ certified bits & solver time (\MPEL, 64 cubes) \\
 \midrule
@@ -373,14 +374,14 @@ Rounds $r$ & cubes with a certificate & max.\ certified bits & solver time (\MPE
 8 & 0  & 0  & 11.1 s\\
 9 & 0  & 0  & 12.2 s\\
 \bottomrule
-\end{tabular}\end{adjustbox}
+\end{tabular}
 \end{table}
 
 \paragraph{Data complexity.} Starting from certified cubes, we removed active bits one at a time as long as some bit stayed certified, restarting from several cubes and random orders. Table~\ref{tab:frontier} lists the smallest certified cubes \emph{found} in this way. They are upper bounds on the data required. At five rounds the smallest cube found has size $2^{16}$, the size of the published word-saturation structure (word $C$). At six rounds the minimum can be proven. If a cube is certified for bit $j$, then by Lemma~\ref{lem:mono} so is every 63-dimensional cube containing it. Its constant bits therefore lie among the positions $p$ whose 63-dimensional cube certifies bit $j$, a subset of the 14 positions with a six-round certificate (Table~\ref{tab:maximal}). For each bit $j$, the sets of constant bits of cubes certified for $j$ are closed under taking subsets, again by Lemma~\ref{lem:mono}, so they can be searched level by level. The largest such set, over all $j$, has four elements. Hence $2^{60}$ is the minimum within the model, and exactly two cubes attain it: the cube with the nibble $\{4,5,6,7\}$ constant, which certifies six bits, and the cube with the nibble $\{12,13,14,15\}$ constant, which certifies bits $\{24,51,56,58\}$. Each of the 4456 ``no certificate'' answers of this search was turned into a trail and validated independently. The same search shows that no cube of dimension below 63 is certified for $\mathrm{Dipper}^{\oplus}$ at nine rounds or for $\mathrm{Dipper}^{\varnothing}$ at ten rounds.
 
 \begin{table}[t]\centering
 \caption{Smallest certified cubes found (dimension $d$, i.e.\ $2^d$ chosen plaintexts; greedy search). The last value in each row is minimal within the model. ``--'': no certificate for any bit-aligned cube (Lemma~\ref{lem:mono}); blank: not computed.}\label{tab:frontier}
-\begin{adjustbox}{max width=\linewidth}\begin{tabular}{lcccccccc}
+\begin{tabular}{lcccccccc}
 \toprule
 Rounds $r$ & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
 \midrule
@@ -388,7 +389,7 @@ Dipper & 2 & 4 & 16 & 60 & -- & -- & -- & \\
 $\mathrm{Dipper}^{\oplus}$ & & & 7 & 22 & 44 & 59 & 63 & --\\
 $\mathrm{Dipper}^{\varnothing}$ & & & 3 & 8 & 15 & 48 & 59 & 63\\
 \bottomrule
-\end{tabular}\end{adjustbox}
+\end{tabular}
 \end{table}
 
 \subsection{Seven rounds: presence proofs}\label{sec:r7presence}
@@ -421,7 +422,7 @@ Table~\ref{tab:ablation} compares Dipper with $\mathrm{Dipper}^{\oplus}$ and $\m
 
 \begin{table}[t]\centering
 \caption{Longest round count with a certificate for some bit-aligned cube (all cubes, by Lemma~\ref{lem:mono}) and the maximum number of balanced bits at that round.}\label{tab:ablation}
-\begin{adjustbox}{max width=\linewidth}\begin{tabular}{lccc}
+\begin{tabular}{lccc}
 \toprule
 Variant & longest certified $r$ & max.\ certified bits & with free round (Lemma~\ref{lem:free})\\
 \midrule
@@ -429,7 +430,7 @@ Dipper ($\modadd$) & 6 & 9 & 7\\
 $\mathrm{Dipper}^{\oplus}$ & 9 & 5 & 10\\
 $\mathrm{Dipper}^{\varnothing}$ & 10 & 2 & 11\\
 \bottomrule
-\end{tabular}\end{adjustbox}
+\end{tabular}
 \end{table}
 
 The variants keep the rotations, the S-box, the permutation and the full-state key addition, so they are not GIFT-64. A difference measured with an existence-based model describes certified properties. It describes the true algebraic behaviour only where the model is tight. We measured tightness only on Dipper for up to five rounds (Section~\ref{sec:tightness}).
@@ -447,7 +448,7 @@ The two bounds coincide in 1843 of the 1856 cases, so there the degree is exact.
 \begin{table}[t]\centering
 \caption{Algebraic degree after one round (exact), by bit position $i$ in the output of the ARX layer.}\label{tab:deg1}
 \setlength{\tabcolsep}{3pt}
-\begin{adjustbox}{max width=\linewidth}\begin{tabular}{l*{16}{c}}
+\begin{tabular}{l*{16}{c}}
 \toprule
 $i$ & 0&1&2&3&4&5&6&7&8&9&10&11&12&13&14&15\\
 \midrule
@@ -455,7 +456,7 @@ $A\modadd B$ & 3&5&7&8&9&11&13&15&16&18&20&21&22&24&25&26\\
 $C\modadd D$ & 2&4&6&6&8&10&12&12&14&16&18&18&20&22&24&24\\
 $B$ (retained) & 2&2&3&3&2&2&3&3&2&2&3&3&2&2&3&3\\
 \bottomrule
-\end{tabular}\end{adjustbox}
+\end{tabular}
 \end{table}
 
 Figure~\ref{fig:degree} and Table~\ref{tab:deg1} support three observations.
@@ -485,7 +486,7 @@ Presence proofs with maximal key patterns (Section~\ref{sec:presence}) decide al
 
 \begin{table}[t]\centering
 \caption{Certified versus empirically zero bits over 28 cubes of dimension 4--16 (sums over all cubes). Last column: persistent gap bits proved unbalanced by a presence proof (Lemma~\ref{lem:presence}).}\label{tab:tight}
-\begin{adjustbox}{max width=\linewidth}\begin{tabular}{cccccc}
+\begin{tabular}{cccccc}
 \toprule
 Rounds & certified & empirically zero & gap & persistent gap & proved unbalanced\\
 \midrule
@@ -494,7 +495,7 @@ Rounds & certified & empirically zero & gap & persistent gap & proved unbalanced
 4 & 91 & 93 & 2 & 0 & --\\
 5 & 6 & 7 & 1 & 0 & --\\
 \bottomrule
-\end{tabular}\end{adjustbox}
+\end{tabular}
 \end{table}
 
 % =====================================================================
@@ -578,8 +579,8 @@ Ali Huseynli: conceptualization, methodology, software, formal analysis, investi
 \section{Test vectors and intermediate values}\label{app:tv}
 All values in hexadecimal, most significant bit first. Dipper-64/128 with $RK_r=K^{(r)}[63{:}0]$ (Section~\ref{sec:erratum}).
 
-\begin{center}\small
-\begin{adjustbox}{max width=\linewidth}\begin{tabular}{lll}
+\begin{center}\footnotesize
+\begin{tabular}{lll}
 \toprule
  & Vector 1 & Vector 2\\
 \midrule
@@ -594,13 +595,13 @@ $S^{(3)}$ & \texttt{22C358EDC3BD1695} & \texttt{F49F4481BC92B880}\\
 $RK_{28}$ & \texttt{78090A148A9BF0E0} & \texttt{FFFFFFE02664FFFF}\\
 $C=S^{(28)}$ & \texttt{4B46284387969060} & \texttt{6ABB4518063706B0}\\
 \bottomrule
-\end{tabular}\end{adjustbox}
+\end{tabular}
 \end{center}
 
 \medskip\noindent Dipper-64/96 under the corrected S-box positions (Section~\ref{sec:erratum}).
 
-\begin{center}\small
-\begin{adjustbox}{max width=\linewidth}\begin{tabular}{lll}
+\begin{center}\footnotesize
+\begin{tabular}{lll}
 \toprule
  & Vector 1 & Vector 2\\
 \midrule
@@ -615,7 +616,7 @@ $S^{(3)}$ & \texttt{3BDC9FD0104AC1C2} & \texttt{11D992CE930C3154}\\
 $RK_{28}$ & \texttt{200AEA1FD9DD001D} & \texttt{E5659977E0A29797}\\
 $C=S^{(28)}$ & \texttt{5F189202D3152B8F} & \texttt{D873355EC63B1B4B}\\
 \bottomrule
-\end{tabular}\end{adjustbox}
+\end{tabular}
 \end{center}
 
 \end{appendices}

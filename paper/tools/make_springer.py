@@ -56,8 +56,9 @@ preamble = r"""\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
 \usepackage[title]{appendix}
 \usepackage{xcolor}
 \usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{manyfoot}% required by sn-jnl.cls (footnote hook at begin document), as in the template
 \usepackage{url}
-\usepackage{adjustbox}
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta}
 
@@ -111,9 +112,10 @@ for old, new in ((r"\add", r"\modadd"), (r"\F", r"\Ftwo"), (r"\val", r"\intval")
     post = re.sub(re.escape(old) + r"(?![A-Za-z])", lambda _: new, post)
     doc = pre + r"\begin{document}" + post
 
-# wide tables: shrink to the text width of the journal class if needed
-doc = doc.replace(r"\begin{tabular}", r"\begin{adjustbox}{max width=\linewidth}\begin{tabular}")
-doc = doc.replace(r"\end{tabular}", r"\end{tabular}\end{adjustbox}")
+# appendix test-vector tables: 32 hex digits need a smaller font at the journal text width
+doc = doc.replace(r"\begin{center}\small", r"\begin{center}\footnotesize")
+# no adjustbox around tables: sn-jnl wraps every table in threeparttable, which needs the
+# tabular as its direct content; all tables fit the text width (checked with sn-jnl.cls)
 # a long inline formula in the proof of Lemma addret: set it as a display
 doc = doc.replace(r"characterisation, $(x\modadd y)^w=\sum_{\intval(a')+\intval(b')=\intval(w)}x^{a'}y^{b'}$. Multiplying",
                   r"characterisation, \[(x\modadd y)^w=\sum_{\intval(a')+\intval(b')=\intval(w)}x^{a'}y^{b'}.\] Multiplying")
