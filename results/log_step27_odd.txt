@@ -9,3 +9,97 @@ p=3 after cycle breaking: blocks [[8, 25], [0, 3], [40, 57]] (128s)
    block [0, 3] beta [0, 3]: repaired by free last round (nibble 1, a=0, t=2)
    block [40, 57] beta [40, 57]: repaired by free last round (nibble 9, a=0, t=2)
 p=3 invertible=True cyc0=31 replaced=8 blocks=[(2, 2, 0), (2, 2, 0), (2, 2, 0)] trails=1773 fail=0 137.3s
+p=5 after cycle breaking: blocks [[8, 25], [40, 57]] (60s)
+   block [8, 25] beta [8, 25]: repaired by free last round (nibble 11, a=0, t=2)
+   block [40, 57] beta [40, 57]: repaired by free last round (nibble 9, a=0, t=2)
+p=5 invertible=True cyc0=13 replaced=4 blocks=[(2, 2, 0), (2, 2, 0)] trails=402 fail=0 63.7s
+p=7 after cycle breaking: blocks [[40, 57]] (71s)
+   block [40, 57] beta [40, 57]: no pattern after 120 samples
+   block [40, 57] beta [40, 57]: no pattern after 120 samples
+   block [40, 57] beta [40, 57]: no pattern after 120 samples
+p=7 invertible=False cyc0=22 replaced=8 blocks=[(2, 1, 0)] trails=None fail=None 374.1s
+p=9 after cycle breaking: blocks [[0, 3], [40, 57]] (90s)
+   block [0, 3] beta [0, 3]: repaired by free last round (nibble 1, a=0, t=2)
+   block [40, 57] beta [40, 57]: no pattern after 120 samples
+   block [40, 57] beta [40, 57]: no pattern after 120 samples
+   block [40, 57] beta [40, 57]: no pattern after 120 samples
+p=9 invertible=False cyc0=19 replaced=8 blocks=[(2, 2, 0), (2, 1, 0)] trails=None fail=None 622.9s
+p=11 after cycle breaking: blocks [[0, 3], [40, 57]] (109s)
+   block [0, 3]: invertible by the last-round component lemma (nibble 1, a=2, t=0)
+   block [40, 57] beta [40, 57]: no pattern after 120 samples
+   block [40, 57] beta [40, 57]: no pattern after 120 samples
+   block [40, 57] beta [40, 57]: no pattern after 120 samples
+p=11 invertible=False cyc0=24 replaced=9 blocks=[(2, 2, 0), (2, 1, 0)] trails=None fail=None 396.1s
+p=13 after cycle breaking: blocks [[8, 25], [0, 3], [40, 57]] (68s)
+   block [8, 25]: row 8 replaced by the last-round component lemma (nibble 11, a=2, t=0)
+   block [0, 3]: row 0 replaced by the last-round component lemma (nibble 1, a=2, t=0)
+   block [40, 57]: row 40 replaced by the last-round component lemma (nibble 9, a=2, t=0)
+p=13 invertible=True cyc0=10 replaced=3 blocks=[(2, 2, 0), (2, 2, 0)] trails=202 fail=0 77.1s
+p=15 after cycle breaking: blocks [[8, 25], [0, 3]] (94s)
+   block [8, 25]: row 8 replaced by the last-round component lemma (nibble 11, a=2, t=0)
+   block [0, 3]: row 0 replaced by the last-round component lemma (nibble 1, a=2, t=0)
+p=15 invertible=True cyc0=24 replaced=10 blocks=[(2, 2, 0)] trails=671 fail=0 95.6s
+p=17 after cycle breaking: blocks [[8, 25], [40, 57]] (62s)
+   block [8, 25]: row 8 replaced by the last-round component lemma (nibble 11, a=2, t=0)
+   block [40, 57]: row 40 replaced by the last-round component lemma (nibble 9, a=2, t=0)
+p=17 invertible=True cyc0=17 replaced=6 blocks=[(2, 2, 0), (2, 2, 0)] trails=216 fail=0 64.6s
+p=19 after cycle breaking: blocks [[8, 25], [32, 35], [40, 57]] (82s)
+   block [8, 25]: row 8 replaced by the last-round component lemma (nibble 11, a=2, t=0)
+   block [32, 35]: row 32 replaced by the last-round component lemma (nibble 3, a=2, t=0)
+   block [40, 57]: row 40 replaced by the last-round component lemma (nibble 9, a=2, t=0)
+p=19 invertible=True cyc0=20 replaced=5 blocks=[(2, 2, 0), (2, 2, 0)] trails=344 fail=0 85.1s
+p=21 after cycle breaking: blocks [[40, 57]] (229s)
+   block [40, 57]: row 40 replaced by the last-round component lemma (nibble 9, a=2, t=0)
+p=21 invertible=True cyc0=35 replaced=9 blocks=[(2, 2, 0)] trails=493 fail=0 234.5s
+p=23 after cycle breaking: blocks [[32, 35], [40, 57]] (203s)
+   block [32, 35] beta [35]: repaired by free last round (nibble 3, a=0, t=1)
+   block [32, 35] beta [35]: repaired by free last round (nibble 3, a=0, t=1)
+   block [32, 35] beta [35]: repaired by free last round (nibble 3, a=0, t=1)
+   block [40, 57]: row 40 replaced by the last-round component lemma (nibble 9, a=2, t=0)
+p=23 invertible=True cyc0=34 replaced=7 blocks=[(2, 2, 0)] trails=473 fail=0 224.8s
+p=25 after cycle breaking: blocks [[32, 35], [40, 57], [9, 16, 43, 56]] (112s)
+   block [32, 35] beta [35]: repaired by free last round (nibble 3, a=0, t=1)
+   block [32, 35] beta [35]: repaired by free last round (nibble 3, a=0, t=1)
+   block [32, 35] beta [35]: repaired by free last round (nibble 3, a=0, t=1)
+   block [40, 57]: row 40 replaced by the last-round component lemma (nibble 9, a=2, t=0)
+   block [9, 16, 43, 56] beta [16]: repaired by free last round (nibble 0, a=2, t=0)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [16]: repaired by free last round (nibble 0, a=2, t=0)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [16]: repaired by free last round (nibble 0, a=2, t=0)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+p=25 invertible=False cyc0=25 replaced=6 blocks=[(2, 2, 0), (2, None, 1)] trails=None fail=None 404.6s
+p=27 after cycle breaking: blocks [[40, 57]] (130s)
+   block [40, 57]: row 40 replaced by the last-round component lemma (nibble 9, a=2, t=0)
+p=27 invertible=True cyc0=23 replaced=9 blocks=[(2, 2, 0)] trails=719 fail=0 136.2s
+p=29 after cycle breaking: blocks [[8, 25], [40, 57]] (108s)
+   block [8, 25]: row 8 replaced by the last-round component lemma (nibble 11, a=2, t=0)
+   block [40, 57]: row 40 replaced by the last-round component lemma (nibble 9, a=2, t=0)
+p=29 invertible=True cyc0=18 replaced=5 blocks=[(2, 2, 0), (2, 2, 0)] trails=522 fail=0 114.0s
+p=31 after cycle breaking: blocks [[8, 25], [40, 57]] (154s)
+   block [8, 25]: row 8 replaced by the last-round component lemma (nibble 11, a=2, t=0)
+   block [40, 57]: row 40 replaced by the last-round component lemma (nibble 9, a=2, t=0)
+p=31 invertible=True cyc0=34 replaced=9 blocks=[(2, 2, 0), (2, 2, 0)] trails=370 fail=0 159.6s
+p=33 after cycle breaking: blocks [[9, 16, 43, 56]] (908s)
+   block [9, 16, 43, 56] beta [16]: repaired by free last round (nibble 0, a=0, t=2)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [16]: repaired by free last round (nibble 0, a=0, t=2)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [16]: repaired by free last round (nibble 0, a=0, t=2)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+   block [9, 16, 43, 56] beta [56]: repaired by free last round (nibble 8, a=0, t=1)
+p=33 TIMEOUT
+p=35 after cycle breaking: blocks [[8, 25]] (163s)
+   block [8, 25]: both rows by the last-round component lemma (nibble 11, rows t=1:(1, 1), t=2:(0, 1))
+p=35 invertible=True cyc0=19 replaced=7 blocks=[] trails=252 fail=0 164.2s

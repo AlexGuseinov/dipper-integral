@@ -7,13 +7,16 @@ def rep(o, n):
     assert s.count(o) == 1, (s.count(o), o[:90]); s = s.replace(o, n)
 
 recs = {}
-for f in glob.glob("../results/step27_lc_*.json"):
-    recs.update({int(p): r for p, r in json.load(open(f)).items()})
+for f in sorted(glob.glob("../results/step27_lc_*.json")):
+    for p, r in json.load(open(f)).items():
+        if int(p) not in recs or (r.get("invertible") and not recs[int(p)].get("invertible")):
+            recs[int(p)] = r
 inv = [p for p, r in recs.items() if r.get("invertible")]
 allinv = len(inv) == 64
 nblocks = sum(len(r["blocks"]) for r in recs.values() if r.get("invertible"))
 maxblock = max((len(b["nodes"]) for r in recs.values() for b in r["blocks"]), default=1)
 nrep = sum(r.get("block_repairs", 0) for r in recs.values() if r.get("invertible"))
+nlem = sum(len(r.get("lemma_blocks", [])) for r in recs.values() if r.get("invertible"))
 ntr = sum(r.get("trails_checked", 0) for r in recs.values() if r.get("invertible"))
 fails = sum(r.get("failures", 0) for r in recs.values() if r.get("invertible"))
 assert fails == 0
@@ -29,6 +32,13 @@ Let $v^{(0)},\dots,v^{(63)}$ be key patterns, and let $M$ be the $64\times64$ ma
 \begin{proof}
 By Proposition~\ref{prop:mp} and linearity, the coefficient of $x^{\mathbf 1_I}k^{v^{(l)}}$ in $\langle\beta,S^{(r)}\rangle$ is $\sum_j M_{l,j}\beta_j=(M\beta)_l$. Since $M$ is invertible and $\beta\neq0$, some $(M\beta)_l$ equals~1, and the argument of Lemma~\ref{lem:presence} shows that the cube sum is not identically zero. The proof of Lemma~\ref{lem:monobal} applies to any output function.
 \end{proof}
+
+\begin{lemma}[Last-round component]\label{lem:component}
+Let $f=g(z)$ depend on $S^{(r)}$ only through the input $z=S^{(r-1)}_{[n]}\oplus RK_{r,[n]}$ of one last-round S-box $n$. Suppose that $z_t$ occurs in the ANF of $g$ only in the monomials $z_t$ and $z_az_t$. Then, for every key pattern $V$ of the first $r-1$ rounds, the coefficient of $x^{\mathbf 1_I}k^{V}k_{r,t}$ in $f$ equals the coefficient of $x^{\mathbf 1_I}k^{V}$ in $S^{(r-1)}_a$.
+\end{lemma}
+\begin{proof}
+Write $z_i=s_i\oplus k_{r,i}$. Among the monomials of $g(s\oplus k_r)$, those that contain $k_{r,t}$ and no other last-round key bit come from $z_t$, which gives $k_{r,t}$, and from $z_az_t$, which gives $s_ak_{r,t}$. The first does not contain $x^{\mathbf 1_I}$ because $|I|\ge1$.
+\end{proof}
 """
 rep(r"""Lemma~\ref{lem:monobal} is the cipher-level counterpart of Lemma~\ref{lem:mono}.""",
     lemma.strip() + "\n" + r"""Lemma~\ref{lem:monobal} is the cipher-level counterpart of Lemma~\ref{lem:mono}.""")
@@ -38,8 +48,8 @@ An attacker may also sum a linear combination $\langle\beta,S^{(7)}\rangle$ of o
 
 The matrix $M$ need not be computed in full. Let $G$ be the graph on the output bits with an edge $l\to j$ ($j\neq l$) whenever pattern $v^{(l)}$ has at least one trail to bit $j$. In a topological order of the strongly connected components of $G$, $M$ is block triangular, so $M$ is invertible if and only if every diagonal block is. A component with a single bit has the diagonal entry~1 of a presence proof. For each of the 64 cubes of dimension~63 we started from the 64 presence proofs of Section~\ref{sec:r7presence}. We then replaced the patterns of bits that lie on cycles of $G$ by other presence proofs with no trail to the rest of their cycle.
 
-For the cube with constant bit~0, almost every pattern has trails to a common set of twelve output bits, all high bits of the two added words, and the cycles that remain are small. Their blocks, counted exactly, were singular for a structural reason. Output bits 0 and~1 of the GIFT S-box sum to the component $1\oplus z_1\oplus z_0z_2$ of degree two in the S-box input $z$. Maximal patterns route the trails through last-round S-box inputs of weight three or four, where the two bits have equal coefficients, so the trail counts for the two bits always have the same parity. The added words cause the same effect, because bit $i$ of $X\add Y$ and the retained bit $Y_i$ share the linear term $Y_i$. Such a pair is separated by a pattern that uses the free last round. We take a six-round presence proof for one bit $s_a$ of $S^{(6)}$ and add a single last-round key bit $t$ such that $z_a$ is the only variable that forms a monomial with $z_t$ in the component in question. The coefficient of the resulting monomial in the combination is then the six-round coefficient of $s_a$, which is~1. We then counted all trails of the new pattern to the bits of the block to confirm the parity. """ + (
-    (r"""With these patterns every block became invertible for all 64 cubes. In total """ + str(nblocks) + r""" blocks of size at most """ + str(maxblock) + r""" remained after the cycle breaking, and """ + str(nrep) + r""" of their rows were replaced in this way.""") if allinv else
+For the cube with constant bit~0, almost every pattern has trails to a common set of twelve output bits, all high bits of the two added words, and the cycles that remain are small. Their blocks, counted exactly, were singular for a structural reason. Output bits 0 and~1 of the GIFT S-box sum to the component $1\oplus z_1\oplus z_0z_2$ of degree two in the S-box input $z$. Maximal patterns route the trails through last-round S-box inputs of weight three or four, where the two bits have equal coefficients, so the trail counts for the two bits always have the same parity. The added words cause the same effect, because bit $i$ of $X\add Y$ and the retained bit $Y_i$ share the linear term $Y_i$. Such a pair is separated by a pattern that uses the last round: a six-round presence proof for one bit $s_a$ of $S^{(6)}$, extended by a single last-round key bit $t$ such that $z_a$ is the only variable that forms a monomial with $z_t$ in the component in question. Where the trails of the new pattern to the block could be counted, we counted them. Where they could not, the pair consisted of output bits 0 and~1 of one S-box of a retained word. For such a pair Lemma~\ref{lem:component}, applied to each bit, gives the entries exactly. With $V$ a six-round presence proof for $s_0$, the last-round key bit $t=1$ gives the row $(1,1)$ and $t=2$ gives the row $(0,1)$, because $z_1$ occurs in both bits only in $z_1$ and $z_0z_1$, while $z_2$ occurs in bit~0 only alone and in bit~1 in $z_2$ and $z_0z_2$. These two rows have determinant~1, whatever the old rows were. """ + (
+    (r"""With these patterns every block became invertible for all 64 cubes. In total """ + str(nblocks) + r""" blocks of size at most """ + str(maxblock) + r""" remained after the cycle breaking, and """ + str(nrep) + r""" of their rows were replaced in this way; """ + str(nlem) + r""" blocks were closed by Lemma~\ref{lem:component}.""") if allinv else
     (r"""With these patterns the matrix became invertible for """ + str(len(inv)) + r""" of the 64 cubes.""")) + r"""
 
 The diagonal entries and the entries inside the blocks rest on trail counts, and each of their """ + f"{ntr:,}".replace(",", r"\,") + r""" trails passed the independent check. The zero entries outside the blocks rest on ``no trail'' answers of the solver. For a random sample of """ + f"{d29['sampled']:,}".replace(",", r"\,") + r""" of these """ + f"{d29['pool']:,}".replace(",", r"\,") + r""" answers we re-solved the instance with an external CaDiCaL, produced a DRAT proof and verified it with \texttt{drat-trim}. All were verified. """ + (
