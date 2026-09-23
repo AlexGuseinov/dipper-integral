@@ -10,6 +10,8 @@ Kompilyasiya üçün Springer-in rəsmi şablonundan **iki fayl** lazımdır, on
 Google-da **"Springer Nature LaTeX template"** axtar, springernature.com-dan zip-i yüklə, bu iki faylı `springer/` qovluğuna at.
 Sonra: `pdflatex main` → `bibtex main` → `pdflatex main` → `pdflatex main` (və ya Overleaf-də "Springer Nature LaTeX Template"-i aç, fayllarımızı yüklə).
 
+**Vacib:** `sn-mathphys-num.bst` şablonda `bst/` qovluğunun içindədir, amma class onu əsas qovluqda axtarır. Onu əsas qovluğa köçür, yoxsa istinadlar `[?]` görünür. Editorial Manager-ə yükləyəndə də bu fayl digərləri ilə eyni səviyyədə olmalıdır.
+
 Kompilyasiyada xəta çıxsa, xəta mesajını mənə göndər, düzəldərəm. `main.tex` şablonun interfeysinə uyğun yazılıb, amma rəsmi class faylı ilə yoxlaya bilmədim.
 
 ## 2. Təsdiqləməli olduğun 3 cümlə (`main.tex`, "Declarations" bölməsi)
