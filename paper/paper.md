@@ -13,7 +13,7 @@ abstract: |
   certified six-round cube, of size $2^{60}$, is minimal within the
   model. At seven rounds no bit-aligned cube is certified. Presence
   proofs, i.e. key monomials with an odd number of trails, show that
-  this is exact and, more strongly, that for independent round keys no
+  this is exact for independent round keys and, more strongly, that no
   nonzero linear combination of output bits is balanced after seven
   rounds over any bit-aligned cube. They also show that 46 bits whose
   sums stayed zero in thousands of random-key trials are not balanced,
@@ -111,9 +111,9 @@ the conventional division property?
     reference="lem:mono"}) reduces this statement to the 64 cubes of
     dimension 63. Presence proofs
     (Section [4.3](#sec:presence){reference-type="ref"
-    reference="sec:presence"}) show that this answer is exact: for each
-    of the 64 cubes of dimension 63, every output bit is unbalanced
-    after seven rounds, so by
+    reference="sec:presence"}) show that this answer is exact for
+    independent round keys: for each of the 64 cubes of dimension 63,
+    every output bit is unbalanced after seven rounds, so by
     Lemma [6](#lem:monobal){reference-type="ref"
     reference="lem:monobal"} no bit-aligned cube gives a seven-round
     property on a single output bit, for independent round keys.
@@ -1101,9 +1101,10 @@ after seven rounds, for independent round keys. Since the sum of
 $T^{-1}(S^{(8)})$ over a cube equals that of $S^{(7)}$ (proof of
 Lemma [4](#lem:free){reference-type="ref" reference="lem:free"}), the
 same holds for $T^{-1}(S^{(8)})$. The seven-round answer of the model is
-therefore exact. Over bit-aligned cubes and single output bits, the
-six-round properties of Table [2](#tab:maximal){reference-type="ref"
-reference="tab:maximal"}, and their extension to $T^{-1}(C)$ by
+therefore exact for independent round keys. Over bit-aligned cubes and
+single output bits, the six-round properties of
+Table [2](#tab:maximal){reference-type="ref" reference="tab:maximal"},
+and their extension to $T^{-1}(C)$ by
 Lemma [4](#lem:free){reference-type="ref" reference="lem:free"}, are the
 longest key-independent integral properties of Dipper with independent
 round keys. This does not exclude probabilistic or weak-key
@@ -1738,9 +1739,13 @@ DRAT proofs of the boundary certificates (about 60 MB) are provided as a
 release archive of the repository. The other DRAT proofs of
 Section [5](#sec:validation){reference-type="ref"
 reference="sec:validation"} are regenerated and checked on the fly; the
-repository contains their verification results. `make test` runs all
-validation checks, `make reproduce` regenerates every table and figure,
-and `make certificates` regenerates and checks all proofs and trails.
+repository contains their verification results. The DRAT proofs certify
+the solver's answers for the generated CNF files; the CNF generator
+itself remains part of the trusted base
+(Section [5](#sec:validation){reference-type="ref"
+reference="sec:validation"}). `make test` runs all validation checks,
+`make reproduce` regenerates every table and figure, and
+`make certificates` regenerates and checks all proofs and trails.
 
 # Test vectors and intermediate values {#app:tv}
 
