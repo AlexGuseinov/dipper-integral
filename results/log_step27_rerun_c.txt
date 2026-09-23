@@ -1,0 +1,5 @@
+p=63 after cycle breaking: blocks [[5, 22, 35, 39], [0, 3]] (238s)
+   block [0, 3]: all rows by the last-round component lemma (nibble 1, rows [(1, 0, [1, 1]), (2, 0, [1, 0])], 6-round trails 6, failed 0)
+   block [5, 22, 35, 39]: row 35 replaced by a countable presence proof
+   block [5, 22, 35, 39] beta [5, 35, 39]: repaired by free last round (nibble 4, a=0, t=1)
+p=63 invertible=True cyc0=25 replaced=7 blocks=[(2, 2, 0), (2, 2, 0)] trails=617 fail=0 877.7s

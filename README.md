@@ -14,8 +14,8 @@ evidence with SAT-based certificates that hold **for every choice of round keys*
 | | Result |
 |---|---|
 | Published 5-round word-saturation integrals | reproduced; certified for all keys |
-| Longest certified property | **6 rounds** (9 balanced bits with 2^63 data; 6 bits with the smallest cube found, 2^60) |
-| 7 rounds | no certificate for **any** cube; **presence proofs for all 64×64 (cube of dim. 63, output bit) pairs** → no bit-aligned cube has a balanced bit after 7 rounds (independent round keys); 32 620 enumerated trails re-validated |
+| Longest certified property | **6 rounds** (9 balanced bits with 2^63 data; 6 bits with 2^60 data — **proven minimal**, two minimal cubes) |
+| 7 rounds | no certificate for any cube; **presence proofs for all 64×64 (cube, bit) pairs** and **invertible coefficient matrices for all 64 cubes** → after 7 rounds no nonzero linear combination of output bits is balanced over any bit-aligned cube (independent round keys) |
 | Persistent gap bits | all 46 bits that were zero in 3200 random-key trials without a certificate are **proven unbalanced**; explicit round keys with nonzero sum for 31 of them (checked with the reference code) → certificates are exact on all 112 tested instances |
 | Free final round (no whitening key) | every r-round property is an (r+1)-round property of T⁻¹(C) → 7-round distinguisher |
 | Key filtering (secondary) | proposed 1-round extension recovering 4 bits of RK₈ with ~2^63 data (extrapolated; not a validated attack) |
@@ -23,8 +23,9 @@ evidence with SAT-based certificates that hold **for every choice of round keys*
 | MP-EL (existence, exact local rules) vs gate-level MP vs classical BDP | identical certificates on every tested instance |
 | Mechanism | at the 6-round boundary every balanced bit comes from the retained words B, D |
 | Degree lemma | bit i of x⊞y has algebraic degree exactly i+1 (proved; checked n ≤ 8) |
-| Degree UPPER bounds | all bounds are 63 from r=6 (Dipper) vs r=9 / 10 (XOR / no-add); retained words lag ~1 round |
+| Algebraic degree | exact for 1843 of 1856 (variant, round, bit) cases (presence proofs matching certified upper bounds); all 63 from r=6 (Dipper) vs r=9/10 (XOR/no-add) |
 | Checkable artifacts | 138 distinct DRAT proofs checked by drat-trim; 12 288 SAT trails validated independently (`make certificates`); 110 presence-proof trails validated; trail counting cross-checked with the ANF |
+| Real key schedule | MP model with the key schedule (`dipper/models_ks.py`): master-key coefficients mostly cancel (even counts); presence with the key schedule open |
 | Key-schedule corrections | paper text vs. spec/reference code: 128-bit RK = K[63:0] (not K[127:64]); 96-bit S-boxes at k4[7:4], k1[7:4] (not top nibbles). All 4 vectors reproduced |
 
 Full numbers: [`results/RESULTS.md`](results/RESULTS.md), raw data: `results/*.json`,

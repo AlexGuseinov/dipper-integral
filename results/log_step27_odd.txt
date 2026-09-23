@@ -103,3 +103,63 @@ p=33 TIMEOUT
 p=35 after cycle breaking: blocks [[8, 25]] (163s)
    block [8, 25]: both rows by the last-round component lemma (nibble 11, rows t=1:(1, 1), t=2:(0, 1))
 p=35 invertible=True cyc0=19 replaced=7 blocks=[] trails=252 fail=0 164.2s
+p=37 after cycle breaking: blocks [[5, 22, 32, 35, 39, 52], [0, 3], [8, 25], [40, 57]] (518s)
+   block [5, 22, 32, 35, 39, 52] beta [32]: repaired by free last round (nibble 3, a=0, t=1)
+   block [5, 22, 32, 35, 39, 52] beta [32]: repaired by free last round (nibble 3, a=0, t=1)
+   block [5, 22, 32, 35, 39, 52] beta [32]: repaired by free last round (nibble 3, a=0, t=1)
+   block [5, 22, 32, 35, 39, 52] beta [32]: repaired by free last round (nibble 3, a=0, t=1)
+   block [5, 22, 32, 35, 39, 52] beta [35]: repaired by free last round (nibble 3, a=0, t=1)
+Terminated
+p=37 TIMEOUT
+p=39 after cycle breaking: blocks [[5, 22, 35, 39], [0, 3], [40, 57]] (552s)
+   block [0, 3]: both rows by the last-round component lemma (nibble 1, rows t=1:(1, 1), t=2:(1, 0))
+   block [40, 57]: both rows by the last-round component lemma (nibble 9, rows t=1:(1, 1), t=2:(0, 1))
+p=39 invertible=False cyc0=49 replaced=6 blocks=[(4, None, 3)] trails=None fail=None 1168.2s
+p=41 after cycle breaking: blocks [[8, 25]] (243s)
+   block [8, 25]: both rows by the last-round component lemma (nibble 11, rows t=1:(1, 1), t=2:(0, 1))
+p=41 invertible=True cyc0=38 replaced=8 blocks=[] trails=330 fail=0 245.0s
+p=43 after cycle breaking: blocks [[0, 3], [27, 40, 57], [9, 16, 43, 50, 56]] (86s)
+   block [0, 3]: both rows by the last-round component lemma (nibble 1, rows t=1:(1, 1), t=2:(1, 0))
+   block [27, 40, 57]: row 27 replaced by a countable presence proof
+   block [9, 16, 43, 50, 56]: row 16 replaced by a countable presence proof
+   block [9, 16, 43, 50, 56]: row 56 replaced by a countable presence proof
+p=43 invertible=True cyc0=18 replaced=5 blocks=[(3, 3, 0)] trails=422 fail=0 319.1s
+p=45 after cycle breaking: blocks [[40, 57]] (27s)
+   block [40, 57]: both rows by the last-round component lemma (nibble 9, rows t=1:(1, 1), t=2:(0, 1))
+p=45 invertible=True cyc0=13 replaced=4 blocks=[(3, 3, 0)] trails=1228 fail=0 34.3s
+p=47 after cycle breaking: blocks [[32, 35], [40, 57]] (119s)
+   block [32, 35]: both rows by the last-round component lemma (nibble 3, rows t=1:(1, 1), t=2:(1, 0))
+   block [40, 57]: both rows by the last-round component lemma (nibble 9, rows t=1:(1, 1), t=2:(0, 1))
+p=47 invertible=False cyc0=15 replaced=6 blocks=[(3, None, 1)] trails=None fail=None 131.2s
+p=49 after cycle breaking: blocks [[40, 57]] (98s)
+   block [40, 57]: both rows by the last-round component lemma (nibble 9, rows t=1:(1, 1), t=2:(0, 1))
+p=49 invertible=True cyc0=16 replaced=7 blocks=[] trails=562 fail=0 112.0s
+p=51 after cycle breaking: blocks [[0, 3], [32, 35], [40, 57], [9, 16, 43, 50, 56]] (123s)
+   block [0, 3]: both rows by the last-round component lemma (nibble 1, rows t=1:(1, 1), t=2:(1, 0))
+   block [32, 35]: both rows by the last-round component lemma (nibble 3, rows t=1:(1, 1), t=2:(1, 0))
+   block [40, 57]: both rows by the last-round component lemma (nibble 9, rows t=1:(1, 1), t=2:(0, 1))
+   block [9, 16, 43, 50, 56]: row 16 replaced by a countable presence proof
+   block [9, 16, 43, 50, 56]: row 56 replaced by a countable presence proof
+   block [9, 16, 43, 50, 56] beta [43, 50, 56]: repaired by free last round (nibble 8, a=0, t=1)
+p=51 invertible=True cyc0=20 replaced=6 blocks=[] trails=514 fail=0 189.5s
+p=53 after cycle breaking: blocks [[5, 22, 32, 35, 39, 52], [0, 3], [40, 57]] (136s)
+   block [5, 22, 32, 35, 39, 52]: row 39 replaced by a countable presence proof
+   block [5, 22, 32, 35, 39, 52]: row 35 replaced by a countable presence proof
+   block [0, 3]: both rows by the last-round component lemma (nibble 1, rows t=1:(1, 1), t=2:(1, 0))
+   block [40, 57]: both rows by the last-round component lemma (nibble 9, rows t=1:(1, 1), t=2:(0, 1))
+p=53 invertible=True cyc0=24 replaced=8 blocks=[] trails=536 fail=0 1009.3s
+p=55 after cycle breaking: blocks [[5, 22, 35, 39], [9, 16, 43, 50, 56]] (299s)
+   block [5, 22, 35, 39]: row 35 replaced by a countable presence proof
+   block [5, 22, 35, 39] beta [5, 35, 39]: repaired by free last round (nibble 4, a=0, t=1)
+   block [9, 16, 43, 50, 56]: row 16 replaced by a countable presence proof
+   block [9, 16, 43, 50, 56]: row 56 replaced by a countable presence proof
+   block [9, 16, 43, 50, 56] beta [43, 50, 56]: repaired by free last round (nibble 8, a=0, t=2)
+p=55 invertible=True cyc0=25 replaced=7 blocks=[(2, 2, 0), (3, 3, 0)] trails=567 fail=0 1016.9s
+p=57 after cycle breaking: blocks [[5, 22, 35, 39], [9, 16, 43, 50, 56]] (345s)
+   block [5, 22, 35, 39]: row 35 replaced by a countable presence proof
+   block [5, 22, 35, 39] beta [5, 35, 39]: repaired by free last round (nibble 4, a=0, t=1)
+   block [9, 16, 43, 50, 56]: row 16 replaced by a countable presence proof
+   block [9, 16, 43, 50, 56]: row 56 replaced by a countable presence proof
+   block [9, 16, 43, 50, 56] beta [43, 50, 56]: repaired by free last round (nibble 8, a=0, t=2)
+p=57 invertible=True cyc0=21 replaced=6 blocks=[(2, 2, 0), (3, 3, 0)] trails=571 fail=0 543.0s
+p=59 after cycle breaking: blocks [[5, 22, 32, 35, 39], [0, 3], [9, 16, 43, 50, 56]] (162s)

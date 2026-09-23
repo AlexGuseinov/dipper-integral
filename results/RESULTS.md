@@ -160,3 +160,20 @@ wasted work.
   20 master-key monomials each: 128-bit key r = 6: 1 odd / 44 even / 75 above cap 2000; r = 7: 0 / 14 / 106.
   96-bit key r = 6: 0 / 39 / 81; r = 7: 0 / 0 / 120. Coefficients cancel in pairs (each master bit feeds
   several round keys); presence with the key schedule is out of reach with this method.
+
+## Linear combinations of output bits at seven rounds (step27, step29)
+
+* **step27 — no nonzero linear combination is balanced** (independent round keys). For each of the 64 cubes
+  of dimension 63, 64 key patterns are chosen so that the 64x64 matrix M (M[l][j] = parity of the number of
+  trails to output bit j with pattern l) is invertible over F_2 (Lemma "linear combinations"). M is not computed
+  in full: along the strongly connected components of the graph "pattern l has a trail to bit j" it is block
+  triangular. Patterns of bits on cycles are replaced by other presence proofs; the remaining blocks (at most
+  4 bits) are counted exactly or, when all their bits are outputs of one last-round S-box of a retained word,
+  obtained exactly from the **last-round component lemma** (entries = sums of six-round trail counts to one
+  or two S-box input bits, weighted by the ANF of the GIFT S-box). Structural reason for the blocks: output
+  bits 0 and 1 of the GIFT S-box sum to 1 + z1 + z0 z2 (degree 2), so maximal patterns give both bits equal
+  parity. Result: **invertible for all 64 cubes**. Every trail behind a counted entry, a diagonal entry and a
+  lemma entry is validated (a cube counts only with zero failures). Consolidated:
+  `results/step27_linear_combinations_final.json`.
+* **step29 — DRAT check of zero entries.** Zero entries rest on UNSAT answers; a random sample was re-solved
+  with an external CaDiCaL, DRAT proofs checked by drat-trim (see `results/step29_drat_zero_entries.json`).

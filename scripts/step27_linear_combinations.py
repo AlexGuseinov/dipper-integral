@@ -26,7 +26,7 @@ from dipper.witness import check_trail
 ps = [int(x) for x in sys.argv[1].split(",")]
 OUT = sys.argv[2]
 res = json.load(open(OUT)) if os.path.exists(OUT) else {}
-SAMPLES = 120            # candidates per cyclic bit and sweep
+SAMPLES = int(os.environ.get("SAMPLES", "120"))   # candidates per cyclic bit and sweep
 BCAP = 5000              # cap for exact block entries
 
 pats = {0: {int(j): [int(m, 16) for m in v["pattern"]] for j, v in
@@ -74,6 +74,11 @@ def component_anf(bits):
             if x >> i & 1:
                 co[x] ^= co[x ^ (1 << i)]
     return {u for u in range(16) if co[u]}
+
+
+def check_trail_mask(trail, act, n_, u):
+    """validate a six-round trail that ends in the state mask u on nibble n_ (possibly several bits)"""
+    return check_trail(trail, act, 0, "add", final_mask=u << (4 * n_))[0]
 
 
 def all_last_round_nibbles(j):
@@ -285,171 +290,219 @@ for p in ps:
 
     blocks, inv, repairs = [], True, 0
     lemma_blocks = []
-    for comp in [s_ for s_ in sccs(G) if len(s_) > 1]:
-        info = [retained_sbox_bit(j) for j in comp]
-        same_sbox_pair = len(comp) == 2 and None not in info and info[0][0] == info[1][0]
-        if same_sbox_pair:
-            rows, unknown, rk = None, None, None
-        else:
-            rows, unknown = block_rows(comp)
-            rk = None if unknown else rank_gf2(rows, comp)
-        if same_sbox_pair:
-            # Lemma (last-round component), applied to each output bit separately: for pattern (V, k7_t)
-            # the entry of output bit j with S-box bit b is 0 if z_t occurs in ANF(b) only alone, and the
-            # six-round coefficient of s_a if it occurs only alone and in z_a z_t. Choose two such rows
-            # with a common partner a (V = six-round presence proof for s_a) and determinant 1.
-            n_ = info[0][0]
-            anfs = [component_anf([info[0][1]]), component_anf([info[1][1]])]
-            opts = []
-            for t in range(4):
-                ent, a_star, ok = [], None, True
-                for A in anfs:
-                    mons = [u for u in A if (u >> t) & 1]
-                    parts = [u ^ (1 << t) for u in mons if u != (1 << t)]
-                    if any(bin(q).count("1") != 1 for q in parts) or len(parts) > 1:
-                        ok = False; break
-                    if parts:
-                        a_ = parts[0].bit_length() - 1
-                        if a_star not in (None, a_):
-                            ok = False; break
-                        a_star = a_; ent.append(1)
-                    else:
-                        ent.append(0)
-                if ok and a_star is not None and any(ent):
-                    opts.append((t, a_star, tuple(ent)))
-            done = None
-            for (t1, a1, e1) in opts:
-                for (t2, a2, e2) in opts:
-                    if (e1[0] * e2[1] + e1[1] * e2[0]) % 2 != 1:
-                        continue
-                    V1, V2 = pres6(4 * n_ + a1), pres6(4 * n_ + a2)
-                    if V1 is None or V2 is None:
-                        continue
-                    # assign rows to labels with a nonzero diagonal where possible
-                    l1, l2 = (comp[0], comp[1]) if e1[0] and e2[1] else (comp[1], comp[0])
-                    v1 = list(V1) + [1 << (4 * n_ + t1)]; v2 = list(V2) + [1 << (4 * n_ + t2)]
-                    P[l1], G[l1] = v1, reach(v1, l1); P[l2], G[l2] = v2, reach(v2, l2)
-                    fixed_rows.update((l1, l2)); repairs += 2
-                    done = {"nodes": comp, "rank": 2, "unknown": [], "by_lemma": {"nibble": n_,
-                            "rows": [{"label": l1, "t": t1, "a": a1, "entries": list(e1), "V": [f"{m:016X}" for m in V1]},
-                                     {"label": l2, "t": t2, "a": a2, "entries": list(e2), "V": [f"{m:016X}" for m in V2]}]}}
-                    lemma_rows[frozenset(comp)] = done
-                    print(f"   block {comp}: both rows by the last-round component lemma (nibble {n_}, rows t={t1}:{e1}, t={t2}:{e2})", flush=True)
-                    break
-                if done:
-                    break
-            if done:
+    for _it in range(4):
+        n_lemma_before, blocks, inv = len(lemma_rows), [], True
+        for comp in [s_ for s_ in sccs(G) if len(s_) > 1]:
+            if frozenset(comp) in lemma_rows:
                 continue
+            info = [retained_sbox_bit(j) for j in comp]
+            same_nibble = 2 <= len(comp) <= 4 and None not in info and len({x[0] for x in info}) == 1
+            rows, unknown, rk = None, None, None
+            if same_nibble:
+                # Lemma (last-round component), exact entries: for pattern (V, k7_t), the entry of output bit j
+                # (S-box output bit b) is sum over monomials z^{u+t} of ANF(b), u != 0, of the parity of the number of
+                # six-round trails with pattern V to the state mask u of nibble n. Rows are chosen to be invertible.
+                n_ = info[0][0]
+                anfs = [component_anf([x[1]]) for x in info]
+                c6_ = cache6.get("_counter") or TrailCounter(act, 6)
+                cache6["_counter"] = c6_
+
+                def n6_mask(V, u, cap=20000):
+                    a_ = [c6_.out[i] if (i >= 4 * n_ and i < 4 * n_ + 4 and (u >> (i - 4 * n_)) & 1) else -c6_.out[i] for i in range(64)]
+                    for tt, mk in enumerate(V):
+                        a_ += [c6_.kv[tt][i] if (mk >> i) & 1 else -c6_.kv[tt][i] for i in range(64)]
+                    if not c6_.s.solve(assumptions=a_):
+                        return 0, []
+                    c6_._sel += 1
+                    sel = c6_.m.pool.id(("sel", c6_._sel)); nn = 0; trs = []
+                    while nn < cap and c6_.s.solve(assumptions=a_ + [sel]):
+                        val = {abs(l_): l_ > 0 for l_ in c6_.s.get_model()}
+                        trs.append([sum(1 << i for i, v_ in enumerate(vs) if val[v_]) for _, vs in c6_.m.trace]); nn += 1
+                        c6_.s.add_clause([-sel] + [-v_ if val[v_] else v_ for v_ in c6_.proj])
+                    capped = nn >= cap and c6_.s.solve(assumptions=a_ + [sel])
+                    c6_.s.add_clause([-sel])
+                    return (None if capped else nn), trs
+
+                cand_rows = []
+                for a in range(4):
+                    V = pres6(4 * n_ + a)
+                    if V is None:
+                        continue
+                    for t in range(4):
+                        ent, ok, used = [], True, {}
+                        for A in anfs:
+                            e = 0
+                            for mono in A:
+                                if not (mono >> t) & 1 or mono == (1 << t):
+                                    continue
+                                u = mono ^ (1 << t)
+                                if u not in used:
+                                    used[u] = n6_mask(V, u)
+                                if used[u][0] is None:
+                                    ok = False; break
+                                e ^= used[u][0] & 1
+                            if not ok:
+                                break
+                            ent.append(e)
+                        if ok and any(ent):
+                            cand_rows.append((t, a, V, tuple(ent), used))
+                # choose len(comp) rows with full rank
+                chosen, basis = [], []
+                for cr in cand_rows:
+                    vec = sum(e << i for i, e in enumerate(cr[3]))
+                    if rank_gf2(basis + [vec], list(range(len(comp)))) > len(basis):
+                        basis.append(vec); chosen.append(cr)
+                    if len(chosen) == len(comp):
+                        break
+                if len(chosen) == len(comp):
+                    ntr6 = bad6 = 0
+                    for (t, a, V, ent, used) in chosen:            # validate every six-round trail used
+                        for u, (cnt, trs) in used.items():
+                            for tr in trs:
+                                ntr6 += 1
+                                masks_ok = check_trail_mask(tr, act, n_, u)
+                                bad6 += (not masks_ok)
+                    import itertools
+                    labels = None                           # assign rows to labels with an all-ones diagonal
+                    for perm in itertools.permutations(range(len(comp))):
+                        if all(chosen[perm[i]][3][i] for i in range(len(comp))):
+                            labels = [None] * len(comp)
+                            for i in range(len(comp)):
+                                labels[perm[i]] = comp[i]
+                            break
+                    assert labels is not None, "invertible block must admit an all-ones diagonal"
+                    rows_info = []
+                    for (t, a, V, ent, used), l in zip(chosen, labels):
+                        v = list(V) + [1 << (4 * n_ + t)]
+                        P[l], G[l] = v, reach(v, l); fixed_rows.add(l)
+                        rows_info.append({"label": l, "t": t, "a": a, "entries": list(ent), "V": [f"{m:016X}" for m in V]})
+                    repairs += len(comp)
+                    done = {"nodes": comp, "rank": len(comp), "unknown": [], "by_lemma": {"nibble": n_, "rows": rows_info,
+                            "six_round_trails": ntr6, "six_round_trails_failed": bad6}}
+                    lemma_rows[frozenset(comp)] = done
+                    print(f"   block {comp}: all rows by the last-round component lemma (nibble {n_}, rows {[(r_['t'], r_['a'], r_['entries']) for r_ in rows_info]}, 6-round trails {ntr6}, failed {bad6})", flush=True)
+                    continue
             rows, unknown = block_rows(comp)
             rk = None if unknown else rank_gf2(rows, comp)
-        attempts = 0
-        while (unknown or rk != len(comp)) and attempts < 3:
-            attempts += 1
-            if unknown:                                   # replace exactly the rows with uncountable entries
-                for l in sorted({l_ for l_, _ in unknown}):
-                    if l in fixed_rows:
+            attempts = 0
+            while (unknown or rk != len(comp)) and attempts < 3:
+                attempts += 1
+                if unknown:                                   # replace exactly the rows with uncountable entries
+                    for l in sorted({l_ for l_, _ in unknown}):
+                        if l in fixed_rows:
+                            continue
+                        for v in candidates(l):
+                            R = reach(v, l)
+                            if any(c.count(v, j, cap=BCAP)[0] is None for j in comp if j != l and j in R):
+                                continue
+                            G2 = dict(G); G2[l] = R
+                            if all(set(x) <= set(comp) or len(x) == 1 for x in sccs(G2) if set(x) & set(comp)):
+                                P[l], G[l] = v, R; repairs += 1
+                                print(f"   block {comp}: row {l} replaced by a countable presence proof", flush=True)
+                                break
+                    rows, unknown = block_rows(comp)
+                    rk = None if unknown else rank_gf2(rows, comp)
+                    if unknown or rk == len(comp):
                         continue
-                    for v in candidates(l):
-                        R = reach(v, l)
-                        if any(c.count(v, j, cap=BCAP)[0] is None for j in comp if j != l and j in R):
-                            continue
-                        G2 = dict(G); G2[l] = R
-                        if all(set(x) <= set(comp) or len(x) == 1 for x in sccs(G2) if set(x) & set(comp)):
-                            P[l], G[l] = v, R; repairs += 1
-                            print(f"   block {comp}: row {l} replaced by a countable presence proof", flush=True)
-                            break
-                rows, unknown = block_rows(comp)
-                rk = None if unknown else rank_gf2(rows, comp)
-                if unknown or rk == len(comp):
-                    continue
-            targets = kernel_gf2(rows, comp) if not unknown else [[l] for l, _ in unknown]
-            for beta in targets:
-                nibs = sorted({n_ for j in beta for n_ in last_round_nibbles(j)})
-                found = None
-                for n_ in sorted({n2 for j in beta for n2 in all_last_round_nibbles(j)}, key=lambda z: z not in nibs):
-                    for a in range(4):
-                        V = pres6(4 * n_ + a)
-                        if V is None:
-                            continue
-                        for t in range(4):
-                            if t == a:
+                targets = kernel_gf2(rows, comp) if not unknown else [[l] for l, _ in unknown]
+                for beta in targets:
+                    nibs = sorted({n_ for j in beta for n_ in last_round_nibbles(j)})
+                    found = None
+                    for n_ in sorted({n2 for j in beta for n2 in all_last_round_nibbles(j)}, key=lambda z: z not in nibs):
+                        for a in range(4):
+                            V = pres6(4 * n_ + a)
+                            if V is None:
                                 continue
-                            v = list(V) + [1 << (4 * n_ + t)]
-                            r_ = row_of(v, comp)
-                            if r_ is None or sum((r_ >> j) & 1 for j in beta) % 2 == 0:
-                                continue
-                            for li, l in enumerate(comp):
-                                trial = rows[:li] + [r_] + rows[li + 1:]
-                                if rank_gf2(trial, comp) > (rk or 0):
-                                    G2 = dict(G); G2[l] = reach(v, l)
-                                    if all(set(x) <= set(comp) or len(x) == 1 for x in sccs(G2) if set(x) & set(comp)):
-                                        found = (li, l, v, G2[l]); break
+                            for t in range(4):
+                                if t == a:
+                                    continue
+                                v = list(V) + [1 << (4 * n_ + t)]
+                                r_ = row_of(v, comp)
+                                if r_ is None or sum((r_ >> j) & 1 for j in beta) % 2 == 0:
+                                    continue
+                                for li, l in enumerate(comp):
+                                    trial = rows[:li] + [r_] + rows[li + 1:]
+                                    if (r_ >> l) & 1 and rank_gf2(trial, comp) > (rk or 0):
+                                        G2 = dict(G); G2[l] = reach(v, l)
+                                        if all(set(x) <= set(comp) or len(x) == 1 for x in sccs(G2) if set(x) & set(comp)):
+                                            found = (li, l, v, G2[l]); break
+                                if found:
+                                    break
                             if found:
                                 break
                         if found:
                             break
                     if found:
-                        break
-                if found:
-                    li, l, v, R = found
-                    P[l], G[l] = v, R; repairs += 1
-                    print(f"   block {comp} beta {beta}: repaired by free last round (nibble {n_}, a={a}, t={t})", flush=True)
-                    rows, unknown = block_rows(comp)
-                    rk = None if unknown else rank_gf2(rows, comp)
-                    if not unknown and rk == len(comp):
-                        break
-                    continue
-                y7 = c.m.keylayers[6][1]
-                found = None
-                for k in range(SAMPLES):
-                    extra = []
-                    if nibs and k % 2 == 0:
-                        for n_ in nibs:                       # low-weight last-round S-box input
-                            w = rng.choice([1, 2, 4, 8, 3, 5, 6, 9, 10, 12])
-                            extra += [y7[4 * n_ + b] if (w >> b) & 1 else -y7[4 * n_ + b] for b in range(4)]
-                    v = greedy_extra(c, rng.choice(beta), rng, extra)
-                    if v is None:
+                        li, l, v, R = found
+                        P[l], G[l] = v, R; repairs += 1
+                        print(f"   block {comp} beta {beta}: repaired by free last round (nibble {n_}, a={a}, t={t})", flush=True)
+                        rows, unknown = block_rows(comp)
+                        rk = None if unknown else rank_gf2(rows, comp)
+                        if not unknown and rk == len(comp):
+                            break
                         continue
-                    r_ = row_of(v, comp)
-                    if r_ is None or not any((r_ >> j) & 1 for j in beta) or bin(sum(((r_ >> j) & 1) << j for j in beta)).count("1") % 2 == 0:
-                        continue
-                    for li, l in enumerate(comp):            # replace a row so that the rank grows
-                        trial = rows[:li] + [r_] + rows[li + 1:]
-                        if rank_gf2(trial, comp) > (rk or 0):
-                            G2 = dict(G); G2[l] = reach(v, l)
-                            if all(set(x) <= set(comp) or len(x) == 1 for x in sccs(G2) if set(x) & set(comp)):
-                                found = (li, l, v, G2[l]); break
+                    y7 = c.m.keylayers[6][1]
+                    found = None
+                    for k in range(SAMPLES):
+                        extra = []
+                        if nibs and k % 2 == 0:
+                            for n_ in nibs:                       # low-weight last-round S-box input
+                                w = rng.choice([1, 2, 4, 8, 3, 5, 6, 9, 10, 12])
+                                extra += [y7[4 * n_ + b] if (w >> b) & 1 else -y7[4 * n_ + b] for b in range(4)]
+                        v = greedy_extra(c, rng.choice(beta), rng, extra)
+                        if v is None:
+                            continue
+                        r_ = row_of(v, comp)
+                        if r_ is None or not any((r_ >> j) & 1 for j in beta) or bin(sum(((r_ >> j) & 1) << j for j in beta)).count("1") % 2 == 0:
+                            continue
+                        for li, l in enumerate(comp):            # replace a row so that the rank grows
+                            trial = rows[:li] + [r_] + rows[li + 1:]
+                            if (r_ >> l) & 1 and rank_gf2(trial, comp) > (rk or 0):
+                                G2 = dict(G); G2[l] = reach(v, l)
+                                if all(set(x) <= set(comp) or len(x) == 1 for x in sccs(G2) if set(x) & set(comp)):
+                                    found = (li, l, v, G2[l]); break
+                        if found:
+                            break
+                    print(f"   block {comp} beta {beta}: {'repaired' if found else 'no pattern'} after {k + 1} samples", flush=True)
                     if found:
-                        break
-                print(f"   block {comp} beta {beta}: {'repaired' if found else 'no pattern'} after {k + 1} samples", flush=True)
-                if found:
-                    li, l, v, R = found
-                    P[l], G[l] = v, R; repairs += 1
-                    rows, unknown = block_rows(comp)
-                    rk = None if unknown else rank_gf2(rows, comp)
-                    if not unknown and rk == len(comp):
-                        break
-        blocks.append({"nodes": comp, "rank": rk, "unknown": unknown})
-        inv &= (rk == len(comp))
+                        li, l, v, R = found
+                        P[l], G[l] = v, R; repairs += 1
+                        rows, unknown = block_rows(comp)
+                        rk = None if unknown else rank_gf2(rows, comp)
+                        if not unknown and rk == len(comp):
+                            break
+            blocks.append({"nodes": comp, "rank": rk, "unknown": unknown})
+            inv &= (rk == len(comp))
+        if len(lemma_rows) == n_lemma_before and inv:
+            break
+        break_cycles(6)
     if lemma_rows:
         break_cycles(6)
-        blocks, inv = [], True
-        for comp in [s_ for s_ in sccs(G) if len(s_) > 1]:
-            if frozenset(comp) in lemma_rows:
-                blocks.append(lemma_rows[frozenset(comp)])        # determinant 1 by the lemma entries
-                continue
-            rows, unknown = block_rows(comp)
-            rk = None if unknown else rank_gf2(rows, comp)
-            blocks.append({"nodes": comp, "rank": rk, "unknown": unknown}); inv &= (rk == len(comp))
-    # sanity: block structure must still hold after repairs
-    inv &= all(len(x) == 1 or any(set(x) == set(b["nodes"]) for b in blocks) for x in sccs(G))
+    # final evaluation over the current strongly connected components
+    blocks, inv = [], True
+    for comp in [s_ for s_ in sccs(G) if len(s_) > 1]:
+        if frozenset(comp) in lemma_rows:
+            blocks.append(lemma_rows[frozenset(comp)]); continue
+        if any(set(comp) & set(k) for k in lemma_rows):          # a lemma row inside a larger cycle: count exactly
+            pass
+        rows_, unknown_ = block_rows(comp)
+        rk_ = None if unknown_ else rank_gf2(rows_, comp)
+        blocks.append({"nodes": comp, "rank": rk_, "unknown": unknown_}); inv &= (rk_ == len(comp))
     rec = {"invertible": inv, "cyclic_nodes_start": cyc0, "patterns_replaced": replaced, "block_repairs": repairs,
            "blocks": blocks, "lemma_blocks": [b["by_lemma"] | {"nodes": b["nodes"]} for b in lemma_rows.values()]}
     if inv:
         ntr = bad = 0
         in_block = {l for b in blocks for l in b["nodes"]}
+        lemma_diag = {}
+        for lb in lemma_rows.values():
+            for r_ in lb["by_lemma"].get("rows", []):
+                if P[r_["label"]] == [int(m, 16) for m in r_["V"]] + [1 << (4 * lb["by_lemma"]["nibble"] + r_["t"])]:
+                    lemma_diag[r_["label"]] = r_["entries"][lb["nodes"].index(r_["label"])]
         for l in range(64):                                   # singleton rows: odd diagonal, all trails valid
             if l in in_block:
+                continue
+            if l in lemma_diag:                               # diagonal known exactly from the lemma
+                bad += (lemma_diag[l] != 1)
                 continue
             n, _ = c.count(P[l], l, cap=BCAP)
             _, trails = c.count(P[l], l, cap=(n or 0) + 1, return_trails=(n or 0) + 1)
@@ -470,6 +523,8 @@ for p in ps:
                     if j == l or j in G[l]:
                         _, trails = c.count(P[l], j, cap=BCAP, return_trails=BCAP)
                         ntr += len(trails); bad += sum(not check_trail(t, act, j, "add")[0] for t in trails)
+        inv = inv and bad == 0
+        rec["invertible"] = inv
         rec.update(trails_checked=ntr, failures=bad,
                    patterns={l: [f"{m:016X}" for m in P[l]] for l in range(64)},
                    graph={l: G[l] for l in range(64)})

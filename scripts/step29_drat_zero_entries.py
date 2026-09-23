@@ -12,8 +12,9 @@ from dipper.count import TrailCounter
 
 CAD, DT, N = sys.argv[1], sys.argv[2], int(sys.argv[3])
 recs = {}
-for f in glob.glob("results/step27_lc_*.json"):
-    recs.update({int(p): r for p, r in json.load(open(f)).items() if r.get("invertible")})
+FINAL = "results/step27_linear_combinations_final.json"
+for f in ([FINAL] if os.path.exists(FINAL) else glob.glob("results/step27_lc_*.json")):
+    recs.update({int(p): r for p, r in json.load(open(f)).items() if r.get("invertible") and r.get("failures", 1) == 0})
 rng = random.Random(2026)
 pool = []
 for p, r in recs.items():
@@ -25,17 +26,22 @@ for p, r in recs.items():
 sample = rng.sample(pool, min(N, len(pool)))
 out, t00 = [], time.time()
 work = tempfile.mkdtemp(prefix="drat27_")
+cache = {}
 for p, l, j in sorted(sample):
-    act = sorted(set(range(64)) - {p})
-    c = TrailCounter(act, 7)
+    if p not in cache:                                  # one model per cube
+        cache.clear()
+        act = sorted(set(range(64)) - {p})
+        c = TrailCounter(act, 7)
+        extra = []
+        for t, (x, y) in enumerate(c.m.keylayers):
+            for i in range(64):
+                kv = c.kv[t][i]
+                extra += [[-kv, y[i]], [-kv, -x[i]], [kv, -y[i], x[i]]]
+        cache[p] = (c, c.m.cl + extra)
+    c, base_cls = cache[p]
     v = [int(m, 16) for m in recs[p]["patterns"][str(l)]]
     units = [[a] for a in c._assumptions(v, j)]
-    extra = []
-    for t, (x, y) in enumerate(c.m.keylayers):
-        for i in range(64):
-            kv = c.kv[t][i]
-            extra += [[-kv, y[i]], [-kv, -x[i]], [kv, -y[i], x[i]]]
-    cls = c.m.cl + extra + units
+    cls = base_cls + units
     nv = max(abs(l_) for cl in cls for l_ in cl)
     cnf = os.path.join(work, f"p{p}_l{l}_j{j}.cnf"); prf = cnf[:-4] + ".drat"
     with open(cnf, "w") as fh:
@@ -48,7 +54,6 @@ for p, l, j in sorted(sample):
     if status == "UNSAT":
         chk = subprocess.run([DT, cnf, prf, "-w"], capture_output=True, text=True)
         ver = "s VERIFIED" in chk.stdout
-    c.close()
     os.remove(cnf); os.remove(prf) if os.path.exists(prf) else None
     out.append({"p": p, "l": l, "j": j, "status": status, "drat_verified": ver})
     print(p, l, j, status, ver, flush=True)

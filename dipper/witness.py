@@ -21,8 +21,9 @@ def _words(x):
     return (x >> 48) & 0xFFFF, (x >> 32) & 0xFFFF, (x >> 16) & 0xFFFF, x & 0xFFFF
 
 
-def check_trail(masks, active, j, mode="add"):
-    """masks: list of 64-bit ints [input, (key, sbox, mix, perm) * r]."""
+def check_trail(masks, active, j, mode="add", final_mask=None):
+    """masks: list of 64-bit ints [input, (key, sbox, mix, perm) * r].
+    The trail must end in e_j, or in final_mask if it is given (a product of several state bits)."""
     I = sum(1 << b for b in active)
     if masks[0] != I:
         return False, "input mask != cube"
@@ -58,6 +59,6 @@ def check_trail(masks, active, j, mode="add"):
         if y != pm:
             return False, f"round {t+1}: permutation wiring"
         x = pm
-    if x != 1 << j:
-        return False, "output mask != e_j"
+    if x != (1 << j if final_mask is None else final_mask):
+        return False, "output mask != e_j" if final_mask is None else "output mask != final_mask"
     return True, "ok"

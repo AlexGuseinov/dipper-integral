@@ -7,23 +7,23 @@ abstract: |
   key-independent results. We model monomial trails through
   reduced-round Dipper as SAT instances with exact local transitions,
   including a rule for the modular additions derived from the
-  Braeken–Semaev characterisation. Certificates at the round boundaries
-  are backed by DRAT proofs checked with `drat-trim`, and every trail
-  behind a missing certificate is validated independently of the SAT
-  encoding. The published five-round properties hold for all round keys,
-  and six-round properties exist. At seven rounds no bit-aligned cube is
-  certified, and presence proofs, i.e. key monomials with an odd number
-  of trails, show that this is exact: for independent round keys, no
-  bit-aligned cube yields a balanced output bit after seven rounds. They
-  also show that all 46 bits whose sums stayed zero in thousands of
-  random-key trials without being certified are unbalanced. An ablation
-  isolates the effect of the two modular additions: replacing them by
-  XOR, or removing them, extends the longest certified property from six
-  to nine and ten rounds. At the six-round boundary every certified bit
-  comes from the two retained words, which pass through the additions
-  unchanged. On all instances examined, the model with exact local
-  transitions certifies the same bits as the bit-based division
-  property.
+  Braeken–Semaev characterisation, and back the results by DRAT proofs
+  and independently validated trails. The published five-round
+  properties hold for all round keys, and six-round properties exist;
+  the smallest certified six-round cube, of size $2^{60}$, is proven
+  minimal. At seven rounds no bit-aligned cube is certified. Presence
+  proofs, i.e. key monomials with an odd number of trails, show that
+  this is exact: for independent round keys, no nonzero linear
+  combination of output bits is balanced over any bit-aligned cube. They
+  also show that 46 bits whose sums stayed zero in thousands of
+  random-key trials are not balanced, and they determine the algebraic
+  degree of 1843 of 1856 output bits exactly. Replacing the two modular
+  additions by XOR, or removing them, extends the longest certified
+  property from six to nine and ten rounds. At the six-round boundary
+  every certified bit comes from the two retained words, which pass
+  through the additions unchanged. The model with exact local
+  transitions certifies the same bits as the bit-based division property
+  on all instances examined.
 author:
 - |
   Ali Huseynli[^1]\
@@ -106,21 +106,25 @@ than the conventional division property?
 1.  **Key-independent certificates and a complete search within the
     model (Q1).** We certify the published five-round properties for all
     round keys, find six-round properties (nine balanced bits with a
-    $2^{63}$ cube; six bits with the smallest certified cube found, of
-    size $2^{60}$), and show that no bit-aligned cube certifies a single
-    output bit at seven rounds in the model. The monotonicity lemma
-    (Lemma [3](#lem:mono){reference-type="ref" reference="lem:mono"})
-    reduces this statement to the 64 cubes of dimension 63. Presence
-    proofs (Section [4.3](#sec:presence){reference-type="ref"
+    $2^{63}$ cube; six bits with a cube of size $2^{60}$, which we prove
+    to be the smallest certified cube), and show that no bit-aligned
+    cube certifies a single output bit at seven rounds in the model. The
+    monotonicity lemma (Lemma [3](#lem:mono){reference-type="ref"
+    reference="lem:mono"}) reduces this statement to the 64 cubes of
+    dimension 63. Presence proofs
+    (Section [4.3](#sec:presence){reference-type="ref"
     reference="sec:presence"}) show that this answer is exact: for each
     of the 64 cubes of dimension 63, every output bit is unbalanced
     after seven rounds, so by
     Lemma [6](#lem:monobal){reference-type="ref"
     reference="lem:monobal"} no bit-aligned cube gives a seven-round
-    property on a single output bit, for independent round keys. Every
-    boundary result has a checkable artifact: 138 DRAT proofs (distinct
-    instances) verified by `drat-trim`, and 12 288 monomial trails
-    validated by a checker that does not use the SAT encoding.
+    property on a single output bit, for independent round keys.
+    Section [6.4](#sec:r7lin){reference-type="ref"
+    reference="sec:r7lin"} extends this to every nonzero linear
+    combination of output bits. Every boundary result has a checkable
+    artifact: 138 DRAT proofs (distinct instances) verified by
+    `drat-trim`, and 12 288 monomial trails validated by a checker that
+    does not use the SAT encoding.
 
 2.  **The role of the modular addition (Q2).** In a controlled ablation,
     replacing the two additions by XOR or removing them extends the
@@ -130,7 +134,9 @@ than the conventional division property?
     them unchanged. We relate this to
     Lemma [2](#lem:deg){reference-type="ref" reference="lem:deg"}, which
     states that output bit $i$ of an addition has degree exactly $i+1$,
-    and to degree upper bounds for every output bit and round.
+    and to the algebraic degree of every output bit and round. We
+    determine it exactly in 1843 of 1856 cases, by matching presence
+    proofs to the certified upper bounds.
 
 3.  **Model comparison and tightness (Q3).** The monomial-trail
     existence model with exact local transitions
@@ -144,13 +150,16 @@ than the conventional division property?
     the certificates are therefore exactly the balanced bits, and a
     model that counts trails could not certify more.
 
-Behind these results are three technical tools: the exact local rule for
+Behind these results are four technical tools: the exact local rule for
 Dipper’s ARX map (Lemma [1](#lem:addret){reference-type="ref"
 reference="lem:addret"}), the standard free-final-round observation
-(Lemma [4](#lem:free){reference-type="ref" reference="lem:free"}), and
+(Lemma [4](#lem:free){reference-type="ref" reference="lem:free"}),
 presence proofs, which count trails under maximal key patterns
 (Section [4.3](#sec:presence){reference-type="ref"
-reference="sec:presence"}).
+reference="sec:presence"}), and a last-round component lemma
+(Lemma [8](#lem:component){reference-type="ref"
+reference="lem:component"}), which turns the low-degree components of
+the GIFT S-box from an obstacle for counting into exact matrix entries.
 Sections [9](#sec:keyrec){reference-type="ref" reference="sec:keyrec"}
 and [10](#sec:erratum){reference-type="ref" reference="sec:erratum"}
 contain secondary material: a partial-key filtering procedure and two
@@ -168,10 +177,9 @@ cube sum is a nonzero polynomial in the round keys, so that the bit is
 not balanced. With presence proofs for all 64 cubes of dimension 63, our
 seven-round statement holds for Dipper with independent round keys, not
 only within the model. We do not claim it for round keys produced by the
-key schedule. For cipher outputs we report only degree upper bounds and
-never claim that a degree is attained;
-Lemma [2](#lem:deg){reference-type="ref" reference="lem:deg"}, about an
-isolated addition, is the only exact degree statement.
+key schedule. For cipher outputs we call a degree exact only when a
+presence proof matches the certified upper bound, and otherwise report
+the interval between the two.
 
 #### Organisation.
 
@@ -711,6 +719,52 @@ constants that agree with $c$ outside $I'$ and are zero on $I$. Each of
 these cube sums is zero. ◻
 :::
 
+::: {#lem:lincomb .lemma}
+**Lemma 7** (Linear combinations). *Let $v^{(0)},\dots,v^{(63)}$ be key
+patterns, and let $M$ be the $64\times64$ matrix over $\mathbb{F}_2$
+whose entry $M_{l,j}$ is the number of monomial trails from
+$\mathbf 1_I$ to $e_j$ with key pattern $v^{(l)}$, modulo 2. If $M$ is
+invertible, then for every $\beta\neq0$ the function
+$\langle\beta,S^{(r)}\rangle$ is not balanced over $I$, nor over any
+$I'\subseteq I$, for independent round keys.*
+:::
+
+::: proof
+*Proof.* By Proposition [1](#prop:mp){reference-type="ref"
+reference="prop:mp"} and linearity, the coefficient of
+$x^{\mathbf 1_I}k^{v^{(l)}}$ in $\langle\beta,S^{(r)}\rangle$ is
+$\sum_j M_{l,j}\beta_j=(M\beta)_l$. Since $M$ is invertible and
+$\beta\neq0$, some $(M\beta)_l$ equals 1, and the argument of
+Lemma [5](#lem:presence){reference-type="ref" reference="lem:presence"}
+shows that the cube sum is not identically zero. The proof of
+Lemma [6](#lem:monobal){reference-type="ref" reference="lem:monobal"}
+applies to any output function. ◻
+:::
+
+::: {#lem:component .lemma}
+**Lemma 8** (Last-round component). *Let $f=g(z)$ depend on the state
+after $r$ rounds only through the input
+$z=S^{(r-1)}_{[n]}\oplus RK_{r,[n]}$ of one S-box $n$ of round $r$, and
+let $g_w$ denote the ANF coefficients of $g$. For a key pattern $V$ of
+the first $r-1$ rounds and a mask $u$ on the four input bits, let
+$c_V(u)$ be the coefficient of $x^{\mathbf 1_I}k^V$ in
+$\prod_{i\in u}S^{(r-1)}_{n,i}$. Then for every input position $t$ of
+the S-box, the coefficient of $x^{\mathbf 1_I}k^{V}k_{r,t}$ in $f$ is
+$\bigoplus_{u\neq0,\,t\notin u}g_{u\cup\{t\}}\,c_V(u)$.*
+:::
+
+::: proof
+*Proof.* Write $z_i=s_i\oplus k_{r,i}$ and expand
+$g(s\oplus k_r)=\bigoplus_w g_w\prod_{i\in w}(s_i\oplus k_{r,i})$. The
+terms whose only last-round key factor is $k_{r,t}$ arise from $w\ni t$
+by choosing $k_{r,t}$ in the factor $i=t$ and $s_i$ in all others, which
+gives $s^{w\setminus\{t\}}k_{r,t}$. For $w=\{t\}$ this is $k_{r,t}$
+alone, which does not contain $x^{\mathbf 1_I}$ because $|I|\ge1$. ◻
+:::
+
+By Proposition [1](#prop:mp){reference-type="ref" reference="prop:mp"},
+$c_V(u)$ is the parity of the number of $(r-1)$-round trails with key
+pattern $V$ that end in the mask $u$ on S-box $n$.
 Lemma [6](#lem:monobal){reference-type="ref" reference="lem:monobal"} is
 the cipher-level counterpart of
 Lemma [3](#lem:mono){reference-type="ref" reference="lem:mono"}. One
@@ -932,11 +986,24 @@ Starting from certified cubes, we removed active bits one at a time as
 long as some bit stayed certified, restarting from several cubes and
 random orders. Table [3](#tab:frontier){reference-type="ref"
 reference="tab:frontier"} lists the smallest certified cubes *found* in
-this way. They are upper bounds on the data required, not proven minima.
-At five rounds the smallest cube found has size $2^{16}$, the size of
-the published word-saturation structure (word $C$). At six rounds it has
-size $2^{60}$: it keeps the nibble $\{4,5,6,7\}$ constant and certifies
-six bits.
+this way. They are upper bounds on the data required. At five rounds the
+smallest cube found has size $2^{16}$, the size of the published
+word-saturation structure (word $C$). At six rounds the minimum can be
+proven. If a cube is certified for bit $j$, then by
+Lemma [3](#lem:mono){reference-type="ref" reference="lem:mono"} so is
+every 63-dimensional cube containing it, so its constant bits lie among
+the 14 positions with a six-round certificate
+(Table [2](#tab:maximal){reference-type="ref" reference="tab:maximal"}).
+The sets of constant bits of certified cubes are closed under taking
+subsets, so they can be searched level by level. The largest has four
+elements. Hence $2^{60}$ is the minimum within the model, and exactly
+two cubes attain it: the cube with the nibble $\{4,5,6,7\}$ constant,
+which certifies six bits, and the cube with the nibble $\{12,13,14,15\}$
+constant, which certifies bits $\{24,51,56,58\}$. Each of the 4456 “no
+certificate” answers of this search was turned into a trail and
+validated independently. The same search shows that no cube of dimension
+below 63 is certified for $\mathrm{Dipper}^{\oplus}$ at nine rounds or
+for $\mathrm{Dipper}^{\varnothing}$ at ten rounds.
 
 ::: {#tab:frontier}
   Rounds $r$                         3   4   5    6    7    8    9    10
@@ -946,9 +1013,10 @@ six bits.
   $\mathrm{Dipper}^{\varnothing}$            3    8    15   48   59   63
 
   : Smallest certified cubes found (dimension $d$, i.e. $2^d$ chosen
-  plaintexts; greedy search, not proven minimal). “–”: no certificate
-  for any bit-aligned cube (Lemma [3](#lem:mono){reference-type="ref"
-  reference="lem:mono"}); blank: not computed.
+  plaintexts; greedy search). The last value in each row is proven
+  minimal. “–”: no certificate for any bit-aligned cube
+  (Lemma [3](#lem:mono){reference-type="ref" reference="lem:mono"});
+  blank: not computed.
 :::
 
 ## Seven rounds: presence proofs
@@ -981,6 +1049,75 @@ Lemma [4](#lem:free){reference-type="ref" reference="lem:free"}, are the
 longest key-independent integral properties of Dipper with independent
 round keys. This does not exclude probabilistic or weak-key
 distinguishers.
+
+## Seven rounds: linear combinations of output bits
+
+An attacker may also sum a linear combination
+$\langle\beta,S^{(7)}\rangle$ of output bits. We show with
+Lemma [7](#lem:lincomb){reference-type="ref" reference="lem:lincomb"}
+that no nonzero combination is balanced after seven rounds over any
+bit-aligned cube.
+
+The matrix $M$ need not be computed in full. Let $G$ be the graph on the
+output bits with an edge $l\to j$ ($j\neq l$) whenever pattern $v^{(l)}$
+has at least one trail to bit $j$. In a topological order of the
+strongly connected components of $G$, $M$ is block triangular, so $M$ is
+invertible if and only if every diagonal block is. A component with a
+single bit has the diagonal entry 1 of a presence proof. For each of the
+64 cubes of dimension 63 we started from the 64 presence proofs of
+Section [6.3](#sec:r7presence){reference-type="ref"
+reference="sec:r7presence"}. We then replaced the patterns of bits that
+lie on cycles of $G$ by other presence proofs with no trail to the rest
+of their cycle.
+
+For the cube with constant bit 0, almost every pattern has trails to a
+common set of twelve output bits, all high bits of the two added words,
+and the cycles that remain are small. Their blocks were often singular,
+or their entries could not be counted, for a structural reason. Output
+bits 0 and 1 of the GIFT S-box sum to the component
+$1\oplus z_1\oplus z_0z_2$ of degree two in the S-box input $z$. Maximal
+patterns route the trails through last-round S-box inputs of weight
+three or four, where the two bits have equal coefficients, so the trail
+counts for the two bits always have the same parity. The added words
+cause the same effect, because bit $i$ of $X\boxplus Y$ and the retained
+bit $Y_i$ share the linear term $Y_i$. Such a pair is separated by a
+pattern that uses the last round: a six-round presence proof for one bit
+$s_a$ of $S^{(6)}$, extended by a single last-round key bit $t$ such
+that $z_a$ is the only variable that forms a monomial with $z_t$ in the
+component in question. Where the trails of the new pattern to the block
+could be counted, we counted them. Where they could not, all bits of the
+block were output bits of one S-box of a retained word. For such a block
+Lemma [8](#lem:component){reference-type="ref"
+reference="lem:component"}, applied to each bit, gives every entry
+exactly from the ANF of the GIFT S-box and a few six-round trail counts
+$c_V(u)$, which are small because $V$ is a maximal pattern; we counted
+them and validated every trail. For output bits 0 and 1 and $V$ a
+six-round presence proof for $s_0$, for instance, the last-round key bit
+$t=1$ gives the row $(1,1)$ and $t=2$ gives the row $(0,1)$, since $z_1$
+occurs in both bits only in $z_1$ and $z_0z_1$, while $z_2$ occurs in
+bit 0 only alone and in bit 1 in $z_2$ and $z_0z_2$. These two rows have
+determinant 1, whatever the old rows were. With these patterns every
+block became invertible for all 64 cubes. Over the 64 cubes, 197 rows
+inside blocks were replaced and 65 blocks were closed with
+Lemma [8](#lem:component){reference-type="ref"
+reference="lem:component"}; the final matrices have 70 diagonal blocks
+of two to 4 bits, all invertible.
+
+The diagonal entries and the entries inside the blocks rest on trail
+counts, directly or through
+Lemma [8](#lem:component){reference-type="ref"
+reference="lem:component"}, and each of their 33 600 trails passed the
+independent check. The zero entries outside the blocks rest on “no
+trail” answers of the solver. For a random sample of 3 000 of these
+194 276 answers we re-solved the instance with an external CaDiCaL,
+produced a DRAT proof and verified it with `drat-trim`. All were
+verified. By Lemma [7](#lem:lincomb){reference-type="ref"
+reference="lem:lincomb"}, no nonzero linear combination of the output
+bits of $S^{(7)}$ is balanced over any bit-aligned cube, for independent
+round keys, and by Lemma [4](#lem:free){reference-type="ref"
+reference="lem:free"} the same holds for $T^{-1}(S^{(8)})$. This is the
+integral-resistance property of (Hebborn et al. 2021) after seven
+rounds, restricted to bit-aligned cubes.
 
 ## Where the balanced bits come from
 
@@ -1051,25 +1188,42 @@ measured tightness only on Dipper for up to five rounds
 (Section [8](#sec:tightness){reference-type="ref"
 reference="sec:tightness"}).
 
-## Degree upper bounds
+## Algebraic degree
 
 By Section [3](#sec:prelim){reference-type="ref"
 reference="sec:prelim"}, a bit of degree less than $d$ is balanced over
-every cube of dimension $d$, so degree bounds give a global view of
-integral resistance. For every output bit $j$ and round count $r$ we
-computed the smallest $D$ for which
+every cube of dimension $d$, so degrees give a global view of integral
+resistance. We consider the degree in the plaintext bits, with the round
+keys as independent variables. For every output bit $j$ and round count
+$r$ we first computed the smallest $D$ for which
 <span class="sans-serif">MP-EL</span> with a free input mask of weight
 at least $D+1$ and output $e_j$ is unsatisfiable. This certifies the
-*upper bound* $\deg_x S^{(r)}_j\le D$ for all round keys. Bounds are
-reported up to 63 (see Section [3](#sec:prelim){reference-type="ref"
-reference="sec:prelim"}); a bound of 63 carries no information about the
-actual degree. All $64\times7$ bounds for Dipper and $64\times11$ bounds
-for each variant were resolved without timeouts.
+upper bound $\deg_x S^{(r)}_j\le D$ for all round keys. We then looked
+for a matching lower bound: a monomial $x^u$ with
+$\operatorname{wt}(u)=D$ taken from the model, and a presence proof for
+it (Lemma [5](#lem:presence){reference-type="ref"
+reference="lem:presence"}). At the degree limit the first-round part of
+the key monomial is often forced to be empty, so the search also uses
+patterns with $v_1=0$. For one one-round bit the search failed and we
+computed its full ANF instead, which has 32 variables; the ANF of four
+further one-round bits agrees with their presence proofs. All
+$64\times7$ cases for Dipper and $64\times11$ for each variant were
+treated without timeouts.
 
-![Mean certified *upper bound* on the algebraic degree of the output
-bits of $S^{(r)}$. For Dipper, bits are grouped by the word of the last
-ARX layer that produced them. Actual degrees may be
-lower.](fig_degree.png){#fig:degree width="0.78\\linewidth"}
+The two bounds coincide in 1843 of the 1856 cases, so there the degree
+is exact. The other 13 cases lie in Dipper at rounds 2 and 3 and in
+$\mathrm{Dipper}^{\oplus}$ at rounds 4 to 6, all on bits of the words
+that receive an addition or XOR. In 12 of them the lower bound is one
+below the upper bound, and in one it is two below. Here the upper bound
+may be loose because trails cancel. Every trail behind a lower bound was
+validated independently.
+
+![Mean algebraic degree of the output bits of $S^{(r)}$, with the round
+keys as independent variables. The plotted values are proven lower
+bounds. They equal the certified upper bounds in 1843 of the 1856 cases
+and differ by at most two otherwise. For Dipper, bits are grouped by the
+word of the last ARX layer that produced
+them.](fig_degree.png){#fig:degree width="0.78\\linewidth"}
 
 ::: {#tab:deg1}
   $i$               0   1   2   3   4   5    6    7    8    9    10   11   12   13   14   15
@@ -1078,15 +1232,15 @@ lower.](fig_degree.png){#fig:degree width="0.78\\linewidth"}
   $C\boxplus D$     2   4   6   6   8   10   12   12   14   16   18   18   20   22   24   24
   $B$ (retained)    2   2   3   3   2   2    3    3    2    2    3    3    2    2    3    3
 
-  : Certified degree upper bounds after one round, by bit position $i$
-  in the output of the ARX layer.
+  : Algebraic degree after one round (exact), by bit position $i$ in the
+  output of the ARX layer.
 :::
 
 Figure [3](#fig:degree){reference-type="ref" reference="fig:degree"} and
 Table [5](#tab:deg1){reference-type="ref" reference="tab:deg1"} support
-three observations. All three concern upper bounds.
+three observations.
 
-*The addition acts immediately.* After one round, the bound on bit $i$
+*The addition acts immediately.* After one round, the degree of bit $i$
 of $A\boxplus B$ grows almost linearly in $i$, from 3 to 26, the pattern
 predicted by Lemma [2](#lem:deg){reference-type="ref"
 reference="lem:deg"} and Corollary [1](#cor:round){reference-type="ref"
@@ -1094,35 +1248,34 @@ reference="cor:round"}. The retained word $B$ stays at the S-box degree
 2 or 3. The growth is slower than $3(i+1)$ because neighbouring bits
 share S-boxes.
 
-*Retained words lag by about one round.* The mean bound on the added
+*Retained words lag by about one round.* The mean degree of the added
 words reaches 60 at $r=3$, and the retained words need one more round.
-After five rounds every added-word bit has bound 63, while six
-retained-word bits, $\{1,19,24,51,56,58\}$, still have bound 62. A bound
-of 62 certifies the bit over every 63-dimensional cube. These six bits
-are exactly the bits certified for all 64 maximal cubes at five rounds,
-and the same six bits carry the six-round certificate of the $2^{60}$
-cube (Table [3](#tab:frontier){reference-type="ref"
+After five rounds every added-word bit has degree 63, while six
+retained-word bits, $\{1,19,24,51,56,58\}$, have degree exactly 62.
+Degree 62 certifies the bit over every 63-dimensional cube. These six
+bits are exactly the bits certified for all 64 maximal cubes at five
+rounds, and the same six bits carry the six-round certificate of the
+$2^{60}$ cube (Table [3](#tab:frontier){reference-type="ref"
 reference="tab:frontier"}).
 
-*The bounds become uninformative three to four rounds earlier with the
-additions.* From $r=6$ on, every bound for Dipper is 63; for
+*The degree saturates three to four rounds earlier with the additions.*
+From $r=6$ on, every output bit of Dipper has degree 63; for
 $\mathrm{Dipper}^{\oplus}$ and $\mathrm{Dipper}^{\varnothing}$ this
-happens only from $r=9$ and $r=10$ on (the last rounds with a bound
+happens only from $r=9$ and $r=10$ on (the last rounds with a degree
 below 63 are 5, 8 and 9, respectively). The ordering matches
 Table [4](#tab:ablation){reference-type="ref" reference="tab:ablation"},
-but degree bounds do not determine the certificate boundary: at six
+but the degree does not determine the certificate boundary: at six
 rounds Dipper still has certificates for particular 63-dimensional cubes
-although every bound is 63, and $\mathrm{Dipper}^{\oplus}$ at eight
-rounds has 64 certified bits on some cube while only two bits have a
-bound below 63. Certificates are per cube, degree bounds are over all
-cubes (Remark [1](#rem:percube){reference-type="ref"
-reference="rem:percube"}). In the linear variants the bound can grow
+although every degree is 63, and $\mathrm{Dipper}^{\oplus}$ at eight
+rounds has 64 certified bits on some cube while only two bits have
+degree below 63. Certificates are per cube, the degree is over all cubes
+(Remark [1](#rem:percube){reference-type="ref"
+reference="rem:percube"}). In the linear variants the degree can grow
 only through the S-boxes, at most by a factor of three per round. In
 Dipper each addition contributes the additional factor of
 Corollary [1](#cor:round){reference-type="ref" reference="cor:round"}.
-Whether the *actual* degree also reaches 63 earlier cannot be decided
-from upper bounds (Remark [1](#rem:percube){reference-type="ref"
-reference="rem:percube"}).
+Because the degrees are exact, these are statements about the ciphers
+with independent round keys, not only about the model.
 
 # Precision of the models
 
@@ -1374,23 +1527,50 @@ becomes a statement about the cipher for all bit-aligned cubes; the
 search took about 8 core-hours. A stronger goal is integral resistance
 in the sense of (Hebborn et al. 2021), a guarantee that covers all input
 subspaces of a given dimension and all nonzero linear combinations of
-output bits. The framework has been extended to key whitening by modular
+output bits. Section [6.4](#sec:r7lin){reference-type="ref"
+reference="sec:r7lin"} establishes it for bit-aligned cubes after seven
+rounds; input subspaces that are not bit-aligned remain open. The
+framework has been extended to key whitening by modular
 addition (Beierle et al. 2025) and to complex linear layers (Gerhalter
 and Eichlseder 2026). To our knowledge it has not been applied to a
 round function that itself contains modular additions, as Dipper’s does.
 
+#### The real key schedule.
+
+All presence results assume independent round keys. To test whether they
+carry over to the key schedules, we extended
+<span class="sans-serif">MP-EL</span> by the key schedule: the
+master-key bits are variables, each round key is a COPY of the low half
+of the key state, and the key update is modelled by wiring, the
+key-schedule S-boxes and the round constants. A trail then carries a
+master-key monomial. For the cube with constant bit 0 and six output
+bits we sampled master-key monomials and counted their trails. With the
+128-bit key at six rounds, 1 of the countable coefficients were odd and
+44 even, and 75 exceeded the cap of 2000 trails. At seven rounds, 226 of
+240 samples for the two key sizes exceeded the cap, and none of the
+others was odd. Each master-key bit enters several round keys, so trails
+appear in pairs that differ only in where a key bit is used, and they
+cancel. Proving presence with the key schedule needs a different
+technique, such as the divide-and-conquer monomial prediction used in
+cube attacks (Hu et al. 2020). We leave it open.
+
 #### Limitations.
 
--   The seven-round statement concerns bit-aligned cubes and single
-    output bits. It says nothing about input sets that are not
-    bit-aligned cubes, or about linear combinations of output bits.
+-   The seven-round statement concerns bit-aligned cubes, for which it
+    covers every nonzero linear combination of output bits. It says
+    nothing about input sets that are not bit-aligned cubes. The zero
+    entries of the matrices in
+    Section [6.4](#sec:r7lin){reference-type="ref"
+    reference="sec:r7lin"} rest on the solver’s answers, of which we
+    checked a random sample with DRAT proofs.
 
 -   Independent round keys make the certificates stronger, since they
     hold for all keys. For the same reason they may miss properties that
     depend on the key schedule.
 
--   The data complexities are those of the smallest certified cubes
-    found by a greedy search.
+-   Below the boundary rounds, the data complexities are those of the
+    smallest certified cubes found by a greedy search; at the boundary
+    rounds they are proven minimal within the model.
 
 -   A presence proof excludes a key-independent zero sum. It does not
     exclude a probabilistic or weak-key distinguisher: a cube sum that
@@ -1408,7 +1588,8 @@ round function that itself contains modular additions, as Dipper’s does.
     three rounds, and every trail found is checked independently, but
     the counts have no proof certificate.
 
--   Degree results are upper bounds.
+-   Degrees are exact in 1843 of 1856 cases; in the other 13 we give an
+    interval of width at most two.
 
 -   The filtering extension relies on an extrapolated survival rate.
 
@@ -1416,25 +1597,28 @@ round function that itself contains modular additions, as Dipper’s does.
 
 The experimental five-round integral bound of Dipper is now a
 key-independent result, backed by checked DRAT proofs. Certified
-properties extend to six rounds, with $2^{60}$ data for the smallest
-cube found, and to seven rounds with the keyless final-round inversion.
-No bit-aligned cube gives a balanced bit of $S^{(7)}$: the model has no
-certificate there, and presence proofs show that every output bit is
-unbalanced over every such cube, for independent round keys. The two
-half-state modular additions account for the difference between six
-certified rounds and the nine or ten rounds of otherwise identical
-rounds without carries. Only retained-operand bits are certified at the
-boundary. This is consistent with the exact degree of the addition
-output bits and with the degree upper bounds for every output bit and
-round, which grow fastest on the added words. On every Dipper instance
-we examined, the existence model with exact local transitions certifies
-the same bits as the conventional division property, partly because a
-full-state key addition precedes each S-box layer. Presence proofs
-separate “no certificate” from “not balanced”: every bit that the
-experiments could not decide is unbalanced, and so is every output bit
-after seven rounds. Integral resistance in the sense of (Hebborn et al.
-2021), which also covers other input subspaces and linear combinations
-of output bits, is the natural next step.
+properties extend to six rounds, with $2^{60}$ data, the minimum for a
+certified cube, and to seven rounds with the keyless final-round
+inversion. No bit-aligned cube gives a balanced bit of $S^{(7)}$: the
+model has no certificate there, and presence proofs show that every
+output bit is unbalanced over every such cube, for independent round
+keys. The two half-state modular additions account for the difference
+between six certified rounds and the nine or ten rounds of otherwise
+identical rounds without carries. Only retained-operand bits are
+certified at the boundary. This is consistent with the exact degree of
+the addition output bits and with the degree of every output bit and
+round, determined exactly in almost all cases, which grows fastest on
+the added words. On every Dipper instance we examined, the existence
+model with exact local transitions certifies the same bits as the
+conventional division property, partly because a full-state key addition
+precedes each S-box layer. Presence proofs separate “no certificate”
+from “not balanced”: every bit that the experiments could not decide is
+unbalanced, and after seven rounds so is every nonzero linear
+combination of output bits over every bit-aligned cube. The smallest
+certified six-round cube is proven minimal, and the algebraic degree of
+almost every output bit is known exactly. Integral resistance in the
+sense of (Hebborn et al. 2021), which also covers other input subspaces
+and linear combinations of output bits, is the natural next step.
 
 # Data and code availability
 

@@ -1,0 +1,37 @@
+p=7 after cycle breaking: blocks [[40, 57], [8, 25]] (79s)
+   block [40, 57]: all rows by the last-round component lemma (nibble 9, rows [(1, 0, [1, 1]), (2, 0, [0, 1])], 6-round trails 2, failed 0)
+   block [8, 25]: all rows by the last-round component lemma (nibble 11, rows [(1, 0, [1, 1]), (2, 0, [0, 1])], 6-round trails 2, failed 0)
+p=7 invertible=True cyc0=22 replaced=8 blocks=[] trails=174 fail=0 244.8s
+p=11 after cycle breaking: blocks [[0, 3], [40, 57]] (151s)
+   block [0, 3]: all rows by the last-round component lemma (nibble 1, rows [(1, 0, [1, 1]), (2, 0, [1, 0])], 6-round trails 2, failed 0)
+   block [40, 57]: all rows by the last-round component lemma (nibble 9, rows [(1, 0, [1, 1]), (2, 0, [0, 1])], 6-round trails 6, failed 0)
+   block [27, 40, 57]: all rows by the last-round component lemma (nibble 9, rows [(1, 0, [0, 1, 1]), (2, 0, [0, 0, 1]), (3, 1, [1, 0, 0])], 6-round trails 103, failed 0)
+p=11 invertible=True cyc0=24 replaced=9 blocks=[(2, 2, 0), (3, 3, 0)] trails=452 fail=0 426.7s
+p=25 after cycle breaking: blocks [[40, 57]] (160s)
+   block [40, 57]: all rows by the last-round component lemma (nibble 9, rows [(1, 0, [1, 1]), (2, 0, [0, 1])], 6-round trails 2, failed 0)
+p=25 invertible=True cyc0=25 replaced=6 blocks=[] trails=696 fail=0 288.6s
+p=33 after cycle breaking: blocks [[32, 35]] (1577s)
+   block [32, 35]: all rows by the last-round component lemma (nibble 3, rows [(1, 0, [1, 1]), (2, 0, [1, 0])], 6-round trails 2, failed 0)
+p=33 invertible=True cyc0=56 replaced=14 blocks=[(2, 2, 0)] trails=506 fail=0 1610.2s
+p=37 after cycle breaking: blocks [[8, 25], [40, 57]] (1300s)
+   block [8, 25]: all rows by the last-round component lemma (nibble 11, rows [(1, 0, [1, 1]), (2, 0, [0, 1])], 6-round trails 2, failed 0)
+   block [40, 57]: all rows by the last-round component lemma (nibble 9, rows [(1, 0, [1, 1]), (2, 0, [0, 1])], 6-round trails 2, failed 0)
+p=37 invertible=True cyc0=49 replaced=8 blocks=[] trails=472 fail=0 1517.4s
+p=50 after cycle breaking: blocks [[40, 57]] (220s)
+   block [40, 57]: all rows by the last-round component lemma (nibble 9, rows [(1, 0, [1, 1]), (2, 0, [0, 1])], 6-round trails 2, failed 0)
+   block [27, 40, 57]: all rows by the last-round component lemma (nibble 9, rows [(1, 0, [0, 1, 1]), (2, 0, [0, 0, 1]), (3, 1, [1, 0, 0])], 6-round trails 12237, failed 0)
+p=50 invertible=True cyc0=20 replaced=7 blocks=[(3, 3, 0)] trails=598 fail=0 478.9s
+p=54 after cycle breaking: blocks [[5, 22, 32, 35, 39, 52]] (397s)
+   block [5, 22, 32, 35, 39, 52]: row 32 replaced by a countable presence proof
+   block [5, 22, 32, 35, 39, 52]: row 35 replaced by a countable presence proof
+   block [5, 22, 32, 35, 39, 52]: row 39 replaced by a countable presence proof
+   block [5, 22, 32, 35, 39, 52]: row 52 replaced by a countable presence proof
+   block [5, 22, 32, 35, 39, 52] beta [32, 35]: repaired by free last round (nibble 3, a=0, t=2)
+p=54 invertible=True cyc0=25 replaced=7 blocks=[] trails=572 fail=0 984.4s
+p=59 after cycle breaking: blocks [] (141s)
+p=59 invertible=True cyc0=22 replaced=10 blocks=[] trails=490 fail=0 141.9s
+p=63 after cycle breaking: blocks [[5, 22, 35, 39], [0, 3]] (226s)
+   block [0, 3]: all rows by the last-round component lemma (nibble 1, rows [(1, 0, [1, 1]), (2, 0, [1, 0])], 6-round trails 6, failed 0)
+   block [5, 22, 35, 39]: row 35 replaced by a countable presence proof
+   block [5, 22, 35, 39] beta [5, 35, 39]: repaired by free last round (nibble 4, a=0, t=1)
+p=63 invertible=True cyc0=25 replaced=7 blocks=[(2, 2, 0), (2, 2, 0)] trails=617 fail=0 858.7s

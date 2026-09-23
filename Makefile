@@ -54,8 +54,10 @@ reproduce: quick ## everything (several hours on 2 cores)
 	$(PY) scripts/step26_min_cube.py add 6
 	$(PY) scripts/step26_min_cube.py xor 9
 	$(PY) scripts/step26_min_cube.py none 10
-	$(PY) scripts/step27_linear_combinations.py $$(seq -s, 0 63) results/step27_lc_all.json
+	SAMPLES=200 $(PY) scripts/step27_linear_combinations.py $$(seq -s, 0 63) results/step27_lc_all.json
+	$(PY) scripts/step27b_consolidate.py
 	$(PY) scripts/step28_keyschedule_probe.py
+	$(PY) scripts/step29_drat_zero_entries.py $(TOOLS)/cadical/build/cadical $(TOOLS)/drat-trim/drat-trim 3000
 	$(PY) scripts/figures.py
 	$(PY) scripts/figures2.py
 	$(PY) scripts/summarize.py
