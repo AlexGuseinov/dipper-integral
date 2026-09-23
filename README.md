@@ -69,9 +69,11 @@ use fixed seeds; SAT results do not depend on solver randomness (UNSAT = certifi
 
 ## Certificates archive
 
-The CNF files and DRAT proofs (~60 MB, `certificates/`) are not tracked in git.
-Attach `dipper-integral-certificates.zip` to a GitHub release (or Zenodo) and
-link it here; `make certificates` regenerates and re-checks everything
+The CNF files and DRAT proofs of the boundary certificates (~60 MB) are not tracked in git. They are
+attached to the release [v1.0](https://github.com/AlexGuseinov/dipper-integral/releases/tag/v1.0) as
+`dipper-integral-certificates-part1.zip`, `-part2.zip` and `-part3.zip` (unzip all three into
+`certificates/`). The other DRAT proofs (step30–step33) are regenerated and checked on the fly;
+their verification results are in `results/`. `make certificates` regenerates and re-checks everything
 (builds CaDiCaL and drat-trim into `.tools/`).
 
 ## How to read a result
