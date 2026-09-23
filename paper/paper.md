@@ -161,8 +161,10 @@ presence proofs, which count trails under maximal key patterns
 (Section [4.3](#sec:presence){reference-type="ref"
 reference="sec:presence"}), and a last-round component lemma
 (Lemma [8](#lem:component){reference-type="ref"
-reference="lem:component"}), which turns the low-degree components of
-the GIFT S-box from an obstacle for counting into exact matrix entries.
+reference="lem:component"}). The lemma formalises, for Dipper, the
+last-round choice of key monomials of Hebborn et al. [@hebborn2021]; we
+use it to turn the low-degree components of the GIFT S-box from an
+obstacle for counting into exact matrix entries.
 Sections [9](#sec:keyrec){reference-type="ref" reference="sec:keyrec"}
 and [10](#sec:erratum){reference-type="ref" reference="sec:erratum"}
 contain secondary material: a partial-key filtering procedure and two
@@ -793,7 +795,11 @@ applies to any output function. ◻
 :::
 
 The second lemma gives matrix entries for output functions that, through
-the last round, depend on the input of a single S-box. Let $r\ge2$, let
+the last round, depend on the input of a single S-box. It formalises the
+choice of last-round key monomials within one S-box that Hebborn et
+al. [@hebborn2021] use to build their integral-resistance matrices (see
+also the description by Peng et al. [@peng2026]), for an arbitrary
+component of the S-box and a single last-round key bit. Let $r\ge2$, let
 $I\neq\emptyset$, and fix an S-box $m$ of round $r$. For $i=0,\dots,3$
 write $s_i=S^{(r-1)}_{4m+i}$ for bit $4m+i$ of the state before round
 $r$ and $k_{r,i}$ for bit $4m+i$ of $RK_r$, so that the input of S-box
@@ -1161,13 +1167,15 @@ mask never enters an S-box in the empty monomial. A trail to one of the
 two bits whose last-round S-box input is any other monomial is also a
 trail to the other bit, with the same key pattern, so the two entries of
 a row can differ only through trails that enter the last S-box in $z_1$
-or $z_0z_2$. Pairs formed by a bit $(X\boxplus Y)_i$ of an added word
-and the retained bit $Y_i$ behaved similarly, which may be due to their
-common linear term $Y_i$; we did not analyse this further. We separated
-such pairs by patterns that use the last round: a six-round presence
-proof $V$ for one input bit of the S-box, extended by a single
-last-round key bit $t$. For S-box output bits 0 and 1 and a presence
-proof $V$ for $s_0$, for instance,
+or $z_0z_2$. A similar dependence of trail parities on the last-round
+S-box input monomials underlies the interfering monomials that Peng et
+al. [@peng2026] found in PRESENT. Pairs formed by a bit
+$(X\boxplus Y)_i$ of an added word and the retained bit $Y_i$ behaved
+similarly, which may be due to their common linear term $Y_i$; we did
+not analyse this further. We separated such pairs by patterns that use
+the last round: a six-round presence proof $V$ for one input bit of the
+S-box, extended by a single last-round key bit $t$. For S-box output
+bits 0 and 1 and a presence proof $V$ for $s_0$, for instance,
 Lemma [8](#lem:component){reference-type="ref"
 reference="lem:component"} gives the row $(1,1)$ for $t=1$ and the row
 $(0,1)$ for $t=2$, whatever the other counts $c_V(u)$ are. Indeed, the
@@ -1619,10 +1627,18 @@ of [@hebborn2021], a guarantee that covers input sets other than
 bit-aligned cubes and all nonzero linear combinations of output bits.
 Section [6.4](#sec:r7lin){reference-type="ref" reference="sec:r7lin"}
 establishes it for bit-aligned cubes after seven rounds; other input
-sets remain open. The framework has been extended to key whitening by
-modular addition [@beierle2025] and to complex linear
-layers [@gerhalter2026]. To our knowledge it has not been applied to a
-round function that itself contains modular additions, as Dipper's does.
+sets remain open. Since $RK_1$ acts as a whitening key, the theorem of
+Hebborn et al. would cover them, but it needs matrices over all 64 input
+monomials of degree 63 jointly. With our presence patterns, the matrix
+of every single output bit over these 64 monomials is singular: two
+input monomials that differ only inside one nibble usually give equal
+rows. Hebborn et al. avoid this with key monomials chosen right after
+the first S-box layer; in Dipper that key is added only after the first
+ARX layer. We leave this to future work. The framework has been extended
+to key whitening by modular addition [@beierle2025] and to complex
+linear layers [@gerhalter2026]. To our knowledge it has not been applied
+to a round function that itself contains modular additions, as Dipper's
+does.
 
 #### The real key schedule.
 

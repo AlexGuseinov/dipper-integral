@@ -217,3 +217,18 @@ wasted work.
 * **step33** (`scripts/step33_drat_min_cubes.py`): the certified bits of both minimal six-round cubes
   (nibble 4–7: bits 1, 19, 24, 51, 56, 58; nibble 12–15: bits 24, 51, 56, 58) re-proved with DRAT:
   10/10 verified (`results/step33_drat_min_cubes.json`).
+
+## Probe: integral resistance for all input sets (step34, not a claim of the paper)
+
+Hebborn et al. (ASIACRYPT 2021, Prop. 2) turn a full-rank integral-resistance matrix into a guarantee for
+every proper subset of plaintexts; RK_1 acts as the whitening key of Dipper. The argument also works for a
+single output mask beta (the coefficients of the 64 degree-63 monomials of <beta, E> must be linearly
+independent). Probe with the existing presence patterns (v_1 = 0), per output bit j, matrix over the 64
+input monomials x^(e_bar_q):
+* step34: on average 1105 of the 4032 off-diagonal pairs (p, q) have a trail; strongly connected components
+  have at most 9 cubes (`results/step34_ir_edges.json`).
+* step34b: 607 non-trivial blocks over the 64 bits; 7 invertible, 482 singular, 118 not countable (cap 2000).
+  431 of the singular blocks are pairs of input monomials that differ inside one nibble (equal rows).
+  Hebborn et al. separate such pairs by first-round key monomials right after the S-box; in Dipper this key
+  (RK_2) comes after the first ARX layer. Conclusion: the extension to all input sets needs a dedicated
+  first-round pattern design (future work, Paper 2); it does not follow from the present data.
