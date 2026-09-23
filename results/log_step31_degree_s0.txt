@@ -1,0 +1,15 @@
+add|1 {'proofs': 63, 'trails': 67, 'drat': 63, 'drat_ok': 63, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 5.2}
+add|3 {'proofs': 64, 'trails': 106, 'drat': 64, 'drat_ok': 64, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 8.2}
+add|5 {'proofs': 64, 'trails': 202, 'drat': 64, 'drat_ok': 64, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 12.9}
+none|1 {'proofs': 64, 'trails': 64, 'drat': 64, 'drat_ok': 64, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 5.1}
+none|3 {'proofs': 64, 'trails': 64, 'drat': 64, 'drat_ok': 64, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 6.9}
+none|5 {'proofs': 64, 'trails': 64, 'drat': 64, 'drat_ok': 64, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 9.0}
+none|7 {'proofs': 64, 'trails': 64, 'drat': 64, 'drat_ok': 64, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 11.3}
+none|9 {'proofs': 64, 'trails': 64, 'drat': 64, 'drat_ok': 64, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 16.3}
+none|11 {'proofs': 64, 'trails': 64, 'drat': 64, 'drat_ok': 64, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 18.0}
+xor|2 {'proofs': 64, 'trails': 64, 'drat': 64, 'drat_ok': 64, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 5.7}
+xor|4 {'proofs': 64, 'trails': 64, 'drat': 64, 'drat_ok': 64, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 8.6}
+xor|6 {'proofs': 64, 'trails': 68, 'drat': 64, 'drat_ok': 64, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 22.5}
+xor|8 {'proofs': 64, 'trails': 70, 'drat': 64, 'drat_ok': 64, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 58.7}
+xor|10 {'proofs': 64, 'trails': 64, 'drat': 64, 'drat_ok': 64, 'duplicates': 0, 'fail': 0, 'count_mismatch': 0, 'weight_mismatch': 0, 'certified': True, 'secs': 33.4}
+TOTAL {'proofs': 895, 'trails': 1089, 'drat': 895, 'drat_ok': 895, 'duplicates': 0, 'certified_groups': 14, 'groups': 14}

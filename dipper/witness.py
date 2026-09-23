@@ -21,9 +21,11 @@ def _words(x):
     return (x >> 48) & 0xFFFF, (x >> 32) & 0xFFFF, (x >> 16) & 0xFFFF, x & 0xFFFF
 
 
-def check_trail(masks, active, j, mode="add", final_mask=None):
+def check_trail(masks, active, j, mode="add", final_mask=None, pattern=None):
     """masks: list of 64-bit ints [input, (key, sbox, mix, perm) * r].
-    The trail must end in e_j, or in final_mask if it is given (a product of several state bits)."""
+    The trail must end in e_j, or in final_mask if it is given (a product of several state bits).
+    If `pattern` is given (one key mask per round), the key monomial of the trail, taken bit by bit
+    as (key-layer output) AND NOT (key-layer input), must equal it."""
     I = sum(1 << b for b in active)
     if masks[0] != I:
         return False, "input mask != cube"
@@ -33,6 +35,8 @@ def check_trail(masks, active, j, mode="add", final_mask=None):
         k, sb, mx, pm = masks[1 + 4 * t: 5 + 4 * t]
         if x & ~k:
             return False, f"round {t+1}: key step violates u <= w"
+        if pattern is not None and (k & ~x) != pattern[t]:
+            return False, f"round {t+1}: key monomial differs from the pattern"
         for n in range(16):
             if SBOX_MP[(k >> 4 * n) & 15][(sb >> 4 * n) & 15] != 1:
                 return False, f"round {t+1}: S-box {n} coefficient zero"

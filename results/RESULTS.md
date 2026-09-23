@@ -26,14 +26,14 @@ Maximal cubes (63 active bits, constant bit p = 0..63):
 | 6 | 14 | 9 (p ∈ {4,6,7}: bits {1,18,19,24,41,48,51,56,58}) |
 | 7 | 0 | 0 → no bit-aligned cube of any dimension (monotonicity lemma) |
 
-Smallest certified cubes found (greedy; upper bounds on data):
+Smallest certified cubes found (greedy; upper bounds on data; the last value of each column is minimal within the model, step26):
 
 | r | Dipper | Dipper-XOR | Dipper-no-add |
 |---|---|---|---|
 | 3 | 2 | | |
 | 4 | 4 | | |
 | 5 | 16 | 7 | 3 |
-| 6 | 60 (constant nibble 4–7, 6 bits; smallest found, not proven minimal) | 22 | 8 |
+| 6 | 60 (constant nibble 4–7, 6 bits, or 12–15, 4 bits; minimal within the model, see step26) | 22 | 8 |
 | 7 | — | 44 | 15 |
 | 8 | — | 59 | 48 |
 | 9 | — | 63 | 59 |
@@ -71,7 +71,7 @@ Mechanism: every certified bit at the 6-round boundary comes, in the last round,
 
 ## Step 6 — degree mechanism and exactness attempts
 * Lemma: deg((x⊞y)_i) = i+1 (Kummer + Braeken–Semaev), verified exhaustively n ≤ 8 [`tests/test_local_models.py`].
-* Certified degree UPPER bounds (never actual degrees) for every output bit [`step6_degree.py`, `step6_degree_*.json`, figure `paper/fig_degree.pdf`]:
+* Certified degree UPPER bounds for every output bit (step25 later matched 1843 of 1856 of them by lower bounds, i.e. exact degrees; step32 DRAT-checks all 1856) [`step6_degree.py`, `step6_degree_*.json`, figure `paper/fig_degree.pdf`]:
   * Dipper after 1 round: bit i of A⊞B has bound 3,5,7,…,26 (≈ linear in i); retained B stays 2–3.
   * Dipper: from r=6 on every bound is 63 (uninformative); at r=5 exactly six retained-word bits {1,19,24,51,56,58} have bound 62 (= the bits certified for all 64 maximal cubes).
   * Dipper-XOR: all bounds 63 from r=9; Dipper-no-add: from r=10. Degree bounds do not determine the certificate boundary (certificates are per cube).
@@ -82,7 +82,7 @@ Mechanism: every certified bit at the 6-round boundary comes, in the last round,
 * 141 DRAT proof runs (138 distinct CNFs) from external CaDiCaL 3.0.1, all VERIFIED by drat-trim: every certified (cube, bit) pair of Dipper r=6 (90), Dipper-XOR r=9 (17), Dipper-no-add r=10 (10), Dipper frontier cubes r=3..6 (18), word cubes A/C r=5 (6).
 * 3 × 4096 SAT answers (Dipper r=7, XOR r=10, no-add r=11): every trail validated by `dipper/witness.py`, which does not use the CNF.
 * Trusted base: correctness of the CNF generator (`dipper/models.py`) rests on the exhaustive local checks and agreement with experiment; DRAT only proves the emitted CNF is UNSAT.
-* Other UNSAT answers (r≤5 maximal cubes, comparison instances, degree bounds) rely on the solver answer alone.
+* Other UNSAT answers (r≤5 maximal cubes, comparison instances) rely on the solver answer alone. The degree bounds, the presence-proof counts and all answers behind the seven-round linear-combination result were DRAT-checked later (step30–step32).
 
 ## Independent verification round (step14–step20)
 
@@ -146,7 +146,9 @@ wasted work.
   `results/step25_degree_summary.json`: **exact in 1843 of 1856** (variant, round, bit) cases
   (Dipper r = 1–7, Dipper-xor and Dipper-none r = 1–11). The other 13 cases: Dipper r = 2 bit 55 in [32, 34];
   Dipper r = 3 bits 9, 16, 43 in [D-1, D]; Dipper-xor r = 4–6, nine bits in [D-1, D]. Every trail behind a lower
-  bound validated. The one-round ANF (bits 6, 7, 20, 36, 39) agrees with the bounds.
+  bound validated. The one-round ANF (bits 6, 7, 20, 36, 39) agrees with the bounds; for bit 7 (degree 24)
+  the presence search reached only 22, so its exact degree rests on the ANF alone. Every presence count behind
+  a lower bound is DRAT-certified complete (step31), every upper bound DRAT-checked (step32).
   Search note: at the degree limit the first-round key part of the monomial is usually forced to be empty,
   so maximal key patterns fail there; patterns with v_1 = 0 are needed.
 * **step26 — minimal certified cube.** Monotonicity implies that the constant bits of a certified cube lie
@@ -158,22 +160,60 @@ wasted work.
 * **step28 — real key schedule (probe).** `dipper/models_ks.py` adds the key schedule to MP-EL (master-key
   variables, COPY into round keys, key S-boxes, round constants). Cube with constant bit 0, six output bits,
   20 master-key monomials each: 128-bit key r = 6: 1 odd / 44 even / 75 above cap 2000; r = 7: 0 / 14 / 106.
-  96-bit key r = 6: 0 / 39 / 81; r = 7: 0 / 0 / 120. Coefficients cancel in pairs (each master bit feeds
-  several round keys); presence with the key schedule is out of reach with this method.
+  96-bit key r = 6: 0 / 39 / 81; r = 7: 0 / 0 / 120. Samples: greedy maximal and minimal master-key monomials.
+  The one odd count (bit 55, 15 trails) was NOT validated independently: `dipper/witness.py` does not model
+  the key schedule. Hypothesis (not verified): coefficients cancel in pairs because each master-key bit feeds
+  several round keys. Presence with the key schedule is out of reach with this method; nested monomial
+  prediction (Hu et al., ASIACRYPT 2021) would be the next tool to try.
 
-## Linear combinations of output bits at seven rounds (step27, step29)
+## Linear combinations of output bits at seven rounds (step27, step27b, step27c, step30)
 
-* **step27 — no nonzero linear combination is balanced** (independent round keys). For each of the 64 cubes
-  of dimension 63, 64 key patterns are chosen so that the 64x64 matrix M (M[l][j] = parity of the number of
-  trails to output bit j with pattern l) is invertible over F_2 (Lemma "linear combinations"). M is not computed
-  in full: along the strongly connected components of the graph "pattern l has a trail to bit j" it is block
-  triangular. Patterns of bits on cycles are replaced by other presence proofs; the remaining blocks (at most
-  4 bits) are counted exactly or, when all their bits are outputs of one last-round S-box of a retained word,
-  obtained exactly from the **last-round component lemma** (entries = sums of six-round trail counts to one
-  or two S-box input bits, weighted by the ANF of the GIFT S-box). Structural reason for the blocks: output
-  bits 0 and 1 of the GIFT S-box sum to 1 + z1 + z0 z2 (degree 2), so maximal patterns give both bits equal
-  parity. Result: **invertible for all 64 cubes**. Every trail behind a counted entry, a diagonal entry and a
-  lemma entry is validated (a cube counts only with zero failures). Consolidated:
-  `results/step27_linear_combinations_final.json`.
-* **step29 — DRAT check of zero entries.** Zero entries rest on UNSAT answers; a random sample was re-solved
-  with an external CaDiCaL, DRAT proofs checked by drat-trim (see `results/step29_drat_zero_entries.json`).
+* **step27 — search.** For each of the 64 cubes of dimension 63, 64 key patterns are sought so that the 64x64
+  matrix M (M[l][j] = parity of the number of trails to output bit j with pattern l) is invertible over F_2
+  (Lemma "linear combinations", the rank argument of Hebborn et al. 2021). M is not computed in full: along
+  the strongly connected components of the graph G ("pattern l has a trail to bit j") it is block triangular.
+  Patterns of bits on cycles are replaced by other presence proofs; remaining blocks are counted exactly or
+  closed with the **last-round component lemma**. Structural observation: output bits 0 and 1 of the GIFT
+  S-box have the same ANF except for z1 and z0z2 (their sum is 1 + z1 + z0z2), so the two entries of a row
+  differ only through trails entering the last S-box in z1 or z0z2. Search history: p = 56 needed two reruns;
+  the first (`step27_lc_fix56.json`) ended with one singleton whose diagonal entry was 0 and was rejected by
+  the strict check (invertible = False, failures = 1); the second (`step27_lc_fix56b.json`, permutation labels
+  and lemma diagonal) succeeded. Only records with invertible = True and failures = 0 are consolidated
+  (`step27b_consolidate.py` → `results/step27_linear_combinations_final.json`).
+* **step27c — independent verifier** (`scripts/step27c_verify.py`, merged by `step27c_merge.py` into
+  `results/step27c_verify.json`). Starts from the final patterns only; recomputes G and its components
+  (asserts that every edge goes to an earlier component); singletons need a counted diagonal 1; blocks are
+  decided by counting all entries, by the component lemma, or by the **sum argument** (2x2 block of two
+  retained output bits of one last-round S-box, one counted row (1,1), the other row's pattern ends in one
+  last-round key bit: determinant = lemma entry for the XOR of the two bits). Every trail is validated
+  including its key pattern. Result: **64/64 cubes verified**; 4016 components = 3948 singletons (counted
+  diagonal 1) + 68 blocks (57 of size 2, 10 of size 3, 1 of size 4); 47 blocks by counted entries, 21 by the
+  sum argument (13 cubes: 4, 13, 15, 17, 19, 21, 23, 24, 27, 28, 29, 30, 31); 51 698 seven-round and 55
+  six-round trails, 0 failures; 128 931 zero entries used outside the diagonal blocks.
+* **step30 — DRAT certificates for every solver answer of the result** (`results/step30_drat_lincomb.json`):
+  per row one UNSAT proof that the pattern has no trail to any bit without an edge (exactly-one over those
+  bits; 4096 proofs covering all 194 321 zero entries of the 64 matrices); for each of the 4174 counted
+  entries a DRAT proof that the enumeration is complete (instance + one blocking clause per trail is UNSAT);
+  the same for the 21 six-round counts of the sum arguments (in all 21 sum blocks the bits are S-box
+  outputs 0 and 1 and the lemma row ends in key bit t = 0, so the determinant is the single count
+  c_V({2})). **8291/8291 proofs verified**, all parities equal to the verifier's matrices, 0 trail
+  failures, 0 duplicate trails, all zeros used by the verifier among the certified zeros, 64/64 cubes
+  certified. (A first run without the duplicate and zero-consistency checks gave the same numbers.)
+* **step29 — superseded by step30.** A random sample of 3000 zero entries (from all zero entries of the
+  step27 records, not only those used) had been DRAT-checked (`results/step29_drat_zero_entries.json`).
+
+## DRAT certificates for counts, degree bounds and minimal cubes (step31–step33)
+
+* **step31** (`scripts/step31_drat_presence.py`): for every presence proof the trails are enumerated again,
+  each validated including its key pattern, the count compared with the recorded odd count, and the
+  completeness of the enumeration certified by a DRAT proof of the blocked instance.
+  Seven rounds (step20/21): **4096/4096** DRAT proofs verified, 32 534 trails, 0 failures,
+  0 duplicates. Gap bits (step22): **46/46** verified, 86 trails. Degree lower bounds (records used by step25d; add|7 comes from step21; add|1 bit 7 from the
+  ANF only): **1791/1791** verified, 2187 trails. Summary: `results/step31_drat_summary.json`.
+  The trail total of the 4142 seven-round and gap proofs (32 620) equals that of step24; the trails are now
+  also checked against their key pattern and for distinctness.
+* **step32** (`scripts/step32_drat_degree_upper.py`): every certified degree upper bound (1856 instances:
+  free input of weight >= D+1, totaliser encoding, output e_j) re-solved with DRAT: **1856/1856** verified (`results/step32_drat_degree_upper.json`).
+* **step33** (`scripts/step33_drat_min_cubes.py`): the certified bits of both minimal six-round cubes
+  (nibble 4–7: bits 1, 19, 24, 51, 56, 58; nibble 12–15: bits 24, 51, 56, 58) re-proved with DRAT:
+  10/10 verified (`results/step33_drat_min_cubes.json`).

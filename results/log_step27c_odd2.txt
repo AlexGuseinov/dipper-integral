@@ -1,0 +1,12 @@
+p=41 verified=True blocks=[] trails7=330 trails6=0 fail=0 zeros=2016 1.8s
+p=43 verified=True blocks=[(3, 'counted entries', 3)] trails7=422 trails6=0 fail=0 zeros=2013 1.7s
+p=45 verified=True blocks=[(3, 'counted entries', 3)] trails7=1228 trails6=0 fail=0 zeros=2013 2.5s
+p=47 verified=True blocks=[(2, 'counted entries', 2), (3, 'counted entries', 3)] trails7=5935 trails6=0 fail=0 zeros=2012 7.5s
+p=49 verified=True blocks=[] trails7=562 trails6=0 fail=0 zeros=2016 2.0s
+p=51 verified=True blocks=[] trails7=514 trails6=0 fail=0 zeros=2016 1.9s
+p=53 verified=True blocks=[] trails7=536 trails6=0 fail=0 zeros=2016 1.9s
+p=55 verified=True blocks=[(2, 'counted entries', 2), (3, 'counted entries', 3)] trails7=567 trails6=0 fail=0 zeros=2012 2.0s
+p=57 verified=True blocks=[(2, 'counted entries', 2), (3, 'counted entries', 3)] trails7=571 trails6=0 fail=0 zeros=2012 1.9s
+p=59 verified=True blocks=[] trails7=490 trails6=0 fail=0 zeros=2016 1.9s
+p=61 verified=True blocks=[(2, 'counted entries', 2)] trails7=601 trails6=0 fail=0 zeros=2015 2.0s
+p=63 verified=True blocks=[(2, 'counted entries', 2), (2, 'counted entries', 2)] trails7=620 trails6=0 fail=0 zeros=2014 1.9s

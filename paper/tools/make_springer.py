@@ -79,8 +79,7 @@ preamble = r"""\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
 \newcommand{\MPC}{\textsf{MP-circuit}}
 \newcommand{\BDP}{\textsf{BDP}}
 \newcommand{\repo}{\url{https://github.com/AlexGuseinov/dipper-integral}}
-\newcommand{\NUNSAT}{138}
-\newcommand{\NWIT}{12\,288}
+%%NUMBERS%%
 
 \raggedbottom
 \setlength{\emergencystretch}{3em}
@@ -103,6 +102,8 @@ front = (r"\abstract{" + abstract + "}\n\n" + r"\keywords{" + keywords + "}\n\n"
 tail = ("\n" + declarations + "\n\\begin{appendices}\n\n" + app + "\n\n\\end{appendices}\n\n"
         + "\\bibliography{refs}\n\n\\end{document}\n")
 
+numbers = "".join(l + "\n" for l in s.splitlines() if re.match(r"\\newcommand\{\\N[A-Z]+\}", l))
+preamble = preamble.replace("%%NUMBERS%%\n", numbers)
 doc = preamble + front + body.rstrip() + "\n" + tail
 # rename generic macros to avoid clashes with the journal class
 for old, new in ((r"\add", r"\modadd"), (r"\F", r"\Ftwo"), (r"\val", r"\intval"), (r"\wt", r"\hw")):

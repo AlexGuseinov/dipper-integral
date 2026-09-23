@@ -20,8 +20,9 @@ from .models import build
 
 
 class TrailCounter:
+    """active=None leaves the input mask free (variables self.m.inputs), to be fixed by assumptions."""
     def __init__(self, active, rounds, mode="add", solver="cadical153", projection="masks"):
-        self.m, self.out = build(set(active), rounds, "mp", mode)
+        self.m, self.out = build(None if active is None else set(active), rounds, "mp", mode)
         self.rounds = rounds
         self.kv = []
         extra = []

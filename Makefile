@@ -56,8 +56,9 @@ reproduce: quick ## everything (several hours on 2 cores)
 	$(PY) scripts/step26_min_cube.py none 10
 	SAMPLES=200 $(PY) scripts/step27_linear_combinations.py $$(seq -s, 0 63) results/step27_lc_all.json
 	$(PY) scripts/step27b_consolidate.py
+	$(PY) scripts/step27c_verify.py $$(seq -s, 0 63) results/step27c_verify_all.json   # independent verifier
+	$(PY) scripts/step27c_merge.py
 	$(PY) scripts/step28_keyschedule_probe.py
-	$(PY) scripts/step29_drat_zero_entries.py $(TOOLS)/cadical/build/cadical $(TOOLS)/drat-trim/drat-trim 3000
 	$(PY) scripts/figures.py
 	$(PY) scripts/figures2.py
 	$(PY) scripts/summarize.py
@@ -83,5 +84,15 @@ tools:
 	test -d $(TOOLS)/drat-trim || git clone --depth 1 https://github.com/marijnheule/drat-trim.git $(TOOLS)/drat-trim
 	test -x $(TOOLS)/drat-trim/drat-trim || (cd $(TOOLS)/drat-trim && make)
 
-certificates: tools   ## DRAT proofs for all boundary certificates + validated trails
-	$(PY) scripts/step7_certificates.py $(TOOLS)/cadical/build/cadical $(TOOLS)/drat-trim/drat-trim certificates
+CAD = $(TOOLS)/cadical/build/cadical
+DT  = $(TOOLS)/drat-trim/drat-trim
+certificates: tools   ## DRAT proofs + independently validated trails for all boundary results (~2 h on 2 cores)
+	$(PY) scripts/step7_certificates.py $(CAD) $(DT) certificates
+	$(PY) scripts/step30_drat_lincomb.py $(CAD) $(DT) $$(seq -s, 0 63) results/step30_drat_lincomb_all.json
+	$(PY) scripts/step30_merge.py
+	$(PY) scripts/step31_drat_presence.py $(CAD) $(DT) r7 results/step31_drat_r7.json
+	$(PY) scripts/step31_drat_presence.py $(CAD) $(DT) gap results/step31_drat_gap.json
+	$(PY) scripts/step31_drat_presence.py $(CAD) $(DT) degree results/step31_drat_degree.json
+	$(PY) scripts/step31_drat_presence.py - - summary results/step31_drat_summary.json
+	$(PY) scripts/step32_drat_degree_upper.py $(CAD) $(DT) add,xor,none results/step32_drat_degree_upper.json
+	$(PY) scripts/step33_drat_min_cubes.py $(CAD) $(DT)

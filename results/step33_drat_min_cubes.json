@@ -1,0 +1,76 @@
+{
+ "4,5,6,7": {
+  "bits": [
+   1,
+   19,
+   24,
+   51,
+   56,
+   58
+  ],
+  "results": {
+   "1": {
+    "status": "UNSAT",
+    "verified": true,
+    "secs": 0.18
+   },
+   "19": {
+    "status": "UNSAT",
+    "verified": true,
+    "secs": 0.18
+   },
+   "24": {
+    "status": "UNSAT",
+    "verified": true,
+    "secs": 0.17
+   },
+   "51": {
+    "status": "UNSAT",
+    "verified": true,
+    "secs": 0.17
+   },
+   "56": {
+    "status": "UNSAT",
+    "verified": true,
+    "secs": 0.19
+   },
+   "58": {
+    "status": "UNSAT",
+    "verified": true,
+    "secs": 0.18
+   }
+  },
+  "all_verified": true
+ },
+ "12,13,14,15": {
+  "bits": [
+   24,
+   51,
+   56,
+   58
+  ],
+  "results": {
+   "24": {
+    "status": "UNSAT",
+    "verified": true,
+    "secs": 0.18
+   },
+   "51": {
+    "status": "UNSAT",
+    "verified": true,
+    "secs": 0.17
+   },
+   "56": {
+    "status": "UNSAT",
+    "verified": true,
+    "secs": 0.18
+   },
+   "58": {
+    "status": "UNSAT",
+    "verified": true,
+    "secs": 0.21
+   }
+  },
+  "all_verified": true
+ }
+}
