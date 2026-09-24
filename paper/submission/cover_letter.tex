@@ -1,0 +1,45 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{url}\urlstyle{same}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\pagestyle{empty}
+\begin{document}
+\begin{flushright}
+Ali Huseynli\\
+Department of Cybersecurity\\
+Faculty of Information Technologies and Telecommunications\\
+Azerbaijan Technical University, Baku AZ1073, Azerbaijan\\
+\texttt{ali.huseynli@student.aztu.edu.az}\\[6pt]
+24 September 2026
+\end{flushright}
+
+To the Editor-in-Chief\\
+\emph{Cryptography and Communications}
+
+Dear Editor,
+
+Please find enclosed our manuscript ``Certified Integral Properties of the Dipper Block Cipher: Monomial-Trail Analysis and the Role of the Half-State Modular Addition'', which we submit for consideration as an original research article in Cryptography and Communications.
+
+The manuscript studies integral properties of a hybrid SPN--ARX block cipher, whose round combines 4-bit S-boxes and a bit permutation with modular additions on half of the state. Integral properties of such rounds are usually evaluated by experiments with a few random keys. We replace this evidence by key-independent results obtained with monomial-trail (monomial prediction) models, using an exact local rule for the addition derived from the Braeken--Semaev characterisation. The main results are:
+
+\begin{itemize}\setlength\itemsep{3pt}
+\item Certificates for all round keys of the published five-round properties and of new six-round properties, each boundary result backed by a DRAT proof checked with drat-trim or by a monomial trail validated independently of the SAT encoding. The smallest certified six-round cube ($2^{60}$ chosen plaintexts) is minimal within the model.
+\item Presence proofs (key monomials with an odd number of monomial trails) showing that, for independent round keys, no nonzero linear combination of output bits is balanced after seven rounds over any bit-aligned cube, so the certified six-round boundary is exact in this setting. For linear combinations we use the rank argument of Hebborn et al. (ASIACRYPT 2021) together with a last-round component lemma, which turns the degree-two components of the GIFT S-box, an obstacle for plain trail counting, into exact matrix entries. An independent verifier re-derives the result from the final key patterns alone. Every solver answer behind it is certified by a checked DRAT proof, including proofs that each trail enumeration is complete, and every counted trail is validated independently of the SAT encoding.
+\item Presence proofs showing that 46 bits that stayed zero in thousands of random-key trials, without being certified, are not balanced. This shows concretely that random-key testing can mislead.
+\item The exact algebraic degree in 1843 of 1856 (cipher, round, output bit) cases for Dipper and two variants, and a controlled ablation isolating the effect of the modular additions (six certified rounds versus nine and ten without carries). At the boundary all certified bits lie in the words that bypass the addition.
+\end{itemize}
+
+We believe the work fits the journal's scope in Boolean functions and the algebraic analysis of symmetric primitives. In particular, it combines exact algebraic statements with checkable proof artifacts.
+
+For transparency: Dipper was proposed by the authors in earlier work (Cryptography, 2026, \url{https://doi.org/10.3390/cryptography10040052}). The present manuscript evaluates that design independently of the design paper's own methods and corrects two statements of its key-schedule description against the reference implementation. All code, data, proofs and scripts are publicly available at \url{https://github.com/AlexGuseinov/dipper-integral}.
+
+The manuscript is original, has not been published before, and is not under consideration for publication elsewhere. All authors have approved the submission. Apart from the authorship of Dipper noted above, we declare no competing interests.
+
+Sincerely,
+
+Ali Huseynli (corresponding author)\\
+ORCID: 0009-0003-4959-2887\\
+on behalf of the co-authors Yadigar Imamverdiyev and Jalal Alizadeh
+\end{document}
